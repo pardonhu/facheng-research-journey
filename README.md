@@ -11,11 +11,13 @@
 
 ## 科研协作复盘
 
-[FastSET 转期刊复盘：跨领域科研防错与交付规范](docs/fastset-journal-retrospective/README.md)
+[FastSET 转期刊复盘：跨领域防错、有效经验与交付规范](docs/fastset-journal-retrospective/README.md)
 
-从一次长期科研协作中总结可复用的错误模式，供以后设计实验、修改论文、制作图表和 PPT 时参考。重点是判断和执行中为什么出错，而不是保存某个项目的操作步骤。
+从一次长期科研协作中总结错误模式和有效做法，供以后设计实验、调度远程计算、修改论文、制作图表和 PPT 时参考。重点是可迁移的判断方法和工作经验，而不是某个项目的参数清单。
 
 - 先读：[八种错误模式与防错机制](docs/fastset-journal-retrospective/01-错误模式与防错机制.md)
+- 有效经验：[值得复用的科研工作方法](docs/fastset-journal-retrospective/09-值得复用的科研工作方法.md)
+- 远程计算：[服务器与多 GPU 实验调度](docs/fastset-journal-retrospective/08-远程服务器与多GPU实验调度.md)
 - 写作与展示：[论文与科研表达](docs/fastset-journal-retrospective/03-论文与科研表达.md) · [图表与 PPT 交付](docs/fastset-journal-retrospective/04-图表与PPT交付.md)
 - 快速使用：[开工与交付模板](docs/fastset-journal-retrospective/07-开工与交付模板.md)
 - 核对来源：[复盘依据与偏好台账](docs/fastset-journal-retrospective/06-复盘依据与偏好台账.md)
