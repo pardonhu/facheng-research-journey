@@ -22,4 +22,10 @@
 - 快速使用：[开工与交付模板](docs/fastset-journal-retrospective/07-开工与交付模板.md)
 - 核对来源：[复盘依据与偏好台账](docs/fastset-journal-retrospective/06-复盘依据与偏好台账.md)
 
-原有指南保持原样。复盘中的建议、明确偏好和项目限定条件分别标注，后续任务以最新要求为准。
+原有指南保留原主线，新增经验以注明来源的补充章节维护。复盘中的建议、明确偏好和项目限定条件分别标注，后续任务以最新要求为准。
+
+### RFDT 组会 PPT 复盘（2026-10）
+
+[方法问题链、公式解释、实验证据与局部回退](docs/rfdt-ppt-retrospective/README.md) · [备稿与交付检查表](docs/rfdt-ppt-retrospective/checklist.md)
+
+记录一次有进展但尚未完全可用的 PPT 协作：重点是如何让第一次接触论文的人理解作者解决问题的过程，以及怎样保护用户手动修改。
