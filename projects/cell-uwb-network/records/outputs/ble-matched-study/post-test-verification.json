@@ -1,0 +1,36 @@
+{
+  "formal_cases": 15,
+  "original_packets": 750000,
+  "bitmap_and_cycle_checks": true,
+  "rejected_frames_by_case": {
+    "p128-m0-a1": 1,
+    "p128-m0-a10": 0,
+    "p128-m1-a1": 0,
+    "p128-m2-a1": 0,
+    "p128-m2-a10": 0,
+    "p64-m0-a1": 0,
+    "p64-m0-a10": 0,
+    "p64-m1-a1": 0,
+    "p64-m2-a1": 0,
+    "p64-m2-a10": 0,
+    "p32-m0-a1": 0,
+    "p32-m0-a10": 0,
+    "p32-m1-a1": 0,
+    "p32-m2-a1": 0,
+    "p32-m2-a10": 0
+  },
+  "boards": [
+    {
+      "board": "A",
+      "serial": "JLINK_A",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    },
+    {
+      "board": "B",
+      "serial": "JLINK_B",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    }
+  ]
+}

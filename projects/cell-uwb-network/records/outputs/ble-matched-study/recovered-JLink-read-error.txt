@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "[LOCAL_WORKSPACE]\work\run-matched.py", line 47, in <module>
+    case(pre,mode,agg,n=600 if args.smoke else 50000,formal=not args.smoke)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[LOCAL_WORKSPACE]\work\run-matched.py", line 33, in case
+    (out/f'{name}-received.bin').write_bytes(bitmap);batch=300//agg;dur=list(struct.unpack('<'+'I'*s['batches'],readbytes(controller,'batch_us',s['batches']*4)));hist=list(struct.unpack('<2048I',readbytes(controller,'period_hist',8192)));assert sum(hist)==s['period_n']
+                                                                                                                                                                                                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[LOCAL_WORKSPACE]\work\run-matched.py", line 9, in readbytes
+    f=root/f'work/matched-{label}-{symbol}.bin';command(label,f'savebin {f.as_posix()} {symbols[symbol]:#x} {n:#x}');return f.read_bytes()
+                                                ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[LOCAL_WORKSPACE]\work\run-matched.py", line 7, in command
+    f=root/f'work/matched-{label}.jlink';f.write_text('connect\n'+cmds+'\nexit\n');r=subprocess.run([jlink,'-SelectEmuBySN',boards[label],'-Device','nRF52832_xxAA','-If','SWD','-Speed','1000','-AutoConnect','0','-ExitOnError','1','-CommandFile',str(f)],capture_output=True,text=True,timeout=45);(out/f'last-{label}.log').write_text(r.stdout+r.stderr);assert r.returncode==0,r.stdout[-2000:];return r.stdout
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^
+AssertionError: SEGGER J-Link Commander V9.90 (Compiled Oct 28 2026 16:08:50)
+DLL version V9.90, compiled Oct 28 2026 15:58:02
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>connect
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...FAILED: Cannot connect to the probe/programmer.
+
+Script processing completed.
+
+

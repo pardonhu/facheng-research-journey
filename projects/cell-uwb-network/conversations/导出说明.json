@@ -1,0 +1,24 @@
+{
+  "local_messages": 435,
+  "roles": {
+    "user": 118,
+    "assistant": 317
+  },
+  "cloud": [
+    {
+      "title": "电芯级组网研究更新",
+      "messages": 10,
+      "returned_turns": 5,
+      "has_more": false
+    },
+    {
+      "title": "接手组网开发调试",
+      "messages": 2,
+      "returned_turns": 1,
+      "has_more": false
+    }
+  ],
+  "scope": "project-visible-user-assistant-messages",
+  "credentials_redacted": true,
+  "raw_recording_included": false
+}

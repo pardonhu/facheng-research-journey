@@ -1,0 +1,11 @@
+{
+  "center": "C",
+  "jlink_exe": "FILL_LOCAL_JLINK_EXECUTABLE",
+  "arm_gcc_bin": "FILL_LOCAL_ARM_GCC_BIN",
+  "boards": [
+    {"label": "C", "serial": "FILL_JLINK_C", "chip": "52840"},
+    {"label": "A", "serial": "FILL_JLINK_A", "chip": "52832"},
+    {"label": "B", "serial": "FILL_JLINK_B", "chip": "52832"},
+    {"label": "D", "serial": "FILL_JLINK_D", "chip": "52840"}
+  ]
+}

@@ -1,0 +1,227 @@
+[
+  {
+    "profile": "BLE listed 60/196 us",
+    "case": "single",
+    "aggregation": 1,
+    "mean300_ms": 62.85,
+    "p99_300_ms": 62.85,
+    "capacity_by_mean": 476,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "BLE listed 60/196 us",
+    "case": "aggregate",
+    "aggregation": 10,
+    "mean300_ms": 10.23,
+    "p99_300_ms": 10.23,
+    "capacity_by_mean": 2890,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "BLE listed 60/196 us",
+    "case": "repeat5",
+    "aggregation": 1,
+    "mean300_ms": 314.85,
+    "p99_300_ms": 314.85,
+    "capacity_by_mean": 95,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "BLE listed 60/196 us",
+    "case": "poll",
+    "aggregation": 1,
+    "mean300_ms": 155.40555555555554,
+    "p99_300_ms": 164.91,
+    "capacity_by_mean": 193,
+    "capacity_by_p99_simulation": 178
+  },
+  {
+    "profile": "BLE listed 60/196 us",
+    "case": "poll_aggregate",
+    "aggregation": 10,
+    "mean300_ms": 20.442592592592597,
+    "p99_300_ms": 24.87,
+    "capacity_by_mean": 1450,
+    "capacity_by_p99_simulation": 1330
+  },
+  {
+    "profile": "BLE table reconstruction 60/194 us",
+    "case": "single",
+    "aggregation": 1,
+    "mean300_ms": 62.85,
+    "p99_300_ms": 62.85,
+    "capacity_by_mean": 476,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "BLE table reconstruction 60/194 us",
+    "case": "aggregate",
+    "aggregation": 10,
+    "mean300_ms": 10.17,
+    "p99_300_ms": 10.17,
+    "capacity_by_mean": 2910,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "BLE table reconstruction 60/194 us",
+    "case": "repeat5",
+    "aggregation": 1,
+    "mean300_ms": 314.85,
+    "p99_300_ms": 314.85,
+    "capacity_by_mean": 95,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "BLE table reconstruction 60/194 us",
+    "case": "poll",
+    "aggregation": 1,
+    "mean300_ms": 155.40555555555554,
+    "p99_300_ms": 164.91,
+    "capacity_by_mean": 193,
+    "capacity_by_p99_simulation": 178
+  },
+  {
+    "profile": "BLE table reconstruction 60/194 us",
+    "case": "poll_aggregate",
+    "aggregation": 10,
+    "mean300_ms": 20.368518518518517,
+    "p99_300_ms": 24.78,
+    "capacity_by_mean": 1460,
+    "capacity_by_p99_simulation": 1330
+  },
+  {
+    "profile": "UWB preamble 128",
+    "case": "single",
+    "aggregation": 1,
+    "mean300_ms": 105.138996,
+    "p99_300_ms": 105.138996,
+    "capacity_by_mean": 285,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 128",
+    "case": "aggregate",
+    "aggregation": 10,
+    "mean300_ms": 11.6097156,
+    "p99_300_ms": 11.6097156,
+    "capacity_by_mean": 2550,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 128",
+    "case": "repeat5",
+    "aggregation": 1,
+    "mean300_ms": 526.29498,
+    "p99_300_ms": 526.29498,
+    "capacity_by_mean": 57,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 128",
+    "case": "poll",
+    "aggregation": 1,
+    "mean300_ms": 258.3033037037037,
+    "p99_300_ms": 274.09480056,
+    "capacity_by_mean": 116,
+    "capacity_by_p99_simulation": 104
+  },
+  {
+    "profile": "UWB preamble 128",
+    "case": "poll_aggregate",
+    "aggregation": 10,
+    "mean300_ms": 27.214856296296297,
+    "p99_300_ms": 33.0983004,
+    "capacity_by_mean": 1090,
+    "capacity_by_p99_simulation": 980
+  },
+  {
+    "profile": "UWB preamble 64",
+    "case": "single",
+    "aggregation": 1,
+    "mean300_ms": 85.60050000000001,
+    "p99_300_ms": 85.60050000000001,
+    "capacity_by_mean": 350,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 64",
+    "case": "aggregate",
+    "aggregation": 10,
+    "mean300_ms": 9.655866000000001,
+    "p99_300_ms": 9.655866000000001,
+    "capacity_by_mean": 3060,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 64",
+    "case": "repeat5",
+    "aggregation": 1,
+    "mean300_ms": 428.6025000000001,
+    "p99_300_ms": 428.6025000000001,
+    "capacity_by_mean": 70,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 64",
+    "case": "poll",
+    "aggregation": 1,
+    "mean300_ms": 210.06010370370367,
+    "p99_300_ms": 222.90394104,
+    "capacity_by_mean": 142,
+    "capacity_by_p99_simulation": 130
+  },
+  {
+    "profile": "UWB preamble 64",
+    "case": "poll_aggregate",
+    "aggregation": 10,
+    "mean300_ms": 22.390536296296297,
+    "p99_300_ms": 27.236751599999998,
+    "capacity_by_mean": 1330,
+    "capacity_by_p99_simulation": 1210
+  },
+  {
+    "profile": "UWB preamble 32",
+    "case": "single",
+    "aggregation": 1,
+    "mean300_ms": 75.83125199999999,
+    "p99_300_ms": 75.83125199999999,
+    "capacity_by_mean": 395,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 32",
+    "case": "aggregate",
+    "aggregation": 10,
+    "mean300_ms": 8.6789412,
+    "p99_300_ms": 8.6789412,
+    "capacity_by_mean": 3400,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 32",
+    "case": "repeat5",
+    "aggregation": 1,
+    "mean300_ms": 379.75626,
+    "p99_300_ms": 379.75626,
+    "capacity_by_mean": 79,
+    "capacity_by_p99_simulation": null
+  },
+  {
+    "profile": "UWB preamble 32",
+    "case": "poll",
+    "aggregation": 1,
+    "mean300_ms": 185.9385037037037,
+    "p99_300_ms": 197.30851127999998,
+    "capacity_by_mean": 161,
+    "capacity_by_p99_simulation": 148
+  },
+  {
+    "profile": "UWB preamble 32",
+    "case": "poll_aggregate",
+    "aggregation": 10,
+    "mean300_ms": 19.978376296296293,
+    "p99_300_ms": 24.305977199999997,
+    "capacity_by_mean": 1490,
+    "capacity_by_p99_simulation": 1360
+  }
+]

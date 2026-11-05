@@ -1,0 +1,83 @@
+[
+  {
+    "preamble": 128,
+    "frame_bytes": 30,
+    "preamble_us": 130.25664,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 30.7704,
+    "rs_us": 6.1540799999999996
+  },
+  {
+    "preamble": 128,
+    "frame_bytes": 34,
+    "preamble_us": 130.25664,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 34.87312,
+    "rs_us": 6.1540799999999996
+  },
+  {
+    "preamble": 128,
+    "frame_bytes": 68,
+    "preamble_us": 130.25664,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 69.74624,
+    "rs_us": 12.308159999999999
+  },
+  {
+    "preamble": 64,
+    "frame_bytes": 30,
+    "preamble_us": 65.12832,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 30.7704,
+    "rs_us": 6.1540799999999996
+  },
+  {
+    "preamble": 64,
+    "frame_bytes": 34,
+    "preamble_us": 65.12832,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 34.87312,
+    "rs_us": 6.1540799999999996
+  },
+  {
+    "preamble": 64,
+    "frame_bytes": 68,
+    "preamble_us": 65.12832,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 69.74624,
+    "rs_us": 12.308159999999999
+  },
+  {
+    "preamble": 32,
+    "frame_bytes": 30,
+    "preamble_us": 32.56416,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 30.7704,
+    "rs_us": 6.1540799999999996
+  },
+  {
+    "preamble": 32,
+    "frame_bytes": 34,
+    "preamble_us": 32.56416,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 34.87312,
+    "rs_us": 6.1540799999999996
+  },
+  {
+    "preamble": 32,
+    "frame_bytes": 68,
+    "preamble_us": 32.56416,
+    "sfd_us": 8.14104,
+    "phr_us": 21.53844,
+    "frame_bits_us": 69.74624,
+    "rs_us": 12.308159999999999
+  }
+]

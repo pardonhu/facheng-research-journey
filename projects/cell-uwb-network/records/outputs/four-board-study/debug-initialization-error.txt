@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "[LOCAL_WORKSPACE]\work\run-four.py", line 8, in <module>
+    run_case('smoke-individual',0,3000,formal=False)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[LOCAL_WORKSPACE]\work\four_io.py", line 45, in run_case
+    assert s['state']==1 and s['devid']==0xdeca0302,(b['label'],s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('B', {'state': 101, 'run': 2714913955, 'devid': 0, 'rounds': 0, 'unique': 0, 'first_unique': 0, 'missing': 0, 'tx_frames': 0, 'tx_data': 0, 'tx_poll': 0, 'tx_ack': 0, 'rx_frames': 0, 'duplicates': 0, 'invalid': 0, 'phy_errors': 0, 'filtered': 0, 'timeouts': 0, 'late_tx': 0, 'requests': 0, 'retries': 0, 'elapsed': 0, 'round_max': 0, 'round_sum_lo': 0, 'round_sum_hi': 0, 'hist_rounds': 0, 'rounds_all': 0, 'rounds_deadline': 0, 'quiet_skips': 0, 'relay_collections': 0, 'relay_forwards': 0, 'node_unique_2': 0, 'node_unique_3': 0, 'node_unique_4': 0, 'node_first_2': 0, 'node_first_3': 0, 'node_first_4': 0, 'node_missing_2': 0, 'node_missing_3': 0, 'node_missing_4': 0})

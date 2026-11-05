@@ -1,0 +1,11 @@
+Pending after baseline matrix:
+1. Repeat identical conditions at least three times with fixed documented geometry.
+2. Add ACK and bounded retries; measure first-attempt and final success separately. RTT timestamps must be from same node clock.
+3. Record error subclasses (CRC/PHY/overrun), capture RSSI/first-path metrics with defined validity. Current errors counter aggregates receive failures.
+4. Increase SPI only after baseline and test transfer correctness; current 1MHz polling/rearm overhead limits high-load results.
+5. Controlled software reset and receiver outage recovery; hardware power-cycle requires user.
+6. 300000-frame long runs for selected conditions. Report confidence assumptions and burst losses; current bitmap counts unique loss but does not archive burst runs.
+7. Physical matrix: distance/orientation/metal sheet/empty enclosure/dummy cells. Cannot autonomously move hardware.
+8. 1 coordinator + 3 sensing nodes minimum initial multinode comparison; current two nodes do not validate network scaling.
+9. Energy-per-delivered-report requires supply current measurement hardware, not USB current inference.
+10. No claim of automotive qualification, complete BMS or RF-only packet-loss measurement.

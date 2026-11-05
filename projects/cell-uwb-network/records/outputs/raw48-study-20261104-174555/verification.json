@@ -1,0 +1,80 @@
+{
+  "formal_groups": 7,
+  "formal_records": 70000,
+  "checks": [
+    {
+      "case": "screen-p64-standard-gap500",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p64-standard-gap500",
+      "bitmap_matches": true
+    },
+    {
+      "case": "p64-phr0-gap500",
+      "bitmap_matches": true
+    },
+    {
+      "case": "p32-phr0-gap500",
+      "bitmap_matches": true
+    },
+    {
+      "case": "p64-phr1-gap500",
+      "bitmap_matches": true
+    },
+    {
+      "case": "p32-phr1-gap500",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap50",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap100",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap150",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap200",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap300",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap350",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap400",
+      "bitmap_matches": true
+    },
+    {
+      "case": "screen-p32-fast-gap450",
+      "bitmap_matches": true
+    },
+    {
+      "case": "p32-fast-gap350-formal",
+      "bitmap_matches": true
+    },
+    {
+      "case": "p32-fast-gap350-reverse",
+      "bitmap_matches": true
+    },
+    {
+      "case": "p32-fast-gap350-drop10pct",
+      "bitmap_matches": true
+    }
+  ],
+  "backups": {
+    "A-before-flash.bin": "ac805eb33405187276960c797fd9403dd8a649f6dbb34963c76f93cb511eba5c",
+    "A-before-uicr.bin": "f0cafa15789691dfae69a11c903b33f2b02928224b9f557c77ef9675ed23f68a",
+    "B-before-flash.bin": "ac805eb33405187276960c797fd9403dd8a649f6dbb34963c76f93cb511eba5c",
+    "B-before-uicr.bin": "f0cafa15789691dfae69a11c903b33f2b02928224b9f557c77ef9675ed23f68a"
+  }
+}

@@ -1,0 +1,387 @@
+以下可直接交给本机调试会话。**重点：本机主控已验证正常，但同学仓库的当前工程仍面向 nRF52840；下一步是移植最小识别程序到 nRF52832，不是直接烧现有 UWB 固件。**
+
+## 一、项目背景与当前目标
+
+用户是上海交通大学博士生，目前导师为**皮宜博老师**。当前科研方向是：
+
+> 面向电池包内部的电芯级 UWB／蓝牙无线通信与感知，研究金属封闭、多径和遮挡环境下的可靠通信、电磁环境建模、自组织组网及通信感知结合。
+
+需要区分：
+
+- **电芯级**：无线节点下沉到单体电芯或与其直接对应的采集单元。
+- **模组级**：多个电芯先通过本地有线采集，再由模组节点无线连接 BMU。
+- **包级**：整包控制器与外部设备通信，不能等同于包内电芯组网。
+
+研究不预设“电芯级一定更优”，需要评估节点数量、可靠性、时延、能耗、成本和部署复杂度。也不需要强行关联用户过去的 Neural Receiver／FastSET 工作。
+
+已讨论的实验路线：
+
+1. 主控烧录、日志验证。
+2. SPI 读取 UWB 设备 ID。
+3. 两节点简单收发，统计丢包和接收信号指标。
+4. 三个及以上节点验证一发多收。
+5. 增加调度、反馈、重传，再研究多节点上行和自组织协议。
+6. 电磁场景从开放桌面开始，再逐步加入金属板、金属盒、模拟电芯排列；暂不直接在带电动力电池包内实验。
+
+**当前仅执行第 2 步，不开展广播、测距或蓝牙协议栈集成。**
+
+## 二、当前硬件和已完成事项
+
+以下为**用户在本机实测后提供的结果**，不是云端直接测得：
+
+| 项目 | 当前状态 |
+|---|---|
+| 主控板 | nRF52-DK／PCA10040 |
+| 主控芯片 | 已实测确认 nRF52832 |
+| J-Link 序列号 | `JLINK_A` |
+| Windows 工具 | 截图显示 J-Link Configurator V9.90 |
+| SWD | 连接成功，识别到 Cortex-M4 |
+| 原始内容 | 用户已备份 Flash 和 UICR；具体路径需本机确认 |
+| 最小程序 | 官方 PCA10040 闪灯固件已烧录，LED 正常 |
+| UWB 扩展板 | DWM3000EVB，目前已取下 |
+| 下一步 | 编译、烧录适配后的识别固件，断电装回扩展板，再读取 ID |
+
+**不要再要求重复解决 USB 识别或重新跑闪灯。** 不要覆盖已有 Flash／UICR 备份。
+
+此前截图中的 Virtual COM-Port 是 Disable；这不影响 SWD 和 RTT。当前日志路线优先 **J-Link RTT**，不是串口。
+
+## 三、同学仓库及核对版本
+
+- 完整仓库：<https://github.com/toolnail/UWB>
+- Git 地址：<https://github.com/toolnail/UWB.git>
+- 分支：**`main`**
+- 本次检查的提交：**`79209d263fc536fbffd4c5af5b2e4c4b610eeedb`**
+- [固定提交链接](https://github.com/toolnail/UWB/tree/79209d263fc536fbffd4c5af5b2e4c4b610eeedb)
+
+**这是已检查的快照，不保证远端 main 后续没有更新。** 本机建议基于此提交建立移植分支，保留原工程。
+
+仓库主要目录：
+
+```text
+DW3_QM33_SDK_1.1.1/
+```
+
+下文路径均相对此目录。
+
+### 已核对的修改和用途
+
+仓库不是未经修改的官方 SDK。当前：
+
+- `Drivers/API/Src/example_selection.h` 启用的是 **`TEST_SIMPLE_RX`**。
+- `simple_tx`／`simple_rx` 已改为带序号的数据包投递实验。
+- 默认目标包数为 **300000**，配置见 `Drivers/API/Src/p2p_test_config.h`。
+- 实现了唯一包统计、丢包统计、接收队列和 RSSI／首径功率采集。
+- RTT 通道 0 输出文本，通道 1 用于二进制信号指标记录。
+- `read_dev_id.c` 已加入逐阶段调试日志。
+
+相关说明：
+
+- [重复测试说明 README_REPEAT.md](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/uwb_test_firmware/README_REPEAT.md)
+- [RSSI 采集说明 README_RSSI.md](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/uwb_test_firmware/README_RSSI.md)
+
+这些数据收发修改**不等于完整组网、自动测距或完整 CIR 导出**，也不属于本次设备识别的必要内容。
+
+## 四、当前仓库实际支持的硬件
+
+**源码核对事实：**
+
+```text
+工程目标：nRF52840_xxAA
+板级宏：BOARD_PCA10056
+芯片宏：NRF52840_XXAA
+Flash：0x100000，即 1 MiB
+RAM：0x40000，即 256 KiB
+```
+
+因此：
+
+- 当前工程对应 **nRF52840-DK／PCA10056**。
+- 其主 SPI 接口可用于 DWM3000EVB。
+- **尚未验证当前仓库可直接编译并运行于 PCA10040／nRF52832。**
+- SDK 中有 `pca10040.h`，不代表 UWB 工程已经完成 PCA10040 适配。
+- 同学称历史上用过两种板子，这是其经验说明；尚未拿到对应的 nRF52832 工程或提交。
+
+DWM3000EVB 上是 **DWM3000 模块／DW3110 UWB 芯片**，应用程序烧在外部 nRF52832 主控中。Qorvo 官方快速入门列出的 Nordic 示例参考平台是 nRF52840-DK。[farnell.com](https://www.farnell.com/datasheets/4509028.pdf?utm_source=chatgpt.com)
+
+另一个曾讨论的 [Uberi/DWM3001C-starter-firmware](https://github.com/Uberi/DWM3001C-starter-firmware) 面向 DWM3001C 内部的 **nRF52833**，**不是本次移植起点**。
+
+## 五、SDK、工具链、工程和已有固件
+
+### 5.1 已核对的依赖
+
+| 项目 | 仓库事实 |
+|---|---|
+| Qorvo 包 | `DW3_QM33_SDK_1.1.1` |
+| 内置 Nordic SDK | **nRF5 SDK v17.0.2** |
+| SDK 版本依据 | `sdk/documentation/release_notes.txt` 首行 |
+| 原工程 IDE | SEGGER Embedded Studio for ARM |
+| 仓库说明／脚本使用版本 | **SES 5.10a** |
+| 同学脚本的 J-Link 路径 | `C:\Program Files\SEGGER\JLink_V980` |
+| 用户当前 J-Link | 截图为 **V9.90**，不要求为此降级 |
+| 编译配置 | 推荐 `Debug`，本工程 RTT 文本受 `DEBUG` 宏控制 |
+
+**不要把用户跑闪灯时用的 SDK 17.1.0 与该仓库内置的 17.0.2 混淆。**
+
+### 5.2 工程与依赖路径
+
+[原始 SES 工程](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/Drivers/API/Build_Platforms/nRF52840-DK/dw3000_api.emProject)：
+
+```text
+Drivers/API/Build_Platforms/nRF52840-DK/dw3000_api.emProject
+```
+
+其目录宏：
+
+```text
+NordicSDKDir=sdk
+DW3000APIDir=../..
+```
+
+内置 Nordic SDK：
+
+```text
+Drivers/API/Build_Platforms/nRF52840-DK/sdk/
+```
+
+原工程还引用：
+
+```text
+sdk/modules/nrfx/mdk/system_nrf52840.c
+sdk/modules/nrfx/mdk/ses_startup_nrf52840.s
+sdk/modules/nrfx/mdk/ses_startup_nrf_common.s
+sdk/modules/nrfx/mdk/nrf52840.svd
+```
+
+### 5.3 编译方式
+
+仓库脚本使用：
+
+```powershell
+& "<SES安装目录>\bin\emBuild.exe" -config Debug -rebuild "<工程完整路径>"
+```
+
+**以上是编译调用形式，不表示原工程已适配 nRF52832。** 必须先建立适配工程，再编译；本会话未完成构建验证。
+
+原有平台说明：
+
+[README.txt](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/Drivers/API/Build_Platforms/nRF52840-DK/README.txt)
+
+### 5.4 已有固件与危险脚本
+
+仓库含：
+
+```text
+uwb_test_firmware/full_rssi_20261013_213031/TX.hex
+uwb_test_firmware/full_rssi_20261013_213031/RX.hex
+```
+
+**它们不是已验证的 nRF52832 识别固件，不要烧到当前板子。**
+
+尤其不要直接运行：
+
+```text
+uwb_test_firmware/run_no_protocol_size_tests.ps1
+```
+
+该脚本含 **`erase` 和 `loadfile`**，并硬编码了同学的工具路径和调试器序列号。当前任务无需使用。
+
+## 六、SPI、复位、IRQ、唤醒引脚
+
+配置来源：
+
+- [port.h](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/Drivers/API/Build_Platforms/nRF52840-DK/Source/platform/port.h)
+- [pca10040.h](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/Drivers/API/Build_Platforms/nRF52840-DK/sdk/components/boards/pca10040.h)
+
+**以下 PCA10040 映射由仓库宏展开得出，尚未完成实物通断和波形验证：**
+
+| UWB 信号 | 仓库宏 | Arduino 排针 | PCA10040／nRF52832 | 原 PCA10056／nRF52840 |
+|---|---|---|---|---|
+| SCK | `DW3000_CLK_Pin` | D13 | **P0.25** | P1.15 |
+| MISO | `DW3000_MISO_Pin` | D12 | **P0.24** | P1.14 |
+| MOSI | `DW3000_MOSI_Pin` | D11 | **P0.23** | P1.13 |
+| CSn | `DW3000_CS_Pin` | D10 | **P0.22** | P1.12 |
+| WAKEUP | `DW3000_WAKEUP_Pin` | D9 | **P0.20** | P1.11 |
+| IRQ | `DW3000_IRQn_Pin` | D8 | **P0.19** | P1.10 |
+| RSTn | `DW3000_RESET_Pin` | D7 | **P0.18** | P1.08 |
+
+### 6.1 重要：与板载 LED 共用引脚
+
+`pca10040.h` 中：
+
+```text
+LED1 = P0.17
+LED2 = P0.18 → 与 UWB RSTn 共用
+LED3 = P0.19 → 与 UWB IRQ 共用
+LED4 = P0.20 → 与 UWB WAKEUP 共用
+```
+
+原 `Source/main.c` 调用了：
+
+```c
+bsp_board_init(BSP_INIT_LEDS | BSP_INIT_BUTTONS);
+```
+
+**建议最小识别程序取消全体 LED／按键初始化，避免先把 RSTn、IRQ 等配置成 LED 输出。**
+
+同时必须认识到：取消软件 LED 初始化**不会移除实物 LED 电路的负载**。是否需要硬件隔离，要结合该板修订版原理图和实测决定，**不要直接剪线、切焊桥或假定必须改板**。
+
+### 6.2 SPI 实例需要真正移植
+
+[deca_spi.c](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/Drivers/API/Build_Platforms/nRF52840-DK/Source/platform/deca_spi.c) 当前主 SPI 使用：
+
+```text
+NRF_SPIM3
+SPI3_INSTANCE_INDEX
+SPI3_USE_EASY_DMA
+NRFX_SPIM3_INST_IDX
+慢速 4 MHz
+快速 32 MHz
+SPI Mode 0
+MSB first
+软件控制 CS
+```
+
+**nRF52832 不能照搬 SPIM3／32 MHz 配置。**
+
+建议最小移植：
+
+- 选 nRF52832 支持且未被占用的 SPIM 实例，例如 **SPIM0**。
+- 同步调整 `sdk_config.h` 中 SPI／SPIM 实例使能，不能只改寄存器指针。
+- 首轮把慢速和快速路径都限定到 **1 MHz**，确保调用“fastrate”也不会切回 32 MHz。
+- 保持 Mode 0、MSB first、手动 CS。
+- 审核缓冲区长度和 EasyDMA 单次传输限制；读 ID 只需短传输。
+
+### 6.3 删除本任务不需要的第二套 SPI 初始化
+
+原 `nrf52840_dk_spi_init()` 无条件调用 `spi2_init()`；`dw_irq_init()` 也初始化第二个 IRQ。
+
+对单块 DWM3000EVB 的最小识别程序：
+
+- 不需要 SDK 为其他芯片预留的第二条 SPI 路径。
+- **应裁剪或条件禁用第二 SPI／第二 IRQ 初始化。**
+- 不要因为选了 `TEST_READING_DEV_ID`，就以为这些初始化会自动消失。
+
+### 6.4 复位与跳线
+
+源码 `reset_DWIC()` 的做法是：
+
+1. RSTn 输出低电平。
+2. 等待 2 ms。
+3. 切回输入、无上下拉，释放复位。
+4. 再等待 2 ms。
+
+**不要把释放复位改成推挽输出高电平。**
+
+DWM3000EVB 的 **J1** 供电选择，官方文档为：
+
+- **2–3 短接**：使用 Arduino 排针的 3V3 电源。
+- **1–2 短接**：使用 EVB 板载 3V3 DC/DC。
+
+这是 **UWB 扩展板 J1**，不是主控板的接口编号。必须按实物针号、供电路径和板卡版本检查，不能只凭“上／下”方向。[farnell.com](https://www.farnell.com/datasheets/4509028.pdf?utm_source=chatgpt.com)
+
+当前未核对用户实物跳线、实际模块供电电压和是否存在历史改线；**这些是装板前的待检查项**。不需要纽扣电池。
+
+## 七、最小设备识别程序：具体入口与适配要求
+
+[示例选择文件](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/Drivers/API/Src/example_selection.h)：
+
+```text
+Drivers/API/Src/example_selection.h
+```
+
+仅启用：
+
+```c
+#define TEST_READING_DEV_ID
+```
+
+禁用当前 `TEST_SIMPLE_RX` 和其他测试宏。
+
+[设备识别示例](https://github.com/toolnail/UWB/blob/main/DW3_QM33_SDK_1.1.1/Drivers/API/Src/examples/ex_00a_reading_dev_id/read_dev_id.c)：
+
+```text
+Drivers/API/Src/examples/ex_00a_reading_dev_id/read_dev_id.c
+```
+
+当前逻辑：
+
+```text
+设置 SPI 速率
+→ reset_DWIC()
+→ dwt_probe(&dw3000_probe_interf)
+→ dwt_readdevid()
+→ dwt_check_dev_id()
+```
+
+原文件的：
+
+```c
+#define USE_SPI2 1
+```
+
+用于检测到 DW3720 后切换另一 SPI。**本次 DWM3000EVB 建议设为 0**，并同步裁剪平台中的无条件第二 SPI 初始化；仅改这个宏不够。
+
+### 工程移植检查清单
+
+| 原配置 | PCA10040 适配目标／动作 |
+|---|---|
+| `nRF52840_xxAA` | `nRF52832_xxAA` |
+| `BOARD_PCA10056` | `BOARD_PCA10040` |
+| `NRF52840_XXAA` | `NRF52832_XXAA` |
+| `system_nrf52840.c` | `system_nrf52832.c` |
+| `ses_startup_nrf52840.s` | `ses_startup_nrf52832.s` |
+| `nrf52840.svd` | `nrf52832.svd` |
+| 1 MiB Flash／256 KiB RAM | 根据本机已识别容量设置；典型 xxAA 为 512 KiB／64 KiB |
+| SPIM3、32 MHz | 适配可用 SPIM，首轮 1 MHz |
+| LED／按键整体初始化 | 移除与 UWB 引脚冲突的初始化 |
+| 双 SPI／双 IRQ | 仅保留本次所需路径 |
+| `Debug`／`DEBUG` | 保留，以输出 RTT 日志 |
+
+还需检查链接布局、芯片专属配置和遗留 `NRF52840` 引用；**不能只做字符串替换后就宣称移植完成。**
+
+### 日志与成功标准
+
+`Source/main.c` 的 `test_run_info()` 在 `DEBUG` 下写入 **RTT 通道 0**。
+
+建议识别程序增加周期性日志或可重试入口，避免原示例只输出一次后进入空循环、连接 RTT 太晚看不到结果。
+
+已核对驱动常量：
+
+```c
+DWT_DW3000_DEV_ID = 0xDECA0302
+```
+
+对当前 DWM3000／DW3110，预期先核验 **`0xDECA0302`**。不应只以“非零返回值”判定成功。
+
+验收条件：
+
+- 多次读取 ID 稳定一致。
+- `dwt_probe()` 成功。
+- `dwt_check_dev_id()` 成功。
+- 断电重启后仍成功。
+- 保存构建版本、引脚、SPI 实例与速率、完整 RTT 日志。
+
+若失败，建议先输出原始 SPI 读数，再检查供电、CS、复位释放、引脚映射和波形；不要直接升级为复杂收发测试。
+
+## 八、交给本机会话的执行边界
+
+**用户当前授权目标：**基于同学仓库完成 nRF52832 最小 UWB 识别程序的适配、构建和烧录，然后由用户断电装回扩展板，再验证 SPI ID。
+
+执行顺序：
+
+1. 确认本机仓库路径、提交及已有 Flash／UICR 备份位置。
+2. 创建独立移植分支，保留原 nRF52840 工程。
+3. 完成上述最小适配，编译并检查链接映射和内存占用。
+4. **只选择 J-Link `JLINK_A`**，烧录新识别固件。
+5. 提示用户断电装回 DWM3000EVB；核对供电跳线和引脚后上电。
+6. 收集 RTT 日志，验证设备 ID。
+7. 到此停止，不自动开展发射、测距或组网测试。
+
+### 已验证与尚未验证的最终界限
+
+- **本机已验证：**nRF52832、SWD、备份和闪灯成功。
+- **源码已验证：**分支／提交、原工程目标、SDK 版本、SPI 配置、引脚宏、LED 共用、识别入口和危险脚本。
+- **尚未验证：**PCA10040 适配构建、实物跳线与电气连接、UWB 供电、SPI 通信和设备 ID。
+- **本云端会话没有改动仓库、编译适配固件或操作本机硬件。**
+
+**尤其不要沿用此前“用户有 nRF52840-DK”的旧假设；最终硬件事实是 PCA10040／nRF52832。**

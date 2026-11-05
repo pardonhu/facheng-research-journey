@@ -1,0 +1,10 @@
+Broadcast tests: toolnail/UWB-derived standalone nRF52832-Broadcast project.
+802.15.4 short-address data frame: FCF 0x8841, PAN compression, no ACK request, destination 0xFFFF for broadcast. PAN 0x1234; source short1, receiver short2 or short3.
+Frame filter enabled on hardware: DWT_FF_ENABLE_802_15_4 + DWT_FF_DATA_EN. Wrong-PAN and wrong-unicast-address negative controls rejected all 3000 frames each. Aggregate errors includes filtering rejection in these controls; these are expected, not RF loss.
+Three 1000-frame runs per condition: broadcast2998/3000, unicast-match2998/3000, wrong-destination0/3000, wrong-PAN0/3000, broadcast-after-changing-B-address2999/3000.
+Only two physical nodes. Changing B address is sequential address-independence testing, not simultaneous multi-receiver proof.
+Frame length includes 9-byte MAC header plus 8-byte run/sequence header; excludes 2-byte FCS. User data = length-17.
+SPI init1MHz/transfer8MHz, preamble128,6.8Mbps,STS off, channel5 initial controls. No ACK/retries. No claims of reliable broadcast completion across receivers.
+Long-run matrix: channel5/9, frame32/64, post-TX wait500/150/0us, both directions,10000 frames per point, repeat until STOP-BROADCAST file or failure.
+RTT CB 0x20009778. Control 0x20009340: command,run,count,gap,length,channel,destination,PAN,node (32bit each). Stats0x20009318.
+Required next hardware experiment: add C, collect B/C unique bitmaps aligned by run+sequence; report B PDR, C PDR, both-received ratio and correlated loss, then coordinated feedback instead of simultaneous ACK collision.

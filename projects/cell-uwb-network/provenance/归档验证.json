@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-05",
+  "hardware_accessed": false,
+  "compiled_targets": [
+    "nRF52832-MinGap",
+    "nRF52840-MinGap"
+  ],
+  "toolchain": "arm-none-eabi-gcc 14.2.1",
+  "sdk": "nRF5 SDK 17.0.2",
+  "cli_syntax": "passed",
+  "run_cli_help": "passed",
+  "run_cli_hardware_validation": "not performed for migrated wrapper",
+  "data_validation": {
+    "formal_groups": 9,
+    "records": 90000,
+    "received_bitmaps": "passed",
+    "batch_time_sums": "passed",
+    "firmware_hashes": "passed"
+  },
+  "local_chat_messages": 435,
+  "prior_accessible_chat_messages": 12,
+  "public_scope": "project records, application code and user-authorized visible messages; no raw board backup or full meeting recording"
+}

@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/toolnail/UWB",
+  "base_commit": "79209d263fc536fbffd4c5af5b2e4c4b610eeedb",
+  "project": "[LOCAL_WORKSPACE]\\work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52832-Matched",
+  "compiler": "arm-none-eabi-gcc 14.2.1",
+  "jlink": "V9.90",
+  "formal_cases": 15,
+  "original_data_packets_per_case": 50000,
+  "requested_ifs_us": 150,
+  "preambles": [
+    128,
+    64,
+    32
+  ],
+  "boards": {
+    "A": "JLINK_A",
+    "B": "JLINK_B"
+  },
+  "C_D": "not flashed in this experiment",
+  "usb_recovery": "p64-m0-a1 completed on hardware; transient J-Link read failure; preserved RAM counters and bitmap recovered, case not rerun",
+  "firmware_sha256": "99e868fc26022681c699cf4833d8fd030691b4cfbb7447f578041d2f602f8a92"
+}

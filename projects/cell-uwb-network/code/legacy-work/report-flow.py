@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('work/report-four.py');s=p.read_text(encoding='utf8').replace('def page(t):q=d.add_heading(t,1);q.paragraph_format.page_break_before=True','def page(t):d.add_heading(t,1)');s=s.replace("path=Path('outputs/四节点UWB组网可行性实验报告.docx')", "field=OxmlElement('w:fldSimple');field.set(qn('w:instr'),'PAGE');foot._p.append(field)\npath=Path('outputs/四节点UWB组网可行性实验报告.docx')");p.write_text(s,encoding='utf8')

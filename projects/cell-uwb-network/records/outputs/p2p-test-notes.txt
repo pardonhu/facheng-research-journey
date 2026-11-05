@@ -1,0 +1,19 @@
+Session notes
+Two nRF52832/PCA10040 + DWM3000EVB nodes: A=JLINK_A B=JLINK_B.
+Base repository toolnail/UWB commit 79209d263fc536fbffd4c5af5b2e4c4b610eeedb.
+Dedicated nRF52832-P2P harness uses original DW3000 driver and Nordic SDK 17.0.2; not the original queued RX implementation.
+Polling SPI0 1MHz and polling RX; finite receive rearm gaps can contribute to drops. Results measure complete implementation, not RF-only performance.
+PHY: channel 5 or 9, 6.8Mbps, preamble128/code9, PAC8, nonstandard 8symbol SFD, STS off, PHR standard. Power defaults from repository.
+Frame bytes exclude 2-byte FCS; frame includes 9-byte experiment/sequence header, remaining bytes deterministic checked content. Thus listed 16/32/64 are frame bytes, NOT application payload bytes.
+TX counts only TXFRS confirmed frames. RX uses 300000-bit bitmap, unique sequence plus run ID plus content check. PDR denominator actual confirmed TX. No ACK/retry in this baseline.
+Host configures role/run/count/interval/length/channel via RAM mailbox. Each run reinitializes UWB, starts receiver before transmitter, waits after TX ends then stops receiver and reads stable totals.
+No per-packet RTT logging in timed loop; stats are in RAM and periodically logged to nonblocking RTT. Host polls RAM at about 5-second intervals.
+Requested interval is scheduling target; reported elapsed gives actual achieved rate. USB/debug polling may perturb performance.
+Desktop geometry/spacing not measured; do not interpret as distance or calibrated path loss.
+Not yet tested: ACK/retry, RTT latency distribution, RF metrics, power-cycle recovery, power use, obstruction or multinode network.
+IMPORTANT: B initial backup was accidentally overwritten on connection retry after ID firmware was loaded. board-B-original-flash.bin contains ID firmware, NOT factory image. A original backups intact. B UICR was not programmed.
+Automatic J-Link firmware update on B completed before tests.
+Debug attempts before final harness deployment are excluded from results.jsonl. error.txt may describe an earlier debugging attempt; results/live files identify active run.
+Stop procedure: create work/STOP-P2P; runner detects it within polling interval and stops both radios. No external services or messages used.
+
+User correction: position not fixed. All current data are exploratory. Per-run target changed to 100000. The 1000000-packet attempt was interrupted around 684000 transmitted and is excluded from completed results.

@@ -1,0 +1,29 @@
+{
+  "name": "continuous-0-A-B",
+  "tx": {
+    "state": 2,
+    "run": 1793707909,
+    "attempts": 15408,
+    "retransmissions": 19,
+    "unique": 0,
+    "duplicates": 0,
+    "invalid": 0,
+    "phy_errors": 0,
+    "ack_requests": 499,
+    "ack_timeouts": 0,
+    "ack_missing": 0,
+    "remote_unique": 0,
+    "remote_failed": 0,
+    "summary_received": 0,
+    "completed": 15360,
+    "elapsed": 12442974,
+    "first_unique": 0,
+    "recovered": 0,
+    "injected": 0,
+    "ack_dropped": 0,
+    "windows": 480,
+    "window_max_us": 28852,
+    "tx_errors": 0,
+    "control_retries": 0
+  }
+}

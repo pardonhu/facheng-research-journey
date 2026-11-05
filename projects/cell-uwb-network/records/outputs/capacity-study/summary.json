@@ -1,0 +1,98 @@
+{
+  "stage1": [
+    {
+      "gap_us": 500,
+      "runs": 5,
+      "packets": 500000,
+      "pdr": 0.999236,
+      "min_run_pdr": 0.99903,
+      "max_run_pdr": 0.99949,
+      "period_us": 1139.5101941243772,
+      "capacity_100ms": 87,
+      "estimate_200_ms": 227.90203882487546,
+      "estimate_300_ms": 341.8530582373132,
+      "max_loss_run": 1
+    },
+    {
+      "gap_us": 300,
+      "runs": 4,
+      "packets": 400000,
+      "pdr": 0.99934,
+      "min_run_pdr": 0.99929,
+      "max_run_pdr": 0.99939,
+      "period_us": 939.5080980857886,
+      "capacity_100ms": 106,
+      "estimate_200_ms": 187.90161961715773,
+      "estimate_300_ms": 281.85242942573655,
+      "max_loss_run": 1
+    },
+    {
+      "gap_us": 200,
+      "runs": 3,
+      "packets": 300000,
+      "pdr": 0.9992133333333333,
+      "min_run_pdr": 0.99913,
+      "max_run_pdr": 0.99931,
+      "period_us": 839.5070957119829,
+      "capacity_100ms": 119,
+      "estimate_200_ms": 167.90141914239658,
+      "estimate_300_ms": 251.85212871359485,
+      "max_loss_run": 1
+    },
+    {
+      "gap_us": 150,
+      "runs": 2,
+      "packets": 200000,
+      "pdr": 0.999335,
+      "min_run_pdr": 0.99924,
+      "max_run_pdr": 0.99943,
+      "period_us": 789.5073860594374,
+      "capacity_100ms": 126,
+      "estimate_200_ms": 157.90147721188748,
+      "estimate_300_ms": 236.85221581783122,
+      "max_loss_run": 1
+    },
+    {
+      "gap_us": 100,
+      "runs": 4,
+      "packets": 400000,
+      "pdr": 0.9992975,
+      "min_run_pdr": 0.99922,
+      "max_run_pdr": 0.9994,
+      "period_us": 739.506315155299,
+      "capacity_100ms": 135,
+      "estimate_200_ms": 147.9012630310598,
+      "estimate_300_ms": 221.8518945465897,
+      "max_loss_run": 1
+    },
+    {
+      "gap_us": 50,
+      "runs": 2,
+      "packets": 200000,
+      "pdr": 0.9991,
+      "min_run_pdr": 0.99902,
+      "max_run_pdr": 0.99918,
+      "period_us": 689.5064775567628,
+      "capacity_100ms": 145,
+      "estimate_200_ms": 137.90129551135257,
+      "estimate_300_ms": 206.85194326702882,
+      "max_loss_run": 1
+    },
+    {
+      "gap_us": 0,
+      "runs": 4,
+      "packets": 400000,
+      "pdr": 0.9992925,
+      "min_run_pdr": 0.99909,
+      "max_run_pdr": 0.99947,
+      "period_us": 640.1305250632635,
+      "capacity_100ms": 156,
+      "estimate_200_ms": 128.0261050126527,
+      "estimate_300_ms": 192.03915751897904,
+      "max_loss_run": 1
+    }
+  ],
+  "stage2": [],
+  "completed_stage1": 24,
+  "completed_stage2": 0
+}

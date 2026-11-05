@@ -1,0 +1,25 @@
+{
+  "assumption": "Current nine-frame, two-leaf, fully sequential protocol; zero loss, zero idle gaps, zero CPU time. This is a protocol-specific lower bound, not a general UWB network bound.",
+  "source": "Qorvo DW3000 Datasheet v1.1 Table 18 and section 4.5",
+  "url": "https://www.mouser.com/catalog/specsheets/Qorvo_DW3000.pdf",
+  "rows": [
+    {
+      "preamble": 64,
+      "control_frames": 6,
+      "leaf_frames": 2,
+      "aggregate_frames": 1,
+      "air_only_group_us": 1202.0014,
+      "air_only_200_ms": 120.20014000000002,
+      "air_only_300_ms": 180.30021000000002
+    },
+    {
+      "preamble": 32,
+      "control_frames": 6,
+      "leaf_frames": 2,
+      "aggregate_frames": 1,
+      "air_only_group_us": 908.9239600000001,
+      "air_only_200_ms": 90.892396,
+      "air_only_300_ms": 136.338594
+    }
+  ]
+}

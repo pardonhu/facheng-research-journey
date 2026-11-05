@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "address": "0x10001200",
+      "original": "0x12",
+      "tested": "0xffffffff"
+    },
+    {
+      "address": "0x10001204",
+      "original": "0x12",
+      "tested": "0xffffffff"
+    }
+  ],
+  "reason": "Restore original PSELRESET configuration after post-test comparison; no erase required."
+}

@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "[LOCAL_WORKSPACE]\work\run-raw48.py", line 67, in <module>
+    for pre,fast in [(64,0),(32,0),(64,1),(32,1)]:case(f'p{pre}-phr{fast}-gap500',pre,fast,500)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[LOCAL_WORKSPACE]\work\run-raw48.py", line 33, in case
+    start(rx,1,run,n,pre,fast,wait,drop);time.sleep(.2)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[LOCAL_WORKSPACE]\work\run-raw48.py", line 28, in start
+    command(b,'\n'.join(cmds))
+  File "[LOCAL_WORKSPACE]\work\run-raw48.py", line 16, in command
+    if r.returncode or 'Could not read memory' in r.stdout or 'Connecting to J-Link via USB...FAILED' in r.stdout:raise RuntimeError(r.stdout+r.stderr)
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: SEGGER J-Link Commander V9.90 (Compiled Oct 28 2026 16:08:50)
+DLL version V9.90, compiled Oct 28 2026 15:58:02
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>connect
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...FAILED: Cannot connect to the probe/programmer.
+
+Script processing completed.
+
+

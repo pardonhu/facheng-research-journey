@@ -1,0 +1,40 @@
+{
+  "state": "stopped_for_preamble_and_4byte_study",
+  "completed_stage1": 24,
+  "last_started": {
+    "name": "s1-r2-g150-d0",
+    "stage": 1,
+    "started": 1793712215.06248,
+    "count": 100000,
+    "gap": 150,
+    "mode": 0,
+    "direction": 0,
+    "batch": 100000,
+    "tx": {
+      "state": 2,
+      "run": 2710852348,
+      "attempts": 82410,
+      "retransmissions": 0,
+      "unique": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "phy_errors": 0,
+      "ack_requests": 0,
+      "ack_timeouts": 0,
+      "ack_missing": 0,
+      "remote_unique": 0,
+      "remote_failed": 0,
+      "summary_received": 0,
+      "completed": 0,
+      "elapsed": 0,
+      "first_unique": 0,
+      "recovered": 0,
+      "injected": 0,
+      "ack_dropped": 0,
+      "windows": 0,
+      "window_max_us": 0,
+      "tx_errors": 0,
+      "control_retries": 0
+    }
+  }
+}

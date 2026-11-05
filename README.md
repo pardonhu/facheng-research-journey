@@ -9,6 +9,11 @@
 - [如何写一篇论文](如何写一篇论文.md)
 - [如何写一份论文的 Review](如何写一份论文的Review.md)
 
+## 项目记录
+
+- [电芯 UWB 组网：代码、实验记录与跨模型交接](projects/cell-uwb-network/README.md)
+- [全部项目](projects/README.md)
+
 ## 科研协作复盘
 
 [FastSET 转期刊复盘：跨领域防错、有效经验与交付规范](docs/fastset-journal-retrospective/README.md)

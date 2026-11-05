@@ -1,0 +1,26 @@
+[
+  {
+    "board": "A",
+    "firmware_matches": true,
+    "uicr_matches_backup": true,
+    "reset_pin_configuration_restored_after_test": false
+  },
+  {
+    "board": "B",
+    "firmware_matches": true,
+    "uicr_matches_backup": true,
+    "reset_pin_configuration_restored_after_test": false
+  },
+  {
+    "board": "C",
+    "firmware_matches": true,
+    "uicr_matches_backup": true,
+    "reset_pin_configuration_restored_after_test": false
+  },
+  {
+    "board": "D",
+    "firmware_matches": true,
+    "uicr_matches_backup": true,
+    "reset_pin_configuration_restored_after_test": true
+  }
+]

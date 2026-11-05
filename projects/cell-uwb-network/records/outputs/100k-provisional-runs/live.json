@@ -1,0 +1,32 @@
+{
+  "run": 41,
+  "cycle": 1,
+  "tx": {
+    "state": 2,
+    "run": 41,
+    "tx": 22049,
+    "rx": 0,
+    "duplicate": 0,
+    "bad": 0,
+    "errors": 0,
+    "timeouts": 0,
+    "last": 0,
+    "elapsed": 20447191
+  },
+  "rx": {
+    "state": 1,
+    "run": 41,
+    "tx": 0,
+    "rx": 21807,
+    "duplicate": 0,
+    "bad": 0,
+    "errors": 335,
+    "timeouts": 0,
+    "last": 22141,
+    "elapsed": 21324899
+  },
+  "channel": 9,
+  "length": 32,
+  "gap": 500,
+  "host_time": 1793705824.0223713
+}

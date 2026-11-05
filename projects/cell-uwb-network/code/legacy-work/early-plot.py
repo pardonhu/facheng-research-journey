@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('work/plot-four.py');s=p.read_text(encoding='utf8').replace("if len(rows)<10:raise SystemExit('waiting for 10 formal cases')", "if sum(r['name'].startswith('group-3-guard') for r in rows)<6:raise SystemExit('waiting for six interval cases')");s=s.replace("rs=[lookup[n] for n in names]", "\nif any(n not in lookup for n in names):raise SystemExit(0)\nrs=[lookup[n] for n in names]");p.write_text(s,encoding='utf8')

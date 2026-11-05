@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('work/toolnail-UWB/DW3_QM33_SDK_1.1.1/Drivers/API/Build_Platforms');s=(p/'nRF52832-Preamble/main.c').read_text();prefix=s[:s.index('#include "dw3000_deca_regs.h"')];init=s[s.index(' NRF_TIMER1->MODE='):s.index(' SEGGER_RTT_WriteString(0,"Reliable')];dst=p/'nRF52832-Matched';dst.mkdir(exist_ok=True);(dst/'main.c').write_text(prefix+Path('work/matched-body.c').read_text().replace('/* PLATFORM_INIT */',init));(dst/'build.py').write_text((p/'nRF52832-Preamble/build.py').read_text().replace('uwb-preamble','uwb-matched'))

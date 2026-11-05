@@ -1,0 +1,13 @@
+PCA10040 ID test #1 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #2 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #3 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #4 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #5 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #6 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #7 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #8 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #9 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #10 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #11 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #12 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0
+PCA10040 ID test #13 SPI0 1MHz MODE0 raw=DECA0302 io=0 probe=0 id=DECA0302 check=0 expected=DECA0302 PASS timeouts=0

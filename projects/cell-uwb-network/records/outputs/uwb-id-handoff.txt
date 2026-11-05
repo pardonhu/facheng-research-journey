@@ -1,0 +1,20 @@
+Source: https://github.com/toolnail/UWB
+Commit: 79209d263fc536fbffd4c5af5b2e4c4b610eeedb
+Branch: pca10040-device-id
+New project: DW3_QM33_SDK_1.1.1/Drivers/API/Build_Platforms/nRF52832-ID
+Original nRF52840 Drivers tree unchanged. Repository has Windows case-collision outside Drivers; do not treat full checkout as validated.
+Nordic SDK: bundled 17.0.2. Arm GNU 14.2.Rel1. Build: python build.py from workspace.
+Uses repository deca_compat, deca_interface, DW3000 driver, qmath, SEGGER RTT and Nordic startup/system_nrf52.c.
+Dedicated identification harness follows read_dev_id probe/read/check flow. Not a complete port of all SDK examples.
+SPI0 polling (not SPIM/EasyDMA), 1MHz, mode 0, MSB first, software CS. No SPI interrupts, DMA or second SPI.
+SCK=25 MISO=24 MOSI=23 CS=22 WAKE=20 IRQ=19 RESET=18. No LED/button initialization.
+Reset driven low 2ms then released to input, no pull. TIMER1 1MHz supplies delays independent of debugger.
+Rejects all UWB register write callbacks; no radio start. Repeats raw/probe/read/check every 2s.
+Expected ID DECA0302. Require repeat PASS and power-cycle validation after shield attachment.
+Flash text+data 30600 bytes, static RAM 1928 bytes, reserved heap 8192 and stack 8192. 512KiB Flash/64KiB RAM linker limits.
+RTT control block 0x200004A0; channel 0. Nonblocking skip when buffer full.
+Flashed and verified using J-Link JLINK_A. No full-chip erase or UICR writes.
+Pre-attachment logs: repeated FFFFFFFF, probe -1, timeout 0, expected with shield removed. UWB not yet validated.
+Original backups retained: original-flash.bin and original-uicr.bin.
+
+After user attached shield and reconnected USB: captured samples #1 through #13, all raw=DECA0302, probe=0, id=DECA0302, check=0, PASS, timeouts=0. Log: uwb-id-rtt-attached.txt. Cold start after attachment succeeded; additional independent power-cycle repetition not performed. No RF transmit/receive/ranging tested.

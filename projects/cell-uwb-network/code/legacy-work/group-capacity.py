@@ -1,0 +1,3 @@
+from pathlib import Path
+p=Path('work/analyze-four.py');s=p.read_text(encoding='utf8').replace('records_in_100ms=math.floor(100000/unit)','records_in_100ms=math.floor(100000/(unit*n))*n,mean_rate_records_in_100ms=math.floor(100000/unit)');p.write_text(s,encoding='utf8')
+p=Path('work/report-four.py');s=p.read_text(encoding='utf8').replace('100 ms 内可安排的条数为 100,000 μs 除以平均每条耗时后向下取整。','100 ms 内的条数按完整小组计算，先取能完成的小组数，再乘每组节点数。');s=s.replace("math.floor(100000/u),f'{200*u/1000:.1f}'", "math.floor(100000/(u*r['mask'].bit_count()))*r['mask'].bit_count(),f'{200*u/1000:.1f}'");p.write_text(s,encoding='utf8')

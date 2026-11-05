@@ -1,0 +1,31 @@
+{
+  "formal_cases": 6,
+  "leaf_records": 300000,
+  "bitmap_counters_windows_consistent": true,
+  "firmware_and_uicr": [
+    {
+      "board": "A",
+      "serial": "JLINK_A",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    },
+    {
+      "board": "B",
+      "serial": "JLINK_B",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    },
+    {
+      "board": "C",
+      "serial": "JLINK_C",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    },
+    {
+      "board": "D",
+      "serial": "JLINK_D",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    }
+  ]
+}

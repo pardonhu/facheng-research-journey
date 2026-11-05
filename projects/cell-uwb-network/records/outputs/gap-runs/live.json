@@ -1,0 +1,27 @@
+{
+  "run": 1017,
+  "tx": {
+    "state": 2,
+    "run": 1017,
+    "tx": 4318,
+    "rx": 0,
+    "duplicate": 0,
+    "bad": 0,
+    "errors": 0,
+    "timeouts": 0,
+    "last": 0,
+    "elapsed": 1852310
+  },
+  "rx": {
+    "state": 1,
+    "run": 1017,
+    "tx": 0,
+    "rx": 4495,
+    "duplicate": 0,
+    "bad": 0,
+    "errors": 1,
+    "timeouts": 0,
+    "last": 4496,
+    "elapsed": 3096001
+  }
+}

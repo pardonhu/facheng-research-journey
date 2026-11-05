@@ -1,0 +1,3 @@
+Completed runs: 2
+Run 1 JLINK_A->JLINK_B ch5 frame=32B interval=10000us TX=1000 RX_unique=1000 loss=0 PDR=1.000000 achieved_rate=100.09fps RX_errors=0
+Run 2 JLINK_B->JLINK_A ch5 frame=32B interval=10000us TX=1000 RX_unique=999 loss=1 PDR=0.999000 achieved_rate=100.09fps RX_errors=1

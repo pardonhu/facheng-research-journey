@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/toolnail/UWB",
+  "base_commit": "79209d263fc536fbffd4c5af5b2e4c4b610eeedb",
+  "compiler": "arm-none-eabi-gcc 14.2.1",
+  "jlink": "V9.90",
+  "formal_cases": 6,
+  "original_leaf_records_per_case": 50000,
+  "records_per_round": 2,
+  "topology": "C/D -> B -> A; direct control C/D -> A",
+  "channel": 5,
+  "data_rate": "6.8 Mbps",
+  "record_bytes": 4,
+  "artificial_loss": false,
+  "simulation": "none; 200/300 record windows are consecutive measured groups on the same physical topology",
+  "firmware_sha256": {
+    "52832": "0658589daffda571a8699463771c3ef485dfdc4b37594192f78bcc723a7d646b",
+    "52840": "6f9ae0570d56d8364f89f0bfd6bc7dbfc85b930133f1ba543421d3b9f66bdf35"
+  }
+}

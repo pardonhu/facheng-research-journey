@@ -1,0 +1,222 @@
+[
+  {
+    "name": "individual-3",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.99874,
+    "final_pdr": 1.0,
+    "round_mean_ms": 6.039356973569736,
+    "round_p99": {
+      "lower_us": 6025,
+      "upper_us": 6050
+    },
+    "round_all": 1.0,
+    "slot_us": 636,
+    "us_per_record": 2014.168,
+    "serial_200_ms": 402.8336,
+    "serial_300_ms": 604.2504,
+    "records_in_100ms": 48,
+    "mean_rate_records_in_100ms": 49,
+    "tx_frames": 233549,
+    "tx_data_frames": 100089
+  },
+  {
+    "name": "group-3-guard1000",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.99883,
+    "final_pdr": 1.0,
+    "round_mean_ms": 5.09530786307863,
+    "round_p99": {
+      "lower_us": 5075,
+      "upper_us": 5100
+    },
+    "round_all": 1.0,
+    "slot_us": 1136,
+    "us_per_record": 1699.50421,
+    "serial_200_ms": 339.900842,
+    "serial_300_ms": 509.851263,
+    "records_in_100ms": 57,
+    "mean_rate_records_in_100ms": 58,
+    "tx_frames": 166870,
+    "tx_data_frames": 100084
+  },
+  {
+    "name": "group-3-guard500",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.99899,
+    "final_pdr": 1.0,
+    "round_mean_ms": 4.080910269102691,
+    "round_p99": {
+      "lower_us": 4050,
+      "upper_us": 4075
+    },
+    "round_all": 1.0,
+    "slot_us": 636,
+    "us_per_record": 1361.34917,
+    "serial_200_ms": 272.26983399999995,
+    "serial_300_ms": 408.404751,
+    "records_in_100ms": 72,
+    "mean_rate_records_in_100ms": 73,
+    "tx_frames": 166838,
+    "tx_data_frames": 100069
+  },
+  {
+    "name": "group-3-guard250",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.6657,
+    "final_pdr": 1.0,
+    "round_mean_ms": 6.536827888278883,
+    "round_p99": {
+      "lower_us": 6525,
+      "upper_us": 6550
+    },
+    "round_all": 1.0,
+    "slot_us": 386,
+    "us_per_record": 2179.99053,
+    "serial_200_ms": 435.998106,
+    "serial_300_ms": 653.997159,
+    "records_in_100ms": 45,
+    "mean_rate_records_in_100ms": 45,
+    "tx_frames": 233526,
+    "tx_data_frames": 133401
+  },
+  {
+    "name": "group-3-guard100",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.66584,
+    "final_pdr": 1.0,
+    "round_mean_ms": 6.23440137401374,
+    "round_p99": {
+      "lower_us": 6225,
+      "upper_us": 6250
+    },
+    "round_all": 1.0,
+    "slot_us": 236,
+    "us_per_record": 2079.18264,
+    "serial_200_ms": 415.836528,
+    "serial_300_ms": 623.7547920000001,
+    "records_in_100ms": 48,
+    "mean_rate_records_in_100ms": 48,
+    "tx_frames": 233501,
+    "tx_data_frames": 133393
+  },
+  {
+    "name": "group-3-guard50",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.33331,
+    "final_pdr": 1.0,
+    "round_mean_ms": 7.783032250322504,
+    "round_p99": {
+      "lower_us": 7775,
+      "upper_us": 7800
+    },
+    "round_all": 1.0,
+    "slot_us": 186,
+    "us_per_record": 2595.38778,
+    "serial_200_ms": 519.077556,
+    "serial_300_ms": 778.616334,
+    "records_in_100ms": 36,
+    "mean_rate_records_in_100ms": 38,
+    "tx_frames": 300013,
+    "tx_data_frames": 166651
+  },
+  {
+    "name": "group-3-guard0",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.33333,
+    "final_pdr": 1.0,
+    "round_mean_ms": 7.673955299552996,
+    "round_p99": {
+      "lower_us": 7650,
+      "upper_us": 7675
+    },
+    "round_all": 1.0,
+    "slot_us": 136,
+    "us_per_record": 2559.02921,
+    "serial_200_ms": 511.805842,
+    "serial_300_ms": 767.7087630000001,
+    "records_in_100ms": 39,
+    "mean_rate_records_in_100ms": 39,
+    "tx_frames": 300019,
+    "tx_data_frames": 166653
+  },
+  {
+    "name": "direct-2-leaves",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.99947,
+    "final_pdr": 1.0,
+    "round_mean_ms": 4.385397,
+    "round_p99": {
+      "lower_us": 4375,
+      "upper_us": 4400
+    },
+    "round_all": 1.0,
+    "slot_us": 636,
+    "us_per_record": 2194.26099,
+    "serial_200_ms": 438.85219800000004,
+    "serial_300_ms": 658.2782970000001,
+    "records_in_100ms": 44,
+    "mean_rate_records_in_100ms": 45,
+    "tx_frames": 250082,
+    "tx_data_frames": 100029
+  },
+  {
+    "name": "relay-forward-2",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.99869,
+    "final_pdr": 1.0,
+    "round_mean_ms": 9.0138675,
+    "round_p99": {
+      "lower_us": 8925,
+      "upper_us": 8950
+    },
+    "round_all": 1.0,
+    "slot_us": 636,
+    "us_per_record": 4508.49819,
+    "serial_200_ms": 901.699638,
+    "serial_300_ms": 1352.549457,
+    "records_in_100ms": 22,
+    "mean_rate_records_in_100ms": 22,
+    "tx_frames": 500314,
+    "tx_data_frames": 200076
+  },
+  {
+    "name": "relay-aggregate-2",
+    "records": 100000,
+    "received": 100000,
+    "missing": 0,
+    "first_pdr": 0.99868,
+    "final_pdr": 1.0,
+    "round_mean_ms": 8.3741497,
+    "round_p99": {
+      "lower_us": 8300,
+      "upper_us": 8325
+    },
+    "round_all": 1.0,
+    "slot_us": 636,
+    "us_per_record": 4188.57486,
+    "serial_200_ms": 837.714972,
+    "serial_300_ms": 1256.5724579999999,
+    "records_in_100ms": 22,
+    "mean_rate_records_in_100ms": 23,
+    "tx_frames": 450190,
+    "tx_data_frames": 150042
+  }
+]

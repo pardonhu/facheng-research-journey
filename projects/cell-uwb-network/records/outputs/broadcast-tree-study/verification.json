@@ -1,0 +1,31 @@
+{
+  "cases": 4,
+  "records": 200000,
+  "accounting_consistent": true,
+  "boards": [
+    {
+      "board": "A",
+      "serial": "JLINK_A",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    },
+    {
+      "board": "B",
+      "serial": "JLINK_B",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    },
+    {
+      "board": "C",
+      "serial": "JLINK_C",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    },
+    {
+      "board": "D",
+      "serial": "JLINK_D",
+      "firmware_matches": true,
+      "uicr_unchanged": true
+    }
+  ]
+}

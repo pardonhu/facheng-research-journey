@@ -1,0 +1,13 @@
+SEGGER J-Link Commander V9.90 (Compiled Oct 28 2026 16:08:50)
+DLL version V9.90, compiled Oct 28 2026 15:58:02
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>connect
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...FAILED: Cannot connect to the probe/programmer.
+
+Script processing completed.
+

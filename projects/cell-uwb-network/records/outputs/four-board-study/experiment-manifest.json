@@ -1,0 +1,45 @@
+{
+  "payload_bytes": 4,
+  "preamble_symbols": 64,
+  "channel": 5,
+  "rate_mbps": 6.8,
+  "per_case_application_records": 100000,
+  "turn_us": 1000,
+  "root_ack_postwait_us": 500,
+  "attempt_limit": 5,
+  "round_histogram_bin_us": 25,
+  "slot_spacing_us": [
+    1136,
+    636,
+    386,
+    236,
+    186,
+    136
+  ],
+  "boards": {
+    "A": "JLINK_A nRF52832",
+    "B": "JLINK_B nRF52832",
+    "C": "JLINK_C nRF52840",
+    "D": "JLINK_D nRF52840"
+  },
+  "D_reset_workaround": "Software reset selected by FICR DEVICEID[0]=06E5F278 because driving P1.08 low rebooted MCU. Physical wiring cause remains unverified.",
+  "files": {
+    "work\\four-body.c": "7c6ae2c487e682ad060a4fe68bb426ab30ae9f206519e868419f4ac44a255aec",
+    "work\\prepare-four.py": "abe8e255a6dfb5ebcd2775d25979afa9893fd0bea370c60b3d1b6783ebc8a24d",
+    "work\\four_io.py": "05d91ace7319314e248ed642e32ee9d991734e67da99cb016556b583d98ab65d",
+    "work\\run-four.py": "bcc7dcf30e3ace3b763cc20c38fbf769999358506c51b28c74dd1b01645d7082",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52832-Four\\main.c": "d01b5c2389d1d0a6e09f8dd8f3adc022ee1a71f76a5ac6757fa5f384e0de6655",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52832-Four\\build.py": "17daeab66ee37eb2a7f9525e9b1340c795aaa04bc126c8b584d8fe752ce6cd3c",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52832-Four\\memory.ld": "4e922105edec503d14f312096ba5b3c2b3564909b6d26388dce19e50ec63eeca",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52832-Four\\build\\uwb-four.hex": "9b27e088449c273b1b9e8eab38876c6d744fc3aa33c17555e7bfd6eafa2605ca",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52832-Four\\build\\uwb-four.elf": "4d00afe3d79957e63a51dd0020be163c578b31943d267ae0a720aaaef7e57e1e",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52840-Four\\main.c": "b6e0896d77397db6ba14c14d0b1952397a273a975a3677f733498d8d77bb0128",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52840-Four\\build.py": "475e38d4ddb7de0afef89d1b7e97541c7bcbedd1620bb869e8ea2f33570a87e8",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52840-Four\\memory.ld": "343fca0b65499e1db804ebb985ec0016ad69b636df01f12f72e1d1c8e3427167",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52840-Four\\build\\uwb-four.hex": "a600fc9e798bf1313f3343f7953ce9780e5c80c2f46c20eea91fe35d463c19fd",
+    "work\\toolnail-UWB\\DW3_QM33_SDK_1.1.1\\Drivers\\API\\Build_Platforms\\nRF52840-Four\\build\\uwb-four.elf": "aae534a217fe2a77bed93580e2532415894dd5607f932ad51087049839e76473"
+  },
+  "post_test_configuration_record": "D-uicr-restoration.json",
+  "tested_D_uicr": "D-tested-uicr.bin",
+  "final_verification": "post-test-verification.json"
+}
