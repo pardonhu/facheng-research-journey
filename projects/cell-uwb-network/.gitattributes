@@ -1,0 +1,2 @@
+# Preserve archive bytes: experimental firmware hashes depend on exact line endings.
+* -text

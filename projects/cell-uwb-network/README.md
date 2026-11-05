@@ -36,6 +36,6 @@
 | `notes/` | 导师指导、实验索引、决策、错误与有效经验 |
 | `provenance/` | 源文件对应清单、文件哈希与交接验证结果 |
 
-聊天：[本机消息Markdown](conversations/本机会话.md) · [JSONL](conversations/本机会话.jsonl) · [前置研究上下文](conversations/电芯级组网研究更新.md) · [前置接手会话](conversations/接手组网开发调试.md)。[前置会话移交原文](conversations/前置会话移交原文.txt)也已保留。原话中存在已纠正的错误，尤其是帧长、350 μs来源、节点容量和实测范围；先读STATE。
+聊天：[本机消息Markdown](conversations/本机会话.md) · [JSONL](conversations/本机会话.jsonl) · [前置研究上下文](conversations/电芯级组网研究更新.md) · [前置接手会话](conversations/接手组网开发调试.md)。[前置会话移交原文](conversations/前置会话移交原文.txt)也已保留。[前置会话移交原文](conversations/前置会话移交原文.txt)也已保留。原话中存在已纠正的错误，尤其是帧长、350 μs来源、节点容量和实测范围；先读STATE。
 
 按用户2026-11-05明确要求，本目录公开项目代码、实验结果与项目聊天。导出只包含项目可见消息，不含内部推理、工具结果、凭据或原始工作机连接标识。组会原录音、其他同学完整发言、原始Flash/UICR镜像留在本机。依赖来源及许可见[源码说明](code/README.md)。
