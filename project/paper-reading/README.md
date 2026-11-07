@@ -67,6 +67,7 @@
 | --- | --- | --- | --- |
 | [2026-11-05](2026-11-05.md) | PolarVisor；Revisiting RDMA Reliability for Lossy Fabrics；ResCCL；Medusa；PanoRadar；HydraNet（共6篇） | 要求与证据；系统边界；图文解释与监督依据；物理约束与受控实验 | 英文改稿、原图分析、原创布局与图注、可复算的功率约束案例 |
 | [2026-11-06](2026-11-06.md) | MSense；UWBOrient；CosMAC；RFlect（共4篇） | 参考条件与句式；几何与指标；系统职责与实验层级；摘要与敏感性图 | 8组英文改稿、原创测量算例、图形布局与图注、3项表达练习 |
+| [2026-11-07](2026-11-07.md) | AlphaWAN；SeRadar；PassiveBLE；Crowd Analytics（共4篇） | 创新定位与设计原则；几何与数学直觉；篇章推进；图文分工 | 8组英文改稿、双接收端与同均值分布算例、图文重组和3项表达练习 |
 
 ## 改稿案例检索
 
@@ -89,6 +90,14 @@
 | 实验可信度 | 评估、摘要 | 仿真写成部署，只报最大倍数 | 写清实验层级、基线与完整方案收益 | [CosMAC §6–8](2026-11-06.md#3-cosmac-从系统约束确定接入与调度的职责) | 测量和仿真各保留验证范围 |
 | 信息取舍 | 摘要、重建评估 | 方法空泛，形状指标被写成泛化准确率 | 保留方法链和指标名称，交代对齐与阈值条件 | [RFlect §9.1](2026-11-06.md#4-rflect-让重建结论与图形证据对应) | 不把对齐后误差当绝对定位误差 |
 | 图形与实验 | 原理图、敏感性分析 | 子图多，受控变量与结论脱节 | 连接几何示意、单变量扰动和定量结果 | [RFlect 图5、图13](2026-11-06.md#4-rflect-让重建结论与图形证据对应) | 原创布局须有对应实验才能使用 |
+| 创新定位 | 引言、贡献 | 增加设备与收益之间缺少机制 | 从测量揭示的资源争用引出新的控制对象 | [AlphaWAN §2–3](2026-11-07.md#1-alphawan-从容量反常现象推进到可部署设计) | 核对冗余接收是否承担可靠性功能 |
+| 篇章推进 | 方法概述、设计取舍 | 候选方案与模块清单脱节 | 按诊断、原则、筛选条件和实现组织信息 | [AlphaWAN §4](2026-11-07.md#1-alphawan-从容量反常现象推进到可部署设计) | 筛选条件须有本稿依据 |
+| 读者理解 | 核心观察、方法概述 | 模块名先于设计理由 | 先交代几何观测差异，再引出处理需求与顺序 | [SeRadar §4–5](2026-11-07.md#2-seradar-从反射的物理直觉走向系统解释) | 保留实际模块关系及信息来源 |
+| 图文配合 | 结果图、图注、评估 | 图例缩写隐去比较条件 | 引图提出问题，图注定义各组，正文解释机制 | [SeRadar §6.2、图17](2026-11-07.md#2-seradar-从反射的物理直觉走向系统解释) | 面板与训练条件须对应当前实验 |
+| 创新定位 | 相关工作、贡献、实现 | 兼容性未分设备角色和协议能力 | 分开激励源、标签、接收端的能力与修改要求 | [PassiveBLE §3–4、§6](2026-11-07.md#3-passiveble-把兼容性写成具体的协议能力) | 广播能力与连接能力分别核对 |
+| 数学与物理 | 编码机制、硬件说明 | 公式性质未解释接收结果 | 用输入、相位变化、解码比特组成最小算例 | [PassiveBLE §3.3–3.4](2026-11-07.md#3-passiveble-把兼容性写成具体的协议能力) | 保留符号对齐及所用信号模型 |
+| 读者理解与统计 | 系统模型、统计推断 | 信号图直接跳到优化目标 | 区分观测量、待估量与候选分布，用算例解释统计量 | [Crowd Analytics §4–5](2026-11-07.md#4-crowd-analytics-从可见人数解释真实人数推断) | 教学分布与论文物理模型分开 |
+| 方法衔接 | 方法总览、训练设置 | 解析与学习模块关系含混 | 按各自利用的信息解释分支，并明确训练数据归属 | [Crowd Analytics §5–7](2026-11-07.md#4-crowd-analytics-从可见人数解释真实人数推断) | 串并联关系及数据来源按实现填写 |
 
 ## 论文索引
 
@@ -106,6 +115,10 @@
 | [2026-11-06](2026-11-06.md) | MobiCom 2024 | Rethinking Orientation Estimation with Smartphone-equipped Ultra-wideband Chips（UWBOrient） | [10.1145/3636534.3690677](https://doi.org/10.1145/3636534.3690677) |
 | [2026-11-06](2026-11-06.md) | MobiCom 2024 | CosMAC: Constellation-Aware Medium Access and Scheduling for IoT Satellites | [10.1145/3636534.3690657](https://doi.org/10.1145/3636534.3690657) |
 | [2026-11-06](2026-11-06.md) | MobiCom 2024 | Around the Corner mmWave Imaging in Practical Environments（RFlect） | [10.1145/3636534.3690671](https://doi.org/10.1145/3636534.3690671) |
+| [2026-11-07](2026-11-07.md) | SIGCOMM 2025 | Towards Next-Generation Global IoT: Empowering Massive Connectivity with Harmonious Multi-Network Coexistence（AlphaWAN） | [10.1145/3718958.3750504](https://doi.org/10.1145/3718958.3750504) |
+| [2026-11-07](2026-11-07.md) | MobiCom 2025 | SeRadar: Embracing Secondary Reflections for Human Sensing with mmWave Radar | [10.1145/3680207.3723471](https://doi.org/10.1145/3680207.3723471) |
+| [2026-11-07](2026-11-07.md) | MobiCom 2025 | PassiveBLE: Towards Fully Commodity-Compatible BLE Backscatter | [10.1145/3680207.3723465](https://doi.org/10.1145/3680207.3723465) |
+| [2026-11-07](2026-11-07.md) | MobiCom 2024 | Crowd Analytics with a Single mmWave Radar | [10.1145/3636534.3690664](https://doi.org/10.1145/3636534.3690664) |
 
 ## 写作依据
 
