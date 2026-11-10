@@ -71,6 +71,7 @@
 | [2026-11-08](2026-11-08.md) | SaTE；Bridge；QuinID；mmXtend（共4篇） | 审稿疑问与实验设计；指标对应目标；图形失效标注；实现与版本信息取舍 | 8组英文改稿、实验问题表、扩展性图方案和3项表达练习 |
 | [2026-11-09](2026-11-09.md) | BiScatter；μCeiver-Fi；NanoScatter；Hydra（共4篇） | 失败机制；指代与信息重心；摘要取舍；误差分布标注 | 8组英文改稿、失败机制布局与分布图放大方案、3项表达练习 |
 | [2026-11-10](2026-11-10.md) | RinP；SiWiS；B²LoRa；CGMM（共4篇） | 标题信息选择；长段压缩；正文与附录；图文一致性 | 8组英文训练、流程图与附录布局方案、3项表达练习 |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md) | UTrack3D；Radarize；RISENSE；HybRadar；OneSense；M2-Fi；FedPDA；CACTUS；XPerT；Satori（共10篇） | 可观测性；操作定义；代价分解；机制与证据 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -128,6 +129,26 @@
 | 数学与证据核对 | 原理验证、实验解释 | 公式旁的示例数值没有绑定载频等配置 | 用公式反算量纲和参数，将不一致定位到具体来源 | [SiWiS 二次精读 §1](2026-11-10-siwis-deep-dive.md#1-原文分析把模块列表追到设计原因) | 复算发现问题后保留原值，按实际配置或作者说明处理 |
 | 机制与句式 | 方法概述 | 共址直接推成同步，简化模型扩大到复杂任务 | 用信息来源、预处理目的、模型范围和任务处理逐句推进 | [SiWiS 机制段练习](2026-11-10-siwis-deep-dive.md#2-改稿练习把机制条件与推论写清楚) | 物理直觉与跨场景实验证据分别对应 |
 | 指标与比较协议 | 评估、图注 | 阈值指标混用，基线条件或标签来源省略 | 定义计算方式和测试变化，再区分观察与归因 | [SiWiS 实验深核](2026-11-10-siwis-deep-dive.md#3-实验分析一个结果究竟回答什么问题) | 待核验代码和基线协议保留具体问题，不推定错误或公平性 |
+| 篇章与机制 | 方法、流程图 | 反馈箭头只写纠错而无状态依赖 | 说明错误进入哪项状态，再解释返回哪个决策步骤 | [UTrack3D](2026-11-10-sprint-01.md#1-utrack3d-从状态依赖解释反馈设计) | 按真实反馈路径；预测回退与重试分开 |
+| 指标与运动约束 | 评估、模型 | 轨迹对齐精度被写成绝对定位精度 | 交代对齐、初始化与采样约束，分别报告 | [UTrack3D](2026-11-10-sprint-01.md#1-utrack3d-从状态依赖解释反馈设计) | 相位速度界依赖几何与包间隔 |
+| 系统模型与篇章 | 方法总览 | 先列网络结构而无输入选择依据 | 从平移和旋转各自留下的观测变化引出表示 | [Radarize](2026-11-10-sprint-01.md#2-radarize-用可观测信息组织系统分工) | 物理动机需要对应模型和场景 |
+| 实验与归因 | 消融、结果图 | 多模块替换被归因到单一抑制模块 | 固定其余输入，结论停留在被替换流程层级 | [Radarize](2026-11-10-sprint-01.md#2-radarize-用可观测信息组织系统分工) | 有对应受控对比才写单模块因果 |
+| 概念与系统模型 | 概述、硬件 | 无源或带内掩盖控制电路与基站动作 | 指出术语修饰对象，再给信号与控制路径 | [RISENSE](2026-11-10-sprint-01.md#3-risense-将术语落实为控制状态) | 被动反射不代表整个控制电路无耗电 |
+| 协议与图文 | 协议、状态图 | 按需更新省略固定监听机会 | 按触发、资源、延迟和新状态解释 | [RISENSE](2026-11-10-sprint-01.md#3-risense-将术语落实为控制状态) | 现场测量与带实测参数的模型分别报告 |
+| 数学与表示 | 阵列设计 | 通道数直接等同独立虚拟阵元数 | 用位置和集合示例解释重复位置与孔径 | [HybRadar](2026-11-10-sprint-01.md#4-hybradar-连接虚拟孔径与扫描成本) | 保留远场模型与实际布局 |
+| 指标与代价 | 实现、评估 | 角分辨率与速度界来自不同配置 | 绑定阵列、chirp数量、扫描时间与运动条件 | [HybRadar](2026-11-10-sprint-01.md#4-hybradar-连接虚拟孔径与扫描成本) | 模型推算距离与实测距离分开 |
+| 训练协议与语法 | 摘要、评估 | 单样本省略每类与离线基础训练 | 写清固定和更新对象、目标域标签与测试类别数 | [OneSense](2026-11-10-sprint-01.md#5-onesense-把训练阶段写进适应主张) | 少样本适应与无标签迁移各对应协议 |
+| 数学与读者理解 | 增强机制 | 只压缩时间轴而忽略多普勒变化 | 用链式法则和带单位的最小例子连接公式与操作 | [OneSense](2026-11-10-sprint-01.md#5-onesense-把训练阶段写进适应主张) | 连接连续性与频带处理须按实现核对 |
+| 系统模型与论证 | 系统概述 | 多人监测省略每人设备要求 | 先说明每人链路，再介绍干扰处理与输出 | [M2-Fi](2026-11-10-sprint-01.md#6-m2-fi-区分信息来源与信号恢复) | 手部运动与人员位置移动分别描述 |
+| 数学与验证 | 分解模型 | 数学模态直接命名为物理来源 | 用可识别性算例说明语义赋值需要额外依据 | [M2-Fi](2026-11-10-sprint-01.md#6-m2-fi-区分信息来源与信号恢复) | 本篇只取得分页文本，未做视觉判断 |
+| 目标与创新定位 | 引言、贡献 | 减少适应次数被写成缩短单次适应 | 把事件频率、恢复耗时与质量分别对应证据 | [FedPDA](2026-11-10-sprint-01.md#7-fedpda-分清适应频率与协同成本) | 论文主目标依据作者任务定义 |
+| 数学与系统代价 | 方法、开销 | 数据转移后宣称存储消失或通信更少 | 写明数据保存位置、轮次数和上传模型量 | [FedPDA](2026-11-10-sprint-01.md#7-fedpda-分清适应频率与协同成本) | 比较需计入相同设备和阶段 |
+| 定义与篇章 | 系统模型 | context泛指所有域变化 | 定义活跃已知类别子集，并分别解释检测和识别 | [CACTUS](2026-11-10-sprint-01.md#8-cactus-让定义触发路径与结果相接) | 借鉴叙述方式，不把类别变化套成信道变化 |
+| 实验与解释 | 性能评估 | 仅用模型加载时间解释总体成本 | 连接变化频率、重路径调用比例与总耗时 | [CACTUS](2026-11-10-sprint-01.md#8-cactus-让定义触发路径与结果相接) | 使用已有日志中的中间量 |
+| 数学与论证 | 方法、评分定义 | 几何接近被写成最少更新的证明 | 依次说明对象、坐标、残差、选择和验证 | [XPerT](2026-11-10-sprint-01.md#9-xpert-将表示连接到模型选择) | 代理决策规则的收益由任务结果验证 |
+| 实验与信息取舍 | 结果、开销 | 微调收益覆盖了选择与通信成本 | 分列选择成本、训练时间和生成质量 | [XPerT](2026-11-10-sprint-01.md#9-xpert-将表示连接到模型选择) | 按同一设备与任务条件判断总体收益 |
+| 数学与图文 | 原理、引图 | 公式消去干扰后缺少几何直觉 | 用平移、旋转、缩放与保持的角度解释 | [Satori](2026-11-10-sprint-01.md#10-satori-用几何不变量解释模拟调制) | 共同信道和状态稳定条件按模型给出 |
+| 指标与代价 | 摘要、实验 | 符号周期当成端到端延迟或部件功耗当成整机 | 标明激励窗口、接收处理和功耗对象 | [Satori](2026-11-10-sprint-01.md#10-satori-用几何不变量解释模拟调制) | 测量、EDA和数据表估计分别注明 |
 
 ## 论文索引
 
@@ -161,6 +182,16 @@
 | [2026-11-10](2026-11-10.md) | MobiCom 2024 | SiWiS: Fine-grained Human Detection Using Single WiFi Device | [10.1145/3636534.3690703](https://doi.org/10.1145/3636534.3690703) |
 | [2026-11-10](2026-11-10.md) | MobiCom 2025 | B²LoRa: Boosting LoRa Transmission for Satellite-IoT Systems with Blind Coherent Combining | [10.1145/3680207.3723463](https://doi.org/10.1145/3680207.3723463) |
 | [2026-11-10](2026-11-10.md) | MobiCom 2025 | CGMM: Non-Invasive Continuous Glucose Monitoring in Wearables Using Metasurfaces | [10.1145/3680207.3723474](https://doi.org/10.1145/3680207.3723474) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#1-utrack3d-从状态依赖解释反馈设计) | MobiSys 2024 | UTrack3D: 3D Tracking Using Ultra-wideband (UWB) Radios | [10.1145/3643832.3661881](https://doi.org/10.1145/3643832.3661881) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#2-radarize-用可观测信息组织系统分工) | MobiSys 2024 | Radarize: Enhancing Radar SLAM with Generalizable Doppler-Based Odometry | [10.1145/3643832.3661871](https://doi.org/10.1145/3643832.3661871) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#3-risense-将术语落实为控制状态) | MobiSys 2025 | RISENSE: Long-Range In-Band Wireless Control of Passive Reconfigurable Intelligent Surfaces | [10.1145/3711875.3729154](https://doi.org/10.1145/3711875.3729154) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#4-hybradar-连接虚拟孔径与扫描成本) | MobiSys 2024 | Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture | [10.1145/3643832.3661865](https://doi.org/10.1145/3643832.3661865) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#5-onesense-把训练阶段写进适应主张) | INFOCOM 2024 | One is Enough: Enabling One-shot Device-free Gesture Recognition with COTS WiFi | [10.1109/INFOCOM52122.2024.10621091](https://doi.org/10.1109/INFOCOM52122.2024.10621091) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#6-m2-fi-区分信息来源与信号恢复) | INFOCOM 2024 | M²-Fi: Multi-person Respiration Monitoring via Handheld WiFi Devices | [10.1109/INFOCOM52122.2024.10621199](https://doi.org/10.1109/INFOCOM52122.2024.10621199) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#7-fedpda-分清适应频率与协同成本) | INFOCOM 2025 | FedPDA: Collaborative Learning for Reducing Online-Adaptation Frequency of Neural Receivers | [10.1109/INFOCOM55648.2025.11044747](https://doi.org/10.1109/INFOCOM55648.2025.11044747) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#8-cactus-让定义触发路径与结果相接) | MobiSys 2024 | CACTUS: Dynamically Switchable Context-aware micro-Classifiers for Efficient IoT Inference | [10.1145/3643832.3661888](https://doi.org/10.1145/3643832.3661888) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#9-xpert-将表示连接到模型选择) | MobiSys 2025 | Never Start from Scratch: Expediting On-Device LLM Personalization via Explainable Model Selection | [10.1145/3711875.3729132](https://doi.org/10.1145/3711875.3729132) |
+| [2026-11-10 加读1](2026-11-10-sprint-01.md#10-satori-用几何不变量解释模拟调制) | MobiSys 2025 | Satori: In-band Analog Backscatter for Audio Transmission | [10.1145/3711875.3729153](https://doi.org/10.1145/3711875.3729153) |
 
 ## 写作依据
 
