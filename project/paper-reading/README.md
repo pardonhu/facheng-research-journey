@@ -75,6 +75,7 @@
 | [2026-11-10 加读2](2026-11-10-sprint-02.md) | Canas；XGate；DtS；SynCheck；MIMSID；SCR；DAF；ChannelMAE；GraphRx；TRIDENT（共10篇） | 研究问题形成；理论到实现；实验分工；训练时序 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读3](2026-11-10-sprint-03.md) | WAIS；MULoc；HELIX；DragonFly；SuperSight；ArrayLink；Janus；ARIA；ARMA；mmNorm（共10篇） | 共同未知量；剩余误差；跨层接口；分层实验与时间轨迹 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读4](2026-11-10-sprint-04.md) | Shepherd Nova；Polaris；SwapRAN；GazeTrak；ArachNet；HORCRUX；Pantheon；OrchLoc；ChirpTransformer；Willow（共10篇） | 共同任务与信息依赖；可重复实验；控制权与干扰；匹配对照和端到端指标 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md) | RANBooster；VRF；RECAP；LSencom；Asclepius；EarVoice；Demeter；DREW；SpaceSched；PhaseMO（共10篇） | 共同抽象；应用需求；中间表示与指代；时间依赖；图文分工与实现不变量 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -212,6 +213,26 @@
 | 实验设计与数学意义 | 机制对照、结果 | 相同时长被误当相同数据率 | 同时匹配信息位数、符号时间和解码流程，区分门限和覆盖推算 | [ChirpTransformer](2026-11-10-sprint-04.md#9-chirptransformer-用共同编码空间统领多项优化) | 应用寿命估计须标明轨迹及功耗模型 |
 | 数学意义与机制条件 | 信号提取、方法 | 平衡码抵消被写成任何信道下成立 | 分开说明直达项稳定、实际接收样本平衡和时序漂移 | [Willow](2026-11-10-sprint-04.md#10-willow-把可分离信号与规模实验接起来) | 理想码本与丢包后的样本集合不同 |
 | 实验层级与图文 | 规模、定位评估 | 单标签最佳误差与多标签规模被拼接 | 绑定真实标签数、码长、同步状态、误差统计和测量场景 | [Willow](2026-11-10-sprint-04.md#10-willow-把可分离信号与规模实验接起来) | 识别、定位误差和完成时延分别计量 |
+| 创新定位与篇章 | 框架概览 | 多个应用缺少共同实现抽象 | 先定义入口与可编程操作，再逐项实例化应用 | [RANBooster](2026-11-10-sprint-05.md#1-ranbooster-共同操作与应用实例) | 应用新颖性与框架贡献分别说明 |
+| 信息取舍与实现可信度 | 正文、附录 | 实现关键条件只在附录出现 | 正文保留可理解机制的必要条件，附录给映射公式和细节 | [RANBooster](2026-11-10-sprint-05.md#1-ranbooster-共同操作与应用实例) | 附录评审状态及参数冲突保留说明 |
+| 论证与实验设计 | 方法动机 | 精化步骤被写成每次都会提升 | 从失败情形导出可计算代理，再对照始终启用与理想选择 | [VRF](2026-11-10-sprint-05.md#2-vrf-条件精化与流水线依赖) | 代理不保证对应正确或算法收敛 |
+| 系统模型与图形设计 | 流水线、时延 | 并行化只写线程同时执行 | 画出当前输入、缓存输入和最终汇合点，计算关键路径 | [VRF](2026-11-10-sprint-05.md#2-vrf-条件精化与流水线依赖) | 缓存和预测的准确性需独立检查 |
+| 篇章与创新定位 | 引言 | 多个贡献缺少统领问题 | 把应用转成输出要求和时间取舍，再提出相连的研究问题 | [RECAP](2026-11-10-sprint-05.md#3-recap-应用需求与中间表示) | 应用理由不能替代技术新颖性 |
+| 语法指代与图文 | 方法、跨帧融合 | 裁剪与历史数据用途混淆 | 明确用于配准的几何支持与用于渲染的原始观测 | [RECAP](2026-11-10-sprint-05.md#3-recap-应用需求与中间表示) | 不补写论文未说明的动态目标去重算法 |
+| 论证与消融设计 | 动机、贡献 | 通信鲁棒性直接延伸为感知鲁棒性 | 指出峰位置与幅度的任务差异，并匹配方向分离和重构对照 | [LSencom](2026-11-10-sprint-05.md#4-lsencom-任务统计量与互补观测) | 把收益归给对应层级 |
+| 图形设计与数学意义 | 重构方法 | 旋转副本被当作无损新观测 | 绘出缺损掩码、有效贡献数和共同缺失点 | [LSencom](2026-11-10-sprint-05.md#4-lsencom-任务统计量与互补观测) | 理想对称算例不等价于完整滤波响应 |
+| 语法句式与篇章 | 串行方法 | it和this跨多个表示指代 | 用录音、频谱、波形、细化作为连续句首，每次交代剩余失真 | [Asclepius](2026-11-10-sprint-05.md#5-asclepius-中间结果接续与事件图) | 并行模块不强行写成串行 |
+| 图文搭配与指标意义 | 结果、图注 | 误差曲线缺少可解释的形态对象 | 用共享时间轴和事件标注连接分布与实例 | [Asclepius](2026-11-10-sprint-05.md#5-asclepius-中间结果接续与事件图) | 不得平移掩盖时间误差或推断诊断准确率 |
+| 论证与研究判断 | 设计选择 | 失败方案后直接换成更好模型 | 定位无法推断的信息，再说明限定任务提供的先验 | [EarVoice](2026-11-10-sprint-05.md#6-earvoice-失败分析与实现不变量) | 限定词识别不能写成原声保真重建 |
+| 数学意义与语法 | 归一化实现 | 能量比和幅度增益混用 | 先给保持的能量比例，再定义窗口并取平方根形成样本增益 | [EarVoice](2026-11-10-sprint-05.md#6-earvoice-失败分析与实现不变量) | 低能量窗口与长度必须明确 |
+| 实验设计与创新定位 | 动机 | 所有链路衰减被归为同一问题 | 固定环境改变天线方向，分离可恢复失配与剩余传播损耗 | [Demeter](2026-11-10-sprint-05.md#7-demeter-可干预损失与硬件控制) | 定向改善不等于消除介质损失 |
+| 系统模型与数学意义 | 硬件设计 | 相位控制如何改变幅度没有解释 | 跟踪分路与耦合器中的复振幅并检查功率守恒 | [Demeter](2026-11-10-sprint-05.md#7-demeter-可干预损失与硬件控制) | 按实际损耗与器件范围补测 |
+| 篇章与数学意义 | 低层优化 | 局部加速缺少系统理由 | 从采样到达周期和响应期限推导指令预算，说明候选数量 | [DREW](2026-11-10-sprint-05.md#8-drew-实时预算与分层兼容性) | 局部7倍不能乘成吞吐增益 |
+| 实验设计与图文 | 兼容性、应用 | 低误包率承担全部联网主张 | 依次验证波形接收、完整连接、共存与应用吞吐 | [DREW](2026-11-10-sprint-05.md#8-drew-实时预算与分层兼容性) | 物理速率不直接等于应用有效速率 |
+| 篇章与研究目标 | 引言 | 三个模块与三个收益并列但不相连 | 从重复观测现象引出重定向、活跃选择和交付优先级 | [SpaceSched](2026-11-10-sprint-05.md#9-spacesched-共同现象与跨阶段信息流) | 任务改变时先改价值定义 |
+| 图形设计与信息接口 | 总览、阶段结果 | 模块只传递模糊results | 命名姿态轨迹、覆盖地图及其支持的局部判断 | [SpaceSched](2026-11-10-sprint-05.md#9-spacesched-共同现象与跨阶段信息流) | 不同阶段最优数值不可拼成一个输出 |
+| 系统模型与篇章 | 模型、相关工作 | 架构比较只数硬件方框 | 用同一矩阵形状区分天线、物理链与虚拟流 | [PhaseMO](2026-11-10-sprint-05.md#10-phasemo-共同模型与资源交换) | 代数表示能力受实际速率和带宽约束 |
+| 图文与实验可信度 | 架构图、能效 | 减少器件被直接写成无成本扩展 | 画出空间并行转时间复用，再绑定吞吐和功率模型 | [PhaseMO](2026-11-10-sprint-05.md#10-phasemo-共同模型与资源交换) | 仿真功耗与原型测量分别报告 |
 
 ## 论文索引
 
@@ -285,6 +306,16 @@
 | [2026-11-10 加读4](2026-11-10-sprint-04.md#8-orchloc-用物理共性解释更新与数据来源) | MobiSys 2024 | OrchLoc: In-Orchard Localization via a Single LoRa Gateway and Generative Diffusion Model-based Fingerprinting | [10.1145/3643832.3661876](https://doi.org/10.1145/3643832.3661876) |
 | [2026-11-10 加读4](2026-11-10-sprint-04.md#9-chirptransformer-用共同编码空间统领多项优化) | MobiSys 2024 | ChirpTransformer: Versatile LoRa Encoding for Low-power Wide-area IoT | [10.1145/3643832.3661861](https://doi.org/10.1145/3643832.3661861) |
 | [2026-11-10 加读4](2026-11-10-sprint-04.md#10-willow-把可分离信号与规模实验接起来) | MobiSys 2024 | Willow: Practical WiFi Backscatter Localization with Parallel Tags | [10.1145/3643832.3661853](https://doi.org/10.1145/3643832.3661853) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#1-ranbooster-共同操作与应用实例) | SIGCOMM 2025 | RANBooster: Democratizing advanced cellular connectivity through fronthaul middleboxes | [10.1145/3718958.3754349](https://doi.org/10.1145/3718958.3754349) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#2-vrf-条件精化与流水线依赖) | MobiSys 2024 | VRF: Vehicle Road-side Point Cloud Fusion | [10.1145/3643832.3661874](https://doi.org/10.1145/3643832.3661874) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#3-recap-应用需求与中间表示) | MobiCom 2024 | RECAP: 3D Traffic Reconstruction | [10.1145/3636534.3690691](https://doi.org/10.1145/3636534.3690691) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#4-lsencom-任务统计量与互补观测) | MobiCom 2025 | Making LoRa Sensing Coexist with Communication | [10.1145/3680207.3723478](https://doi.org/10.1145/3680207.3723478) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#5-asclepius-中间结果接续与事件图) | MobiCom 2024 | Exploring the Feasibility of Remote Cardiac Auscultation Using Earphones | [10.1145/3636534.3649366](https://doi.org/10.1145/3636534.3649366) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#6-earvoice-失败分析与实现不变量) | MobiSys 2024 | Enabling Hands-Free Voice Assistant Activation on Earphones | [10.1145/3643832.3661890](https://doi.org/10.1145/3643832.3661890) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#7-demeter-可干预损失与硬件控制) | MobiCom 2024 | Demeter: Reliable Cross-soil LPWAN with Low-cost Signal Polarization Alignment | [10.1145/3636534.3649358](https://doi.org/10.1145/3636534.3649358) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#8-drew-实时预算与分层兼容性) | MobiCom 2024 | DREW: Double-Throughput Emulated WiFi | [10.1145/3636534.3649388](https://doi.org/10.1145/3636534.3649388) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#9-spacesched-共同现象与跨阶段信息流) | MobiCom 2025 | SpaceSched: A Constellation-Wide Scheduling System for Resolving Ground Track Congestion in Remote Sensing | [10.1145/3680207.3765249](https://doi.org/10.1145/3680207.3765249) |
+| [2026-11-10 加读5](2026-11-10-sprint-05.md#10-phasemo-共同模型与资源交换) | INFOCOM 2025 | PhaseMO: A Universal Massive MIMO Architecture for Sustainable NextG | [10.1109/INFOCOM55648.2025.11044781](https://doi.org/10.1109/INFOCOM55648.2025.11044781) |
 
 ## 写作依据
 
