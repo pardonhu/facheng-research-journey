@@ -74,6 +74,7 @@
 | [2026-11-10 加读1](2026-11-10-sprint-01.md) | UTrack3D；Radarize；RISENSE；HybRadar；OneSense；M2-Fi；FedPDA；CACTUS；XPerT；Satori（共10篇） | 可观测性；操作定义；代价分解；机制与证据 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读2](2026-11-10-sprint-02.md) | Canas；XGate；DtS；SynCheck；MIMSID；SCR；DAF；ChannelMAE；GraphRx；TRIDENT（共10篇） | 研究问题形成；理论到实现；实验分工；训练时序 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读3](2026-11-10-sprint-03.md) | WAIS；MULoc；HELIX；DragonFly；SuperSight；ArrayLink；Janus；ARIA；ARMA；mmNorm（共10篇） | 共同未知量；剩余误差；跨层接口；分层实验与时间轨迹 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md) | Shepherd Nova；Polaris；SwapRAN；GazeTrak；ArachNet；HORCRUX；Pantheon；OrchLoc；ChirpTransformer；Willow（共10篇） | 共同任务与信息依赖；可重复实验；控制权与干扰；匹配对照和端到端指标 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -191,6 +192,26 @@
 | 数学意义与实验设计 | 时延预算、调度 | 局部阶段概率被当成端到端保证 | 用阶段预算推导控制压力，并分别检验模型、动作与完整延迟 | [ARMA](2026-11-10-sprint-03.md#9-arma-用信息接口连接两种调度周期) | 慢配置与逐帧修正的周期需按实现确认 |
 | 篇章与数学意义 | 方法概览 | 阶段顺序只有模块名称，没有递进理由 | 沿法向、相对距离函数、偏移常数说明每步消除与保留的歧义 | [mmNorm](2026-11-10-sprint-03.md#10-mmnorm-以剩余歧义组织重建过程) | 每步输入产物须对应当前方法 |
 | 指标定义与图文 | 形状评估 | 配准后形状误差被当成绝对位置精度 | 分开报告形状匹配阈值、平移校正及位置指标 | [mmNorm](2026-11-10-sprint-03.md#10-mmnorm-以剩余歧义组织重建过程) | 重建质量与位置对齐条件一起读 |
+| 实验可信度与数学意义 | 实验设计、时序分析 | 同一供能轨迹被当成所有事件应完全重合 | 分别定义保真度、重复性和活动时序，分析周期方差与相关性 | [Shepherd Nova](2026-11-10-sprint-04.md#1-shepherd-nova-从可控条件定义可重复实验) | 观测器时钟对齐不消除目标负载的行为差异 |
+| 图文搭配与读者理解 | 部署案例、图注 | 长期供能与短时收包事件缺少联系 | 用共享时间轴连接能量概览、局部GPIO和包日志 | [Shepherd Nova](2026-11-10-sprint-04.md#1-shepherd-nova-从可控条件定义可重复实验) | 活动窗口重叠只证明通信机会 |
+| 创新定位与篇章 | 引言、相关工作 | 新模态只靠否定旧方法来说明价值 | 先定义几何参考和上下文ID的共同任务，再解释新结构如何兼顾 | [Polaris](2026-11-10-sprint-04.md#2-polaris-连接标签定位与信息解码) | 同一任务下比较，不扩大为所有场景优势 |
+| 信息依赖与坐标表达 | 联合估计、系统图 | 方法似乎需要尚未得到的解码结果 | 分清相对磁体朝向、标签框架和最终符号，按产物推进 | [Polaris](2026-11-10-sprint-04.md#2-polaris-连接标签定位与信息解码) | 实际迭代算法需保留初始化和反馈 |
+| 研究目标与主张范围 | 动机、需求 | 可接受中断被写成普遍事实 | 明确操作场景、目标中断和部署资源取舍 | [SwapRAN](2026-11-10-sprint-04.md#3-swapran-从部署约束推导更新机制) | 实际业务容忍范围需独立证据 |
+| 系统模型与实现可信度 | 实现、故障分析 | 调度优先级被当成消除全部硬件干扰 | 分开执行权不变量、SMI等遗漏通道和针对性测量 | [SwapRAN](2026-11-10-sprint-04.md#3-swapran-从部署约束推导更新机制) | 具体因果链要有定位和验证 |
+| 图文与句式指代 | 方法、硬件映射 | 模块名称掩盖输入输出及固定算子 | 写清回波延迟轴、时间堆叠和固定模板卷积，单独检验压缩影响 | [GazeTrak](2026-11-10-sprint-04.md#4-gazetrak-用中间表示连接感知与实现) | 局部算子等价不推出整个流程无损 |
+| 指标定义与配置一致性 | 摘要、功耗结果 | 不同板卡、帧率和误差被拼成一个配置 | 绑定模型、帧率、实测功率和未来集成估计 | [GazeTrak](2026-11-10-sprint-04.md#4-gazetrak-用中间表示连接感知与实现) | 只有新整机测量才能将projected写成measured |
+| 篇章衔接与系统约束 | 设计概览 | 低功耗模块与调度器只有并列关系 | 从长包碰撞代价、广播接收成本和异构报告周期推导机制 | [ArachNet](2026-11-10-sprint-04.md#5-arachnet-以资源约束连接协议和动态证据) | 持续供能要包括占空比和感知负载 |
+| 指标定义与图形解释 | 协议评估 | 非空率被称为交付率、恢复被写成永久稳定 | 固定时隙分母并对齐占用与碰撞轨迹，区分观察和作者归因 | [ArachNet](2026-11-10-sprint-04.md#5-arachnet-以资源约束连接协议和动态证据) | 包交付还需解码与接收日志 |
+| 篇章与图文搭配 | 模型概览、算法 | 子信道、距离和重建结果指代混乱 | 用图组依次解释距离区间子信道、初值、上行拟合和下行预测 | [HORCRUX](2026-11-10-sprint-04.md#6-horcrux-追踪跨频预测中的中间变量) | 实部示例不替代复数误差统计 |
+| 数学意义与实验公平性 | 泛化、跨频评估 | 物理训练被扩展为无限泛化 | 用距离误差到跨频相位误差算例，再区分半带与独立RF链实验 | [HORCRUX](2026-11-10-sprint-04.md#6-horcrux-追踪跨频预测中的中间变量) | 运行时间需与实际信道稳定时间比较 |
+| 读者理解与系统模型 | 引言、运行时架构 | 借用CPU类比后直接跳到GPU方案 | 说明继承的调度原则、不可直接移植的状态成本和提交边界 | [Pantheon](2026-11-10-sprint-04.md#7-pantheon-找到可实施调度的控制位置) | 按后端实际能力说明可抢占位置 |
+| 篇章衔接与图文 | 设计、消融 | 切块和早退出被列成互不相关组件 | 从抢占压缩剩余时间推导共享前缀的缩减路径，再逐项消融 | [Pantheon](2026-11-10-sprint-04.md#7-pantheon-找到可实施调度的控制位置) | 推理状态复用不自动适用于权重更新 |
+| 系统模型与创新定位 | 动机、表示学习 | 可迁移只归因于模型能力强 | 区分共享介质参数与位置相关比例，说明稀疏观测更新什么 | [OrchLoc](2026-11-10-sprint-04.md#8-orchloc-用物理共性解释更新与数据来源) | 共享结构和观测覆盖要按当前环境核实 |
+| 可重复性与图文 | 数据集、实验设置 | 增广记录与独立实测混用 | 分别列实发包、跨信道组合、增广、微调子集和模拟导航 | [OrchLoc](2026-11-10-sprint-04.md#8-orchloc-用物理共性解释更新与数据来源) | 未经划分细节核对不判定有无泄漏 |
+| 篇章与信息取舍 | 方法概览、章节组织 | 多项机制缺少共同抽象 | 先给独立设计自由度，再按目标选择编码和配套解码 | [ChirpTransformer](2026-11-10-sprint-04.md#9-chirptransformer-用共同编码空间统领多项优化) | 各案例收益不合并成同一配置 |
+| 实验设计与数学意义 | 机制对照、结果 | 相同时长被误当相同数据率 | 同时匹配信息位数、符号时间和解码流程，区分门限和覆盖推算 | [ChirpTransformer](2026-11-10-sprint-04.md#9-chirptransformer-用共同编码空间统领多项优化) | 应用寿命估计须标明轨迹及功耗模型 |
+| 数学意义与机制条件 | 信号提取、方法 | 平衡码抵消被写成任何信道下成立 | 分开说明直达项稳定、实际接收样本平衡和时序漂移 | [Willow](2026-11-10-sprint-04.md#10-willow-把可分离信号与规模实验接起来) | 理想码本与丢包后的样本集合不同 |
+| 实验层级与图文 | 规模、定位评估 | 单标签最佳误差与多标签规模被拼接 | 绑定真实标签数、码长、同步状态、误差统计和测量场景 | [Willow](2026-11-10-sprint-04.md#10-willow-把可分离信号与规模实验接起来) | 识别、定位误差和完成时延分别计量 |
 
 ## 论文索引
 
@@ -254,6 +275,16 @@
 | [2026-11-10 加读3](2026-11-10-sprint-03.md#8-aria-让复用代价引出对齐机制) | MobiSys 2025 | ARIA: Optimizing Vision Foundation Model Inference on Heterogeneous Mobile Processors for Augmented Reality | [10.1145/3711875.3729161](https://doi.org/10.1145/3711875.3729161) |
 | [2026-11-10 加读3](2026-11-10-sprint-03.md#9-arma-用信息接口连接两种调度周期) | MobiSys 2025 | Towards End-to-End Latency Guarantee in MEC Live Video Analytics with App-RAN Mutual Awareness | [10.1145/3711875.3729139](https://doi.org/10.1145/3711875.3729139) |
 | [2026-11-10 加读3](2026-11-10-sprint-03.md#10-mmnorm-以剩余歧义组织重建过程) | MobiSys 2025 | Non-Line-of-Sight 3D Object Reconstruction via mmWave Surface Normal Estimation | [10.1145/3711875.3729138](https://doi.org/10.1145/3711875.3729138) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#1-shepherd-nova-从可控条件定义可重复实验) | MobiSys 2025 | Shepherd Nova: A Public Testbed for Rigorous Experiments Under Repeatable Energy-Harvesting Conditions | [10.1145/3711875.3729146](https://doi.org/10.1145/3711875.3729146) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#2-polaris-连接标签定位与信息解码) | MobiCom 2024 | Polaris: Accurate, Vision-free Fiducials for Mobile Robots with Magnetic Constellation | [10.1145/3636534.3690711](https://doi.org/10.1145/3636534.3690711) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#3-swapran-从部署约束推导更新机制) | MobiCom 2025 | How to Update Your 5G vRAN | [10.1145/3680207.3723464](https://doi.org/10.1145/3680207.3723464) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#4-gazetrak-用中间表示连接感知与实现) | MobiCom 2024 | GazeTrak: Exploring Acoustic-based Eye Tracking on a Glass Frame | [10.1145/3636534.3649376](https://doi.org/10.1145/3636534.3649376) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#5-arachnet-以资源约束连接协议和动态证据) | SIGCOMM 2025 | Acoustic Backscatter Network for Vehicle Body-in-White | [10.1145/3718958.3750486](https://doi.org/10.1145/3718958.3750486) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#6-horcrux-追踪跨频预测中的中间变量) | MobiCom 2024 | HORCRUX: Accurate Cross Band Channel Prediction | [10.1145/3636534.3649343](https://doi.org/10.1145/3636534.3649343) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#7-pantheon-找到可实施调度的控制位置) | MobiSys 2024 | Pantheon: Preemptible Multi-DNN Inference on Mobile Edge GPUs | [10.1145/3643832.3661878](https://doi.org/10.1145/3643832.3661878) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#8-orchloc-用物理共性解释更新与数据来源) | MobiSys 2024 | OrchLoc: In-Orchard Localization via a Single LoRa Gateway and Generative Diffusion Model-based Fingerprinting | [10.1145/3643832.3661876](https://doi.org/10.1145/3643832.3661876) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#9-chirptransformer-用共同编码空间统领多项优化) | MobiSys 2024 | ChirpTransformer: Versatile LoRa Encoding for Low-power Wide-area IoT | [10.1145/3643832.3661861](https://doi.org/10.1145/3643832.3661861) |
+| [2026-11-10 加读4](2026-11-10-sprint-04.md#10-willow-把可分离信号与规模实验接起来) | MobiSys 2024 | Willow: Practical WiFi Backscatter Localization with Parallel Tags | [10.1145/3643832.3661853](https://doi.org/10.1145/3643832.3661853) |
 
 ## 写作依据
 
