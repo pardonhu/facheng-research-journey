@@ -79,6 +79,7 @@
 | [2026-11-10 加读6](2026-11-10-sprint-06.md) | TerraSLAM；M2HO；SigChord；MagWear；AquaScan；FlowForm；SoMix；AeroEcho；LoRaSeek；MetaAI（共10篇） | 接口约束推导设计；离线在线责任；采集与推理时延；中间表示及图文分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读7](2026-11-10-sprint-07.md) | OssiSense；BeamFormer；TwinFocus；EasySpiro；Blinic；CCS-Fi；M²；SpecSentry；RF-SR；RFMagus（共10篇） | 任务充分性；物理模型到训练目标；多模态监督；图像与指标证据分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读8](2026-11-10-sprint-08.md) | GPSense；GPMS；MulDar；AutoMS；BeamMix；WiNB；MeAnt；CloudRIC；FedDC；TimelyLLM（共10篇） | 传播模型与观测意义；跨层协议；在线适应与时间线；完整英文方法及结果段 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读9](2026-11-10-sprint-09.md) | MicroSurf；ESPIRO；AquaScope（共3篇） | 模型校准与优化目标；受筛选输入的实验；跨层开销；本轮83篇总结 | 原创英文改稿、机制算例、图文分析及分组汇总 |
 
 ## 改稿案例检索
 
@@ -296,6 +297,12 @@
 | 图文与实验设计 | 补偿成本和切换 | 后台计算被称为零开销且永远有益 | 统一画训练与反演时间线，比较近似误差与补偿收益 | [FedDC](2026-11-10-sprint-08.md#9-feddc-关联挑战与补偿启停) | 分组相对提升与总体准确率分开 |
 | 系统模型与论证 | 分段方法 | 流式输出和释放计算混为一个机制 | 定义可独立消费单元及状态保存，再用相同工作量对照调度 | [TimelyLLM](2026-11-10-sprint-08.md#10-timelyllm-可执行单元与共同时间轴) | 执行依赖反馈时可用时间空间减小 |
 | 图文与指标定义 | 结果和公式 | 响应、等待、完成和效用使用同一加速词 | 在同一时钟上标各起止点，分别核算时间和效用差值 | [TimelyLLM](2026-11-10-sprint-08.md#10-timelyllm-可执行单元与共同时间轴) | 有负值的效用不直接解释为倍数加速 |
+| 系统模型与篇章 | 模型校准和设计 | 校准参数与搜索配置混写为一个优化过程 | 先说明测量如何约束仿真参数，再定义配置搜索及实测验证 | [MicroSurf](2026-11-10-sprint-09.md#1-microsurf-模型校准与物理目标) | 归一化空间模式相符不能推出绝对加热量准确 |
+| 数学意义与实验设计 | 目标函数 | 均匀性方差允许零能量退化解 | 用最小吸收功率解释目标选择，并以温度实验验证实际效果 | [MicroSurf](2026-11-10-sprint-09.md#1-microsurf-模型校准与物理目标) | 功率均衡不保证不同热容量物体同温 |
+| 系统模型与篇章 | 物理启发回归 | 前向关联被写成唯一逆解 | 明确模型约束的是参数比值，再说明个人化监督估计器的职责 | [ESPIRO](2026-11-10-sprint-09.md#2-espiro-物理启发估计与输入筛选) | 流量与肺容量分开；个人内交叉验证不代表跨人泛化 |
+| 实验设计与图文 | 筛选系统 | 接受样本误差被概括为全输入鲁棒性 | 同一接受输入上比较处理方法，同时报告拒绝比例与覆盖率 | [ESPIRO](2026-11-10-sprint-09.md#2-espiro-物理启发估计与输入筛选) | 干净参考输入不作为匹配消融条件 |
+| 篇章与系统模型 | 跨层方法 | 生成表示承担全部可靠性而其他模块职责模糊 | 分别说明表示大小、残余错误、编码和同步的作用 | [AquaScope](2026-11-10-sprint-09.md#3-aquascope-跨层职责与完整传输时延) | 所读公开版本早于会议；离线微调不视为在线适应 |
+| 图文与指标定义 | 传输案例和时延 | 净比特除速率代替端到端时间且只展示成功案例 | 逐层核算编码和帧结构，保留失败尝试及总分母 | [AquaScope](2026-11-10-sprint-09.md#3-aquascope-跨层职责与完整传输时延) | 感知相似度不等于语义完全正确；计时包含编码解码才称端到端 |
 
 ## 论文索引
 
@@ -409,6 +416,9 @@
 | [2026-11-10 加读8](2026-11-10-sprint-08.md#8-cloudric-目标优先级与信息提前量) | MobiCom 2024 | CloudRIC: Open Radio Access Network (O-RAN) Virtualization with Shared Heterogeneous Computing | [10.1145/3636534.3649381](https://doi.org/10.1145/3636534.3649381) |
 | [2026-11-10 加读8](2026-11-10-sprint-08.md#9-feddc-关联挑战与补偿启停) | MobiCom 2025 | When Device Delays Meet Data Heterogeneity in Federated AIoT Applications | [10.1145/3680207.3723481](https://doi.org/10.1145/3680207.3723481) |
 | [2026-11-10 加读8](2026-11-10-sprint-08.md#10-timelyllm-可执行单元与共同时间轴) | MobiSys 2026 | TimelyLLM: Time-sensitive LLM Serving System for Physical-I/O Limited Agents | [10.1145/3745756.3809203](https://doi.org/10.1145/3745756.3809203) |
+| [2026-11-10 加读9](2026-11-10-sprint-09.md#1-microsurf-模型校准与物理目标) | MobiCom 2024 | MicroSurf: Guiding Energy Distribution inside Microwave Oven with Metasurfaces | [10.1145/3636534.3690697](https://doi.org/10.1145/3636534.3690697) |
+| [2026-11-10 加读9](2026-11-10-sprint-09.md#2-espiro-物理启发估计与输入筛选) | MobiCom 2025 | ESPIRO: Natural Pulmonary Function Monitoring via Earphone-Acquired Speech | [10.1145/3680207.3723477](https://doi.org/10.1145/3680207.3723477) |
+| [2026-11-10 加读9](2026-11-10-sprint-09.md#3-aquascope-跨层职责与完整传输时延) | MobiSys 2026 | AquaScope: Reliable Underwater Image Transmission on Mobile Devices | [10.1145/3745756.3809226](https://doi.org/10.1145/3745756.3809226) |
 
 ## 写作依据
 
