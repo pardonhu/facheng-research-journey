@@ -72,6 +72,7 @@
 | [2026-11-09](2026-11-09.md) | BiScatter；μCeiver-Fi；NanoScatter；Hydra（共4篇） | 失败机制；指代与信息重心；摘要取舍；误差分布标注 | 8组英文改稿、失败机制布局与分布图放大方案、3项表达练习 |
 | [2026-11-10](2026-11-10.md) | RinP；SiWiS；B²LoRa；CGMM（共4篇） | 标题信息选择；长段压缩；正文与附录；图文一致性 | 8组英文训练、流程图与附录布局方案、3项表达练习 |
 | [2026-11-10 加读1](2026-11-10-sprint-01.md) | UTrack3D；Radarize；RISENSE；HybRadar；OneSense；M2-Fi；FedPDA；CACTUS；XPerT；Satori（共10篇） | 可观测性；操作定义；代价分解；机制与证据 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md) | Canas；XGate；DtS；SynCheck；MIMSID；SCR；DAF；ChannelMAE；GraphRx；TRIDENT（共10篇） | 研究问题形成；理论到实现；实验分工；训练时序 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -149,6 +150,26 @@
 | 实验与信息取舍 | 结果、开销 | 微调收益覆盖了选择与通信成本 | 分列选择成本、训练时间和生成质量 | [XPerT](2026-11-10-sprint-01.md#9-xpert-将表示连接到模型选择) | 按同一设备与任务条件判断总体收益 |
 | 数学与图文 | 原理、引图 | 公式消去干扰后缺少几何直觉 | 用平移、旋转、缩放与保持的角度解释 | [Satori](2026-11-10-sprint-01.md#10-satori-用几何不变量解释模拟调制) | 共同信道和状态稳定条件按模型给出 |
 | 指标与代价 | 摘要、实验 | 符号周期当成端到端延迟或部件功耗当成整机 | 标明激励窗口、接收处理和功耗对象 | [Satori](2026-11-10-sprint-01.md#10-satori-用几何不变量解释模拟调制) | 测量、EDA和数据表估计分别注明 |
+| 相关工作与创新定位 | 引言、相关工作 | 前作能力被笼统归为无法处理干扰 | 按接收覆盖、同信道碰撞和异斜率干扰组织区别 | [Canas](2026-11-10-sprint-02.md#1-canas-用可检查差异定位信道干扰) | 按实际基线能力与组合实验说明 |
+| 数学与机制表达 | 抵消算法 | 载荷正确直接推到波形完全已知 | 用相位残差例子引出副本校准的必要信息 | [Canas](2026-11-10-sprint-02.md#1-canas-用可检查差异定位信道干扰) | 固定幅度等条件下的算例与真实消除效果分开 |
+| 数学与读者理解 | 检测动机 | 一个频谱峰直接确定多个未知参数 | 展示同斜率不同周期的等价候选，再引入额外观测 | [XGate](2026-11-10-sprint-02.md#2-xgate-从参数歧义引出多窗口检测) | 模型可辨识性与解码成功率分开 |
+| 实验设计 | 并发、消融 | 接收数量增加全部归因于检测器 | 分别控制配置覆盖和碰撞恢复，解释互补收益 | [XGate](2026-11-10-sprint-02.md#2-xgate-从参数歧义引出多窗口检测) | 回放规模与实时实体测试分别对应 |
+| 问题形成与论证 | 引言、测量 | 所有重试都解释为前向丢包 | 按发送、卫星接收、服务器接收和反馈时间辨别原因 | [DtS](2026-11-10-sprint-02.md#3-dts-从事件时间线定位交付瓶颈) | 单条机制示例与整体发生比例分别给出 |
+| 数学与统计对象 | 调度、约束 | 不同流量窗口直接平均风险 | 按目标交付量加权并检查阈值方向与量纲 | [DtS](2026-11-10-sprint-02.md#3-dts-从事件时间线定位交付瓶颈) | 实测、地面仿真和未评审附录分别注明 |
+| 论证与代理指标 | 问题定义、评估 | 抽象质量指标替代下游任务验证 | 依次给定义、可测代理、干预和任务结果 | [SynCheck](2026-11-10-sprint-02.md#4-syncheck-让质量定义连接诊断与干预) | 定理方向、参考集和分类器依赖写清 |
+| 图文与训练流程 | 架构图、训练 | 检测器筛选与分类器赋标签混写 | 按共享骨干、双头和训练阶段标出监督进入位置 | [SynCheck](2026-11-10-sprint-02.md#4-syncheck-让质量定义连接诊断与干预) | 训练分支和推理分支按真实实现区分 |
+| 数学与理论解释 | 方法、概率模型 | 后验采样直接称为最小均方误差估计 | 明确损失、后验均值与实际输出的关系 | [MIMSID](2026-11-10-sprint-02.md#5-mimsid-连接测量设计与后验重建) | 理论身份不替代近似实现的验证 |
+| 图形与证据组织 | 评估、图注 | 逐步配置对照称为完整析因实验 | 依次用统计分布、同目标样例和算法对照解释 | [MIMSID](2026-11-10-sprint-02.md#5-mimsid-连接测量设计与后验重建) | 采集时间、推理时间及重校准分别记录 |
+| 数学与指标 | 频率估计 | 更密候选网格直接等同双峰分辨率 | 区分单峰定位、观测长度和多目标分辨证据 | [SCR](2026-11-10-sprint-02.md#6-scr-让检测分支与完整感知共享数据) | 按实际谱形和估计器说明 |
+| 图文与系统代价 | 系统图、结果 | 复用全部数据被解释成没有新增成本 | 图说明数据复用，正文分别给保持的指标和计算代价 | [SCR](2026-11-10-sprint-02.md#6-scr-让检测分支与完整感知共享数据) | 调制检测与身份认证各按功能说明 |
+| 篇章与设计动机 | 概览、实现 | 组件清单没有共同收益目标 | 按理论收益、阻断操作、数据路径和局部证据组织 | [DAF](2026-11-10-sprint-02.md#7-daf-让系统成本对应设计章节) | 瓶颈须来自当前系统测量 |
+| 实验解释 | 开销分析 | 总时间下降被归因于实际增加的组成项 | 显式相加分项时间并解释数据搬运改变 | [DAF](2026-11-10-sprint-02.md#7-daf-让系统成本对应设计章节) | 准确率、临时内存和运行内存分别定义 |
+| 方法动机与论证 | 引言、辅助任务 | 自监督被循环解释成学习有用特征 | 按缺标签、可观测结构、混杂因素和共享路径推进 | [ChannelMAE](2026-11-10-sprint-02.md#8-channelmae-从可获得观测建立辅助任务) | 辅助损失与主任务收益由实际实验连接 |
+| 句式与时序 | 在线流程 | 推理和更新颠倒或增广等同独立观测 | 逐句写数据何时可得、缓存和参数更新顺序 | [ChannelMAE](2026-11-10-sprint-02.md#8-channelmae-从可获得观测建立辅助任务) | 仿真流程不自动给出硬件截止时间保证 |
+| 数学与篇章 | 目标函数、算法 | 理想风险、上界和实现近似混为一体 | 按信息不可得、替代目标和可执行动作逐层衔接 | [GraphRx](2026-11-10-sprint-02.md#9-graphrx-从理想风险走到可计算协作) | 固定模型子问题的最优性限定在该子问题 |
+| 图文与实验 | 权重图、消融 | 结构热图直接证明最优性能 | 说明行列方向，再连接近似检查和性能对照 | [GraphRx](2026-11-10-sprint-02.md#9-graphrx-从理想风险走到可计算协作) | 权重大小与数据量、模型距离共同解释 |
+| 系统模型与机制 | 滤波、干扰抑制 | 带外无调制被写成没有反射 | 区分静态平均反射和负载切换承载信息的分量 | [TRIDENT](2026-11-10-sprint-02.md#10-trident-区分可控反射与网络收益) | 相同激励与信道条件下讨论系数差 |
+| 实验与网络指标 | 吞吐评估 | 局部受害链路改善等同整体网络提高 | 定义统计接收端和正确解码量，分开局部与全网实验 | [TRIDENT](2026-11-10-sprint-02.md#10-trident-区分可控反射与网络收益) | PCB实测与ASIC方案评估分别报告 |
 
 ## 论文索引
 
@@ -192,6 +213,16 @@
 | [2026-11-10 加读1](2026-11-10-sprint-01.md#8-cactus-让定义触发路径与结果相接) | MobiSys 2024 | CACTUS: Dynamically Switchable Context-aware micro-Classifiers for Efficient IoT Inference | [10.1145/3643832.3661888](https://doi.org/10.1145/3643832.3661888) |
 | [2026-11-10 加读1](2026-11-10-sprint-01.md#9-xpert-将表示连接到模型选择) | MobiSys 2025 | Never Start from Scratch: Expediting On-Device LLM Personalization via Explainable Model Selection | [10.1145/3711875.3729132](https://doi.org/10.1145/3711875.3729132) |
 | [2026-11-10 加读1](2026-11-10-sprint-01.md#10-satori-用几何不变量解释模拟调制) | MobiSys 2025 | Satori: In-band Analog Backscatter for Audio Transmission | [10.1145/3711875.3729153](https://doi.org/10.1145/3711875.3729153) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#1-canas-用可检查差异定位信道干扰) | MobiSys 2025 | Are LoRa Logical Channels Really Orthogonal? Practically Orthogonalizing Massive Logical Channels | [10.1145/3711875.3729125](https://doi.org/10.1145/3711875.3729125) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#2-xgate-从参数歧义引出多窗口检测) | MobiCom 2024 | Revolutionizing LoRa Gateway with XGate: Scalable Concurrent Transmission across Massive Logical Channels | [10.1145/3636534.3649375](https://doi.org/10.1145/3636534.3649375) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#3-dts-从事件时间线定位交付瓶颈) | SIGCOMM 2026 | Planet-Scale IoT Connectivity via LEO Satellites | [10.1145/3789240.3829147](https://doi.org/10.1145/3789240.3829147) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#4-syncheck-让质量定义连接诊断与干预) | MobiSys 2025 | Data Can Speak for Itself: Quality-guided Utilization of Wireless Synthetic Data | [10.1145/3711875.3729123](https://doi.org/10.1145/3711875.3729123) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#5-mimsid-连接测量设计与后验重建) | MobiSys 2025 | High-resolution mmWave Imaging using Metasurface and Diffusion | [10.1145/3711875.3729162](https://doi.org/10.1145/3711875.3729162) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#6-scr-让检测分支与完整感知共享数据) | MobiSys 2025 | Toward Spoofing-Resilient and Communication-Integrated MmWave Radar Sensing | [10.1145/3711875.3729155](https://doi.org/10.1145/3711875.3729155) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#7-daf-让系统成本对应设计章节) | MobiSys 2025 | DAF: An Efficient End-to-End Dynamic Activation Framework for on-Device DNN Training | [10.1145/3711875.3729145](https://doi.org/10.1145/3711875.3729145) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#8-channelmae-从可获得观测建立辅助任务) | INFOCOM 2026 | ChannelMAE: Self-Supervised Learning Assisted Online Adaptation of Neural Channel Estimators | [10.1109/INFOCOM59046.2026.11571223](https://doi.org/10.1109/INFOCOM59046.2026.11571223) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#9-graphrx-从理想风险走到可计算协作) | INFOCOM 2025 | GraphRx: Graph-Based Collaborative Learning Among Multiple Cells for Uplink Neural Receivers | [10.1109/INFOCOM55648.2025.11044726](https://doi.org/10.1109/INFOCOM55648.2025.11044726) |
+| [2026-11-10 加读2](2026-11-10-sprint-02.md#10-trident-区分可控反射与网络收益) | INFOCOM 2024 | Trident: Interference Avoidance in Multi-reader Backscatter Network via Frequency-space Division | [10.1109/INFOCOM52122.2024.10621258](https://doi.org/10.1109/INFOCOM52122.2024.10621258) |
 
 ## 写作依据
 
