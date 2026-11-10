@@ -73,6 +73,7 @@
 | [2026-11-10](2026-11-10.md) | RinP；SiWiS；B²LoRa；CGMM（共4篇） | 标题信息选择；长段压缩；正文与附录；图文一致性 | 8组英文训练、流程图与附录布局方案、3项表达练习 |
 | [2026-11-10 加读1](2026-11-10-sprint-01.md) | UTrack3D；Radarize；RISENSE；HybRadar；OneSense；M2-Fi；FedPDA；CACTUS；XPerT；Satori（共10篇） | 可观测性；操作定义；代价分解；机制与证据 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读2](2026-11-10-sprint-02.md) | Canas；XGate；DtS；SynCheck；MIMSID；SCR；DAF；ChannelMAE；GraphRx；TRIDENT（共10篇） | 研究问题形成；理论到实现；实验分工；训练时序 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md) | WAIS；MULoc；HELIX；DragonFly；SuperSight；ArrayLink；Janus；ARIA；ARMA；mmNorm（共10篇） | 共同未知量；剩余误差；跨层接口；分层实验与时间轨迹 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -170,6 +171,26 @@
 | 图文与实验 | 权重图、消融 | 结构热图直接证明最优性能 | 说明行列方向，再连接近似检查和性能对照 | [GraphRx](2026-11-10-sprint-02.md#9-graphrx-从理想风险走到可计算协作) | 权重大小与数据量、模型距离共同解释 |
 | 系统模型与机制 | 滤波、干扰抑制 | 带外无调制被写成没有反射 | 区分静态平均反射和负载切换承载信息的分量 | [TRIDENT](2026-11-10-sprint-02.md#10-trident-区分可控反射与网络收益) | 相同激励与信道条件下讨论系数差 |
 | 实验与网络指标 | 吞吐评估 | 局部受害链路改善等同整体网络提高 | 定义统计接收端和正确解码量，分开局部与全网实验 | [TRIDENT](2026-11-10-sprint-02.md#10-trident-区分可控反射与网络收益) | PCB实测与ASIC方案评估分别报告 |
+| 创新定位与篇章 | 引言、相关工作 | 已有组件各有能力，组合必要性未解释 | 区分地标身份可识别与全局更新成本，再引出双层状态依赖 | [WAIS](2026-11-10-sprint-03.md#1-wais-从互补信息提出融合问题) | 按实际模块职责保留互补关系 |
+| 数学意义与失败边界 | 估计器说明 | 主成分被直接等同于目标路径 | 分开说明共同相位抵消和反射能量分散条件，给最小协方差例 | [WAIS](2026-11-10-sprint-03.md#1-wais-从互补信息提出融合问题) | 最大特征值方向需满足物理对应条件 |
+| 数学意义与衔接 | 同步、相位恢复 | 每步笼统声称消除全部误差 | 每次差分明确共有项、保留传播量和下一步残差 | [MULoc](2026-11-10-sprint-03.md#2-muloc-按剩余误差解释差分步骤) | 误差稳定性与发送间隔按系统确认 |
+| 可重复性与符号 | 递推算法 | 参数数值未说明权重对象和初始条件 | 对照更新方程、系数、初值与符号约定，展开递推 | [MULoc](2026-11-10-sprint-03.md#2-muloc-按剩余误差解释差分步骤) | 作者勘误采用厘米；图页未核验的差异保留待查 |
+| 系统模型与研究问题 | 引言、架构 | 计算加速被当作接口传输压力的解决方案 | 用采样率与样本位宽核算接口需求，再解释移动处理边界 | [HELIX](2026-11-10-sprint-03.md#3-helix-从接口容量解释功能划分) | 原始IQ速率与净数据吞吐分开 |
+| 实验设计与图文 | 实现评估 | 星座、误码与吞吐互相替代证明 | 按组件正确性、信号代价、固定配置吞吐和请求回复时延安排实验 | [HELIX](2026-11-10-sprint-03.md#3-helix-从接口容量解释功能划分) | 保持调制码率与测量边界一致 |
+| 篇章衔接与数学意义 | 算法到硬件 | 硬件模块突然出现，必要性不清 | 推导采样间隔平方约束，再说明短观测的信号代价与前端回应 | [DragonFly](2026-11-10-sprint-03.md#4-dragonfly-用运动约束连接算法与硬件) | 按有效采样时刻核算，含噪表现另有实验 |
+| 实验可信度与主张 | 摘要、结果 | 最远距离、最快速度和最低误差被拼接 | 分别绑定场景、统计量、真值及采集条件 | [DragonFly](2026-11-10-sprint-03.md#4-dragonfly-用运动约束连接算法与硬件) | 拟合轨迹与独立绝对真值分开 |
+| 系统模型与读者理解 | 几何方法 | 公式数量替代可解性说明 | 先求同一虚拟雷达的两种表达，再交代几何独立性和条件数 | [SuperSight](2026-11-10-sprint-03.md#5-supersight-围绕同一未知量连接几何观测) | 已知标签几何与有效反射路径仍需满足 |
+| 图形设计与统计 | 图注、几何消融 | 二维配置与三维能力、分位线与置信区间混用 | 图注绑定间距、配置、坐标中位数及10/90分位 | [SuperSight](2026-11-10-sprint-03.md#5-supersight-围绕同一未知量连接几何观测) | 空间占用按完整阵列，保留反射面布置 |
+| 研究问题与篇章 | 动机、架构 | 前一设计取舍与后续MIMO模块缺少联系 | 先给剩余增益差与边际收益，再提出用空间流补容量的问题 | [ArrayLink](2026-11-10-sprint-03.md#6-arraylink-用孔径与增益取舍引出多流) | 面板数量是设计选择，最优性需成本模型 |
+| 实验层级与指标 | 仿真、缩尺验证 | 归一化信道条件数被写成实测卫星吞吐 | 明确几何模型、地面硬件、卫星尺度仿真与容量估计各自任务 | [ArrayLink](2026-11-10-sprint-03.md#6-arraylink-用孔径与增益取舍引出多流) | 总功率分摊和绝对SNR需独立检查 |
+| 创新定位与信息取舍 | 动机、相关工作 | 已知技术组合没有说明新联系 | 用中间表示尺寸说明旧条件缺失，再解释剪枝创造通信缩减机会 | [Janus](2026-11-10-sprint-03.md#7-janus-以模型结构解释剪枝与切分的组合) | 按目标模型真实结构和成本 |
+| 图文搭配与策略解释 | 调度评估 | 只画结果曲线，决策原因不可见 | 将带宽时延图与切分剪枝选择图对齐，解释预算使用 | [Janus](2026-11-10-sprint-03.md#7-janus-以模型结构解释剪枝与切分的组合) | 目标满足与预测误差分开，轨迹仿真身份明确 |
+| 篇章与设计必要性 | 并行架构 | 复用被写成没有代价的操作 | 先解释全局低频和局部高频，再说明时空差异及对齐位置 | [ARIA](2026-11-10-sprint-03.md#8-aria-让复用代价引出对齐机制) | 只迁移真实存在的复用条件 |
+| 图形设计与运行解释 | 运行轨迹 | 温度与性能多条曲线缺少关系 | 用共同时间轴连接条件、策略动作和结果 | [ARIA](2026-11-10-sprint-03.md#8-aria-让复用代价引出对齐机制) | 对照实现确认因果，VFM与辅助模型训练分别表述 |
+| 系统模型与读者理解 | 跨层接口 | 接口字段先于信息需求出现 | 先明确两侧缺少什么信息，再给最小交换字段和控制责任 | [ARMA](2026-11-10-sprint-03.md#9-arma-用信息接口连接两种调度周期) | 分离算法不自动等同正式隐私保证 |
+| 数学意义与实验设计 | 时延预算、调度 | 局部阶段概率被当成端到端保证 | 用阶段预算推导控制压力，并分别检验模型、动作与完整延迟 | [ARMA](2026-11-10-sprint-03.md#9-arma-用信息接口连接两种调度周期) | 慢配置与逐帧修正的周期需按实现确认 |
+| 篇章与数学意义 | 方法概览 | 阶段顺序只有模块名称，没有递进理由 | 沿法向、相对距离函数、偏移常数说明每步消除与保留的歧义 | [mmNorm](2026-11-10-sprint-03.md#10-mmnorm-以剩余歧义组织重建过程) | 每步输入产物须对应当前方法 |
+| 指标定义与图文 | 形状评估 | 配准后形状误差被当成绝对位置精度 | 分开报告形状匹配阈值、平移校正及位置指标 | [mmNorm](2026-11-10-sprint-03.md#10-mmnorm-以剩余歧义组织重建过程) | 重建质量与位置对齐条件一起读 |
 
 ## 论文索引
 
@@ -223,6 +244,16 @@
 | [2026-11-10 加读2](2026-11-10-sprint-02.md#8-channelmae-从可获得观测建立辅助任务) | INFOCOM 2026 | ChannelMAE: Self-Supervised Learning Assisted Online Adaptation of Neural Channel Estimators | [10.1109/INFOCOM59046.2026.11571223](https://doi.org/10.1109/INFOCOM59046.2026.11571223) |
 | [2026-11-10 加读2](2026-11-10-sprint-02.md#9-graphrx-从理想风险走到可计算协作) | INFOCOM 2025 | GraphRx: Graph-Based Collaborative Learning Among Multiple Cells for Uplink Neural Receivers | [10.1109/INFOCOM55648.2025.11044726](https://doi.org/10.1109/INFOCOM55648.2025.11044726) |
 | [2026-11-10 加读2](2026-11-10-sprint-02.md#10-trident-区分可控反射与网络收益) | INFOCOM 2024 | Trident: Interference Avoidance in Multi-reader Backscatter Network via Frequency-space Division | [10.1109/INFOCOM52122.2024.10621258](https://doi.org/10.1109/INFOCOM52122.2024.10621258) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#1-wais-从互补信息提出融合问题) | MobiSys 2024 | WAIS: Leveraging WiFi for Resource-Efficient SLAM | [10.1145/3643832.3661895](https://doi.org/10.1145/3643832.3661895) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#2-muloc-按剩余误差解释差分步骤) | INFOCOM 2025 | MULoc: Towards Millimeter-Accurate Localization for Unlimited UWB Tags via Anchor Overhearing | [10.1109/INFOCOM55648.2025.11044652](https://doi.org/10.1109/INFOCOM55648.2025.11044652) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#3-helix-从接口容量解释功能划分) | MobiSys 2025 | HELIX: High-speed Real-Time Experimentation Platform for 6G Wireless Networks | [10.1145/3711875.3729152](https://doi.org/10.1145/3711875.3729152) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#4-dragonfly-用运动约束连接算法与硬件) | MobiCom 2025 | DragonFly: Single mmWave Radar 3D Localization of Highly Dynamic Tags in GPS-Denied Environments | [10.1145/3680207.3765269](https://doi.org/10.1145/3680207.3765269) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#5-supersight-围绕同一未知量连接几何观测) | MobiSys 2024 | SuperSight: Sub-cm NLOS Localization for mmWave Backscatter | [10.1145/3643832.3661857](https://doi.org/10.1145/3643832.3661857) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#6-arraylink-用孔径与增益取舍引出多流) | INFOCOM 2026 | Satellites are closer than you think: A near field MIMO approach for Ground stations | [10.1109/INFOCOM59046.2026.11571506](https://doi.org/10.1109/INFOCOM59046.2026.11571506) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#7-janus-以模型结构解释剪枝与切分的组合) | INFOCOM 2025 | Janus: Collaborative Vision Transformer Under Dynamic Network Environment | [10.1109/INFOCOM55648.2025.11044626](https://doi.org/10.1109/INFOCOM55648.2025.11044626) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#8-aria-让复用代价引出对齐机制) | MobiSys 2025 | ARIA: Optimizing Vision Foundation Model Inference on Heterogeneous Mobile Processors for Augmented Reality | [10.1145/3711875.3729161](https://doi.org/10.1145/3711875.3729161) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#9-arma-用信息接口连接两种调度周期) | MobiSys 2025 | Towards End-to-End Latency Guarantee in MEC Live Video Analytics with App-RAN Mutual Awareness | [10.1145/3711875.3729139](https://doi.org/10.1145/3711875.3729139) |
+| [2026-11-10 加读3](2026-11-10-sprint-03.md#10-mmnorm-以剩余歧义组织重建过程) | MobiSys 2025 | Non-Line-of-Sight 3D Object Reconstruction via mmWave Surface Normal Estimation | [10.1145/3711875.3729138](https://doi.org/10.1145/3711875.3729138) |
 
 ## 写作依据
 
