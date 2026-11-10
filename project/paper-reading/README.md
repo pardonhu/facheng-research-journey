@@ -78,6 +78,7 @@
 | [2026-11-10 加读5](2026-11-10-sprint-05.md) | RANBooster；VRF；RECAP；LSencom；Asclepius；EarVoice；Demeter；DREW；SpaceSched；PhaseMO（共10篇） | 共同抽象；应用需求；中间表示与指代；时间依赖；图文分工与实现不变量 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读6](2026-11-10-sprint-06.md) | TerraSLAM；M2HO；SigChord；MagWear；AquaScan；FlowForm；SoMix；AeroEcho；LoRaSeek；MetaAI（共10篇） | 接口约束推导设计；离线在线责任；采集与推理时延；中间表示及图文分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读7](2026-11-10-sprint-07.md) | OssiSense；BeamFormer；TwinFocus；EasySpiro；Blinic；CCS-Fi；M²；SpecSentry；RF-SR；RFMagus（共10篇） | 任务充分性；物理模型到训练目标；多模态监督；图像与指标证据分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md) | GPSense；GPMS；MulDar；AutoMS；BeamMix；WiNB；MeAnt；CloudRIC；FedDC；TimelyLLM（共10篇） | 传播模型与观测意义；跨层协议；在线适应与时间线；完整英文方法及结果段 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -275,6 +276,26 @@
 | 图文与实验设计 | 机制解释、消融 | 干净频谱被当作收包改善证明 | 先用PER分离插值和残差贡献，再以匹配频谱解释变换 | [RF-SR](2026-11-10-sprint-07.md#9-rf-sr-插值责任与神经增量) | 损失不变性不能从相位推广到一般频偏 |
 | 系统模型与数学意义 | 配置目标 | 独立链路功率直接相加作为接收功率 | 写清复振幅及相位，再说明几何或统计信息如何形成配置 | [RFMagus](2026-11-10-sprint-07.md#10-rfmagus-环境编程与相干目标) | 优化后量化不保证每一步继续单调改善 |
 | 实验设计与图文 | 在线性和性能 | 配置效果与扫描搜索时间混合 | 给信息采集、搜索与执行的分工，并在线性量上解释dB差 | [RFMagus](2026-11-10-sprint-07.md#10-rfmagus-环境编程与相干目标) | 分位数差不当作逐样本配对增益 |
+| 篇章与句式 | 感知方法 | 原始测量直接跳到分类模型 | 依次解释测量、所需变化、几何与信号选择，保持句首信息接续 | [GPSense](2026-11-10-sprint-08.md#1-gpsense-导航测量到任务表示) | 不同接收机原始采样率与插值率分开 |
+| 数学意义与实验设计 | 多源融合 | 更多卫星被当作更多独立几何视角 | 核算视线变化，解释加权匹配用途与不同接收机条件 | [GPSense](2026-11-10-sprint-08.md#1-gpsense-导航测量到任务表示) | 单人八类和多人四类实验分别报告 |
+| 系统模型与篇章 | 定位方法 | 接收增强直接被当作原方程可用 | 先假定表面身份已知推导残余伪距，再解释如何匹配 | [GPMS](2026-11-10-sprint-08.md#2-gpms-虚拟锚点与路径关联) | 更多卫星不等于不同虚拟锚点 |
+| 实验设计与图文 | 评估总览 | 仿真覆盖和位置精度混成一个指标 | 依次验证角域设计、卫星接收、关联与手机定位 | [GPMS](2026-11-10-sprint-08.md#2-gpms-虚拟锚点与路径关联) | 静态定位与连续导航证据区分 |
+| 创新定位与图形 | 方法动机 | 更多设备没有解释新增观测 | 同一场景比较单站与跨设备路径，再用通道矩阵连接处理 | [MulDar](2026-11-10-sprint-08.md#3-muldar-新增路径与分层融合) | 通道数不能直接当独立约束或分辨率倍数 |
+| 系统模型与数学意义 | 同步、融合 | 同步精度被概括为一个系统数值 | 分开粗触发、频率、相位和姿态，再解释组内相干与组间幅度融合 | [MulDar](2026-11-10-sprint-08.md#3-muldar-新增路径与分层融合) | 原型仍有有线粗触发；点云平方距离方向明确 |
+| 论证与数学意义 | 器件到系统 | 理想反射与区域效用直接扩成吞吐 | 从阻抗、反射相位到制造条件，再定义表面和AP职责 | [AutoMS](2026-11-10-sprint-08.md#4-automs-制造模型与部署证据链) | 理想无损、实际损耗和并发调度分开 |
+| 图文与可信度 | 覆盖评估 | 布局、相位、实物和测量无法对应 | 保持同场景编号与尺度，沿设计到实测安排面板 | [AutoMS](2026-11-10-sprint-08.md#4-automs-制造模型与部署证据链) | 阈值截断的RSS与真实TCP分别解释 |
+| 信息取舍与系统模型 | 表示设计 | 只保留功率却声称支持多用户预编码 | 从下游需要的相位关系引出复数阵列张量和残差路径 | [BeamMix](2026-11-10-sprint-08.md#5-beammix-决策接口与多任务证据) | 学习分量不自动等于真实反射体 |
+| 篇章与实验设计 | 统一框架结果 | 一个任务优势概括所有任务 | 分别说明站点效率、阵列决策和角谱质量，保留强基线结果 | [BeamMix](2026-11-10-sprint-08.md#5-beammix-决策接口与多任务证据) | 混合系数不同于物理能量份额 |
+| 论证与图文 | 动机和系统图 | 宽带挑战只用形容词概括 | 分别测解码成本、信道误差耦合和时偏，推导设计义务 | [WiNB](2026-11-10-sprint-08.md#6-winb-动机实验与部署责任) | 先明确模型在接收端运行 |
+| 指标与数学意义 | 训练监督、实时性 | 重建代理被称为真实信道误差 | 定义可观测重建损失并匹配独立比特评价，再比推理与符号周期 | [WiNB](2026-11-10-sprint-08.md#6-winb-动机实验与部署责任) | 演示代码与完整论文实现分开 |
+| 系统模型与篇章 | MAC设计 | 物理链路和协议只有并列描述 | 从侧向慢传播推导竞争窗口、请求和同步时隙的必要性 | [MeAnt](2026-11-10-sprint-08.md#7-meant-传播差异到介质访问) | 控制传播与数据传播使用不同延迟 |
+| 实验设计与数学意义 | 扩展性和吞吐 | 器件数、并发节点和有效数据速率混同 | 给真实同时参与数，按编码信息位和控制开销核算有效速率 | [MeAnt](2026-11-10-sprint-08.md#7-meant-传播差异到介质访问) | 重复时隙不等于真实节点规模验证 |
+| 篇章与系统模型 | 控制策略 | 联合优化没有说明目标关系 | 按期限、吞吐、能耗顺序解释资源选择，再按相同顺序评价 | [CloudRIC](2026-11-10-sprint-08.md#8-cloudric-目标优先级与信息提前量) | 经验可靠性不由非对称损失自动保证 |
+| 图文与时延 | 控制数据路径 | 移出数据面被当作无额外成本 | 画出授权元数据、预分配、到达和完成反馈，分别列时限 | [CloudRIC](2026-11-10-sprint-08.md#8-cloudric-目标优先级与信息提前量) | 训练样本到达时间不同于完整适应时间 |
+| 创新定位与篇章 | 引言 | 两个挑战并列却没有新问题 | 说明迟到设备持有独有数据时权重调整的双重作用 | [FedDC](2026-11-10-sprint-08.md#9-feddc-关联挑战与补偿启停) | 旧模型更新匹配不能保证任意新模型等价 |
+| 图文与实验设计 | 补偿成本和切换 | 后台计算被称为零开销且永远有益 | 统一画训练与反演时间线，比较近似误差与补偿收益 | [FedDC](2026-11-10-sprint-08.md#9-feddc-关联挑战与补偿启停) | 分组相对提升与总体准确率分开 |
+| 系统模型与论证 | 分段方法 | 流式输出和释放计算混为一个机制 | 定义可独立消费单元及状态保存，再用相同工作量对照调度 | [TimelyLLM](2026-11-10-sprint-08.md#10-timelyllm-可执行单元与共同时间轴) | 执行依赖反馈时可用时间空间减小 |
+| 图文与指标定义 | 结果和公式 | 响应、等待、完成和效用使用同一加速词 | 在同一时钟上标各起止点，分别核算时间和效用差值 | [TimelyLLM](2026-11-10-sprint-08.md#10-timelyllm-可执行单元与共同时间轴) | 有负值的效用不直接解释为倍数加速 |
 
 ## 论文索引
 
@@ -378,6 +399,16 @@
 | [2026-11-10 加读7](2026-11-10-sprint-07.md#8-specsentry-任务输出与观测窗口) | MobiSys 2026 | SpecSentry: Micro-power Wideband Spectrum Surveillance for Ephemeral Transmissions | [10.1145/3745756.3809244](https://doi.org/10.1145/3745756.3809244) |
 | [2026-11-10 加读7](2026-11-10-sprint-07.md#9-rf-sr-插值责任与神经增量) | MobiSys 2026 | RF Super Resolution: A Deep Learning Approach to Spatial Enhancement for LoRa | [10.1145/3745756.3809216](https://doi.org/10.1145/3745756.3809216) |
 | [2026-11-10 加读7](2026-11-10-sprint-07.md#10-rfmagus-环境编程与相干目标) | MobiCom 2024 | RFMagus: Programming the Radio Environment With Networked Metasurfaces | [10.1145/3636534.3649344](https://doi.org/10.1145/3636534.3649344) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#1-gpsense-导航测量到任务表示) | MobiCom 2024 | GPSense: Passive Sensing with Pervasive GPS Signals | [10.1145/3636534.3690674](https://doi.org/10.1145/3636534.3690674) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#2-gpms-虚拟锚点与路径关联) | MobiCom 2024 | GPMS: Enabling Indoor GNSS Positioning using Passive Metasurfaces | [10.1145/3636534.3690702](https://doi.org/10.1145/3636534.3690702) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#3-muldar-新增路径与分层融合) | MobiSys 2026 | MulDar: Unleashing the Potential of Distributed COTS mmWave Radar by Exploiting Cross-Device Channels | [10.1145/3745756.3809206](https://doi.org/10.1145/3745756.3809206) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#4-automs-制造模型与部署证据链) | MobiCom 2024 | AutoMS: Automated Service for mmWave Coverage Optimization using Low-cost Metasurfaces | [10.1145/3636534.3649347](https://doi.org/10.1145/3636534.3649347) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#5-beammix-决策接口与多任务证据) | MobiSys 2026 | BeamMix: 3D Gaussian Mixture-of-Experts for Element-Space Wireless Channel Modeling | [10.1145/3745756.3809247](https://doi.org/10.1145/3745756.3809247) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#6-winb-动机实验与部署责任) | MobiSys 2026 | Wideband Low-complexity High-speed 5G NR Backscatter | [10.1145/3745756.3809221](https://doi.org/10.1145/3745756.3809221) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#7-meant-传播差异到介质访问) | MobiCom 2024 | Enabling Cross-Medium Wireless Networks with Miniature Mechanical Antennas | [10.1145/3636534.3649387](https://doi.org/10.1145/3636534.3649387) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#8-cloudric-目标优先级与信息提前量) | MobiCom 2024 | CloudRIC: Open Radio Access Network (O-RAN) Virtualization with Shared Heterogeneous Computing | [10.1145/3636534.3649381](https://doi.org/10.1145/3636534.3649381) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#9-feddc-关联挑战与补偿启停) | MobiCom 2025 | When Device Delays Meet Data Heterogeneity in Federated AIoT Applications | [10.1145/3680207.3723481](https://doi.org/10.1145/3680207.3723481) |
+| [2026-11-10 加读8](2026-11-10-sprint-08.md#10-timelyllm-可执行单元与共同时间轴) | MobiSys 2026 | TimelyLLM: Time-sensitive LLM Serving System for Physical-I/O Limited Agents | [10.1145/3745756.3809203](https://doi.org/10.1145/3745756.3809203) |
 
 ## 写作依据
 
