@@ -76,6 +76,7 @@
 | [2026-11-10 加读3](2026-11-10-sprint-03.md) | WAIS；MULoc；HELIX；DragonFly；SuperSight；ArrayLink；Janus；ARIA；ARMA；mmNorm（共10篇） | 共同未知量；剩余误差；跨层接口；分层实验与时间轨迹 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读4](2026-11-10-sprint-04.md) | Shepherd Nova；Polaris；SwapRAN；GazeTrak；ArachNet；HORCRUX；Pantheon；OrchLoc；ChirpTransformer；Willow（共10篇） | 共同任务与信息依赖；可重复实验；控制权与干扰；匹配对照和端到端指标 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读5](2026-11-10-sprint-05.md) | RANBooster；VRF；RECAP；LSencom；Asclepius；EarVoice；Demeter；DREW；SpaceSched；PhaseMO（共10篇） | 共同抽象；应用需求；中间表示与指代；时间依赖；图文分工与实现不变量 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md) | TerraSLAM；M2HO；SigChord；MagWear；AquaScan；FlowForm；SoMix；AeroEcho；LoRaSeek；MetaAI（共10篇） | 接口约束推导设计；离线在线责任；采集与推理时延；中间表示及图文分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -233,6 +234,26 @@
 | 图形设计与信息接口 | 总览、阶段结果 | 模块只传递模糊results | 命名姿态轨迹、覆盖地图及其支持的局部判断 | [SpaceSched](2026-11-10-sprint-05.md#9-spacesched-共同现象与跨阶段信息流) | 不同阶段最优数值不可拼成一个输出 |
 | 系统模型与篇章 | 模型、相关工作 | 架构比较只数硬件方框 | 用同一矩阵形状区分天线、物理链与虚拟流 | [PhaseMO](2026-11-10-sprint-05.md#10-phasemo-共同模型与资源交换) | 代数表示能力受实际速率和带宽约束 |
 | 图文与实验可信度 | 架构图、能效 | 减少器件被直接写成无成本扩展 | 画出空间并行转时间复用，再绑定吞吐和功率模型 | [PhaseMO](2026-11-10-sprint-05.md#10-phasemo-共同模型与资源交换) | 仿真功耗与原型测量分别报告 |
+| 系统模型与篇章 | 方法首段 | 定位坐标和所用地图不明确 | 先定义局部、全球及地理坐标，再说明离线变换怎样服务在线输出 | [TerraSLAM](2026-11-10-sprint-06.md#1-terraslam-坐标关系与离线在线交接) | 预建地图和粗位置信息需写清 |
+| 数学意义与实验设计 | 定位与时延 | 局部求解速度替代端到端定位代价 | 分别给变换可辨识条件、在线计算和离线准备 | [TerraSLAM](2026-11-10-sprint-06.md#1-terraslam-坐标关系与离线在线交接) | 自由度数量不能直接等于点对数 |
+| 论证与图文 | 动机、状态机 | 毫秒中断与秒级恢复被混为一个现象 | 沿链路切换、窗口变化、吞吐恢复组织同轴证据 | [M2HO](2026-11-10-sprint-06.md#2-m2ho-跨层现象与控制时序) | 不同时间尺度使用独立起止事件 |
+| 系统模型与公平性 | 控制与评估 | 容量估计和接收窗口单位混用 | 明确每RTT可发送字节及控制先后，说明实测轨迹和仿真执行 | [M2HO](2026-11-10-sprint-06.md#2-m2ho-跨层现象与控制时序) | 日志延迟限制在线部署主张 |
+| 系统模型与创新定位 | 重构方法 | 神经预测与线性求解只有模块清单 | 先给频段支持如何选择测量矩阵列，再解释后续解算 | [SigChord](2026-11-10-sprint-06.md#3-sigchord-先验支持与重构条件) | 支持正确仍需矩阵秩与数值条件 |
+| 指标定义与实验可信度 | 采样和时延 | 低采样率或高正确率缺少分母 | 给采样率归一化基准、正确头部条件及采集批长 | [SigChord](2026-11-10-sprint-06.md#3-sigchord-先验支持与重构条件) | 软件降采样与实际低速ADC分别说明 |
+| 论证与系统模型 | 传感器设计 | 模型参数与调节动作没有连接 | 从扰动幅度与饱和特性推导激励和反馈工作点 | [MagWear](2026-11-10-sprint-06.md#4-magwear-个体差异到工作点控制) | 最大输出幅度不等于最大局部灵敏度 |
+| 实验设计与数学意义 | 包容性和能耗 | 分组结果与设备续航缺少条件 | 交代人群分组、误差单位及连续或占空比功率 | [MagWear](2026-11-10-sprint-06.md#4-magwear-个体差异到工作点控制) | 有限人群实测不扩展为全部临床情形 |
+| 篇章与图形设计 | 系统概览 | 算法名称没有对应可测困难 | 先交代声呐接口与采样时间，再引出跟踪和状态历史 | [AquaScan](2026-11-10-sprint-06.md#5-aquascan-采样检测与状态推理) | 模拟危险动作识别与现实事故预防分开 |
+| 指标定义与实验解释 | 检测消融 | F1改善被写成所有错误同时下降 | 并列漏检和假阳性，用同一匹配规则解释综合指标 | [AquaScan](2026-11-10-sprint-06.md#5-aquascan-采样检测与状态推理) | 平均值不能直接反推原始计数 |
+| 系统组织与语法主语 | 设计和运行 | 固定表面被写成动态选路主体 | 分开离线创造路径、固定反射与终端扫描选择 | [FlowForm](2026-11-10-sprint-06.md#6-flowform-离线在线主体与代理目标) | 无表面控制不等于无运行开销 |
+| 数学意义与图文 | 优化及覆盖结果 | 带权目标被称为实际接收功率 | 用最小数值例解释归一化，再分别呈现仿真与实测 | [FlowForm](2026-11-10-sprint-06.md#6-flowform-离线在线主体与代理目标) | 代理目标与相干或非相干物理量区分 |
+| 篇章与系统模型 | 架构介绍 | 器件优势没有接到完整接收流程 | 按本振、混频、滤波、判决的功能链解释器件职责 | [SoMix](2026-11-10-sprint-06.md#7-somix-接收机功能链与比较单位) | 功能共用与不需要该功能分别表述 |
+| 实验设计与公平性 | 功耗和覆盖 | 前端功耗与整机功耗混比 | 列出注入源、偏置与后级边界，绑定距离和码率条件 | [SoMix](2026-11-10-sprint-06.md#7-somix-接收机功能链与比较单位) | 波形图中的高码率不替代对应BER测量 |
+| 系统模型与语法 | 同步和解调 | 异步标签被写成接收机无需对齐 | 说明标签随机偏移、接收机逐包对齐及轨迹分离 | [AeroEcho](2026-11-10-sprint-06.md#8-aeroecho-异步标签与接收端对齐) | 不同步发送不能等同无时间估计 |
+| 数学意义与实验可信度 | 并发和吞吐 | 仿真叠加流数量被当作实物节点部署 | 标记轨迹采集和碰撞合成层级，核算带宽与符号时长 | [AeroEcho](2026-11-10-sprint-06.md#8-aeroecho-异步标签与接收端对齐) | 名义吞吐需另计包头、控制和错误 |
+| 篇章与句式 | 网络结构 | 组件名称替代信息需求 | 先解释局部变化与全局轨迹，再安排模块和筛选跳连 | [LoRaSeek](2026-11-10-sprint-06.md#9-loraseek-信息需求与图文证据分工) | 按真实实现组织数据流 |
+| 图文与复杂度分析 | 结构图和消融 | 权重矩阵缩小被写成整网同倍加速 | 分别核算矩阵元素与乘加量，再给设备实测时延 | [LoRaSeek](2026-11-10-sprint-06.md#9-loraseek-信息需求与图文证据分工) | 组合消融不独立估计各子模块收益 |
+| 系统模型与图文 | 计算流程 | 空中完成部分运算被写成全流程物理执行 | 标出物理乘法、软件复数累加与取模所在位置 | [MetaAI](2026-11-10-sprint-06.md#10-metaai-物理计算与端到端责任) | 运算次序决定结果，不能提前取幅度 |
+| 实验设计与信息取舍 | 时延能耗和准确率 | 局部算子收益替代总开销 | 同时列采集传输、后处理和准确率，解释多类重复成本 | [MetaAI](2026-11-10-sprint-06.md#10-metaai-物理计算与端到端责任) | 数据增强不等于消除物理时钟偏差 |
 
 ## 论文索引
 
@@ -316,6 +337,16 @@
 | [2026-11-10 加读5](2026-11-10-sprint-05.md#8-drew-实时预算与分层兼容性) | MobiCom 2024 | DREW: Double-Throughput Emulated WiFi | [10.1145/3636534.3649388](https://doi.org/10.1145/3636534.3649388) |
 | [2026-11-10 加读5](2026-11-10-sprint-05.md#9-spacesched-共同现象与跨阶段信息流) | MobiCom 2025 | SpaceSched: A Constellation-Wide Scheduling System for Resolving Ground Track Congestion in Remote Sensing | [10.1145/3680207.3765249](https://doi.org/10.1145/3680207.3765249) |
 | [2026-11-10 加读5](2026-11-10-sprint-05.md#10-phasemo-共同模型与资源交换) | INFOCOM 2025 | PhaseMO: A Universal Massive MIMO Architecture for Sustainable NextG | [10.1109/INFOCOM55648.2025.11044781](https://doi.org/10.1109/INFOCOM55648.2025.11044781) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#1-terraslam-坐标关系与离线在线交接) | MobiSys 2025 | TerraSLAM: Towards GPS-Denied Localization | [10.1145/3711875.3729144](https://doi.org/10.1145/3711875.3729144) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#2-m2ho-跨层现象与控制时序) | MobiCom 2024 | M2HO: Mitigating the Adverse Effects of 5G Handovers on TCP | [10.1145/3636534.3690680](https://doi.org/10.1145/3636534.3690680) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#3-sigchord-先验支持与重构条件) | MobiSys 2025 | SigChord: Sniffing Wide Non-sparse Multiband Signals for Terrestrial and Non-terrestrial Networks | [10.1145/3711875.3729159](https://doi.org/10.1145/3711875.3729159) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#4-magwear-个体差异到工作点控制) | MobiCom 2024 | Exploring Biomagnetism for Inclusive Vital Sign Monitoring: Modeling and Implementation | [10.1145/3636534.3649349](https://doi.org/10.1145/3636534.3649349) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#5-aquascan-采样检测与状态推理) | MobiCom 2025 | AquaScan: A Sonar-based Underwater Sensing System for Human Activity Monitoring | [10.1145/3680207.3723484](https://doi.org/10.1145/3680207.3723484) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#6-flowform-离线在线主体与代理目标) | SIGCOMM 2026 | FlowForm: Scalable Passive Metasurface Network for mmWave Coverage Expansion | [10.1145/3789240.3829102](https://doi.org/10.1145/3789240.3829102) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#7-somix-接收机功能链与比较单位) | MobiSys 2025 | Unraveling the Missing Link in Low-power Communication: An Autodyning Receiver Architecture that Achieves a Long Range | [10.1145/3711875.3729164](https://doi.org/10.1145/3711875.3729164) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#8-aeroecho-异步标签与接收端对齐) | INFOCOM 2025 | AeroEcho: Towards Agricultural Low-power Wide-area Backscatter with Aerial Excitation Source | [10.1109/INFOCOM55648.2025.11044614](https://doi.org/10.1109/INFOCOM55648.2025.11044614) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#9-loraseek-信息需求与图文证据分工) | MobiCom 2025 | LoRaSeek: Boosting Denoising Ability in Neural-enhanced LoRa Decoder via Hierarchical Feature Extraction | [10.1145/3680207.3765241](https://doi.org/10.1145/3680207.3765241) |
+| [2026-11-10 加读6](2026-11-10-sprint-06.md#10-metaai-物理计算与端到端责任) | SIGCOMM 2025 | Enabling Over-the-Air AI for Edge Computing via Metasurface-Driven Physical Neural Networks | [10.1145/3718958.3750474](https://doi.org/10.1145/3718958.3750474) |
 
 ## 写作依据
 
