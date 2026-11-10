@@ -77,6 +77,7 @@
 | [2026-11-10 加读4](2026-11-10-sprint-04.md) | Shepherd Nova；Polaris；SwapRAN；GazeTrak；ArachNet；HORCRUX；Pantheon；OrchLoc；ChirpTransformer；Willow（共10篇） | 共同任务与信息依赖；可重复实验；控制权与干扰；匹配对照和端到端指标 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读5](2026-11-10-sprint-05.md) | RANBooster；VRF；RECAP；LSencom；Asclepius；EarVoice；Demeter；DREW；SpaceSched；PhaseMO（共10篇） | 共同抽象；应用需求；中间表示与指代；时间依赖；图文分工与实现不变量 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读6](2026-11-10-sprint-06.md) | TerraSLAM；M2HO；SigChord；MagWear；AquaScan；FlowForm；SoMix；AeroEcho；LoRaSeek；MetaAI（共10篇） | 接口约束推导设计；离线在线责任；采集与推理时延；中间表示及图文分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md) | OssiSense；BeamFormer；TwinFocus；EasySpiro；Blinic；CCS-Fi；M²；SpecSentry；RF-SR；RFMagus（共10篇） | 任务充分性；物理模型到训练目标；多模态监督；图像与指标证据分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 
 ## 改稿案例检索
 
@@ -254,6 +255,26 @@
 | 图文与复杂度分析 | 结构图和消融 | 权重矩阵缩小被写成整网同倍加速 | 分别核算矩阵元素与乘加量，再给设备实测时延 | [LoRaSeek](2026-11-10-sprint-06.md#9-loraseek-信息需求与图文证据分工) | 组合消融不独立估计各子模块收益 |
 | 系统模型与图文 | 计算流程 | 空中完成部分运算被写成全流程物理执行 | 标出物理乘法、软件复数累加与取模所在位置 | [MetaAI](2026-11-10-sprint-06.md#10-metaai-物理计算与端到端责任) | 运算次序决定结果，不能提前取幅度 |
 | 实验设计与信息取舍 | 时延能耗和准确率 | 局部算子收益替代总开销 | 同时列采集传输、后处理和准确率，解释多类重复成本 | [MetaAI](2026-11-10-sprint-06.md#10-metaai-物理计算与端到端责任) | 数据增强不等于消除物理时钟偏差 |
+| 系统模型与篇章 | 反演方法 | 传统模型到神经网络缺少中间推导 | 先说明孔径混合，再说明初始重建的残余衍射及多频信息 | [OssiSense](2026-11-10-sprint-07.md#1-ossisense-前向模型与多频校正) | 本文所读为正式录用工作的早期公开作者版本 |
+| 创新定位与指标 | 相关工作、成像精度 | 相邻研究任务被当作同一精度比赛 | 按表面、运动和内部截面区分输出；分开网格与中心定位误差 | [OssiSense](2026-11-10-sprint-07.md#1-ossisense-前向模型与多频校正) | 肉样实验不扩展为人体诊断 |
+| 信息取舍与系统模型 | 方法首段 | 复杂模型之前没有定义所需输出 | 从选波束所需功率引出模式编码和固定潜在表示 | [BeamFormer](2026-11-10-sprint-07.md#2-beamformer-决策所需表示与核验层级) | 硬件统一表示与无需适配区分 |
+| 实验可信度与图文 | 结果、附录 | 重画缓存图被称作完整复现 | 分别说明缓存绘图、重新推理、重新训练和新采集 | [BeamFormer](2026-11-10-sprint-07.md#2-beamformer-决策所需表示与核验层级) | 注明执行路径和设备，不能由角误差代替功率损失 |
+| 数学意义与论证 | 方法动机 | 公共位姿误差被写成相同相位误差 | 由视线投影推导相位差上界，再说明参考位置条件 | [TwinFocus](2026-11-10-sprint-07.md#3-twinfocus-校正迁移条件与优化对象) | 误差幅度与高斯标准差区分 |
+| 语法与系统模型 | 可微优化 | 训练、推理和单次优化混用 | 明确固定模板、相位变量、幅度域损失及迁移对象 | [TwinFocus](2026-11-10-sprint-07.md#3-twinfocus-校正迁移条件与优化对象) | 预训练前端与聚焦是否需要配对训练分开 |
+| 篇章与语法 | 多模态方法 | 额外传感器被当作无条件提升 | 用混杂因素引出辅助线索，再交代预训练、排序监督与目标 | [EasySpiro](2026-11-10-sprint-07.md#4-easyspiro-输入歧义与监督来源) | 重建表征不等于真实生理测量 |
+| 实验设计与数学核验 | 重建和下游指标 | 频谱相似被直接当作诊断有效 | 在相同留出人群上联读重建和预测结果，检查恒等输入公式 | [EasySpiro](2026-11-10-sprint-07.md#4-easyspiro-输入歧义与监督来源) | 计划中的同划分实验不能写成已完成 |
+| 篇章与实验设计 | 评估导言 | 按模块罗列结果而缺少待回答问题 | 分别安排预测能力、设计贡献和条件变化实验 | [Blinic](2026-11-10-sprint-07.md#5-blinic-问题驱动评估与编码假设) | 训练特权信息需按受试者隔离，居家样本范围明确 |
+| 系统模型与图形 | 编码和虚拟阵列 | 线性解混被写成独立物理接收机 | 时间轴、观测方程、解码和虚拟通道依次连接 | [Blinic](2026-11-10-sprint-07.md#5-blinic-问题驱动评估与编码假设) | 跨时隙稳定性与解码噪声相关需保留 |
+| 数学意义与论证 | 物理启发学习 | 可恢复性和通用逼近替代采样条件 | 从理想稀疏谱过渡到真实偏差，再交代谱标签生成 | [CCS-Fi](2026-11-10-sprint-07.md#6-ccs-fi-稀疏观测到谱监督) | 检查两个候选之差，谱标签仍含参数监督 |
+| 指标与图文 | 定位、分辨率 | 中位位置误差被写成双目标最小间距 | 分别画定位CDF和双目标装置，统一比较单位 | [CCS-Fi](2026-11-10-sprint-07.md#6-ccs-fi-稀疏观测到谱监督) | 基线频段和场景条件明确 |
+| 篇章与创新定位 | 引言 | 器件细节抢走系统问题主线 | 从外部载波源依赖引出本地稳定性，再交代器件分工 | [M²](2026-11-10-sprint-07.md#7-m²-部署依赖到器件条件) | 局部去依赖不扩大为全部部署问题解决 |
+| 数学意义与信息取舍 | 机制、附录 | 高Q性质直接推出电路可用 | 正文保留振荡和匹配条件，附录展开架构比较 | [M²](2026-11-10-sprint-07.md#7-m²-部署依赖到器件条件) | 前端功耗、偏置功耗和推算BER分别报告 |
+| 信息取舍与模型 | 问题定义 | 应用愿景没有导出必要信息 | 先定义时间、中心频率和带宽输出，再解释先编码后折叠 | [SpecSentry](2026-11-10-sprint-07.md#8-specsentry-任务输出与观测窗口) | 参数估计不等于波形解码 |
+| 实验设计与图文 | 参数选择 | FFT越长被写成统一更优 | 在固定观察窗口内比较变换长度，再跨窗口解释变化 | [SpecSentry](2026-11-10-sprint-07.md#8-specsentry-任务输出与观测窗口) | 仿真消融与空口误差分开 |
+| 篇章与系统模型 | 残差架构 | 大任务名字遮蔽各支路责任 | 解释常规插值已完成什么，再给加性修正的目标与符号 | [RF-SR](2026-11-10-sprint-07.md#9-rf-sr-插值责任与神经增量) | 低速输入表现接近不等于补回所有信息 |
+| 图文与实验设计 | 机制解释、消融 | 干净频谱被当作收包改善证明 | 先用PER分离插值和残差贡献，再以匹配频谱解释变换 | [RF-SR](2026-11-10-sprint-07.md#9-rf-sr-插值责任与神经增量) | 损失不变性不能从相位推广到一般频偏 |
+| 系统模型与数学意义 | 配置目标 | 独立链路功率直接相加作为接收功率 | 写清复振幅及相位，再说明几何或统计信息如何形成配置 | [RFMagus](2026-11-10-sprint-07.md#10-rfmagus-环境编程与相干目标) | 优化后量化不保证每一步继续单调改善 |
+| 实验设计与图文 | 在线性和性能 | 配置效果与扫描搜索时间混合 | 给信息采集、搜索与执行的分工，并在线性量上解释dB差 | [RFMagus](2026-11-10-sprint-07.md#10-rfmagus-环境编程与相干目标) | 分位数差不当作逐样本配对增益 |
 
 ## 论文索引
 
@@ -347,6 +368,16 @@
 | [2026-11-10 加读6](2026-11-10-sprint-06.md#8-aeroecho-异步标签与接收端对齐) | INFOCOM 2025 | AeroEcho: Towards Agricultural Low-power Wide-area Backscatter with Aerial Excitation Source | [10.1109/INFOCOM55648.2025.11044614](https://doi.org/10.1109/INFOCOM55648.2025.11044614) |
 | [2026-11-10 加读6](2026-11-10-sprint-06.md#9-loraseek-信息需求与图文证据分工) | MobiCom 2025 | LoRaSeek: Boosting Denoising Ability in Neural-enhanced LoRa Decoder via Hierarchical Feature Extraction | [10.1145/3680207.3765241](https://doi.org/10.1145/3680207.3765241) |
 | [2026-11-10 加读6](2026-11-10-sprint-06.md#10-metaai-物理计算与端到端责任) | SIGCOMM 2025 | Enabling Over-the-Air AI for Edge Computing via Metasurface-Driven Physical Neural Networks | [10.1145/3718958.3750474](https://doi.org/10.1145/3718958.3750474) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#1-ossisense-前向模型与多频校正) | MobiSys 2026 | Towards Seeing Bones at Radio Frequency | [10.1145/3745756.3809223](https://doi.org/10.1145/3745756.3809223) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#2-beamformer-决策所需表示与核验层级) | MobiSys 2026 | BeamFormer: Transformer-based Beam Management for 6G Networks | [10.1145/3745756.3809229](https://doi.org/10.1145/3745756.3809229) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#3-twinfocus-校正迁移条件与优化对象) | MobiSys 2026 | TwinFocus: Autofocus for Handheld mmWave SAR Imaging via Physical and Digital Twin References | [10.1145/3745756.3809185](https://doi.org/10.1145/3745756.3809185) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#4-easyspiro-输入歧义与监督来源) | MobiCom 2025 | EasySpiro: Assessing Lung Function via Arbitrary Exhalations on Commodity Earphones | [10.1145/3680207.3723489](https://doi.org/10.1145/3680207.3723489) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#5-blinic-问题驱动评估与编码假设) | MobiCom 2025 | Home-based Dry Eye Assessment via Blink Kinematics Using mmWave and Clinical Knowledge Distillation | [10.1145/3680207.3765268](https://doi.org/10.1145/3680207.3765268) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#6-ccs-fi-稀疏观测到谱监督) | INFOCOM 2025 | CCS-Fi: Widening Wi-Fi Sensing Bandwidth via Compressive Channel Sampling | [10.1109/INFOCOM55648.2025.11044653](https://doi.org/10.1109/INFOCOM55648.2025.11044653) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#7-m²-部署依赖到器件条件) | MobiSys 2026 | Microwatt Microwave (M²) Oscillator: Going Beyond the Delegation Architecture of Low-power Wireless Communication | [10.1145/3745756.3809248](https://doi.org/10.1145/3745756.3809248) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#8-specsentry-任务输出与观测窗口) | MobiSys 2026 | SpecSentry: Micro-power Wideband Spectrum Surveillance for Ephemeral Transmissions | [10.1145/3745756.3809244](https://doi.org/10.1145/3745756.3809244) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#9-rf-sr-插值责任与神经增量) | MobiSys 2026 | RF Super Resolution: A Deep Learning Approach to Spatial Enhancement for LoRa | [10.1145/3745756.3809216](https://doi.org/10.1145/3745756.3809216) |
+| [2026-11-10 加读7](2026-11-10-sprint-07.md#10-rfmagus-环境编程与相干目标) | MobiCom 2024 | RFMagus: Programming the Radio Environment With Networked Metasurfaces | [10.1145/3636534.3649344](https://doi.org/10.1145/3636534.3649344) |
 
 ## 写作依据
 
