@@ -80,6 +80,7 @@
 | [2026-11-10 加读7](2026-11-10-sprint-07.md) | OssiSense；BeamFormer；TwinFocus；EasySpiro；Blinic；CCS-Fi；M²；SpecSentry；RF-SR；RFMagus（共10篇） | 任务充分性；物理模型到训练目标；多模态监督；图像与指标证据分工 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读8](2026-11-10-sprint-08.md) | GPSense；GPMS；MulDar；AutoMS；BeamMix；WiNB；MeAnt；CloudRIC；FedDC；TimelyLLM（共10篇） | 传播模型与观测意义；跨层协议；在线适应与时间线；完整英文方法及结果段 | 原创英文改稿、机制算例、图文分析及每10篇汇总 |
 | [2026-11-10 加读9](2026-11-10-sprint-09.md) | MicroSurf；ESPIRO；AquaScope（共3篇） | 模型校准与优化目标；受筛选输入的实验；跨层开销；本轮83篇总结 | 原创英文改稿、机制算例、图文分析及分组汇总 |
+| [2026-11-11](2026-11-11.md) | TinyLEO、Nexus、RF-LEGO、EchoBLUE（4篇） | 约束和峰值工况、可训练量及数据划分、定位可观测性与实测范围 | 原创英文改稿、图文练习、算例、3组表达及8条索引案例 |
 
 ## 改稿案例检索
 
@@ -303,6 +304,14 @@
 | 实验设计与图文 | 筛选系统 | 接受样本误差被概括为全输入鲁棒性 | 同一接受输入上比较处理方法，同时报告拒绝比例与覆盖率 | [ESPIRO](2026-11-10-sprint-09.md#2-espiro-物理启发估计与输入筛选) | 干净参考输入不作为匹配消融条件 |
 | 篇章与系统模型 | 跨层方法 | 生成表示承担全部可靠性而其他模块职责模糊 | 分别说明表示大小、残余错误、编码和同步的作用 | [AquaScope](2026-11-10-sprint-09.md#3-aquascope-跨层职责与完整传输时延) | 所读公开版本早于会议；离线微调不视为在线适应 |
 | 图文与指标定义 | 传输案例和时延 | 净比特除速率代替端到端时间且只展示成功案例 | 逐层核算编码和帧结构，保留失败尝试及总分母 | [AquaScope](2026-11-10-sprint-09.md#3-aquascope-跨层职责与完整传输时延) | 感知相似度不等于语义完全正确；计时包含编码解码才称端到端 |
+| 篇章与语法主语 | 方法概述 | 训练标签、推理分数与调度决策都由模型充当主语 | 按时序写剖析阶段怎样贴标签、模型怎样评分、调度器在何时作出选择 | [Nexus](2026-11-11.md#nexus) | 模型输出、决策门槛和物理时延单位分别核对 |
+| 实验设计与信息取舍 | 摘要、系统容量 | 最多并发小区与最高聚合速率拼接成一个运行点 | 为每一组峰值配上数据流、带宽和工作核数，查明计数范围 | [Nexus](2026-11-11.md#nexus) | 若同一次运行同时取得两项结果，可在同句报告 |
+| 数学意义与读者理解 | 物理启发方法 | 将固定变换的精确等式沿用到训练后的算子 | 指出保留的坐标、可学习的算子和会变化的量，用小输入检查等价主张 | [RF-LEGO](2026-11-11.md#rf-lego) | 频点可索引与幅值保真分别验证 |
+| 实验可信度与图文 | 跨域识别结果 | 将多个划分的均值提升扩写为各域均有提升 | 先交代标签合并规则和评估划分，用图核对逐项例外，再给绝对增益 | [RF-LEGO](2026-11-11.md#rf-lego) | 确定具体受益类别需逐类数据 |
+| 数学意义与读者理解 | 定位方法 | 称两路信号互补却没有说明多出什么观测 | 给出一对观测中共享的时延项、不同的速度系数及采样时序，再引入联合估计 | [EchoBLUE](2026-11-11.md#echoblue) | 观测符号和同步条件按当前系统重新核对 |
+| 实验设计与图文 | 总体误差和机制消融 | 用所有轨迹的中位数解释某项补偿为何有效 | 报告轨迹组成；在同一轨迹内检查补偿开关，再用独立时序对照归因 | [EchoBLUE](2026-11-11.md#echoblue) | 泳池三维定位与河中单锚测距的维度、范围和参照分别标明 |
+| 数学意义与系统模型 | 资源约束 | 用总量充足推断各节点各时段需求达标 | 给每一条局部需求标上区域与时刻，用反例说明总量核算会漏掉什么 | [TinyLEO](2026-11-11.md#tinyleo) | 可行候选配置与证明最小规模分别表述 |
+| 图文配合与指标定义 | 结果与摘要 | 将局部需求、放宽可用性后的最高节省倍数用于全局 | 按需求图和服务目标组织比较，图注说明基准规模，正文解释指定配置 | [TinyLEO](2026-11-11.md#tinyleo) | 规划规模、分组级仿真与实际部署分别说明 |
 
 ## 论文索引
 
@@ -419,6 +428,10 @@
 | [2026-11-10 加读9](2026-11-10-sprint-09.md#1-microsurf-模型校准与物理目标) | MobiCom 2024 | MicroSurf: Guiding Energy Distribution inside Microwave Oven with Metasurfaces | [10.1145/3636534.3690697](https://doi.org/10.1145/3636534.3690697) |
 | [2026-11-10 加读9](2026-11-10-sprint-09.md#2-espiro-物理启发估计与输入筛选) | MobiCom 2025 | ESPIRO: Natural Pulmonary Function Monitoring via Earphone-Acquired Speech | [10.1145/3680207.3723477](https://doi.org/10.1145/3680207.3723477) |
 | [2026-11-10 加读9](2026-11-10-sprint-09.md#3-aquascope-跨层职责与完整传输时延) | MobiSys 2026 | AquaScope: Reliable Underwater Image Transmission on Mobile Devices | [10.1145/3745756.3809226](https://doi.org/10.1145/3745756.3809226) |
+| [2026-11-11](2026-11-11.md#nexus) | MobiCom 2026 | Nexus: Efficient and Scalable Multi-Cell mmWave Baseband Processing with Heterogeneous Compute | [10.1145/3795866.3796685](https://doi.org/10.1145/3795866.3796685) |
+| [2026-11-11](2026-11-11.md#rf-lego) | MobiCom 2026 | RF-LEGO: Modularized Signal Processing-Deep Learning Co-Design for RF Sensing via Deep Unrolling | [10.1145/3795866.3796683](https://doi.org/10.1145/3795866.3796683) |
+| [2026-11-11](2026-11-11.md#echoblue) | MobiCom 2025 | Scalable and Low Power Localization for Underwater Robots | [10.1145/3680207.3765265](https://doi.org/10.1145/3680207.3765265) |
+| [2026-11-11](2026-11-11.md#tinyleo) | SIGCOMM 2025 | Small-scale LEO Satellite Networking for Global-scale Demands | [10.1145/3718958.3750525](https://doi.org/10.1145/3718958.3750525) |
 
 ## 写作依据
 
