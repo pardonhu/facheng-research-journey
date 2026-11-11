@@ -12,6 +12,8 @@
 ## 项目记录
 
 - [电芯 UWB 组网：代码、实验记录与跨模型交接](projects/cell-uwb-network/README.md)
+- [论文研读与改稿训练](projects/paper-reading/README.md)
+- [Codex 交接索引](<projects/codex arxive/README.md>)
 - [全部项目](projects/README.md)
 
 ## 科研协作复盘
