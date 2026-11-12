@@ -65,7 +65,7 @@ $$
 - 远程计算：[服务器与多 GPU 实验调度](docs/fastset-journal-retrospective/08-远程服务器与多GPU实验调度.md)
 - 写作与展示：[论文与科研表达](docs/fastset-journal-retrospective/03-论文与科研表达.md) · [图表与 PPT 交付](docs/fastset-journal-retrospective/04-图表与PPT交付.md)
 - 快速使用：[开工与交付模板](docs/fastset-journal-retrospective/07-开工与交付模板.md)
-- 核对来源：[复盘依据与偏好台账](docs/fastset-journal-retrospective/06-复盘依据与偏好台账.md)
+- 核对来源：[复盘依据与偏好记录](docs/fastset-journal-retrospective/06-复盘依据与偏好记录.md)
 
 原有指南保留原主线，新增经验以注明来源的补充章节维护。复盘中的建议、明确偏好和项目限定条件分别标注，后续任务以最新要求为准。
 
