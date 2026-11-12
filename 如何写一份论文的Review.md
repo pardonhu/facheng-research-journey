@@ -8,6 +8,8 @@
 
 Review 按 Summary、Strengths、Weaknesses 三个部分组织。
 
+英文用词以大学英语六级左右为宜。用自己平时会写的词，保留准确的专业术语。比如两组结果对不上，写 “the results are inconsistent” 就很清楚，语气也适合正式审稿。
+
 ## 二 Summary
 
 Summary 以“This paper”开头，用自己的话客观地概括研究问题、核心想法、方法及主要结果。不需要写很多，四五行文字即可。即使评价修改稿，也不需要以“This revised correspondence”开头。
@@ -44,6 +46,10 @@ Generally, this paper presents a solid piece of work with useful simulation resu
 ## 四 Weaknesses
 
 Weaknesses 同样按照“如何评价一份工作”的逻辑展开，指出选题、方法和评估中的不足，并提出质疑。
+
+写主要批评时，先想清楚：作者最想证明什么？我发现的问题会怎样影响这个结论？挑一个最能说明问题的例子，把这层关系写出来就够了。建议拒稿时，把最影响录用判断的问题放在前面。
+
+例如，一篇论文声称新方法能识别从未见过的设备，但测试集里仍是训练时见过的设备。可以直接写：“The test set contains the same devices used for training, so the reported accuracy tells us little about performance on a new device.” 这一句已经说明实验能支持多大的结论，再补一句笼统的“实验不充分”就多余了。
 
 整体评价积极、已经在 Strengths 开头表态时，Weaknesses 不需要再加一段总体评价，直接列出问题即可。如果整体评价消极，则可以在 Weaknesses 开头概括主要不足，说明为什么工作不够有说服力，再逐条展开。
 
@@ -111,6 +117,8 @@ Strong motivation. Joint angle-distance search is computationally expensive. The
 Equation (23) needs clarification. How are its zero blocks implemented in the stated analog network?
 
 上面的具体问题只是句式示例，不是每篇论文都需要提出的问题。实际 Review 中要根据所读论文写判断和依据。
+
+同一份 Review 里，有的意见一句就能讲清，有的需要举例。按问题本身决定长短，少用反复出现的小标题、固定开场和段末表态。把稿件里的具体对象写进句子，读者自然能看出你在质疑什么。
 
 这种写法也适用于科研论文和组会 PPT：开头先点明意思，再展开说明。表达直接、自然，不把多个判断堆在一个长句里。
 
