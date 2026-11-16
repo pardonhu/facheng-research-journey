@@ -6,7 +6,7 @@
 
 本轮另收集近三年 ICML、CVPR、ECCV 和 NeurIPS（NIPS）的 AI 工具与解题思路。每条从原论文的方法出发，记录它可以启发的组网问题；一个工具可以对应多个点子。专项记录区分论文精读、方法阅读和原创联想。[从组网问题查 16 篇论文的工具与思路](2026-11-16-insight-12.md#从组网问题查工具) · [分而治之和三种 LLM 优化的具体例子](2026-11-16-insight-11.md#第五个十篇的解题思路)
 
-后续收集把系统论文与 AI 工具放在同一个具体问题里对照。[第 51–60 篇：何时确认动作、怎样对齐局部结果](2026-11-16-insight-13.md#第六个十篇的解题思路) · [第 61–70 篇：主动补测、数据重放与连续失联](2026-11-16-insight-15.md#第七个十篇的解题思路)
+后续收集把系统论文与 AI 工具放在同一个具体问题里对照。[第 51–60 篇：何时确认动作、怎样对齐局部结果](2026-11-16-insight-13.md#第六个十篇的解题思路) · [第 61–70 篇：主动补测、数据重放与连续失联](2026-11-16-insight-15.md#第七个十篇的解题思路) · [第 71–80 篇：调参时固定什么、聚合时保留什么、流水线省去哪段等待](2026-11-16-insight-17.md#第八个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -104,6 +104,7 @@
 | [2026-11-16 专项 14](2026-11-16-insight-14.md) | LoRaTrimmer、Sisyphus、TAPVid-3D、LiDAR4D、GenNBV、Lipschitz OPE | 分段接收、低功耗唤醒、位姿重放、主动补测与离线估计 | 六张方法卡与一个可组合的补测问题 |
 | [2026-11-16 专项 15](2026-11-16-insight-15.md) | ACE、PassiveBLE、tsseg-eval、QuaRot | 真实时间窗、连续断连、状态复现与等码长量化 | [第 61–70 篇的组合思路和实验段](2026-11-16-insight-15.md#第七个十篇的解题思路) |
 | [2026-11-16 专项 16](2026-11-16-insight-16.md) | FlexICoN Gen-3、CorrMatch、SEA-RAFT、EF21-SGDM、TabICL | 结构与在线权重、伪标签的两个分母、同中心的误差分布、压缩反馈、字段角色 | 用校准起点、缺失字段和暂态变化检验一个方法究竟保留了哪些信息。 |
+| [2026-11-16 专项 17](2026-11-16-insight-17.md) | RadioStream、FOA、FADAS、FLoRA、FlashAttention-3 | 时隙预约、固定模型的设备适配、异步聚合、低秩因子配对、跨块流水 | [第 71–80 篇总结](2026-11-16-insight-17.md#第八个十篇的解题思路)归纳了分工时要保留的关系、调参周期与时间测量。 |
 
 ## 改稿案例检索
 
@@ -422,6 +423,11 @@
 | 预测值与误差分布 | 测距与复测决策 | 两条链路估计距离相同，哪条该复测 | 在同一预测中心估计两种误差尺度的权重，在独立数据上检查残差 | [SEA-RAFT](2026-11-16-insight-16.md#sea-raft) | 持续偏置还需校正中心 |
 | 按接收端已有的估计编码 | 压缩反馈与丢包 | 每轮只报一项时如何兼顾小而持续的偏差 | 从平滑后的当前值减去接收端已计入的量，再压缩差值 | [EF21-SGDM](2026-11-16-insight-16.md#ef21-sgdm) | 收发状态需要一致；变化消失后无法据此还原事件 |
 | 用交换角色的反例解释设计 | 方法动机与调度日志 | 两列无线数据分布相同，互换后动作是否仍合理 | 构造只交换收发端的两行，先给正确动作，再解释模型要保留的角色 | [TabICL](2026-11-16-insight-16.md#tabicl) | 旧调度动作标签只能用作旧策略示范 |
+| 预定生效时刻与硬件执行 | 实验设置、时钟与时序图 | 如何解释主机提前准备和示波器上看到的切换延迟 | 给指令带上目标帧号和时隙号，结果句写出计时的两个端点 | [RadioStream](2026-11-16-insight-17.md#radiostream) | 独立时钟设备仍需共同时基或偏差测量 |
+| 冻结权重后用候选输入调整模型 | 部署适配、无标签调参 | 新接收机上哪些数值能改，靠什么选 | 同批评估候选输入，结合预测熵与源域激活统计偏移，并单列推理次数 | [FOA](2026-11-16-insight-17.md#foa) | 需要访问中间激活，现场类别构成变化也会影响统计量 |
+| 按数据生成版本解释时效 | 异步更新与聚合 | 两个节点同时上报，其更新是否同样新 | 记录生成版本，用批内最大版本差调节本批步长，说明所用公式或代码 | [FADAS](2026-11-16-insight-17.md#fadas) | 控制训练步长的实验无法单独说明上行字节与发包能耗 |
+| 按节点配对后聚合 | 多网关校准与通信开销 | 左右因子各自平均会引入哪些变化 | 构造两节点各改一维的反例，再分别列上行因子和回传宽度 | [FLoRA](2026-11-16-insight-17.md#flora) | 低秩近似的物理合理性需由校准数据给出 |
+| 跨块并行与时间指标 | 系统优化与消融实验 | 流水重叠省去等待后哪一个结果会提早 | 画出首块与整批完成时刻，分别移除并行机制并写清保留的配置 | [FlashAttention-3](2026-11-16-insight-17.md#flashattention-3) | 持续输入速度超过处理速度仍会积压，三组消融不能确定交互量 |
 
 ## 论文索引
 
@@ -589,6 +595,11 @@
 | [2026-11-16](2026-11-16-insight-16.md#sea-raft) | ECCV 2024 | SEA-RAFT: Simple, Efficient, Accurate RAFT for Optical Flow | [10.1007/978-3-031-72667-5_3](https://doi.org/10.1007/978-3-031-72667-5_3) |
 | [2026-11-16](2026-11-16-insight-16.md#ef21-sgdm) | NeurIPS 2023 | Momentum Provably Improves Error Feedback! | [10.52202/075280-3342](https://doi.org/10.52202/075280-3342) |
 | [2026-11-16](2026-11-16-insight-16.md#tabicl) | ICML 2025 | TabICL: A Tabular Foundation Model for In-Context Learning on Large Data | [pmlr-v267-qu25d](https://proceedings.mlr.press/v267/qu25d.html) |
+| [2026-11-16](2026-11-16-insight-17.md#radiostream) | MobiCom 2026 | RadioStream: A Wideband Multi-Antenna SDR Platform | [10.1145/3795866.3844452](https://doi.org/10.1145/3795866.3844452) |
+| [2026-11-16](2026-11-16-insight-17.md#foa) | ICML 2024 | Test-Time Model Adaptation with Only Forward Passes | [pmlr-v235-niu24a](https://proceedings.mlr.press/v235/niu24a.html) |
+| [2026-11-16](2026-11-16-insight-17.md#fadas) | ICML 2024 | FADAS: Towards Federated Adaptive Asynchronous Optimization | [pmlr-v235-wang24bv](https://proceedings.mlr.press/v235/wang24bv.html) |
+| [2026-11-16](2026-11-16-insight-17.md#flora) | NeurIPS 2024 | FLoRA: Federated Fine-Tuning Large Language Models with Heterogeneous Low-Rank Adaptations | [10.52202/079017-0708](https://doi.org/10.52202/079017-0708) |
+| [2026-11-16](2026-11-16-insight-17.md#flashattention-3) | NeurIPS 2024 | FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision | [10.52202/079017-2193](https://doi.org/10.52202/079017-2193) |
 
 ## 写作依据
 
