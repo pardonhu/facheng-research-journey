@@ -123,6 +123,7 @@
 | [2026-11-16 专项 29](2026-11-16-insight-29.md) | ChargeX、单光子三维重建、MultiDimSPCI、MuDSC、LESS | 还原部署单位、表面覆盖与误差方向、特征匹配和选样 | [第 131–140 篇综合](2026-11-16-insight-29.md#第十四个十篇的解题思路) |
 | [2026-11-16 专项 30](2026-11-16-insight-30.md) | Prism5G、InstructIR、Bias-to-Text、Depth Anything V2、QTIP | 替代观测、失败分组、错误标签和相邻步耦合 | [三个研究转念](2026-11-16-insight-30.md#三个研究转念) |
 | [2026-11-16 专项 31](2026-11-16-insight-31.md) | X-ResQ、Point Transformer V3、RepViT、AQLM、DyT | 起点选择、层间邻域、分支合并、码本成本与跨通道耦合 | [第 141–150 篇综合](2026-11-16-insight-31.md#第十五个十篇的解题思路) |
+| [2026-11-16 专项 32](2026-11-16-insight-32.md) | SeaScan、GeoCalib、SSME、Photon Inhibition、在线级联 | 台架能量、校准先验、少标注和休眠漏测 | 把数据来源、未观测的时段和留给复核的样本写清。 |
 
 ## 改稿案例检索
 
@@ -516,6 +517,11 @@
 | 系统设计、实验可信度 | 感知前端实现 | 训练分支多看起来部署也要付多次成本 | 将线性分支合并，先比输出再在目标设备测时 | [RepViT](2026-11-16-insight-31.md#repvit) | 分支内的非线性需要单独处理 |
 | 指标定义、实验设计 | 低码率回传 | 只报每个数据包的索引长度 | 分别计算字典预置成本和每包索引位数并报告重建质量 | [AQLM](2026-11-16-insight-31.md#aqlm) | 可靠分发、重复使用和包头成本另计 |
 | 数学意义、因果解释 | 多接收通道特征 | 分类分数相近被理解成逐输入作用相同 | 只改一路输入观察另一路是否改变 | [DyT](2026-11-16-insight-31.md#dyt) | 需要重新训练模型并验证跨增益表现 |
+| 指标定义、实验设计 | 节点能量账 | 处理时功率高被误读成全设备能耗高 | 以各阶段功率乘持续时间求每张图所需能量并计算压缩门槛 | [SeaScan](2026-11-16-insight-32.md#seascan) | 跨设备对比无法给出单机关闭压缩的反事实 |
+| 系统模型、可辨识性 | 联合校准 | 硬固定的测量可能把自身偏差转给其他量 | 分开报告可信先验和带误差先验，并保留独立量测 | [GeoCalib](2026-11-16-insight-32.md#geocalib) | 零拟合残差仍可能含偏差 |
+| 指标定义、实验可信度 | 低标注评测 | 把未标注记录中的推断正确数当人工核验 | 在同一批输入上用多模型分数及少量真值估计性能，另算留出误差 | [SSME](2026-11-16-insight-32.md#ssme) | 评估模型与少量标注须适用目标条件 |
+| 系统模型、可观测性 | 休眠感知 | 把关机时段和开机未检出都记零 | 将监听掩码与检测值分别保存并报告可证范围 | [Photon Inhibition](2026-11-16-insight-32.md#photon-inhibition) | 自适应停测会改变被观察时段 |
+| 实验设计、失败边界 | 分级诊断 | 小模型自己放行的样本没有复核机会 | 允许少数已放行输入随机到专家，独立参考检验漏警 | [在线级联](2026-11-16-insight-32.md#在线级联) | 模仿专家与对照物理真值分别评估 |
 
 ## 论文索引
 
@@ -758,6 +764,11 @@
 | [2026-11-16](2026-11-16-insight-31.md#repvit) | CVPR 2024 | RepViT: Revisiting Mobile CNN From ViT Perspective | [10.1109/CVPR52733.2024.01506](https://doi.org/10.1109/CVPR52733.2024.01506) |
 | [2026-11-16](2026-11-16-insight-31.md#aqlm) | ICML 2024 | Extreme Compression of Large Language Models via Additive Quantization | [pmlr-v235-egiazarian24a](https://proceedings.mlr.press/v235/egiazarian24a.html) |
 | [2026-11-16](2026-11-16-insight-31.md#dyt) | CVPR 2025 | Transformers without Normalization | [10.1109/CVPR52734.2025.01388](https://doi.org/10.1109/CVPR52734.2025.01388) |
+| [2026-11-16](2026-11-16-insight-32.md#seascan) | MobiCom 2024 | SeaScan: An Energy-Efficient Underwater Camera for Wireless 3D Color Imaging | [10.1145/3636534.3690661](https://doi.org/10.1145/3636534.3690661) |
+| [2026-11-16](2026-11-16-insight-32.md#geocalib) | ECCV 2024 | GeoCalib: Learning Single-Image Calibration with Geometric Optimization | [10.1007/978-3-031-73661-2_1](https://doi.org/10.1007/978-3-031-73661-2_1) |
+| [2026-11-16](2026-11-16-insight-32.md#ssme) | NeurIPS 2025 | Evaluating multiple models using labeled and unlabeled data | [10.52202/085713-1029](https://doi.org/10.52202/085713-1029) |
+| [2026-11-16](2026-11-16-insight-32.md#photon-inhibition) | ECCV 2024 | Photon Inhibition for Energy-Efficient Single-Photon Imaging | [10.1007/978-3-031-73116-7_6](https://doi.org/10.1007/978-3-031-73116-7_6) |
+| [2026-11-16](2026-11-16-insight-32.md#在线级联) | ICML 2024 | Online Cascade Learning for Efficient Inference over Streams | [pmlr-v235-nie24a](https://proceedings.mlr.press/v235/nie24a.html) |
 
 ## 写作依据
 
