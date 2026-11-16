@@ -85,7 +85,8 @@
 | [2026-11-11](2026-11-11.md) | TinyLEO、Nexus、RF-LEGO、EchoBLUE（4篇） | 约束和峰值工况、可训练量及数据划分、定位可观测性与实测范围 | 原创英文改稿、图文练习、算例、3组表达及12条索引案例，[实验段落精读与UWB英文示例](2026-11-11.md#实验段落精读) |
 | [2026-11-12](2026-11-12.md) | DeRa、WiCompass、Map++、EchoRider（4篇） | 如何从整机结果引出模块对照、说明参考组的先验、解释图中零事件 | 8条索引案例、3项表达及[UWB 实验过渡示例](2026-11-12.md#改实验段时怎样接上下文) |
 | [2026-11-16 专项 01](2026-11-16-insight-01.md) | PanoRadar、EchoBLUE、WiCompass、RFlect（复读） | 把不确定的设计理由变成可区分的比较 | 原文段序、可核对的对照、英文改稿与迁移条件 |
-| [2026-11-16 专项 02](2026-11-16-insight-02.md) | CosMAC、DeRa、HydraNet、ArachNet、UWBOrient、TinyLEO（复读） | 从资源单位、时间尺度和中间目标推导实验 | 原文段序、可核对的对照、英文改稿与迁移条件 |
+| [2026-11-16 专项 02](2026-11-16-insight-02.md) | CosMAC、DeRa、HydraNet、ArachNet、UWBOrient、TinyLEO（复读） | 从资源单位、时间尺度和中间目标推导实验 | [前十篇的写作 insight 与 UWB 改稿示例](2026-11-16-insight-02.md#前十篇的写作-insight) |
+| [2026-11-16 专项 03](2026-11-16-insight-03.md) | MSense、SiWiS（复读），UltraLEGO（新读） | 用处理前后仍然保留的事件、目标和相位项解释方法 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 
 ## 改稿案例检索
 
@@ -339,6 +340,9 @@
 | 单位与机制解释 | 下行链路实验 | 同样的毫秒偏差被写成各速率下相同的代价 | 将定时偏移与原始比特间隔相比，再解释接收端如何按脉宽解码 | [ArachNet](2026-11-16-insight-02.md#arachnet) | 归因到某端故障还需发射与接收的时序对照 |
 | 数学意义与可信度 | 融合门限和评估 | 将旋转矩阵的差值分数写成角度阈值 | 固定物理转角只换轴，核对判定是否一致，区分逐窗门控与整机姿态误差 | [UWBOrient](2026-11-16-insight-02.md#uwborient) | 判断门控正确率需要逐窗真值 |
 | 读者理解与算法条件 | 方法与可靠性 | 把向下一网格推进写成每跳都更靠近终点 | 以没有更近邻居的卫星作例，引出网格内出口、环上转发及断连处理 | [TinyLEO](2026-11-16-insight-02.md#tinyleo) | 送达保证需有可行出口或说明等待条件 |
+| 故障诊断与证据 | 运动干扰结果 | 滤波后峰减少就宣称漏检变少 | 用有独立标签的同一段记录展示真实事件被保留、相似干扰被压制，再回到总体误报率 | [MSense](2026-11-16-insight-03.md#msense) | 例图解释一次事件，总体结论要有完整样本分母 |
+| 指标与读者理解 | 损失函数与定性对照 | 只写新增损失可提升精度 | 用错相同数量像素却产生不同前景重叠的例子解释为什么需要另一项，再核对图中实际例子 | [SiWiS](2026-11-16-insight-03.md#siwis) | 训练目标、某幅图的实例数和独立测试性能各有各的证据 |
+| 数学意义与图文 | 阵列校准方法 | 只给出两次差分的公式和最终平稳曲线 | 第一次差分后列出仍然共有的发射机项，再看两接收机相减保留哪项几何信息 | [UltraLEGO](2026-11-16-insight-03.md#ultralego) | 参考路径、相位周期和校准条件按目标系统核对 |
 
 ## 论文索引
 
@@ -463,6 +467,7 @@
 | [2026-11-12](2026-11-12.md#wicompass) | MobiCom 2026 | WiCompass: Oracle-driven Data Scaling for mmWave Human Pose Estimation | [10.1145/3795866.3796684](https://doi.org/10.1145/3795866.3796684) |
 | [2026-11-12](2026-11-12.md#map) | MobiCom 2024 | Map++: Towards User-Participatory Visual SLAM Systems with Efficient Map Expansion and Sharing | [10.1145/3636534.3649386](https://doi.org/10.1145/3636534.3649386) |
 | [2026-11-12](2026-11-12.md#echorider) | SIGCOMM 2025 | Mobile Underwater Backscatter Networking | [10.1145/3718958.3750507](https://doi.org/10.1145/3718958.3750507) |
+| [2026-11-16](2026-11-16-insight-03.md#ultralego) | MobiCom 2026 | UltraLEGO: A Modular Ultra-Wideband Phased Array Platform for Wireless Sensing and Localization | [10.1145/3795866.3844461](https://doi.org/10.1145/3795866.3844461) |
 
 ## 写作依据
 
