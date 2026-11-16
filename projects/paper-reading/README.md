@@ -127,6 +127,7 @@
 | [2026-11-16 专项 33](2026-11-16-insight-33.md) | Hydra 叶面感知、SA3D、LaSCal、AnyChange、POP-BO | 跨模态对应、共同误差、类别校准、双向检测与成对反馈 | [第 151–160 篇综合](2026-11-16-insight-33.md#第十六个十篇的解题思路) |
 | [2026-11-16 专项 34](2026-11-16-insight-34.md) | NeuralAids、Mip-Splatting、Active Statistical Inference、SALAD、Gist Tokens | 往返时限、采样混叠、非均匀核验、地点特征与指令压缩 | [怎样设计能揭露信息损失的例子](2026-11-16-insight-34.md#把被省略的输入重新放回来) |
 | [2026-11-16 专项 35](2026-11-16-insight-35.md) | WDNN、DSINE、Collapse or Thrive、BoQ、MatQuant | 硬件非线性、邻域几何、样本代际遗忘、共享查询和多精度训练 | [第 161–170 篇总结](2026-11-16-insight-35.md#第十七个十篇的解题思路) · [用 Promptbreeder 改阅读指令](2026-11-16-insight-35.md#把提示词也当作可以检验的研究工具) |
+| [2026-11-16 专项 36](2026-11-16-insight-36.md) | L3GS、CountGD、GABO、LDPC 难例训练、DCVC-RT | 渐进下发、条件计数、离线选参、残余失败、计算与操作开销 | 让现有方案先在自己的观测条件下完整运行，再决定该补哪项。 |
 
 ## 改稿案例检索
 
@@ -540,6 +541,11 @@
 | 实验设计、失败机制 | 迭代仿真数据 | 保留历史带来的收益混入每代训练量增长 | 固定每代读取条数再比较全替换和从历史抽样 | [Collapse or Thrive](2026-11-16-insight-35.md#collapse-or-thrive) | 真实数据源和合成分布假设需明确 |
 | 系统设计、实验覆盖 | 多视角指纹 | 直接平均使不同位置得到相同结果 | 保留位置身份，用共享查询读取局部特征，再跨地点比较 | [BoQ](2026-11-16-insight-35.md#boq) | 查询不能恢复输入中已丢失的身份 |
 | 数学意义、指标定义 | 多精度推理 | 高位可以切出误推为低精度仍保留同一判断 | 按各精度检验跨阈值样本对，再做共享训练 | [MatQuant](2026-11-16-insight-35.md#matquant) | 切片含舍入截断，物理测量不能随权重优化 |
+| 系统模型、含时评估 | 渐进式下发 | 两个独立版本都小，升级时却重新发送已知内容 | 保留已下发的基础层，对同一带宽轨迹画出可用质量随时间的变化 | [L3GS](2026-11-16-insight-36.md#l3gs) | 固定字节的画质与加载过程的画质不同 |
+| 指标定义、信息结合 | 条件计数 | 把文字与样例的两个计数相加会重复或越界 | 对同一候选同时应用类别、外观条件再计数 | [CountGD](2026-11-16-insight-36.md#countgd) | 样例和词义要指向同一目标集合 |
+| 实验可信度、评价预算 | 离线选参 | 最大预测值可能落在代理模型最会高估的区域 | 分别比较来源相似性、代理预测和最终唯一候选的实测值 | [GABO](2026-11-16-insight-36.md#gabo) | 历史支持域与真实目标不能相互代替 |
+| 实验设计、指标定义 | 罕见故障/补救 | 随机加入高信噪比数据仍看不到已知译码器的遗留错误 | 在首段实际失败中训练后段，再按全量分母计算最终误帧率 | [LDPC 难例训练](2026-11-16-insight-36.md#ldpc-难例训练) | 漏检而未进入后段的帧需另计 |
+| 系统设计、结果解释 | 实时编码与传输 | 算术减少被直接解释为延迟改善 | 列调度和数据移动开销，并对照不同运动工况下的码率代价 | [DCVC-RT](2026-11-16-insight-36.md#dcvc-rt) | 不将整套系统成绩归于一项时域设计 |
 
 ## 论文索引
 
@@ -802,6 +808,11 @@
 | [2026-11-16](2026-11-16-insight-35.md#collapse-or-thrive) | ICML 2025 | Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World | [pmlr-v267-kazdan25a](https://proceedings.mlr.press/v267/kazdan25a.html) |
 | [2026-11-16](2026-11-16-insight-35.md#boq) | CVPR 2024 | BoQ: A Place is Worth a Bag of Learnable Queries | [10.1109/CVPR52733.2024.01685](https://doi.org/10.1109/CVPR52733.2024.01685) |
 | [2026-11-16](2026-11-16-insight-35.md#matquant) | ICML 2025 | Matryoshka Quantization | [pmlr-v267-nair25a](https://proceedings.mlr.press/v267/nair25a.html) |
+| [2026-11-16](2026-11-16-insight-36.md#l3gs) | MobiCom 2025 | L3GS: Layered 3D Gaussian Splats for Efficient 3D Scene Delivery | [10.1145/3680207.3723485](https://doi.org/10.1145/3680207.3723485) |
+| [2026-11-16](2026-11-16-insight-36.md#countgd) | NeurIPS 2024 | CountGD: Multi-Modal Open-World Counting | [10.52202/079017-1547](https://doi.org/10.52202/079017-1547) |
+| [2026-11-16](2026-11-16-insight-36.md#gabo) | NeurIPS 2024 | Generative Adversarial Model-Based Optimization via Source Critic Regularization | [10.52202/079017-1397](https://doi.org/10.52202/079017-1397) |
+| [2026-11-16](2026-11-16-insight-36.md#ldpc-难例训练) | NeurIPS 2023 | Boosting Learning for LDPC Codes to Improve the Error-Floor Performance | [10.52202/075280-0971](https://doi.org/10.52202/075280-0971) |
+| [2026-11-16](2026-11-16-insight-36.md#dcvc-rt) | CVPR 2025 | Towards Practical Real-Time Neural Video Compression | [10.1109/CVPR52734.2025.01170](https://doi.org/10.1109/CVPR52734.2025.01170) |
 
 ## 写作依据
 
