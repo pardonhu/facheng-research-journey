@@ -10,7 +10,7 @@
 
 前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
 
-第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路) · [第 131–140 篇：反转比较方向、观测互补与代表性](2026-11-16-insight-29.md#第十四个十篇的解题思路)
+第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路) · [第 131–140 篇：反转比较方向、观测互补与代表性](2026-11-16-insight-29.md#第十四个十篇的解题思路) · [第 141–150 篇：采集偏差、可替代观测及失败分母](2026-11-16-insight-31.md#第十五个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -122,6 +122,7 @@
 | [2026-11-16 专项 28](2026-11-16-insight-28.md) | EVLeSen、ETAP、AACO、TIES-Merging、tinyBenchmarks | 参照通道收益、折返跟踪、成组采样、符号冲突与代表用例 | 把决定所依赖的条件写进对应的实验句。 |
 | [2026-11-16 专项 29](2026-11-16-insight-29.md) | ChargeX、单光子三维重建、MultiDimSPCI、MuDSC、LESS | 还原部署单位、表面覆盖与误差方向、特征匹配和选样 | [第 131–140 篇综合](2026-11-16-insight-29.md#第十四个十篇的解题思路) |
 | [2026-11-16 专项 30](2026-11-16-insight-30.md) | Prism5G、InstructIR、Bias-to-Text、Depth Anything V2、QTIP | 替代观测、失败分组、错误标签和相邻步耦合 | [三个研究转念](2026-11-16-insight-30.md#三个研究转念) |
+| [2026-11-16 专项 31](2026-11-16-insight-31.md) | X-ResQ、Point Transformer V3、RepViT、AQLM、DyT | 起点选择、层间邻域、分支合并、码本成本与跨通道耦合 | [第 141–150 篇综合](2026-11-16-insight-31.md#第十五个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -510,6 +511,11 @@
 | 实验设计、失败诊断 | 错误分析 | 常见词被当成失败原因 | 同一真实类别内比较判错和判对样本的图词相似度，再找独立工况复核 | [Bias-to-Text](2026-11-16-insight-30.md#bias-to-text) | 描述与错误相关不能确立因果 |
 | 真值定义、可信度 | 真值与跨域监督 | 标注仪器记录的物理表面和任务目标不一致 | 构造目标和仪器读出可分的输入，用独立参考核对 | [Depth Anything V2](2026-11-16-insight-30.md#depth-anything-v2) | 相对前后关系及米制误差分别评测 |
 | 数学意义、实验设计 | 序列编码 | 独立舍入忽略下一步能到达的数值 | 枚举短路径计算累计误差，分开报告编码误差和任务正确率 | [QTIP](2026-11-16-insight-30.md#qtip) | 起始状态必须可知 |
+| 实验设计、资源比较 | MIMO 检测 | 更多候选和更多计算资源易混在一起 | 说明候选起点、并行资源和检测判据 | [X-ResQ](2026-11-16-insight-31.md#x-resq) | 只引用作者测试的输入与平台 |
+| 系统模型、消融 | 点云感知与局部聚合 | 一次分块让邻点长期分离 | 改变层间排列并用单排列对照检验新邻接关系 | [Point Transformer V3](2026-11-16-insight-31.md#point-transformer-v3) | 端到端测速受设备和块大小影响 |
+| 系统设计、实验可信度 | 感知前端实现 | 训练分支多看起来部署也要付多次成本 | 将线性分支合并，先比输出再在目标设备测时 | [RepViT](2026-11-16-insight-31.md#repvit) | 分支内的非线性需要单独处理 |
+| 指标定义、实验设计 | 低码率回传 | 只报每个数据包的索引长度 | 分别计算字典预置成本和每包索引位数并报告重建质量 | [AQLM](2026-11-16-insight-31.md#aqlm) | 可靠分发、重复使用和包头成本另计 |
+| 数学意义、因果解释 | 多接收通道特征 | 分类分数相近被理解成逐输入作用相同 | 只改一路输入观察另一路是否改变 | [DyT](2026-11-16-insight-31.md#dyt) | 需要重新训练模型并验证跨增益表现 |
 
 ## 论文索引
 
@@ -747,6 +753,11 @@
 | [2026-11-16](2026-11-16-insight-30.md#bias-to-text) | CVPR 2024 | Discovering and Mitigating Visual Biases through Keyword Explanation | [10.1109/CVPR52733.2024.01054](https://doi.org/10.1109/CVPR52733.2024.01054) |
 | [2026-11-16](2026-11-16-insight-30.md#depth-anything-v2) | NeurIPS 2024 | Depth Anything V2 | [10.52202/079017-0688](https://doi.org/10.52202/079017-0688) |
 | [2026-11-16](2026-11-16-insight-30.md#qtip) | NeurIPS 2024 | QTIP: Quantization with Trellises and Incoherence Processing | [10.52202/079017-1904](https://doi.org/10.52202/079017-1904) |
+| [2026-11-16](2026-11-16-insight-31.md#x-resq) | MobiCom 2025 | X-ResQ: Parallel Reverse Annealing for Quantum Maximum-Likelihood MIMO Detection with Flexible Parallelism | [10.1145/3680207.3723495](https://doi.org/10.1145/3680207.3723495) |
+| [2026-11-16](2026-11-16-insight-31.md#point-transformer-v3) | CVPR 2024 | Point Transformer V3: Simpler Faster Stronger | [10.1109/CVPR52733.2024.00463](https://doi.org/10.1109/CVPR52733.2024.00463) |
+| [2026-11-16](2026-11-16-insight-31.md#repvit) | CVPR 2024 | RepViT: Revisiting Mobile CNN From ViT Perspective | [10.1109/CVPR52733.2024.01506](https://doi.org/10.1109/CVPR52733.2024.01506) |
+| [2026-11-16](2026-11-16-insight-31.md#aqlm) | ICML 2024 | Extreme Compression of Large Language Models via Additive Quantization | [pmlr-v235-egiazarian24a](https://proceedings.mlr.press/v235/egiazarian24a.html) |
+| [2026-11-16](2026-11-16-insight-31.md#dyt) | CVPR 2025 | Transformers without Normalization | [10.1109/CVPR52734.2025.01388](https://doi.org/10.1109/CVPR52734.2025.01388) |
 
 ## 写作依据
 
