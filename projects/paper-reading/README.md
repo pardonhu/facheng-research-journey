@@ -111,6 +111,7 @@
 | [2026-11-16 专项 19](2026-11-16-insight-19.md) | DynaFilter、Doppelgangers++、p-KGFN、MOBO-OSD、MOMENT | 压缩域预筛、假匹配、分段试验、成批选点、连续缺测 | [第 81–90 篇总结及电芯 UWB 逐批复算](2026-11-16-insight-19.md#第九个十篇的解题思路) |
 | [2026-11-16 专项 20](2026-11-16-insight-20.md) | Dissecting the StarLink、LM-GC、Lego Sketch、SAST、EAGLE | 带宽归属、逐位恢复、碰撞后的频数估计、稀疏计算、按已知事件提前规划 | 分别写清要恢复的数据、要查询的量，以及采取动作前要等到的确认。 |
 | [2026-11-16 专项 21](2026-11-16-insight-21.md) | IoT-Brain、UMotion、4D-GS、STREAM-UGS、MatFormer | 语义到覆盖、带不确定性的测距、动态几何、拓扑采样、嵌套宽度 | [第 91–100 篇总结](2026-11-16-insight-21.md#第十个十篇的解题思路)与[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) |
+| [2026-11-16 专项 22](2026-11-16-insight-22.md) | SkyShare、PARE-Net、ScaLR、KT 置信序列、Promptbreeder | 总干扰与覆盖、旋转假设、跨模态配对、随时有效的置信序列、改写调参指令 | 用对照回答为什么这些证据足够、还有哪项要另测。 |
 
 ## 改稿案例检索
 
@@ -454,6 +455,11 @@
 | 固定场景与时变形状分开建模 | 动态无线地图与多径 | 移走反射板后，哪些路径参数需要重算 | 复用未变化的几何，只对动体有关路径推算变化，用独立观测确认 | [4D-GS](2026-11-16-insight-21.md#4d-gs) | 视觉外观与射频材料属性不同；插值和预测需分别验证 |
 | 按采样单位校正重复机会 | 无线拓扑与局部冗余统计 | 按边走两跳得到的三角形占比能否代表所有三节点集合 | 先列举三点组与各自可能的采样路径，再按提出概率校正 | [STREAM-UGS](2026-11-16-insight-21.md#stream-ugs) | 作者算法需要对同一快照的边表多次扫描 |
 | 将模型宽度与设备预算对应 | 边缘部署、配置比较 | 设备的算力介于两档模型之间，可否使用剩余预算 | 从共享前馈层中分层选宽度，分开报告结构开销和验证集性能 | [MatFormer](2026-11-16-insight-21.md#matformer) | 参数量和乘加数均不能直接换算成现场时延或能耗 |
+| 固定服务量检验累积干扰 | 共存与调度 | 单条链路开通合规，同时服务两条是否还合规 | 在同一受影响接收点按时间累加线性贡献，再在相同覆盖下换分配 | [SkyShare](2026-11-16-insight-22.md#skyshare) | 射电观测容限与实际天线响应均须有依据 |
+| 用同一局部结构分别支持匹配和旋转 | 地图配准、定位设计 | 一个匹配点除坐标还带来了什么信息 | 从局部方向提旋转假设，再用独立匹配点核验变换 | [PARE-Net](2026-11-16-insight-22.md#pare-net) | 无方向邻域或纯标量测距不能直接给出旋转 |
+| 跨传感器教学样本的配对依据 | 跨模态学习、标签质量 | 两个传感器同一时间的样本是否对应同一物体 | 查对象身份、投影偏移和遮挡边缘，再接受视觉特征作监督 | [ScaLR](2026-11-16-insight-22.md#scalr) | 空间及时间误差应与边界距离一起检查 |
+| 边测边停时的可靠性判断 | 成功率与停止条件 | 持续查看结果时何时可以报告越过目标线 | 保留按顺序到达的观测，在置信序列下限越线时停止 | [KT 置信序列](2026-11-16-insight-22.md#kt-置信序列) | 对应固定的条件概率假设；配置切换可能改变试验对象 |
+| 让生成配置建议的规则本身可改 | 语言模型调参与基准构造 | 产生很多候选为何仍重复同一类选择 | 区分完成任务的指令与改写指令的办法，用有参考选择的记录评分 | [Promptbreeder](2026-11-16-insight-22.md#promptbreeder) | 被用来挑选指令的记录须与独立评价分开 |
 
 ## 论文索引
 
@@ -646,6 +652,11 @@
 | [2026-11-16](2026-11-16-insight-21.md#4d-gs) | CVPR 2024 | 4D Gaussian Splatting for Real-Time Dynamic Scene Rendering | [10.1109/CVPR52733.2024.01920](https://doi.org/10.1109/CVPR52733.2024.01920) |
 | [2026-11-16](2026-11-16-insight-21.md#stream-ugs) | NeurIPS 2024 | Efficient Streaming Algorithms for Graphlet Sampling | [10.52202/079017-0634](https://doi.org/10.52202/079017-0634) |
 | [2026-11-16](2026-11-16-insight-21.md#matformer) | NeurIPS 2024 | MatFormer: Nested Transformer for Elastic Inference | [10.52202/079017-4461](https://doi.org/10.52202/079017-4461) |
+| [2026-11-16](2026-11-16-insight-22.md#skyshare) | MobiCom 2026 | SkyShare: Constellation-wide Sky Sharing for LEO-Radio Astronomy Coexistence | [10.1145/3795866.3844487](https://doi.org/10.1145/3795866.3844487) |
+| [2026-11-16](2026-11-16-insight-22.md#pare-net) | ECCV 2024 | PARE-Net: Position-Aware Rotation-Equivariant Networks for Robust Point Cloud Registration | [10.1007/978-3-031-72904-1_17](https://doi.org/10.1007/978-3-031-72904-1_17) |
+| [2026-11-16](2026-11-16-insight-22.md#scalr) | CVPR 2024 | Three Pillars Improving Vision Foundation Model Distillation for Lidar | [10.1109/CVPR52733.2024.02033](https://doi.org/10.1109/CVPR52733.2024.02033) |
+| [2026-11-16](2026-11-16-insight-22.md#kt-置信序列) | ICML 2024 | Gambling-Based Confidence Sequences for Bounded Random Vectors | [pmlr-v235-ryu24a](https://proceedings.mlr.press/v235/ryu24a.html) |
+| [2026-11-16](2026-11-16-insight-22.md#promptbreeder) | ICML 2024 | Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution | [pmlr-v235-fernando24a](https://proceedings.mlr.press/v235/fernando24a.html) |
 
 ## 写作依据
 
