@@ -4,7 +4,7 @@
 
 选文优先无线组网、无线感知及交叉方向，包括分布式感知、UWB与毫米波雷达、Wi-Fi感知、同步、定位和低功耗无线网络。按相关性与可获取的正式论文正文选择，不为会议数量均衡而优先收录无关主题。
 
-本轮另收集近三年 ICML、CVPR、ECCV 和 NeurIPS（NIPS）的 AI 工具与解题思路。每条从原论文的方法出发，记录它可以启发的组网问题；一个工具可以对应多个点子。专项记录区分论文精读、方法阅读和原创联想。
+本轮另收集近三年 ICML、CVPR、ECCV 和 NeurIPS（NIPS）的 AI 工具与解题思路。每条从原论文的方法出发，记录它可以启发的组网问题；一个工具可以对应多个点子。专项记录区分论文精读、方法阅读和原创联想。[从组网问题查 16 篇论文的工具与思路](2026-11-16-insight-12.md#从组网问题查工具) · [分而治之和三种 LLM 优化的具体例子](2026-11-16-insight-11.md#第五个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -97,6 +97,7 @@
 | [2026-11-16 专项 09](2026-11-16-insight-09.md) | PerceptAlign（首次进入索引），Demeter、M2HO、LSencom、DREW（复读） | 跨土壤改进与绝对余量、位置编码与消融、切换窗口、符号到包、吞吐到播放 | [第 31–40 篇的写作 insight 与 UWB 实验段示例](2026-11-16-insight-09.md#第四个十篇的写作-insight) |
 | [2026-11-16 专项 10](2026-11-16-insight-10.md) | TimesFM、VGGT、CoTracker、CPTC | 同步预测、现场采点、遮挡跟踪和提前唤醒 | 四篇精读、原文与实现核对、组网联想 |
 | [2026-11-16 专项 11](2026-11-16-insight-11.md) | CityGaussian、Cutie、MobileCLIP、LABO、ReEvo、FunBO | 带边界的分治、对象记忆、离线蒸馏和三种 LLM 优化 | [第 41–50 篇的思路与组合例](2026-11-16-insight-11.md#第五个十篇的解题思路) |
+| [2026-11-16 专项 12](2026-11-16-insight-12.md) | Tree of Thoughts、MoVA、DeepCache、Medusa-LLM、Geometric Algorithms、NCO4TDTSP | 分支搜索、工具调用、缓存、预计算、联合选择与时变路由 | [16 篇论文的工具与组网点子索引](2026-11-16-insight-12.md#从组网问题查工具) |
 
 ## 改稿案例检索
 
@@ -390,6 +391,12 @@
 | 模型估分与实测反馈 | 无线参数调优 | 可选配置多，每次上板耗时 | 语言模型先批量估计，由实际测量更新两类分数的偏差 | [LABO](2026-11-16-insight-11.md#labo) | 估分不充当硬件结果 |
 | 用两条规则的结果改写下一条 | 重传优先级 | 要产出一条可在网关运行的短规则 | 把两段规则和它们在相同条件下的结果交给生成器改写 | [ReEvo](2026-11-16-insight-11.md#reevo) | 由评测器检查动作可行性 |
 | 学习下一次测谁 | 无线实验设计 | 搜索参数时还可以改进选择下一组实验的规则 | 让语言模型提出采集函数，历史问题负责评分 | [FunBO](2026-11-16-insight-11.md#funbo) | 原任务的函数可借鉴，组网目标另行定义 |
+| 保留多个部分解 | 时隙表与诊断 | 局部合理的安排可能把下一跳堵死 | 把部分安排或假设写成分支，沿约束延伸或回退 | [Tree of Thoughts](2026-11-16-insight-12.md#tree-of-thoughts) | 生成下一步和核实终局可分开 |
+| 按问题调用专家 | 网络测量与运维 | 同一终端的不同问题需要不同观测 | 先读问题，再调用合适的测量工具和融合其结果 | [MoVA](2026-11-16-insight-12.md#mova) | 融合只使用实际取得的观测 |
+| 复用慢变量 | 冲突图与覆盖地图 | 每轮变化的量只占总状态的一部分 | 缓存慢变结构，只用当前反馈更新快变量 | [DeepCache](2026-11-16-insight-12.md#deepcache) | 状态变化时需要刷新缓存 |
+| 先并行准备、再确认前缀 | 等待反馈时准备控制计划 | 拿到反馈后才准备计划会增加路径时延 | 在内存中准备候选计划，真实反馈到达才确认后续动作 | [Medusa-LLM](2026-11-16-insight-12.md#medusa-llm) | 可计算的候选与实际发射要分开 |
+| 按整组表示一个动作 | 冲突图与并发调度 | 只给每个节点的发送概率会丢掉谁与谁一起发 | 把一个时隙可执行的链路集合作为单位，再给整组分配份额 | [Geometric Algorithms](2026-11-16-insight-12.md#geometric-algorithms) | 不同可行组合可具有相同的节点占用率 |
+| 时变边代价与成对造题 | 周期唤醒与转发 | 到达时刻改变后最快中继可能变化 | 将边耗时写成出发时刻的函数，保持其他条件配对产生输入 | [NCO4TDTSP](2026-11-16-insight-12.md#nco4tdtsp) | 原工具是巡回路线，组网扩展的终点是网关 |
 
 ## 论文索引
 
@@ -533,6 +540,12 @@
 | [2026-11-16](2026-11-16-insight-11.md#labo) | ICML 2026 | LABO: LLM-Accelerated Bayesian Optimization through Broad Exploration and Selective Experimentation | [pmlr-v306-chen26fx](https://proceedings.mlr.press/v306/chen26fx.html) |
 | [2026-11-16](2026-11-16-insight-11.md#reevo) | NeurIPS 2024 | ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution | [10.52202/079017-1381](https://doi.org/10.52202/079017-1381) |
 | [2026-11-16](2026-11-16-insight-11.md#funbo) | ICML 2025 | FunBO: Discovering Acquisition Functions for Bayesian Optimization with FunSearch | [pmlr-v267-aglietti25a](https://proceedings.mlr.press/v267/aglietti25a.html) |
+| [2026-11-16](2026-11-16-insight-12.md#tree-of-thoughts) | NeurIPS 2023 | Tree of Thoughts: Deliberate Problem Solving with Large Language Models | [10.52202/075280-0517](https://doi.org/10.52202/075280-0517) |
+| [2026-11-16](2026-11-16-insight-12.md#mova) | NeurIPS 2024 | MoVA: Adapting Mixture of Vision Experts to Multimodal Context | [10.52202/079017-3282](https://doi.org/10.52202/079017-3282) |
+| [2026-11-16](2026-11-16-insight-12.md#deepcache) | CVPR 2024 | DeepCache: Accelerating Diffusion Models for Free | [10.1109/CVPR52733.2024.01492](https://doi.org/10.1109/CVPR52733.2024.01492) |
+| [2026-11-16](2026-11-16-insight-12.md#medusa-llm) | ICML 2024 | Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads | [pmlr-v235-cai24b](https://proceedings.mlr.press/v235/cai24b.html) |
+| [2026-11-16](2026-11-16-insight-12.md#geometric-algorithms) | NeurIPS 2025 | Geometric Algorithms for Neural Combinatorial Optimization with Constraints | [10.52202/085713-2632](https://doi.org/10.52202/085713-2632) |
+| [2026-11-16](2026-11-16-insight-12.md#nco4tdtsp) | NeurIPS 2025 | Neural Combinatorial Optimization for Time-Dependent Traveling Salesman Problem | [10.52202/085713-2442](https://doi.org/10.52202/085713-2442) |
 
 ## 写作依据
 
