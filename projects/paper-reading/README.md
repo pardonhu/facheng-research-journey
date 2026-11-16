@@ -96,6 +96,7 @@
 | [2026-11-16 专项 08](2026-11-16-insight-08.md) | 5G-MAP（首次进入索引），Bridge、mmXtend、Nexus、μCeiver-Fi（复读） | 控制操作的分项时延、每次定位的能耗、通电时长、标签来源与跨链路相位 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 09](2026-11-16-insight-09.md) | PerceptAlign（首次进入索引），Demeter、M2HO、LSencom、DREW（复读） | 跨土壤改进与绝对余量、位置编码与消融、切换窗口、符号到包、吞吐到播放 | [第 31–40 篇的写作 insight 与 UWB 实验段示例](2026-11-16-insight-09.md#第四个十篇的写作-insight) |
 | [2026-11-16 专项 10](2026-11-16-insight-10.md) | TimesFM、VGGT、CoTracker、CPTC | 同步预测、现场采点、遮挡跟踪和提前唤醒 | 四篇精读、原文与实现核对、组网联想 |
+| [2026-11-16 专项 11](2026-11-16-insight-11.md) | CityGaussian、Cutie、MobileCLIP、LABO、ReEvo、FunBO | 带边界的分治、对象记忆、离线蒸馏和三种 LLM 优化 | [第 41–50 篇的思路与组合例](2026-11-16-insight-11.md#第五个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -383,6 +384,12 @@
 | 先从图像获得几何 | UWB 部署测点 | 进入新空间时，少量无线测量要放在哪里 | 照片恢复结构，再按遮挡、拐角和空间变化选择采点 | [VGGT](2026-11-16-insight-10.md#vggt) | 视觉几何须配准，无线传播仍需测量 |
 | 让多个点共享运动信息 | 遮挡与链路切换 | 遮挡前沿暂时离开视野时怎样继续估计运动 | 用仍可见的点帮助跟踪，再把运动接到切换时间 | [CoTracker](2026-11-16-insight-10.md#cotracker) | 图像可见性和无线链路状态分别观察 |
 | 按状态分别积累误差 | 重传与提前唤醒 | 历史中的平稳段和突发段有不同预测误差 | 保留各状态的预测区间，再把区间接到提前分配时隙 | [CPTC](2026-11-16-insight-10.md#cptc) | 收到完整位图前后是两个不同时刻的决策 |
+| 共享底图的分治 | 无线覆盖制图 | 相邻工作区需要共同的观测 | 建粗图，再用移除区域后的预测变化分配边界观测 | [CityGaussian](2026-11-16-insight-11.md#citygaussian) | 无线场强仍由实际测量提供 |
+| 带身份的对象记忆 | 无线遮挡标注 | 相似物体交错时要跟对目标 | 同时保留对象身份与局部轮廓，按时钟对齐无线日志 | [Cutie](2026-11-16-insight-11.md#cutie) | 画面生成候选时段，丢包依靠收包记录 |
+| 先离线教、再端侧用 | 低功耗参数选择 | 强模型的计算很难放在每次通信之前 | 离线存候选和实验得分，重复用来训练小模型 | [MobileCLIP](2026-11-16-insight-11.md#mobileclip) | 候选理由与设备测量标签分开 |
+| 模型估分与实测反馈 | 无线参数调优 | 可选配置多，每次上板耗时 | 语言模型先批量估计，由实际测量更新两类分数的偏差 | [LABO](2026-11-16-insight-11.md#labo) | 估分不充当硬件结果 |
+| 用两条规则的结果改写下一条 | 重传优先级 | 要产出一条可在网关运行的短规则 | 把两段规则和它们在相同条件下的结果交给生成器改写 | [ReEvo](2026-11-16-insight-11.md#reevo) | 由评测器检查动作可行性 |
+| 学习下一次测谁 | 无线实验设计 | 搜索参数时还可以改进选择下一组实验的规则 | 让语言模型提出采集函数，历史问题负责评分 | [FunBO](2026-11-16-insight-11.md#funbo) | 原任务的函数可借鉴，组网目标另行定义 |
 
 ## 论文索引
 
@@ -520,6 +527,12 @@
 | [2026-11-16](2026-11-16-insight-10.md#vggt) | CVPR 2025 | VGGT: Visual Geometry Grounded Transformer | [10.1109/CVPR52734.2025.00499](https://doi.org/10.1109/CVPR52734.2025.00499) |
 | [2026-11-16](2026-11-16-insight-10.md#cotracker) | ECCV 2024 | CoTracker: It Is Better to Track Together | [10.1007/978-3-031-73033-7_2](https://doi.org/10.1007/978-3-031-73033-7_2) |
 | [2026-11-16](2026-11-16-insight-10.md#cptc) | NeurIPS 2025 | Conformal Prediction for Time-series Forecasting with Change Points | [10.52202/085713-0410](https://doi.org/10.52202/085713-0410) |
+| [2026-11-16](2026-11-16-insight-11.md#citygaussian) | ECCV 2024 | CityGaussian: Real-Time High-Quality Large-Scale Scene Rendering with Gaussians | [10.1007/978-3-031-72640-8_15](https://doi.org/10.1007/978-3-031-72640-8_15) |
+| [2026-11-16](2026-11-16-insight-11.md#cutie) | CVPR 2024 | Putting the Object Back into Video Object Segmentation | [10.1109/CVPR52733.2024.00304](https://doi.org/10.1109/CVPR52733.2024.00304) |
+| [2026-11-16](2026-11-16-insight-11.md#mobileclip) | CVPR 2024 | MobileCLIP: Fast Image-Text Models through Multi-Modal Reinforced Training | [10.1109/CVPR52733.2024.01511](https://doi.org/10.1109/CVPR52733.2024.01511) |
+| [2026-11-16](2026-11-16-insight-11.md#labo) | ICML 2026 | LABO: LLM-Accelerated Bayesian Optimization through Broad Exploration and Selective Experimentation | [pmlr-v306-chen26fx](https://proceedings.mlr.press/v306/chen26fx.html) |
+| [2026-11-16](2026-11-16-insight-11.md#reevo) | NeurIPS 2024 | ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution | [10.52202/079017-1381](https://doi.org/10.52202/079017-1381) |
+| [2026-11-16](2026-11-16-insight-11.md#funbo) | ICML 2025 | FunBO: Discovering Acquisition Functions for Bayesian Optimization with FunSearch | [pmlr-v267-aglietti25a](https://proceedings.mlr.press/v267/aglietti25a.html) |
 
 ## 写作依据
 
