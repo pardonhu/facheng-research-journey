@@ -107,6 +107,7 @@
 | [2026-11-16 专项 17](2026-11-16-insight-17.md) | RadioStream、FOA、FADAS、FLoRA、FlashAttention-3 | 时隙预约、固定模型的设备适配、异步聚合、低秩因子配对、跨块流水 | [第 71–80 篇总结](2026-11-16-insight-17.md#第八个十篇的解题思路)归纳了分工时要保留的关系、调参周期与时间测量。 |
 | [2026-11-16 专项 18](2026-11-16-insight-18.md) | RadioSight、RoMa、UniDepth、ifBO、Moirai | 两段反射路径、分离峰的局部估计、相机与天线坐标、可接续调参、通道重编号 | 先把当前能区分的候选写清楚，再给决定下一步所需的观察。 |
 | [2026-11-16 专项 19](2026-11-16-insight-19.md) | DynaFilter、Doppelgangers++、p-KGFN、MOBO-OSD、MOMENT | 压缩域预筛、假匹配、分段试验、成批选点、连续缺测 | [第 81–90 篇总结及电芯 UWB 逐批复算](2026-11-16-insight-19.md#第九个十篇的解题思路) |
+| [2026-11-16 专项 20](2026-11-16-insight-20.md) | Dissecting the StarLink、LM-GC、Lego Sketch、SAST、EAGLE | 带宽归属、逐位恢复、碰撞后的频数估计、稀疏计算、按已知事件提前规划 | 分别写清要恢复的数据、要查询的量，以及采取动作前要等到的确认。 |
 
 ## 改稿案例检索
 
@@ -440,6 +441,11 @@
 | 按最终选择的变化决定单环节试验 | 接收机测试、调参 | 整条链都能测时，下一次只测哪一段 | 对每项可行试验估计更新后最佳配置的收益并折算每单位成本 | [p-KGFN](2026-11-16-insight-19.md#p-kgfn) | 下游试验需真实可用的上游中间结果 |
 | 按新增覆盖选择同批候选 | 多目标试验与并行台架 | 头两名候选是否在重复探索同一种取舍 | 定下一个候选后重新计算其余候选能新增的目标范围 | [MOBO-OSD](2026-11-16-insight-19.md#mobo-osd) | 候选的预测表现仍需上板测量；覆盖依赖所选目标和边界 |
 | 保持丢失比例、更换缺失形状 | 间歇上报、时钟残差插值评估 | 相同比例的缺失是否留下同样的线索 | 对同一真值使用孤立和整段掩码，分开报告缺口内误差 | [MOMENT](2026-11-16-insight-19.md#moment) | 离线插值可看缺口右侧，在线决策只能用已到达观测 |
+| 交替流量检验共享资源 | 带宽实测与资源分配 | 升高的速率属于单流还是整台终端 | 一条停发时用另一条接力，在同一接收时钟同时画分流与合计 | [Dissecting the StarLink](2026-11-16-insight-20.md#dissecting-the-starlink) | 端点观测难以进一步定位调度器在网内的物理位置 |
+| 按预测概率做无损编码 | 遥测压缩与传输开销 | 一个偶尔预测错误的模型能否用于逐位恢复 | 传输观察到的符号在共享模型下的算术码，分别计码长与运行时间 | [LM-GC](2026-11-16-insight-20.md#lm-gc) | 两端模型和编码约定须一致，理想位数不含报头和字节对齐 |
+| 以固定大小的摘要回答频数查询 | 网关遥测、频数估计 | 计数碰撞之后还有哪些量能区分两种事件流 | 为编号引入可加向量，并用碰撞反例解释能查出与查不出的量 | [Lego Sketch](2026-11-16-insight-20.md#lego-sketch) | 查询给出估计，不保留原始事件顺序 |
+| 先选窗口、再选窗口内的位置 | 稀疏观测与计算开销 | 一幅稀疏观测中的哪些位置还需两两比较 | 按窗口分别计数入选位置，和全图的有序比较数对照 | [SAST](2026-11-16-insight-20.md#sast) | 处理开销、输入采样数与实际运行时间各需独立测量 |
+| 按已经发生的事件预测下一状态 | 投机计算、队列调度 | 下一状态的歧义由哪个已知事件引起 | 把刚确定的选择或确认随旧状态输入下一步，同时保留尚未观测的结果分支 | [EAGLE](2026-11-16-insight-20.md#eagle) | 发送命令与交付确认对应不同事件 |
 
 ## 论文索引
 
@@ -622,6 +628,11 @@
 | [2026-11-16](2026-11-16-insight-19.md#p-kgfn) | ICML 2024 | Bayesian Optimization of Function Networks with Partial Evaluations | [pmlr-v235-buathong24a](https://proceedings.mlr.press/v235/buathong24a.html) |
 | [2026-11-16](2026-11-16-insight-19.md#mobo-osd) | NeurIPS 2025 | MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions | [10.52202/085713-0581](https://doi.org/10.52202/085713-0581) |
 | [2026-11-16](2026-11-16-insight-19.md#moment) | ICML 2024 | MOMENT: A Family of Open Time-series Foundation Models | [pmlr-v235-goswami24a](https://proceedings.mlr.press/v235/goswami24a.html) |
+| [2026-11-16](2026-11-16-insight-20.md#dissecting-the-starlink) | SIGCOMM 2026 | Dissecting the StarLink: Characterizing Queuing and Flow Dynamics in the Starlink Network | [10.1145/3789240.3829162](https://doi.org/10.1145/3789240.3829162) |
+| [2026-11-16](2026-11-16-insight-20.md#lm-gc) | NeurIPS 2024 | Language Models as Zero-shot Lossless Gradient Compressors: Towards General Neural Parameter Prior Models | [10.52202/079017-2032](https://doi.org/10.52202/079017-2032) |
+| [2026-11-16](2026-11-16-insight-20.md#lego-sketch) | ICML 2025 | Lego Sketch: A Scalable Memory-augmented Neural Network for Sketching Data Streams | [pmlr-v267-feng25a](https://proceedings.mlr.press/v267/feng25a.html) |
+| [2026-11-16](2026-11-16-insight-20.md#sast) | CVPR 2024 | Scene Adaptive Sparse Transformer for Event-based Object Detection | [10.1109/CVPR52733.2024.01589](https://doi.org/10.1109/CVPR52733.2024.01589) |
+| [2026-11-16](2026-11-16-insight-20.md#eagle) | ICML 2024 | EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty | [pmlr-v235-li24bt](https://proceedings.mlr.press/v235/li24bt.html) |
 
 ## 写作依据
 
