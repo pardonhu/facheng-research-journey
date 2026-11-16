@@ -14,6 +14,8 @@
 
 ## 助手如何完成与复用训练
 
+在 Codex 中练习论文阅读和改稿，可从[用反馈改进研读指令并换文检验](2026-11-16-insight-35.md#把提示词也当作可以检验的研究工具)与[区分一次改稿和可复用指令](2026-11-16-insight-38.md#在-codex-里怎样用这两种办法)开始。两项都是助手做过的练习，使用时依据当前稿件和作者反馈选取。
+
 每天完成原文研读、论证拆解和具体改稿，记录“助手自拟待改句或段落—问题诊断—完整改稿—修改理由—适用边界”。练习由助手完成，无需作者阅读论文、提交作业或填写进度。
 
 后续帮助作者改稿时，先按章节和问题检索下方案例，再核对当前稿件的意图、事实和修改范围，只应用相关改法。记录中的论文事实附来源与位置；训练差例由助手自拟，不是原论文或作者稿件中的句子。新经验保留为助手参考，不自动升级为作者已确认的写作规范。
@@ -129,6 +131,7 @@
 | [2026-11-16 专项 35](2026-11-16-insight-35.md) | WDNN、DSINE、Collapse or Thrive、BoQ、MatQuant | 硬件非线性、邻域几何、样本代际遗忘、共享查询和多精度训练 | [第 161–170 篇总结](2026-11-16-insight-35.md#第十七个十篇的解题思路) · [用 Promptbreeder 改阅读指令](2026-11-16-insight-35.md#把提示词也当作可以检验的研究工具) |
 | [2026-11-16 专项 36](2026-11-16-insight-36.md) | L3GS、CountGD、GABO、LDPC 难例训练、DCVC-RT | 渐进下发、条件计数、离线选参、残余失败、计算与操作开销 | 让现有方案先在自己的观测条件下完整运行，再决定该补哪项。 |
 | [2026-11-16 专项 37](2026-11-16-insight-37.md) | HyperCam、AnySat、Causal Graph Cut、S3、Time-MMD | 分段实测、空间干扰、次序变换和数据可获得时间 | [第 171–180 篇综合](2026-11-16-insight-37.md#第十八个十篇的解题思路) |
+| [2026-11-16 专项 38](2026-11-16-insight-38.md) | Self-Refine | 把一次改稿、外部核验与跨任务指令比较分开 | [方法与原创改稿](2026-11-16-insight-38.md) |
 
 ## 改稿案例检索
 
@@ -552,6 +555,7 @@
 | 实验设计、因果判断 | 多接入点现场对照 | 空间相关和相互干扰都被归为相邻节点要同组 | 区别处理对邻居的影响与同步业务涨落，再决定分组 | [Causal Graph Cut](2026-11-16-insight-37.md#causal-graph-cut) | 直接比较的效果取决于分组和真实场景 |
 | 系统模型、指标定义 | 时序特征 | 连续丢包混淆同一节点的报告顺序与空口顺序 | 保留采样时间并明确内部算子使用的邻接关系 | [S3](2026-11-16-insight-37.md#s3) | 仅重排已观察的输入窗口 |
 | 实验可信度、时间定义 | 日志与预测数据 | 按事件时刻接入事后写成的故障单 | 记录何时发生与何时可用，并抽查抽取后的内容 | [Time-MMD](2026-11-16-insight-37.md#time-mmd) | 预测与事后解释使用的证据不同 |
+| 实验可信度、修改依据 | 实验结果复核 | 模型说数字合理却没有查运算对象 | 保留原始目标，在同一原始样本上独立重算后才改结果句 | [Self-Refine](2026-11-16-insight-38.md#self-refine) | 对象是当前稿件；要改变可复用指令还需跨稿检验 |
 
 ## 论文索引
 
@@ -824,6 +828,7 @@
 | [2026-11-16](2026-11-16-insight-37.md#causal-graph-cut) | ICML 2025 | Balancing Interference and Correlation in Spatial Experimental Designs: A Causal Graph Cut Approach | [pmlr-v267-zhu25l](https://proceedings.mlr.press/v267/zhu25l.html) |
 | [2026-11-16](2026-11-16-insight-37.md#s3) | NeurIPS 2024 | Segment, Shuffle, and Stitch: A Simple Layer for Improving Time-Series Representations | [10.52202/079017-0158](https://doi.org/10.52202/079017-0158) |
 | [2026-11-16](2026-11-16-insight-37.md#time-mmd) | NeurIPS 2024（Datasets and Benchmarks） | Time-MMD: Multi-Domain Multimodal Dataset for Time Series Analysis | [10.52202/079017-2476](https://doi.org/10.52202/079017-2476) |
+| [2026-11-16](2026-11-16-insight-38.md#self-refine) | NeurIPS 2023 | Self-Refine: Iterative Refinement with Self-Feedback | [10.52202/075280-2019](https://doi.org/10.52202/075280-2019) |
 
 ## 写作依据
 
