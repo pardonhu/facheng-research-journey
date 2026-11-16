@@ -103,6 +103,7 @@
 | [2026-11-16 专项 13](2026-11-16-insight-13.md) | SateRIoT、DUSt3R、POCCO、DataComp | 上行反馈、局部配准、多目标候选、训练数据与独立实测 | [第 51–60 篇的写作 insight 与组合示例](2026-11-16-insight-13.md#第六个十篇的解题思路) |
 | [2026-11-16 专项 14](2026-11-16-insight-14.md) | LoRaTrimmer、Sisyphus、TAPVid-3D、LiDAR4D、GenNBV、Lipschitz OPE | 分段接收、低功耗唤醒、位姿重放、主动补测与离线估计 | 六张方法卡与一个可组合的补测问题 |
 | [2026-11-16 专项 15](2026-11-16-insight-15.md) | ACE、PassiveBLE、tsseg-eval、QuaRot | 真实时间窗、连续断连、状态复现与等码长量化 | [第 61–70 篇的组合思路和实验段](2026-11-16-insight-15.md#第七个十篇的解题思路) |
+| [2026-11-16 专项 16](2026-11-16-insight-16.md) | FlexICoN Gen-3、CorrMatch、SEA-RAFT、EF21-SGDM、TabICL | 结构与在线权重、伪标签的两个分母、同中心的误差分布、压缩反馈、字段角色 | 用校准起点、缺失字段和暂态变化检验一个方法究竟保留了哪些信息。 |
 
 ## 改稿案例检索
 
@@ -416,6 +417,11 @@
 | 建立与持续的成功条件 | 连接管理、连续运行 | 同样总收包率能否说明每段运行同样稳定 | 按时间顺序统计连续失联长度，分别写建连和维持的试验分母 | [PassiveBLE](2026-11-16-insight-15.md#passiveble) | 运行判据、窗口长及相邻事件间隔应一起记录 |
 | 区分状态边界和重复出现的状态 | 链路状态识别 | 正确找出两次切换后能否认出回到起点 | 把状态编号一对一对齐，再数持续错误的时间段 | [tsseg-eval](2026-11-16-insight-15.md#tsseg-eval) | 状态身份的参考需要实验记录，单有边界不足以给出标签 |
 | 变换坐标后再压缩 | UWB 相关值、低码率回传 | 弱分量在等码长表示下被大分量决定的步长抹掉 | 核对正交变换前后的理论量，再算舍入后的具体判定 | [QuaRot](2026-11-16-insight-15.md#quarot) | 任务阈值的一次判定保留与完整波形重建分别说明 |
+| 分开调整结构和增益 | 校准设计与移动实验 | 固定校准的地点对比较有多大影响 | 保留昂贵的支路选择，在线调权；分别用两端的固定校准作参照 | [FlexICoN Gen-3](2026-11-16-insight-16.md#flexicon-gen-3) | 实验同时换了起点和行进方向，金属门的影响尚未单独测量 |
+| 区域覆盖率与标签一致率 | 小样本链路标注 | 几个可靠标签何时能代表整组观测 | 先算可靠窗口占全组多少，再算其中同类占多少，同时报告两个分母 | [CorrMatch](2026-11-16-insight-16.md#corrmatch) | 一致的错误仍需独立标注发现 |
+| 预测值与误差分布 | 测距与复测决策 | 两条链路估计距离相同，哪条该复测 | 在同一预测中心估计两种误差尺度的权重，在独立数据上检查残差 | [SEA-RAFT](2026-11-16-insight-16.md#sea-raft) | 持续偏置还需校正中心 |
+| 按接收端已有的估计编码 | 压缩反馈与丢包 | 每轮只报一项时如何兼顾小而持续的偏差 | 从平滑后的当前值减去接收端已计入的量，再压缩差值 | [EF21-SGDM](2026-11-16-insight-16.md#ef21-sgdm) | 收发状态需要一致；变化消失后无法据此还原事件 |
+| 用交换角色的反例解释设计 | 方法动机与调度日志 | 两列无线数据分布相同，互换后动作是否仍合理 | 构造只交换收发端的两行，先给正确动作，再解释模型要保留的角色 | [TabICL](2026-11-16-insight-16.md#tabicl) | 旧调度动作标签只能用作旧策略示范 |
 
 ## 论文索引
 
@@ -578,6 +584,11 @@
 | [2026-11-16](2026-11-16-insight-15.md#ace) | SIGCOMM 2025 | ACE: Sending Burstiness Control for High-Quality Real-time Communication | [10.1145/3718958.3750520](https://doi.org/10.1145/3718958.3750520) |
 | [2026-11-16](2026-11-16-insight-15.md#tsseg-eval) | NeurIPS 2025 | Toward Interpretable Evaluation Measures for Time Series Segmentation | [10.52202/085713-0219](https://doi.org/10.52202/085713-0219) |
 | [2026-11-16](2026-11-16-insight-15.md#quarot) | NeurIPS 2024 | QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs | [10.52202/079017-3180](https://doi.org/10.52202/079017-3180) |
+| [2026-11-16](2026-11-16-insight-16.md#flexicon-gen-3) | MobiCom 2026 | Wideband Real-Time Adaptive Full-Duplex Radios | [10.1145/3795866.3844155](https://doi.org/10.1145/3795866.3844155) |
+| [2026-11-16](2026-11-16-insight-16.md#corrmatch) | CVPR 2024 | CorrMatch: Label Propagation via Correlation Matching for Semi-Supervised Semantic Segmentation | [10.1109/CVPR52733.2024.00299](https://doi.org/10.1109/CVPR52733.2024.00299) |
+| [2026-11-16](2026-11-16-insight-16.md#sea-raft) | ECCV 2024 | SEA-RAFT: Simple, Efficient, Accurate RAFT for Optical Flow | [10.1007/978-3-031-72667-5_3](https://doi.org/10.1007/978-3-031-72667-5_3) |
+| [2026-11-16](2026-11-16-insight-16.md#ef21-sgdm) | NeurIPS 2023 | Momentum Provably Improves Error Feedback! | [10.52202/075280-3342](https://doi.org/10.52202/075280-3342) |
+| [2026-11-16](2026-11-16-insight-16.md#tabicl) | ICML 2025 | TabICL: A Tabular Foundation Model for In-Context Learning on Large Data | [pmlr-v267-qu25d](https://proceedings.mlr.press/v267/qu25d.html) |
 
 ## 写作依据
 
