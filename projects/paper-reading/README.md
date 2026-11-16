@@ -6,7 +6,7 @@
 
 本轮另收集近三年 ICML、CVPR、ECCV 和 NeurIPS（NIPS）的 AI 工具与解题思路。每条从原论文的方法出发，记录它可以启发的组网问题；一个工具可以对应多个点子。专项记录区分论文精读、方法阅读和原创联想。[从组网问题查 16 篇论文的工具与思路](2026-11-16-insight-12.md#从组网问题查工具) · [分而治之和三种 LLM 优化的具体例子](2026-11-16-insight-11.md#第五个十篇的解题思路)
 
-后续收集把系统论文与 AI 工具放在同一个具体问题里对照。[第 51–60 篇：何时确认动作、怎样对齐局部结果](2026-11-16-insight-13.md#第六个十篇的解题思路) · [第 61–70 篇：主动补测、数据重放与连续失联](2026-11-16-insight-15.md#第七个十篇的解题思路) · [第 71–80 篇：调参时固定什么、聚合时保留什么、流水线省去哪段等待](2026-11-16-insight-17.md#第八个十篇的解题思路)
+后续收集把系统论文与 AI 工具放在同一个具体问题里对照。[第 51–60 篇：何时确认动作、怎样对齐局部结果](2026-11-16-insight-13.md#第六个十篇的解题思路) · [第 61–70 篇：主动补测、数据重放与连续失联](2026-11-16-insight-15.md#第七个十篇的解题思路) · [第 71–80 篇：调参时固定什么、聚合时保留什么、流水线省去哪段等待](2026-11-16-insight-17.md#第八个十篇的解题思路) · [第 81–90 篇：什么测量能分开候选，哪次试验会改变选择](2026-11-16-insight-19.md#第九个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -106,6 +106,7 @@
 | [2026-11-16 专项 16](2026-11-16-insight-16.md) | FlexICoN Gen-3、CorrMatch、SEA-RAFT、EF21-SGDM、TabICL | 结构与在线权重、伪标签的两个分母、同中心的误差分布、压缩反馈、字段角色 | 用校准起点、缺失字段和暂态变化检验一个方法究竟保留了哪些信息。 |
 | [2026-11-16 专项 17](2026-11-16-insight-17.md) | RadioStream、FOA、FADAS、FLoRA、FlashAttention-3 | 时隙预约、固定模型的设备适配、异步聚合、低秩因子配对、跨块流水 | [第 71–80 篇总结](2026-11-16-insight-17.md#第八个十篇的解题思路)归纳了分工时要保留的关系、调参周期与时间测量。 |
 | [2026-11-16 专项 18](2026-11-16-insight-18.md) | RadioSight、RoMa、UniDepth、ifBO、Moirai | 两段反射路径、分离峰的局部估计、相机与天线坐标、可接续调参、通道重编号 | 先把当前能区分的候选写清楚，再给决定下一步所需的观察。 |
+| [2026-11-16 专项 19](2026-11-16-insight-19.md) | DynaFilter、Doppelgangers++、p-KGFN、MOBO-OSD、MOMENT | 压缩域预筛、假匹配、分段试验、成批选点、连续缺测 | [第 81–90 篇总结及电芯 UWB 逐批复算](2026-11-16-insight-19.md#第九个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -434,6 +435,11 @@
 | 先统一坐标再比较距离 | 视觉辅助标定、定位评估 | 相机的光轴深度与天线的径向距离怎样比较 | 用对应相机内参反投影并通过外参变换到天线坐标系 | [UniDepth](2026-11-16-insight-18.md#unidepth) | 米制深度本身有预测误差，数值差异还受标定影响 |
 | 分开决策前瞻和实际投入 | 链路预测器调参与试验资源 | 一组参数当前落后，要不要再训练一轮 | 在同一前瞻时刻比较各候选的越线概率，只执行下一个增量再观察 | [ifBO](2026-11-16-insight-18.md#ifbo) | 需要可恢复的训练状态及可比的验证成绩 |
 | 锚点改名与预测等变 | 多链路时间序列模型 | 任意编号变化后什么该保持、什么要随之交换 | 打乱整条锚点轨迹连同元数据，检查预测是否同样换位；保留同源关系 | [Moirai](2026-11-16-insight-18.md#moirai) | 有固定物理角色的字段仍要保留其身份 |
+| 在解码前找候选 | 边缘预处理、系统开销 | 候选区域很小，实际解码和发包是否同样少 | 沿处理顺序分别统计候选面积、补齐后的解码面积与报文字节 | [DynaFilter](2026-11-16-insight-19.md#dynafilter) | 面积不能直接推出无线链路能耗 |
+| 从外观近似的候选中采集假匹配 | 定位、指纹检索与验证 | 两条过道测距相同，怎样避免错误合并 | 把候选召回与核验分开，另找能打破对称的观测 | [Doppelgangers++](2026-11-16-insight-19.md#doppelgangers) | 没有区别性观测时保留多个位置假设 |
+| 按最终选择的变化决定单环节试验 | 接收机测试、调参 | 整条链都能测时，下一次只测哪一段 | 对每项可行试验估计更新后最佳配置的收益并折算每单位成本 | [p-KGFN](2026-11-16-insight-19.md#p-kgfn) | 下游试验需真实可用的上游中间结果 |
+| 按新增覆盖选择同批候选 | 多目标试验与并行台架 | 头两名候选是否在重复探索同一种取舍 | 定下一个候选后重新计算其余候选能新增的目标范围 | [MOBO-OSD](2026-11-16-insight-19.md#mobo-osd) | 候选的预测表现仍需上板测量；覆盖依赖所选目标和边界 |
+| 保持丢失比例、更换缺失形状 | 间歇上报、时钟残差插值评估 | 相同比例的缺失是否留下同样的线索 | 对同一真值使用孤立和整段掩码，分开报告缺口内误差 | [MOMENT](2026-11-16-insight-19.md#moment) | 离线插值可看缺口右侧，在线决策只能用已到达观测 |
 
 ## 论文索引
 
@@ -611,6 +617,11 @@
 | [2026-11-16](2026-11-16-insight-18.md#unidepth) | CVPR 2024 | UniDepth: Universal Monocular Metric Depth Estimation | [10.1109/CVPR52733.2024.00963](https://doi.org/10.1109/CVPR52733.2024.00963) |
 | [2026-11-16](2026-11-16-insight-18.md#ifbo) | ICML 2024 | In-Context Freeze-Thaw Bayesian Optimization for Hyperparameter Optimization | [pmlr-v235-rakotoarison24a](https://proceedings.mlr.press/v235/rakotoarison24a.html) |
 | [2026-11-16](2026-11-16-insight-18.md#moirai) | ICML 2024 | Unified Training of Universal Time Series Forecasting Transformers | [pmlr-v235-woo24a](https://proceedings.mlr.press/v235/woo24a.html) |
+| [2026-11-16](2026-11-16-insight-19.md#dynafilter) | MobiCom 2026 | DynaFilter: Cloud-driven Dynamic Filtering for Satellite Edge Intelligence | [10.1145/3795866.3844496](https://doi.org/10.1145/3795866.3844496) |
+| [2026-11-16](2026-11-16-insight-19.md#doppelgangers) | CVPR 2025 | Doppelgangers++: Improved Visual Disambiguation with Geometric 3D Features | [10.1109/CVPR52734.2025.02530](https://doi.org/10.1109/CVPR52734.2025.02530) |
+| [2026-11-16](2026-11-16-insight-19.md#p-kgfn) | ICML 2024 | Bayesian Optimization of Function Networks with Partial Evaluations | [pmlr-v235-buathong24a](https://proceedings.mlr.press/v235/buathong24a.html) |
+| [2026-11-16](2026-11-16-insight-19.md#mobo-osd) | NeurIPS 2025 | MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions | [10.52202/085713-0581](https://doi.org/10.52202/085713-0581) |
+| [2026-11-16](2026-11-16-insight-19.md#moment) | ICML 2024 | MOMENT: A Family of Open Time-series Foundation Models | [pmlr-v235-goswami24a](https://proceedings.mlr.press/v235/goswami24a.html) |
 
 ## 写作依据
 
