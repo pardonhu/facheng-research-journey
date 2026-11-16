@@ -88,6 +88,7 @@
 | [2026-11-16 专项 02](2026-11-16-insight-02.md) | CosMAC、DeRa、HydraNet、ArachNet、UWBOrient、TinyLEO（复读） | 从资源单位、时间尺度和中间目标推导实验 | [前十篇的写作 insight 与 UWB 改稿示例](2026-11-16-insight-02.md#前十篇的写作-insight) |
 | [2026-11-16 专项 03](2026-11-16-insight-03.md) | MSense、SiWiS（复读），UltraLEGO（新读） | 用处理前后仍然保留的事件、目标和相位项解释方法 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 04](2026-11-16-insight-04.md) | GPMS、Medusa、BiScatter（复读），Wall-Street（新读） | 从归一化指标、链路区间、遮挡轮换和距离索引写出设计依据 | 原文段序、可核对的对照、英文改稿与迁移条件 |
+| [2026-11-16 专项 05](2026-11-16-insight-05.md) | B²LoRa、SaTE（复读），MetaVenom（新读） | 区分符号恢复与检包、硬件状态与波束、样本数量与测试表现 | [第 11–20 篇的写作 insight 与 UWB 同步改稿示例](2026-11-16-insight-05.md#第二个十篇的写作-insight) |
 
 ## 改稿案例检索
 
@@ -348,6 +349,9 @@
 | 系统模型与判据 | 方法、切换决策 | 写了多终端提高精度却没有说明第二个观测改变哪个决定 | 列出第一台终端仍容许的两种结果，再说明第二台排除了哪一个 | [Wall-Street](2026-11-16-insight-04.md#wall-street) | 室外链路项须共享，损耗界须覆盖观测条件 |
 | 实验因果与段落衔接 | 遮挡实验、机制解释 | 从整机误差直接推出注意力层会识别受遮挡的位置 | 位置和遮挡分开改变，沿同一接收机追踪权重，再用固定权重对照估计精度收益 | [Medusa](2026-11-16-insight-04.md#medusa) | 图 23 验证权重响应，收益归因需要相同记录的对照 |
 | 数学意义与引图 | 信号处理方法、测距实验 | 把峰换格写成目标移动，把插值写成提高物理分辨率 | 让静止目标提供已知参照，先换算每一格的物理距离，再说明跨扫频的共同网格 | [BiScatter](2026-11-16-insight-04.md#biscatter) | 网格间距、分辨率与测距误差须分别核验 |
+| 实验对象与选择条件 | 接收机实验、基线比较 | 把更多包被检出直接写成符号误差降低 | 交代改变前导码后新纳入了哪些副本，分别解释检测量和合并后的误差 | [B²LoRa](2026-11-16-insight-05.md#b²lora) | 机制归因要核对副本身份、幅度、权重与噪声条件 |
+| 系统模型与图文对应 | 硬件自由度、波束验证 | 从二进制状态数直接推出能形成多少种合格波束 | 按共同受控的子阵计数，再按实测方向图逐项检查目标角度及旁瓣 | [MetaVenom](2026-11-16-insight-05.md#metavenom) | 状态容量、仿真峰值、同一块表面的实测响应分别陈述 |
+| 实验设计与比较分母 | 训练集规模、结果段 | 把相对大样本模型的 99% 写成承载了 99% 业务 | 把参照模型和共同测试集带入结果句，并提出等样本数对照以区分选样收益 | [SaTE](2026-11-16-insight-05.md#sate) | 仿真负载和拓扑表示决定代表性，结果按对应测试条件使用 |
 
 ## 论文索引
 
@@ -474,6 +478,7 @@
 | [2026-11-12](2026-11-12.md#echorider) | SIGCOMM 2025 | Mobile Underwater Backscatter Networking | [10.1145/3718958.3750507](https://doi.org/10.1145/3718958.3750507) |
 | [2026-11-16](2026-11-16-insight-03.md#ultralego) | MobiCom 2026 | UltraLEGO: A Modular Ultra-Wideband Phased Array Platform for Wireless Sensing and Localization | [10.1145/3795866.3844461](https://doi.org/10.1145/3795866.3844461) |
 | [2026-11-16](2026-11-16-insight-04.md#wall-street) | MobiCom 2026 | Wall-Street: An Intelligent Vehicular Surface for Reliable mmWave Handover | [10.1145/3795866.3796693](https://doi.org/10.1145/3795866.3796693) |
+| [2026-11-16](2026-11-16-insight-05.md#metavenom) | MobiCom 2026 | MetaVenom: Field Programmable Fully Passive Metasurfaces | [10.1145/3795866.3844150](https://doi.org/10.1145/3795866.3844150) |
 
 ## 写作依据
 
