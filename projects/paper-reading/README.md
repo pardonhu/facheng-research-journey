@@ -87,6 +87,7 @@
 | [2026-11-16 专项 01](2026-11-16-insight-01.md) | PanoRadar、EchoBLUE、WiCompass、RFlect（复读） | 把不确定的设计理由变成可区分的比较 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 02](2026-11-16-insight-02.md) | CosMAC、DeRa、HydraNet、ArachNet、UWBOrient、TinyLEO（复读） | 从资源单位、时间尺度和中间目标推导实验 | [前十篇的写作 insight 与 UWB 改稿示例](2026-11-16-insight-02.md#前十篇的写作-insight) |
 | [2026-11-16 专项 03](2026-11-16-insight-03.md) | MSense、SiWiS（复读），UltraLEGO（新读） | 用处理前后仍然保留的事件、目标和相位项解释方法 | 原文段序、可核对的对照、英文改稿与迁移条件 |
+| [2026-11-16 专项 04](2026-11-16-insight-04.md) | GPMS、Medusa、BiScatter（复读），Wall-Street（新读） | 从归一化指标、链路区间、遮挡轮换和距离索引写出设计依据 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 
 ## 改稿案例检索
 
@@ -343,6 +344,10 @@
 | 故障诊断与证据 | 运动干扰结果 | 滤波后峰减少就宣称漏检变少 | 用有独立标签的同一段记录展示真实事件被保留、相似干扰被压制，再回到总体误报率 | [MSense](2026-11-16-insight-03.md#msense) | 例图解释一次事件，总体结论要有完整样本分母 |
 | 指标与读者理解 | 损失函数与定性对照 | 只写新增损失可提升精度 | 用错相同数量像素却产生不同前景重叠的例子解释为什么需要另一项，再核对图中实际例子 | [SiWiS](2026-11-16-insight-03.md#siwis) | 训练目标、某幅图的实例数和独立测试性能各有各的证据 |
 | 数学意义与图文 | 阵列校准方法 | 只给出两次差分的公式和最终平稳曲线 | 第一次差分后列出仍然共有的发射机项，再看两接收机相减保留哪项几何信息 | [UltraLEGO](2026-11-16-insight-03.md#ultralego) | 参考路径、相位周期和校准条件按目标系统核对 |
+| 指标定义与设计选择 | 方法、参数扫描 | 用逐图归一化的方向图主张接收信号更强 | 先说明归一化消去的尺度，再用保留强度信息的指标解释间距选择 | [GPMS](2026-11-16-insight-04.md#gpms) | 图形匹配、传输能量和终端检出率各需相应证据 |
+| 系统模型与判据 | 方法、切换决策 | 写了多终端提高精度却没有说明第二个观测改变哪个决定 | 列出第一台终端仍容许的两种结果，再说明第二台排除了哪一个 | [Wall-Street](2026-11-16-insight-04.md#wall-street) | 室外链路项须共享，损耗界须覆盖观测条件 |
+| 实验因果与段落衔接 | 遮挡实验、机制解释 | 从整机误差直接推出注意力层会识别受遮挡的位置 | 位置和遮挡分开改变，沿同一接收机追踪权重，再用固定权重对照估计精度收益 | [Medusa](2026-11-16-insight-04.md#medusa) | 图 23 验证权重响应，收益归因需要相同记录的对照 |
+| 数学意义与引图 | 信号处理方法、测距实验 | 把峰换格写成目标移动，把插值写成提高物理分辨率 | 让静止目标提供已知参照，先换算每一格的物理距离，再说明跨扫频的共同网格 | [BiScatter](2026-11-16-insight-04.md#biscatter) | 网格间距、分辨率与测距误差须分别核验 |
 
 ## 论文索引
 
@@ -468,6 +473,7 @@
 | [2026-11-12](2026-11-12.md#map) | MobiCom 2024 | Map++: Towards User-Participatory Visual SLAM Systems with Efficient Map Expansion and Sharing | [10.1145/3636534.3649386](https://doi.org/10.1145/3636534.3649386) |
 | [2026-11-12](2026-11-12.md#echorider) | SIGCOMM 2025 | Mobile Underwater Backscatter Networking | [10.1145/3718958.3750507](https://doi.org/10.1145/3718958.3750507) |
 | [2026-11-16](2026-11-16-insight-03.md#ultralego) | MobiCom 2026 | UltraLEGO: A Modular Ultra-Wideband Phased Array Platform for Wireless Sensing and Localization | [10.1145/3795866.3844461](https://doi.org/10.1145/3795866.3844461) |
+| [2026-11-16](2026-11-16-insight-04.md#wall-street) | MobiCom 2026 | Wall-Street: An Intelligent Vehicular Surface for Reliable mmWave Handover | [10.1145/3795866.3796693](https://doi.org/10.1145/3795866.3796693) |
 
 ## 写作依据
 
