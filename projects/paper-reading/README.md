@@ -125,6 +125,7 @@
 | [2026-11-16 专项 31](2026-11-16-insight-31.md) | X-ResQ、Point Transformer V3、RepViT、AQLM、DyT | 起点选择、层间邻域、分支合并、码本成本与跨通道耦合 | [第 141–150 篇综合](2026-11-16-insight-31.md#第十五个十篇的解题思路) |
 | [2026-11-16 专项 32](2026-11-16-insight-32.md) | SeaScan、GeoCalib、SSME、Photon Inhibition、在线级联 | 台架能量、校准先验、少标注和休眠漏测 | 把数据来源、未观测的时段和留给复核的样本写清。 |
 | [2026-11-16 专项 33](2026-11-16-insight-33.md) | Hydra 叶面感知、SA3D、LaSCal、AnyChange、POP-BO | 跨模态对应、共同误差、类别校准、双向检测与成对反馈 | [第 151–160 篇综合](2026-11-16-insight-33.md#第十六个十篇的解题思路) |
+| [2026-11-16 专项 34](2026-11-16-insight-34.md) | NeuralAids、Mip-Splatting、Active Statistical Inference、SALAD、Gist Tokens | 往返时限、采样混叠、非均匀核验、地点特征与指令压缩 | [怎样设计能揭露信息损失的例子](2026-11-16-insight-34.md#把被省略的输入重新放回来) |
 
 ## 改稿案例检索
 
@@ -528,6 +529,11 @@
 | 概率含义、实验验证 | 换场景校准 | 同一输出分数仍被解释为旧场景的概率 | 固定类内分布，改变先验比例，重算该分数档的阳性占比 | [LaSCal](2026-11-16-insight-33.md#lascal) | 目标域含新类别或类内变化时需其他证据 |
 | 实验设计、信息取舍 | 感知覆盖变化 | 只从旧弱区生成候选会漏掉新弱区 | 交换新旧数据各生成一次候选，然后检查变化方向 | [AnyChange](2026-11-16-insight-33.md#anychange) | 两次测量需对齐、标定 |
 | 数学意义、指标定义 | 偏好调参 | 由两种方案的胜负声称节省了具体时间 | 用偏好挑选比较对象，另用时间戳核对物理收益 | [POP-BO](2026-11-16-insight-33.md#pop-bo) | 依赖偏好模型，对效用加共同常数无法区分 |
+| 系统模型、时间定义 | 端到端处理时限 | 用单向传输吞吐量推断往返能赶上音频时限 | 按每块字节和周期先算必要吞吐，再分别列出传输、推理和回传时间 | [NeuralAids](2026-11-16-insight-34.md#neuralaids) | 平均速率不能保证逐块截止时间 |
+| 实验设计、机制解释 | 跨分辨率感知 | 在训练的采样尺度上测试会遮蔽混叠 | 固定训练图像，扫描测试采样尺度并报告误差随尺度的变化 | [Mip-Splatting](2026-11-16-insight-34.md#mip-splatting) | 不能从单个尺度推定跨尺度性能 |
+| 指标定义、实验可信度 | 难例核验与全网误差 | 抽查了大量难例却直接平均真值 | 保留全样本预测、逐项核验概率，以加权残差修正全体均值 | [Active Statistical Inference](2026-11-16-insight-34.md#active-statistical-inference) | 核验结果可见性也可能受链路影响 |
+| 系统设计、消融 | 无线指纹检索 | 强反射被强制分给一个地点 | 允许某些局部特征不参加聚合，在匹配场景成对评估 | [SALAD](2026-11-16-insight-34.md#salad) | 偶发大幅度与不稳定特征需区别 |
+| 系统模型、指标定义 | 指令缓存与复用 | 缓存位置较少被写成等比例端到端提速 | 分开比无缓存与完整缓存，用边界样例检验保留下来的规则 | [Gist Tokens](2026-11-16-insight-34.md#gist-tokens) | 缓存为高维激活，换指令需重算 |
 
 ## 论文索引
 
@@ -780,6 +786,11 @@
 | [2026-11-16](2026-11-16-insight-33.md#lascal) | NeurIPS 2024 | LaSCal: Label-Shift Calibration without target labels | [10.52202/079017-2088](https://doi.org/10.52202/079017-2088) |
 | [2026-11-16](2026-11-16-insight-33.md#anychange) | NeurIPS 2024 | Segment Any Change | [10.52202/079017-2581](https://doi.org/10.52202/079017-2581) |
 | [2026-11-16](2026-11-16-insight-33.md#pop-bo) | ICML 2024 | Principled Preferential Bayesian Optimization | [pmlr-v235-xu24y](https://proceedings.mlr.press/v235/xu24y.html) |
+| [2026-11-16](2026-11-16-insight-34.md#neuralaids) | MobiCom 2025 | Wireless Hearables With Programmable Speech AI Accelerators | [10.1145/3680207.3765251](https://doi.org/10.1145/3680207.3765251) |
+| [2026-11-16](2026-11-16-insight-34.md#mip-splatting) | CVPR 2024 | Mip-Splatting: Alias-Free 3D Gaussian Splatting | [10.1109/CVPR52733.2024.01839](https://doi.org/10.1109/CVPR52733.2024.01839) |
+| [2026-11-16](2026-11-16-insight-34.md#active-statistical-inference) | ICML 2024 | Active Statistical Inference | [pmlr-v235-zrnic24a](https://proceedings.mlr.press/v235/zrnic24a.html) |
+| [2026-11-16](2026-11-16-insight-34.md#salad) | CVPR 2024 | Optimal Transport Aggregation for Visual Place Recognition | [10.1109/CVPR52733.2024.01672](https://doi.org/10.1109/CVPR52733.2024.01672) |
+| [2026-11-16](2026-11-16-insight-34.md#gist-tokens) | NeurIPS 2023 | Learning to Compress Prompts with Gist Tokens | [10.52202/075280-0848](https://doi.org/10.52202/075280-0848) |
 
 ## 写作依据
 
