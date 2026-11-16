@@ -90,6 +90,7 @@
 | [2026-11-16 专项 04](2026-11-16-insight-04.md) | GPMS、Medusa、BiScatter（复读），Wall-Street（新读） | 从归一化指标、链路区间、遮挡轮换和距离索引写出设计依据 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 05](2026-11-16-insight-05.md) | B²LoRa、SaTE（复读），MetaVenom（新读） | 区分符号恢复与检包、硬件状态与波束、样本数量与测试表现 | [第 11–20 篇的写作 insight 与 UWB 同步改稿示例](2026-11-16-insight-05.md#第二个十篇的写作-insight) |
 | [2026-11-16 专项 06](2026-11-16-insight-06.md) | MetaX、GRADE（新读），Hydra、DtS、QuinID（复读） | 边界条件、三维误差、路径可辨识性、抽样分母与共享功放 | 原文段序、可核对的对照、英文改稿与迁移条件 |
+| [2026-11-16 专项 07](2026-11-16-insight-07.md) | CommSAR、RFDT（首次进入研读索引），AlphaWAN、XGate、SeRadar（复读） | 失败如何计数、总量掩盖了谁的损失、额外实验怎样检验解释 | [第 21–30 篇的写作 insight 与 UWB 同步改稿示例](2026-11-16-insight-07.md#第三个十篇的写作-insight) |
 
 ## 改稿案例检索
 
@@ -358,6 +359,11 @@
 | 几何可辨识性与结果解释 | 多径模型、定位实验 | 实测峰落在两弧交点就宣称两路径总能唯一定位 | 保留关于锚点连线对称的候选点，检验新增路径是否给出不同预测 | [Hydra](2026-11-16-insight-06.md#hydra) | 已知首末反射点、可分辨的时延与几何独立性影响结论 |
 | 抽样分母与实验过渡 | 可用性测量、休眠策略 | 把失败过境中低仰角所占比例写成低仰角时的失败概率 | 先说明按成败各取样多少，再交代终端作决定时手里已有的条件 | [DtS](2026-11-16-insight-06.md#dts) | 全次过境与单个时隙也需各自确定分母 |
 | 信号模型与实验衔接 | 多频带读取、收发机实现 | 频带分开便认定会话互不干扰 | 在第二路载波关断时追踪第一路输出，再用开关预失真的包级对照检验后果 | [QuinID](2026-11-16-insight-06.md#quinid) | 共用功放的非线性是必要条件，包速率不能单独定位前导码漏检 |
+| 指标定义与配置选择 | 误码实验、设计取舍 | 只算已同步样本，或因某条曲线更低就断言吞吐最高 | 把未同步脉冲的全部载荷位计入总比特数和错误比特数，再说明满足目标后还剩几个载荷位置 | [CommSAR](2026-11-16-insight-07.md#commsar) | 等长载荷时一次失步按一个脉冲的载荷计，吞吐另需同时间有效位数 |
+| 机制解释与对照 | 射频数字孪生、接收功率图 | 把仿真功率热图的纹理变化读成局部实测误差消失 | 区分预测网格与实测位置，若要归因到某个区域就核对成对残差对全局均方误差的贡献 | [RFDT](2026-11-16-insight-07.md#rfdt) | 整套方法的测试误差不能独立计量每项设计的贡献 |
+| 公平性与分母 | 无线网络共存实验 | 总接收率掩盖过载波及哪一张网 | 固定一张网的负载，只给另一张网加发送者，分别保留各自分母 | [AlphaWAN](2026-11-16-insight-07.md#alphawan) | 服务比例衡量当轮交付，长期公平需要多轮逐用户记录 |
+| 基线与弱链路 | 并发接收、远近效应 | 误把弱链路自身误码和邻近强信号造成的损失合为一项 | 固定弱链路 SNR，对照强发射者开关，再按信号质量组报告整网接收率 | [XGate](2026-11-16-insight-07.md#xgate) | 两节点的符号错误率与网络多节点的包接收率分别解释 |
+| 受控实验与篇章衔接 | 环境泛化、跨房间测试 | 房间之间有差别就将全部改善归给反射物数量 | 在同一房间固定识别器后改变布置，再用转动同一物体检验几何条件 | [SeRadar](2026-11-16-insight-07.md#seradar) | 本次新增物体的材质、面积和位置绑定，最佳角属于测试布置 |
 
 ## 论文索引
 
@@ -487,6 +493,8 @@
 | [2026-11-16](2026-11-16-insight-05.md#metavenom) | MobiCom 2026 | MetaVenom: Field Programmable Fully Passive Metasurfaces | [10.1145/3795866.3844150](https://doi.org/10.1145/3795866.3844150) |
 | [2026-11-16](2026-11-16-insight-06.md#metax) | MobiCom 2026 | Mechanically Programmable Reflective Metasurfaces: A General Low-Cost Paradigm for High-Frequency Wavefront Control | [10.1145/3795866.3844482](https://doi.org/10.1145/3795866.3844482) |
 | [2026-11-16](2026-11-16-insight-06.md#grade) | MobiCom 2026 | GRADE: Single-Frame Generative Radar Depth Estimation Under Visual Degradation | [10.1145/3795866.3844478](https://doi.org/10.1145/3795866.3844478) |
+| [2026-11-16](2026-11-16-insight-07.md#commsar) | SIGCOMM 2026 | CommSAR: Enabling Bidirectional Communication in SAR Imaging Satellites via Shared Waveform | [10.1145/3789240.3829144](https://doi.org/10.1145/3789240.3829144) |
+| [2026-11-16](2026-11-16-insight-07.md#rfdt) | MobiCom 2026 | Physically Accurate Differentiable Inverse Rendering for Radio Frequency Digital Twin | [10.1145/3795866.3796686](https://doi.org/10.1145/3795866.3796686) |
 
 ## 写作依据
 
