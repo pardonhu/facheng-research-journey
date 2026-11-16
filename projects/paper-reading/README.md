@@ -10,7 +10,7 @@
 
 前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
 
-第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路)
+第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路) · [第 131–140 篇：反转比较方向、观测互补与代表性](2026-11-16-insight-29.md#第十四个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -120,6 +120,7 @@
 | [2026-11-16 专项 26](2026-11-16-insight-26.md) | Gastag、Token Cropr、VisualSync、CLEAR、Mamba-2 | 参考标签间距、剪枝与位置恢复、运动激励、探测器误差、状态跨段传递 | 在去掉或校正一项信息之后，给出仍能核对目标的观测。 |
 | [2026-11-16 专项 27](2026-11-16-insight-27.md) | OhmScanner、ATENet、shapiq、RPSW、DeltaNet | 芯片反馈、观测时刻、通道互补与关联记忆 | [第 121–130 篇综合](2026-11-16-insight-27.md#第十三个十篇的解题思路) |
 | [2026-11-16 专项 28](2026-11-16-insight-28.md) | EVLeSen、ETAP、AACO、TIES-Merging、tinyBenchmarks | 参照通道收益、折返跟踪、成组采样、符号冲突与代表用例 | 把决定所依赖的条件写进对应的实验句。 |
+| [2026-11-16 专项 29](2026-11-16-insight-29.md) | ChargeX、单光子三维重建、MultiDimSPCI、MuDSC、LESS | 还原部署单位、表面覆盖与误差方向、特征匹配和选样 | [第 131–140 篇综合](2026-11-16-insight-29.md#第十四个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -498,6 +499,11 @@
 | 系统模型、实验设计 | 主动采集 | 单次查询看似无用，成对查询却足以分类 | 把一组观测的预期收益与整组测量代价相加比较，实际先采一项再决策 | [AACO](2026-11-16-insight-28.md#aaco) | 近邻数据需覆盖欲比较的组合 |
 | 数学含义、公平性 | 模型合并 | 多数任务的方向与总改变量符号相反 | 计算两侧总改变量并保留分任务评测 | [TIES-Merging](2026-11-16-insight-28.md#ties-merging) | 同初始化、坐标已对应 |
 | 指标定义、实验可信度 | 缩短台架回归评测 | 用代表段直接平均给出了错误的工况权重 | 从旧版本选代表段，把预测的总分与留出新版本全套实测对照 | [tinyBenchmarks](2026-11-16-insight-28.md#tinybenchmarks) | 固件改变行为后需检验原分组 |
+| 指标定义、数学意义 | 供能距离比较 | 归一化距离较大被读成可部署距离更远 | 在同一效率阈值下将两组结果都换回米，再核对负载需求 | [ChargeX](2026-11-16-insight-29.md#chargex) | 效率门限与手机持续充电条件不同 |
+| 指标定义、实验设计 | 三维测绘评估 | 仅测上报点离真值多近导致漏掉大部表面的系统占优 | 反转最近邻查询方向，并报告两个均值 | [单光子三维重建](2026-11-16-insight-29.md#单光子三维重建) | 真值表面的取样方式改变平均数 |
+| 数学意义、证据范围 | 联合预测区间 | 同时检查两个单变量区间漏掉少见的反向变化 | 依据配对残差建立联合区域，同报覆盖率和面积 | [MultiDimSPCI](2026-11-16-insight-29.md#multidimspci) | 序列稳定性影响覆盖 |
+| 系统模型、实验设计 | 模型融合与比较 | 同名通道可能学的是不同响应 | 先在同批输入上辨认单元，再给出合并前后分任务和联合准确率 | [MuDSC](2026-11-16-insight-29.md#mudsc) | 通道响应依赖校准输入 |
+| 数学意义、消融 | 筛选训练回放 | 候选更新大而方向偏离目标 | 并列比较归一化前后的选择行为和留出任务得分 | [LESS](2026-11-16-insight-29.md#less) | 实际单步下降还与更新长度有关 |
 
 ## 论文索引
 
@@ -725,6 +731,11 @@
 | [2026-11-16](2026-11-16-insight-28.md#aaco) | ICML 2024 | Acquisition Conditioned Oracle for Nongreedy Active Feature Acquisition | [pmlr-v235-valancius24a](https://proceedings.mlr.press/v235/valancius24a.html) |
 | [2026-11-16](2026-11-16-insight-28.md#ties-merging) | NeurIPS 2023 | TIES-Merging: Resolving Interference When Merging Models | [10.52202/075280-0310](https://doi.org/10.52202/075280-0310) |
 | [2026-11-16](2026-11-16-insight-28.md#tinybenchmarks) | ICML 2024 | tinyBenchmarks: evaluating LLMs with fewer examples | [pmlr-v235-maia-polo24a](https://proceedings.mlr.press/v235/maia.html) |
+| [2026-11-16](2026-11-16-insight-29.md#chargex) | MobiCom 2024 | Pushing Wireless Charging from Station to Travel | [10.1145/3636534.3649346](https://doi.org/10.1145/3636534.3649346) |
+| [2026-11-16](2026-11-16-insight-29.md#单光子三维重建) | CVPR 2024 | Towards 3D Vision with Low-Cost Single-Photon Cameras | [10.1109/CVPR52733.2024.00507](https://doi.org/10.1109/CVPR52733.2024.00507) |
+| [2026-11-16](2026-11-16-insight-29.md#multidimspci) | ICML 2024 | Conformal prediction for multi-dimensional time series by ellipsoidal sets | [pmlr-v235-xu24m](https://proceedings.mlr.press/v235/xu24m.html) |
+| [2026-11-16](2026-11-16-insight-29.md#mudsc) | CVPR 2024 | Training-Free Pretrained Model Merging | [10.1109/CVPR52733.2024.00565](https://doi.org/10.1109/CVPR52733.2024.00565) |
+| [2026-11-16](2026-11-16-insight-29.md#less) | ICML 2024 | LESS: Selecting Influential Data for Targeted Instruction Tuning | [pmlr-v235-xia24c](https://proceedings.mlr.press/v235/xia24c.html) |
 
 ## 写作依据
 
