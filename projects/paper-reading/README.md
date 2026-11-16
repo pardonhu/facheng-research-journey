@@ -115,6 +115,7 @@
 | [2026-11-16 专项 21](2026-11-16-insight-21.md) | IoT-Brain、UMotion、4D-GS、STREAM-UGS、MatFormer | 语义到覆盖、带不确定性的测距、动态几何、拓扑采样、嵌套宽度 | [第 91–100 篇总结](2026-11-16-insight-21.md#第十个十篇的解题思路)与[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) |
 | [2026-11-16 专项 22](2026-11-16-insight-22.md) | SkyShare、PARE-Net、ScaLR、KT 置信序列、Promptbreeder | 总干扰与覆盖、旋转假设、跨模态配对、随时有效的置信序列、改写调参指令 | 用对照回答为什么这些证据足够、还有哪项要另测。 |
 | [2026-11-16 专项 23](2026-11-16-insight-23.md) | 5G 中频实测、Tartan IMU、PCP、Multicalibration、Reflexion | 资源乘积、运动先验、选择性缺标、交叉校准、重试记忆 | [第 101–110 篇对照和截止时间算例](2026-11-16-insight-23.md#第十一个十篇的解题思路) |
+| [2026-11-16 专项 24](2026-11-16-insight-24.md) | EarCardio、CodeFilling、Transductive Active Learning、EXOM、DoRA | 缺测位置与波形、接收者所缺信息、目标区方差、同次事件的另一选择、幅度与方向 | 先确定要改善哪个量，再说明为何这条消息或改动可能改善它。 |
 
 ## 改稿案例检索
 
@@ -468,6 +469,11 @@
 | 标签缺失与区间校准 | 测距评估、标定集构造 | 最难测的路线会不会也最容易缺少参考真值 | 记录真值留存机制，在校准时调整条件权重；另列部署需要哪些输入 | [PCP](2026-11-16-insight-23.md#pcp) | 理论保证的条件包括交换性和给定辅助变量后的缺失机制 |
 | 查看相交子群的校准 | 多设备可靠性实验 | 按机型和频段各自检查后哪些组合还有误差 | 比较已有分数在具体机型与频段交叉组的实际成功率 | [Multicalibration](2026-11-16-insight-23.md#multicalibration) | 样本不足的小组要报告样本数与不确定性 |
 | 以实测反馈指导下一次动作 | 重试策略、LLM 台架助手 | 同样多试几次，经验是否改变下次决策 | 保留失败时可核对的时刻、由此选择的下一步；比较相同重试次数 | [Reflexion](2026-11-16-insight-23.md#reflexion) | 累计至少成功一次和单次成功率属于两个指标 |
+| 先标出漏采再评价重建 | 可穿戴无线感知、采样时序 | 补齐时间轴之后哪些峰仍是推断 | 用时间戳确定缺少的采样位置，让辅助轴和相似度实验检验补值 | [EarCardio](2026-11-16-insight-24.md#earcardio) | 两端数值相同不能唯一确定缺口内波形 |
+| 以接收方已有信息决定要发什么 | 协同感知与回传开销 | 同一预算下发送最有把握的观测还是最能补缺的观测 | 以每格尚未满足的需求计算新增贡献，区分关注位置与每个特征的编码 | [CodeFilling](2026-11-16-insight-24.md#codefilling) | 选择前广播置信度及位置索引也占空口 |
+| 根据目标区域获益选择测点 | 布点、标定与主动补测 | 自身方差大的候选能否解释真正关心的位置 | 用候选与目标区域的关联和观测噪声，计算目标不确定性的变化 | [Transductive Active Learning](2026-11-16-insight-24.md#transductive-active-learning) | 若两者几乎独立，再精确测候选也难以改进目标预测 |
+| 已有观测约束下的反事实抽样 | 配置对照与原因解释 | 已失败的一包在另一设置下会怎样 | 在同一外生状态下比较两个动作，以实际观测筛选并对抽样分布重加权 | [EXOM](2026-11-16-insight-24.md#exom) | 识别单次反事实需要模型假设；不同次上板试验通常不共享衰落实现 |
+| 整体增益与通道相对方向 | 设备迁移、模型校准 | 总增益正确之后为什么特定输入仍可能错 | 先归一化方向再调独立的幅度，另用留出输入检查两者合效 | [DoRA](2026-11-16-insight-24.md#dora) | 二维例子只解释分解，多通道是否低秩须由数据验证 |
 
 ## 论文索引
 
@@ -670,6 +676,11 @@
 | [2026-11-16](2026-11-16-insight-23.md#pcp) | NeurIPS 2024 | Robust Conformal Prediction Using Privileged Information | [10.52202/079017-3742](https://doi.org/10.52202/079017-3742) |
 | [2026-11-16](2026-11-16-insight-23.md#multicalibration) | ICML 2024 | Multicalibration for Confidence Scoring in LLMs | [pmlr-v235-detommaso24a](https://proceedings.mlr.press/v235/detommaso24a.html) |
 | [2026-11-16](2026-11-16-insight-23.md#reflexion) | NeurIPS 2023 | Reflexion: Language Agents with Verbal Reinforcement Learning | [10.52202/075280-0377](https://doi.org/10.52202/075280-0377) |
+| [2026-11-16](2026-11-16-insight-24.md#earcardio) | MobiCom 2026 | Unlocking Practical Cardiac Monitoring Capabilities on True Wireless Stereo Earbuds | [10.1145/3795866.3796678](https://doi.org/10.1145/3795866.3796678) |
+| [2026-11-16](2026-11-16-insight-24.md#codefilling) | CVPR 2024 | Communication-Efficient Collaborative Perception via Information Filling with Codebook | [10.1109/CVPR52733.2024.01466](https://doi.org/10.1109/CVPR52733.2024.01466) |
+| [2026-11-16](2026-11-16-insight-24.md#transductive-active-learning) | NeurIPS 2024 | Transductive Active Learning: Theory and Applications | [10.52202/079017-3961](https://doi.org/10.52202/079017-3961) |
+| [2026-11-16](2026-11-16-insight-24.md#exom) | NeurIPS 2024 | Exogenous Matching: Learning Good Proposals for Tractable Counterfactual Estimation | [10.52202/079017-4206](https://doi.org/10.52202/079017-4206) |
+| [2026-11-16](2026-11-16-insight-24.md#dora) | ICML 2024 | DoRA: Weight-Decomposed Low-Rank Adaptation | [pmlr-v235-liu24bn](https://proceedings.mlr.press/v235/liu24bn.html) |
 
 ## 写作依据
 
