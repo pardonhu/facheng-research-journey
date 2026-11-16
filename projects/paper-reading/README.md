@@ -105,6 +105,7 @@
 | [2026-11-16 专项 15](2026-11-16-insight-15.md) | ACE、PassiveBLE、tsseg-eval、QuaRot | 真实时间窗、连续断连、状态复现与等码长量化 | [第 61–70 篇的组合思路和实验段](2026-11-16-insight-15.md#第七个十篇的解题思路) |
 | [2026-11-16 专项 16](2026-11-16-insight-16.md) | FlexICoN Gen-3、CorrMatch、SEA-RAFT、EF21-SGDM、TabICL | 结构与在线权重、伪标签的两个分母、同中心的误差分布、压缩反馈、字段角色 | 用校准起点、缺失字段和暂态变化检验一个方法究竟保留了哪些信息。 |
 | [2026-11-16 专项 17](2026-11-16-insight-17.md) | RadioStream、FOA、FADAS、FLoRA、FlashAttention-3 | 时隙预约、固定模型的设备适配、异步聚合、低秩因子配对、跨块流水 | [第 71–80 篇总结](2026-11-16-insight-17.md#第八个十篇的解题思路)归纳了分工时要保留的关系、调参周期与时间测量。 |
+| [2026-11-16 专项 18](2026-11-16-insight-18.md) | RadioSight、RoMa、UniDepth、ifBO、Moirai | 两段反射路径、分离峰的局部估计、相机与天线坐标、可接续调参、通道重编号 | 先把当前能区分的候选写清楚，再给决定下一步所需的观察。 |
 
 ## 改稿案例检索
 
@@ -428,6 +429,11 @@
 | 按数据生成版本解释时效 | 异步更新与聚合 | 两个节点同时上报，其更新是否同样新 | 记录生成版本，用批内最大版本差调节本批步长，说明所用公式或代码 | [FADAS](2026-11-16-insight-17.md#fadas) | 控制训练步长的实验无法单独说明上行字节与发包能耗 |
 | 按节点配对后聚合 | 多网关校准与通信开销 | 左右因子各自平均会引入哪些变化 | 构造两节点各改一维的反例，再分别列上行因子和回传宽度 | [FLoRA](2026-11-16-insight-17.md#flora) | 低秩近似的物理合理性需由校准数据给出 |
 | 跨块并行与时间指标 | 系统优化与消融实验 | 流水重叠省去等待后哪一个结果会提早 | 画出首块与整批完成时刻，分别移除并行机制并写清保留的配置 | [FlashAttention-3](2026-11-16-insight-17.md#flashattention-3) | 持续输入速度超过处理速度仍会积压，三组消融不能确定交互量 |
+| 局部视角与完整传播路径 | 波束调度、系统动机 | 接收机看得见反射面，哪一段传播条件尚未检查 | 分别检查发射端到反射面和反射面到接收端，按目标时刻验证候选 | [RadioSight](2026-11-16-insight-18.md#radiosight) | 可见性只约束几何路径，频段衰减与整体吞吐的归因需分开 |
+| 保留多个峰再局部细化 | 多径识别、连续参数估计 | 何时对候选求均值会落在没有信号的位置 | 先保留分离的候选、在同一峰内细化，指出什么新观测能辨别不同峰 | [RoMa](2026-11-16-insight-18.md#roma) | 细化峰值不等于识别了正确路径 |
+| 先统一坐标再比较距离 | 视觉辅助标定、定位评估 | 相机的光轴深度与天线的径向距离怎样比较 | 用对应相机内参反投影并通过外参变换到天线坐标系 | [UniDepth](2026-11-16-insight-18.md#unidepth) | 米制深度本身有预测误差，数值差异还受标定影响 |
+| 分开决策前瞻和实际投入 | 链路预测器调参与试验资源 | 一组参数当前落后，要不要再训练一轮 | 在同一前瞻时刻比较各候选的越线概率，只执行下一个增量再观察 | [ifBO](2026-11-16-insight-18.md#ifbo) | 需要可恢复的训练状态及可比的验证成绩 |
+| 锚点改名与预测等变 | 多链路时间序列模型 | 任意编号变化后什么该保持、什么要随之交换 | 打乱整条锚点轨迹连同元数据，检查预测是否同样换位；保留同源关系 | [Moirai](2026-11-16-insight-18.md#moirai) | 有固定物理角色的字段仍要保留其身份 |
 
 ## 论文索引
 
@@ -600,6 +606,11 @@
 | [2026-11-16](2026-11-16-insight-17.md#fadas) | ICML 2024 | FADAS: Towards Federated Adaptive Asynchronous Optimization | [pmlr-v235-wang24bv](https://proceedings.mlr.press/v235/wang24bv.html) |
 | [2026-11-16](2026-11-16-insight-17.md#flora) | NeurIPS 2024 | FLoRA: Federated Fine-Tuning Large Language Models with Heterogeneous Low-Rank Adaptations | [10.52202/079017-0708](https://doi.org/10.52202/079017-0708) |
 | [2026-11-16](2026-11-16-insight-17.md#flashattention-3) | NeurIPS 2024 | FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision | [10.52202/079017-2193](https://doi.org/10.52202/079017-2193) |
+| [2026-11-16](2026-11-16-insight-18.md#radiosight) | MobiCom 2026 | RadioSight: Predictive mmWave XR Network Optimization from Dynamic Neural Radio Fields | [10.1145/3795866.3844465](https://doi.org/10.1145/3795866.3844465) |
+| [2026-11-16](2026-11-16-insight-18.md#roma) | CVPR 2024 | RoMa: Robust Dense Feature Matching | [10.1109/CVPR52733.2024.01871](https://doi.org/10.1109/CVPR52733.2024.01871) |
+| [2026-11-16](2026-11-16-insight-18.md#unidepth) | CVPR 2024 | UniDepth: Universal Monocular Metric Depth Estimation | [10.1109/CVPR52733.2024.00963](https://doi.org/10.1109/CVPR52733.2024.00963) |
+| [2026-11-16](2026-11-16-insight-18.md#ifbo) | ICML 2024 | In-Context Freeze-Thaw Bayesian Optimization for Hyperparameter Optimization | [pmlr-v235-rakotoarison24a](https://proceedings.mlr.press/v235/rakotoarison24a.html) |
+| [2026-11-16](2026-11-16-insight-18.md#moirai) | ICML 2024 | Unified Training of Universal Time Series Forecasting Transformers | [pmlr-v235-woo24a](https://proceedings.mlr.press/v235/woo24a.html) |
 
 ## 写作依据
 
