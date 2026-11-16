@@ -8,6 +8,8 @@
 
 后续收集把系统论文与 AI 工具放在同一个具体问题里对照。[第 51–60 篇：何时确认动作、怎样对齐局部结果](2026-11-16-insight-13.md#第六个十篇的解题思路) · [第 61–70 篇：主动补测、数据重放与连续失联](2026-11-16-insight-15.md#第七个十篇的解题思路) · [第 71–80 篇：调参时固定什么、聚合时保留什么、流水线省去哪段等待](2026-11-16-insight-17.md#第八个十篇的解题思路) · [第 81–90 篇：什么测量能分开候选，哪次试验会改变选择](2026-11-16-insight-19.md#第九个十篇的解题思路)
 
+前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
+
 ## 助手如何完成与复用训练
 
 每天完成原文研读、论证拆解和具体改稿，记录“助手自拟待改句或段落—问题诊断—完整改稿—修改理由—适用边界”。练习由助手完成，无需作者阅读论文、提交作业或填写进度。
@@ -108,6 +110,7 @@
 | [2026-11-16 专项 18](2026-11-16-insight-18.md) | RadioSight、RoMa、UniDepth、ifBO、Moirai | 两段反射路径、分离峰的局部估计、相机与天线坐标、可接续调参、通道重编号 | 先把当前能区分的候选写清楚，再给决定下一步所需的观察。 |
 | [2026-11-16 专项 19](2026-11-16-insight-19.md) | DynaFilter、Doppelgangers++、p-KGFN、MOBO-OSD、MOMENT | 压缩域预筛、假匹配、分段试验、成批选点、连续缺测 | [第 81–90 篇总结及电芯 UWB 逐批复算](2026-11-16-insight-19.md#第九个十篇的解题思路) |
 | [2026-11-16 专项 20](2026-11-16-insight-20.md) | Dissecting the StarLink、LM-GC、Lego Sketch、SAST、EAGLE | 带宽归属、逐位恢复、碰撞后的频数估计、稀疏计算、按已知事件提前规划 | 分别写清要恢复的数据、要查询的量，以及采取动作前要等到的确认。 |
+| [2026-11-16 专项 21](2026-11-16-insight-21.md) | IoT-Brain、UMotion、4D-GS、STREAM-UGS、MatFormer | 语义到覆盖、带不确定性的测距、动态几何、拓扑采样、嵌套宽度 | [第 91–100 篇总结](2026-11-16-insight-21.md#第十个十篇的解题思路)与[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) |
 
 ## 改稿案例检索
 
@@ -446,6 +449,11 @@
 | 以固定大小的摘要回答频数查询 | 网关遥测、频数估计 | 计数碰撞之后还有哪些量能区分两种事件流 | 为编号引入可加向量，并用碰撞反例解释能查出与查不出的量 | [Lego Sketch](2026-11-16-insight-20.md#lego-sketch) | 查询给出估计，不保留原始事件顺序 |
 | 先选窗口、再选窗口内的位置 | 稀疏观测与计算开销 | 一幅稀疏观测中的哪些位置还需两两比较 | 按窗口分别计数入选位置，和全图的有序比较数对照 | [SAST](2026-11-16-insight-20.md#sast) | 处理开销、输入采样数与实际运行时间各需独立测量 |
 | 按已经发生的事件预测下一状态 | 投机计算、队列调度 | 下一状态的歧义由哪个已知事件引起 | 把刚确定的选择或确认随旧状态输入下一步，同时保留尚未观测的结果分支 | [EAGLE](2026-11-16-insight-20.md#eagle) | 发送命令与交付确认对应不同事件 |
+| 将自然语言意图转成拓扑与覆盖条件 | 传感器调度与现场实验 | 场地名对应多个出口，在哪些位置需要几次观测 | 先用地图核对路径，再按所需观测次数和设备覆盖选择可用组合 | [IoT-Brain](2026-11-16-insight-21.md#iot-brain) | 一次可见与两站同时可见是不同目标；传输量与完成率需分别报告 |
+| 按观测条件调整测距影响 | UWB/惯性融合与实验解释 | 同一测距残差在通视和遮挡时如何用 | 按该条件标定测距方差，并区分节点间距离与最终关节位置的实验 | [UMotion](2026-11-16-insight-21.md#umotion) | 持续偏差需另行校正，模拟噪声和真实 UWB 的结果各有适用范围 |
+| 固定场景与时变形状分开建模 | 动态无线地图与多径 | 移走反射板后，哪些路径参数需要重算 | 复用未变化的几何，只对动体有关路径推算变化，用独立观测确认 | [4D-GS](2026-11-16-insight-21.md#4d-gs) | 视觉外观与射频材料属性不同；插值和预测需分别验证 |
+| 按采样单位校正重复机会 | 无线拓扑与局部冗余统计 | 按边走两跳得到的三角形占比能否代表所有三节点集合 | 先列举三点组与各自可能的采样路径，再按提出概率校正 | [STREAM-UGS](2026-11-16-insight-21.md#stream-ugs) | 作者算法需要对同一快照的边表多次扫描 |
+| 将模型宽度与设备预算对应 | 边缘部署、配置比较 | 设备的算力介于两档模型之间，可否使用剩余预算 | 从共享前馈层中分层选宽度，分开报告结构开销和验证集性能 | [MatFormer](2026-11-16-insight-21.md#matformer) | 参数量和乘加数均不能直接换算成现场时延或能耗 |
 
 ## 论文索引
 
@@ -633,6 +641,11 @@
 | [2026-11-16](2026-11-16-insight-20.md#lego-sketch) | ICML 2025 | Lego Sketch: A Scalable Memory-augmented Neural Network for Sketching Data Streams | [pmlr-v267-feng25a](https://proceedings.mlr.press/v267/feng25a.html) |
 | [2026-11-16](2026-11-16-insight-20.md#sast) | CVPR 2024 | Scene Adaptive Sparse Transformer for Event-based Object Detection | [10.1109/CVPR52733.2024.01589](https://doi.org/10.1109/CVPR52733.2024.01589) |
 | [2026-11-16](2026-11-16-insight-20.md#eagle) | ICML 2024 | EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty | [pmlr-v235-li24bt](https://proceedings.mlr.press/v235/li24bt.html) |
+| [2026-11-16](2026-11-16-insight-21.md#iot-brain) | MobiCom 2026 | IoT-Brain: Grounding LLMs for Semantic-Spatial Sensor Scheduling | [10.1145/3795866.3796695](https://doi.org/10.1145/3795866.3796695) |
+| [2026-11-16](2026-11-16-insight-21.md#umotion) | CVPR 2025 | UMotion: Uncertainty-driven Human Motion Estimation from Inertial and Ultra-wideband Units | [10.1109/CVPR52734.2025.00664](https://doi.org/10.1109/CVPR52734.2025.00664) |
+| [2026-11-16](2026-11-16-insight-21.md#4d-gs) | CVPR 2024 | 4D Gaussian Splatting for Real-Time Dynamic Scene Rendering | [10.1109/CVPR52733.2024.01920](https://doi.org/10.1109/CVPR52733.2024.01920) |
+| [2026-11-16](2026-11-16-insight-21.md#stream-ugs) | NeurIPS 2024 | Efficient Streaming Algorithms for Graphlet Sampling | [10.52202/079017-0634](https://doi.org/10.52202/079017-0634) |
+| [2026-11-16](2026-11-16-insight-21.md#matformer) | NeurIPS 2024 | MatFormer: Nested Transformer for Elastic Inference | [10.52202/079017-4461](https://doi.org/10.52202/079017-4461) |
 
 ## 写作依据
 
