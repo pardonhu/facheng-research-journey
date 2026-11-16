@@ -99,6 +99,7 @@
 | [2026-11-16 专项 11](2026-11-16-insight-11.md) | CityGaussian、Cutie、MobileCLIP、LABO、ReEvo、FunBO | 带边界的分治、对象记忆、离线蒸馏和三种 LLM 优化 | [第 41–50 篇的思路与组合例](2026-11-16-insight-11.md#第五个十篇的解题思路) |
 | [2026-11-16 专项 12](2026-11-16-insight-12.md) | Tree of Thoughts、MoVA、DeepCache、Medusa-LLM、Geometric Algorithms、NCO4TDTSP | 分支搜索、工具调用、缓存、预计算、联合选择与时变路由 | [16 篇论文的工具与组网点子索引](2026-11-16-insight-12.md#从组网问题查工具) |
 | [2026-11-16 专项 13](2026-11-16-insight-13.md) | SateRIoT、DUSt3R、POCCO、DataComp | 上行反馈、局部配准、多目标候选、训练数据与独立实测 | [第 51–60 篇的写作 insight 与组合示例](2026-11-16-insight-13.md#第六个十篇的解题思路) |
+| [2026-11-16 专项 14](2026-11-16-insight-14.md) | LoRaTrimmer、Sisyphus、TAPVid-3D、LiDAR4D、GenNBV、Lipschitz OPE | 分段接收、低功耗唤醒、位姿重放、主动补测与离线估计 | 六张方法卡与一个可组合的补测问题 |
 
 ## 改稿案例检索
 
@@ -402,6 +403,12 @@
 | 用重复观测接起局部地图 | 配准与多锚几何 | 两区都能重建，数字却在不同参考系 | 沿图的公共观测估变换，给米制和楼层坐标各自的参照 | [DUSt3R](2026-11-16-insight-13.md#dust3r) | 三维视觉点图、度量尺度和外部坐标不能混写 |
 | 改变候选的比较规则 | 多目标调度、路由与备用方案 | 轮换能耗和时延权重仍可能遗漏满足两道门槛的路 | 保留各维成本，给出加权和与最大加权成本的三路算例 | [POCCO](2026-11-16-insight-13.md#pocco) | 目标空间的差异与物理链路独立分别核验 |
 | 把数据清单作为实验变量 | 无线训练集与稀有事件 | 看到更多训练样本是否意味着采到更多独立事件 | 固定候选来源与训练展示总数，保存所用样本编号及重复次数 | [DataComp](2026-11-16-insight-13.md#datacomp) | 重复展示改变训练权重，独立运行需要新采集 |
+| 由候选决定观测区间 | 弱信号检测 | 相位断点未知时整段相加会抵消 | 每一候选先给出自己的分段，再比较分段能量 | [LoRaTrimmer](2026-11-16-insight-14.md#loratrimmer) | 教学分数与真实定位误差分别记录 |
+| 借协议标记预留切换时间 | 低功耗监听与唤醒 | 怎样让便宜的检测先叫醒高耗能接收 | 从已知标记中区分检测所用时间和切换的剩余时间 | [Sisyphus](2026-11-16-insight-14.md#sisyphus) | 还需核对切换时延与唤醒能量的对象 |
+| 用同步观测生成有物理身份的轨迹标签 | 遮挡事件配对 | 同一物体消失再出现后如何按同一点核对 | 在物体局部坐标留住点，再投回各时刻的传感器参考系 | [TAPVid-3D](2026-11-16-insight-14.md#tapvid-3d) | 相机可见性与无线是否受阻分别标记 |
+| 同一场景重放、改变观测位姿 | 辅助传感器布置 | 改变安装位置后还能否看见同一遮挡物 | 请场景模型在指定时刻按新位姿生成点云 | [LiDAR4D](2026-11-16-insight-14.md#lidar4d) | 新视点几何与新无线链路质量需要各自的观测依据 |
+| 把新增信息当作下一步动作的收益 | UWB 主动补测 | 测点一样远，哪个方向能补足现有估计 | 结合已测几何和当前估计，为不同方向计算增量 | [GenNBV](2026-11-16-insight-14.md#gennbv) | 训练可用全局真值，现场决策只用已得观测 |
+| 为缺少历史观测的动作计算范围 | 配置日志、离线策略评价 | 某配置在目标环境没有日志 | 给定变化率上界，用已观测点共同限制未知均值 | [Lipschitz OPE](2026-11-16-insight-14.md#lipschitz-ope) | 范围依赖平滑性和距离定义，采样误差另外处理 |
 
 ## 论文索引
 
@@ -555,6 +562,12 @@
 | [2026-11-16](2026-11-16-insight-13.md#dust3r) | CVPR 2024 | DUSt3R: Geometric 3D Vision Made Easy | [10.1109/CVPR52733.2024.01956](https://doi.org/10.1109/CVPR52733.2024.01956) |
 | [2026-11-16](2026-11-16-insight-13.md#pocco) | NeurIPS 2025 | Preference-Driven Multi-Objective Combinatorial Optimization with Conditional Computation | [10.52202/085713-0389](https://doi.org/10.52202/085713-0389) |
 | [2026-11-16](2026-11-16-insight-13.md#datacomp) | NeurIPS 2023 · Datasets and Benchmarks | DataComp: In search of the next generation of multimodal datasets | [10.52202/075280-1179](https://doi.org/10.52202/075280-1179) |
+| [2026-11-16](2026-11-16-insight-14.md#loratrimmer) | MobiCom 2024 | LoRaTrimmer: Optimal Energy Condensation with Chirp Trimming for LoRa Weak Signal Decoding | [10.1145/3636534.3690681](https://doi.org/10.1145/3636534.3690681) |
+| [2026-11-16](2026-11-16-insight-14.md#sisyphus) | MobiCom 2024 | Sisyphus: Redefining Low Power for LoRa Receiver | [10.1145/3636534.3690686](https://doi.org/10.1145/3636534.3690686) |
+| [2026-11-16](2026-11-16-insight-14.md#tapvid-3d) | NeurIPS 2024 · Datasets and Benchmarks | TAPVid-3D: A Benchmark for Tracking Any Point in 3D | [10.52202/079017-2611](https://doi.org/10.52202/079017-2611) |
+| [2026-11-16](2026-11-16-insight-14.md#lidar4d) | CVPR 2024 | LiDAR4D: Dynamic Neural Fields for Novel Space-time View LiDAR Synthesis | [10.1109/CVPR52733.2024.00492](https://doi.org/10.1109/CVPR52733.2024.00492) |
+| [2026-11-16](2026-11-16-insight-14.md#gennbv) | CVPR 2024 | GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction | [10.1109/CVPR52733.2024.01555](https://doi.org/10.1109/CVPR52733.2024.01555) |
+| [2026-11-16](2026-11-16-insight-14.md#lipschitz-ope) | ICML 2024 | Off-policy Evaluation Beyond Overlap: Sharp Partial Identification Under Smoothness | [pmlr-v235-khan24b](https://proceedings.mlr.press/v235/khan24b.html) |
 
 ## 写作依据
 
