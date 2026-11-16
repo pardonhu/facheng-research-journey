@@ -6,6 +6,8 @@
 
 本轮另收集近三年 ICML、CVPR、ECCV 和 NeurIPS（NIPS）的 AI 工具与解题思路。每条从原论文的方法出发，记录它可以启发的组网问题；一个工具可以对应多个点子。专项记录区分论文精读、方法阅读和原创联想。[从组网问题查 16 篇论文的工具与思路](2026-11-16-insight-12.md#从组网问题查工具) · [分而治之和三种 LLM 优化的具体例子](2026-11-16-insight-11.md#第五个十篇的解题思路)
 
+后续收集把系统论文与 AI 工具放在同一个具体问题里对照。[第 51–60 篇：何时确认动作、怎样对齐局部结果](2026-11-16-insight-13.md#第六个十篇的解题思路) · [第 61–70 篇：主动补测、数据重放与连续失联](2026-11-16-insight-15.md#第七个十篇的解题思路)
+
 ## 助手如何完成与复用训练
 
 每天完成原文研读、论证拆解和具体改稿，记录“助手自拟待改句或段落—问题诊断—完整改稿—修改理由—适用边界”。练习由助手完成，无需作者阅读论文、提交作业或填写进度。
@@ -100,6 +102,7 @@
 | [2026-11-16 专项 12](2026-11-16-insight-12.md) | Tree of Thoughts、MoVA、DeepCache、Medusa-LLM、Geometric Algorithms、NCO4TDTSP | 分支搜索、工具调用、缓存、预计算、联合选择与时变路由 | [16 篇论文的工具与组网点子索引](2026-11-16-insight-12.md#从组网问题查工具) |
 | [2026-11-16 专项 13](2026-11-16-insight-13.md) | SateRIoT、DUSt3R、POCCO、DataComp | 上行反馈、局部配准、多目标候选、训练数据与独立实测 | [第 51–60 篇的写作 insight 与组合示例](2026-11-16-insight-13.md#第六个十篇的解题思路) |
 | [2026-11-16 专项 14](2026-11-16-insight-14.md) | LoRaTrimmer、Sisyphus、TAPVid-3D、LiDAR4D、GenNBV、Lipschitz OPE | 分段接收、低功耗唤醒、位姿重放、主动补测与离线估计 | 六张方法卡与一个可组合的补测问题 |
+| [2026-11-16 专项 15](2026-11-16-insight-15.md) | ACE、PassiveBLE、tsseg-eval、QuaRot | 真实时间窗、连续断连、状态复现与等码长量化 | [第 61–70 篇的组合思路和实验段](2026-11-16-insight-15.md#第七个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -409,6 +412,10 @@
 | 同一场景重放、改变观测位姿 | 辅助传感器布置 | 改变安装位置后还能否看见同一遮挡物 | 请场景模型在指定时刻按新位姿生成点云 | [LiDAR4D](2026-11-16-insight-14.md#lidar4d) | 新视点几何与新无线链路质量需要各自的观测依据 |
 | 把新增信息当作下一步动作的收益 | UWB 主动补测 | 测点一样远，哪个方向能补足现有估计 | 结合已测几何和当前估计，为不同方向计算增量 | [GenNBV](2026-11-16-insight-14.md#gennbv) | 训练可用全局真值，现场决策只用已得观测 |
 | 为缺少历史观测的动作计算范围 | 配置日志、离线策略评价 | 某配置在目标环境没有日志 | 给定变化率上界，用已观测点共同限制未知均值 | [Lipschitz OPE](2026-11-16-insight-14.md#lipschitz-ope) | 范围依赖平滑性和距离定义，采样误差另外处理 |
+| 批量反馈与窗口定义 | 拥塞控制、反馈估计 | 平均上报速率相同，最近几组数据实际覆盖多长时间 | 分清固定个数与固定时长，用原始接收时刻重建窗口 | [ACE](2026-11-16-insight-15.md#ace) | 整套发送控制的结果只支持组合改动 |
+| 建立与持续的成功条件 | 连接管理、连续运行 | 同样总收包率能否说明每段运行同样稳定 | 按时间顺序统计连续失联长度，分别写建连和维持的试验分母 | [PassiveBLE](2026-11-16-insight-15.md#passiveble) | 运行判据、窗口长及相邻事件间隔应一起记录 |
+| 区分状态边界和重复出现的状态 | 链路状态识别 | 正确找出两次切换后能否认出回到起点 | 把状态编号一对一对齐，再数持续错误的时间段 | [tsseg-eval](2026-11-16-insight-15.md#tsseg-eval) | 状态身份的参考需要实验记录，单有边界不足以给出标签 |
+| 变换坐标后再压缩 | UWB 相关值、低码率回传 | 弱分量在等码长表示下被大分量决定的步长抹掉 | 核对正交变换前后的理论量，再算舍入后的具体判定 | [QuaRot](2026-11-16-insight-15.md#quarot) | 任务阈值的一次判定保留与完整波形重建分别说明 |
 
 ## 论文索引
 
@@ -568,6 +575,9 @@
 | [2026-11-16](2026-11-16-insight-14.md#lidar4d) | CVPR 2024 | LiDAR4D: Dynamic Neural Fields for Novel Space-time View LiDAR Synthesis | [10.1109/CVPR52733.2024.00492](https://doi.org/10.1109/CVPR52733.2024.00492) |
 | [2026-11-16](2026-11-16-insight-14.md#gennbv) | CVPR 2024 | GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction | [10.1109/CVPR52733.2024.01555](https://doi.org/10.1109/CVPR52733.2024.01555) |
 | [2026-11-16](2026-11-16-insight-14.md#lipschitz-ope) | ICML 2024 | Off-policy Evaluation Beyond Overlap: Sharp Partial Identification Under Smoothness | [pmlr-v235-khan24b](https://proceedings.mlr.press/v235/khan24b.html) |
+| [2026-11-16](2026-11-16-insight-15.md#ace) | SIGCOMM 2025 | ACE: Sending Burstiness Control for High-Quality Real-time Communication | [10.1145/3718958.3750520](https://doi.org/10.1145/3718958.3750520) |
+| [2026-11-16](2026-11-16-insight-15.md#tsseg-eval) | NeurIPS 2025 | Toward Interpretable Evaluation Measures for Time Series Segmentation | [10.52202/085713-0219](https://doi.org/10.52202/085713-0219) |
+| [2026-11-16](2026-11-16-insight-15.md#quarot) | NeurIPS 2024 | QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs | [10.52202/079017-3180](https://doi.org/10.52202/079017-3180) |
 
 ## 写作依据
 
