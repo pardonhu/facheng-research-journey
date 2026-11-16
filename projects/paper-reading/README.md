@@ -119,6 +119,7 @@
 | [2026-11-16 专项 25](2026-11-16-insight-25.md) | WiLE-Audio、MAGiC-SLAM、DiffFPR、LSTD-Tournament、KIVI | 同网卡共存、回环后移图、相位歧义、离线估值器、量化分组 | [第 111–120 篇与电芯首次缺包的两组解释](2026-11-16-insight-25.md#第十二个十篇的解题思路) |
 | [2026-11-16 专项 26](2026-11-16-insight-26.md) | Gastag、Token Cropr、VisualSync、CLEAR、Mamba-2 | 参考标签间距、剪枝与位置恢复、运动激励、探测器误差、状态跨段传递 | 在去掉或校正一项信息之后，给出仍能核对目标的观测。 |
 | [2026-11-16 专项 27](2026-11-16-insight-27.md) | OhmScanner、ATENet、shapiq、RPSW、DeltaNet | 芯片反馈、观测时刻、通道互补与关联记忆 | [第 121–130 篇综合](2026-11-16-insight-27.md#第十三个十篇的解题思路) |
+| [2026-11-16 专项 28](2026-11-16-insight-28.md) | EVLeSen、ETAP、AACO、TIES-Merging、tinyBenchmarks | 参照通道收益、折返跟踪、成组采样、符号冲突与代表用例 | 把决定所依赖的条件写进对应的实验句。 |
 
 ## 改稿案例检索
 
@@ -492,6 +493,11 @@
 | 指标定义、公平性 | 多传感器消融 | 单路排序选出了重复的观测 | 在同批样本上计算各组合效果及指定配置下的边际贡献 | [shapiq](2026-11-16-insight-27.md#shapiq) | 效用和已开启设备决定实际选取 |
 | 数学意义、读者理解 | 联合分布与实验动机 | 单站直方图相同，双站漏包率却变了 | 构造同时衰落与交替衰落的对照，在斜方向比较投影 | [RPSW](2026-11-16-insight-27.md#rpsw) | 需要同步样本和可比尺度 |
 | 系统模型、实验设计 | 记忆更新与评估 | 读者分不清重复上报的是绝对量还是增量 | 展示第二次写入的残差，再分开测实现速度与交叉干扰 | [DeltaNet](2026-11-16-insight-27.md#deltanet) | 关联键相似时会干扰其他读数 |
+| 实验设计、因果解释 | 参照通道消融 | 总体改善混入路况频率变化 | 同路段内分开比较预处理及参考通道收益 | [EVLeSen](2026-11-16-insight-28.md#evlesen) | 实际道路差异还含其他变化 |
+| 实验设计、指标定义 | 对齐损失与跟踪 | 联合得分改进掩盖可见性准确率下降 | 同一起点比较两组模型并列出两项指标 | [ETAP](2026-11-16-insight-28.md#etap) | 单个暗光场景 |
+| 系统模型、实验设计 | 主动采集 | 单次查询看似无用，成对查询却足以分类 | 把一组观测的预期收益与整组测量代价相加比较，实际先采一项再决策 | [AACO](2026-11-16-insight-28.md#aaco) | 近邻数据需覆盖欲比较的组合 |
+| 数学含义、公平性 | 模型合并 | 多数任务的方向与总改变量符号相反 | 计算两侧总改变量并保留分任务评测 | [TIES-Merging](2026-11-16-insight-28.md#ties-merging) | 同初始化、坐标已对应 |
+| 指标定义、实验可信度 | 缩短台架回归评测 | 用代表段直接平均给出了错误的工况权重 | 从旧版本选代表段，把预测的总分与留出新版本全套实测对照 | [tinyBenchmarks](2026-11-16-insight-28.md#tinybenchmarks) | 固件改变行为后需检验原分组 |
 
 ## 论文索引
 
@@ -714,6 +720,11 @@
 | [2026-11-16](2026-11-16-insight-27.md#shapiq) | NeurIPS 2024（Datasets and Benchmarks） | shapiq: Shapley Interactions for Machine Learning | [10.52202/079017-4141](https://doi.org/10.52202/079017-4141) |
 | [2026-11-16](2026-11-16-insight-27.md#rpsw) | ICML 2024 | Sliced Wasserstein with Random-Path Projecting Directions | [pmlr-v235-nguyen24l](https://proceedings.mlr.press/v235/nguyen24l.html) |
 | [2026-11-16](2026-11-16-insight-27.md#deltanet) | NeurIPS 2024 | Parallelizing Linear Transformers with the Delta Rule over Sequence Length | [10.52202/079017-3668](https://doi.org/10.52202/079017-3668) |
+| [2026-11-16](2026-11-16-insight-28.md#evlesen) | MobiCom 2024 | EVLeSen: In-Vehicle Sensing with EV-Leaked Signal | [10.1145/3636534.3649389](https://doi.org/10.1145/3636534.3649389) |
+| [2026-11-16](2026-11-16-insight-28.md#etap) | CVPR 2025 | ETAP: Event-based Tracking of Any Point | [10.1109/CVPR52734.2025.02532](https://doi.org/10.1109/CVPR52734.2025.02532) |
+| [2026-11-16](2026-11-16-insight-28.md#aaco) | ICML 2024 | Acquisition Conditioned Oracle for Nongreedy Active Feature Acquisition | [pmlr-v235-valancius24a](https://proceedings.mlr.press/v235/valancius24a.html) |
+| [2026-11-16](2026-11-16-insight-28.md#ties-merging) | NeurIPS 2023 | TIES-Merging: Resolving Interference When Merging Models | [10.52202/075280-0310](https://doi.org/10.52202/075280-0310) |
+| [2026-11-16](2026-11-16-insight-28.md#tinybenchmarks) | ICML 2024 | tinyBenchmarks: evaluating LLMs with fewer examples | [pmlr-v235-maia-polo24a](https://proceedings.mlr.press/v235/maia.html) |
 
 ## 写作依据
 
