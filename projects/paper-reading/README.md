@@ -10,6 +10,8 @@
 
 前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
 
+第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路)
+
 ## 助手如何完成与复用训练
 
 每天完成原文研读、论证拆解和具体改稿，记录“助手自拟待改句或段落—问题诊断—完整改稿—修改理由—适用边界”。练习由助手完成，无需作者阅读论文、提交作业或填写进度。
@@ -112,6 +114,7 @@
 | [2026-11-16 专项 20](2026-11-16-insight-20.md) | Dissecting the StarLink、LM-GC、Lego Sketch、SAST、EAGLE | 带宽归属、逐位恢复、碰撞后的频数估计、稀疏计算、按已知事件提前规划 | 分别写清要恢复的数据、要查询的量，以及采取动作前要等到的确认。 |
 | [2026-11-16 专项 21](2026-11-16-insight-21.md) | IoT-Brain、UMotion、4D-GS、STREAM-UGS、MatFormer | 语义到覆盖、带不确定性的测距、动态几何、拓扑采样、嵌套宽度 | [第 91–100 篇总结](2026-11-16-insight-21.md#第十个十篇的解题思路)与[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) |
 | [2026-11-16 专项 22](2026-11-16-insight-22.md) | SkyShare、PARE-Net、ScaLR、KT 置信序列、Promptbreeder | 总干扰与覆盖、旋转假设、跨模态配对、随时有效的置信序列、改写调参指令 | 用对照回答为什么这些证据足够、还有哪项要另测。 |
+| [2026-11-16 专项 23](2026-11-16-insight-23.md) | 5G 中频实测、Tartan IMU、PCP、Multicalibration、Reflexion | 资源乘积、运动先验、选择性缺标、交叉校准、重试记忆 | [第 101–110 篇对照和截止时间算例](2026-11-16-insight-23.md#第十一个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -460,6 +463,11 @@
 | 跨传感器教学样本的配对依据 | 跨模态学习、标签质量 | 两个传感器同一时间的样本是否对应同一物体 | 查对象身份、投影偏移和遮挡边缘，再接受视觉特征作监督 | [ScaLR](2026-11-16-insight-22.md#scalr) | 空间及时间误差应与边界距离一起检查 |
 | 边测边停时的可靠性判断 | 成功率与停止条件 | 持续查看结果时何时可以报告越过目标线 | 保留按顺序到达的观测，在置信序列下限越线时停止 | [KT 置信序列](2026-11-16-insight-22.md#kt-置信序列) | 对应固定的条件概率假设；配置切换可能改变试验对象 |
 | 让生成配置建议的规则本身可改 | 语言模型调参与基准构造 | 产生很多候选为何仍重复同一类选择 | 区分完成任务的指令与改写指令的办法，用有参考选择的记录评分 | [Promptbreeder](2026-11-16-insight-22.md#promptbreeder) | 被用来挑选指令的记录须与独立评价分开 |
+| 按资源与单位资源产出解释异常趋势 | 真实网络实验、图后解释 | 带宽更宽的链路为何平均吞吐更低 | 先查获配资源有多少，再查每份资源实际使用了几个空间层 | [5G 中频实测](2026-11-16-insight-23.md#5g-中频实测) | 现场配置同时变化，只把相关机制写成解释 |
+| 跨运动平台的惯导适配与纠偏时刻 | 定位、长短期运动测试 | 无线测距中断时为什么仅凭短时惯性读数难以区分静止和匀速 | 分别衡量无线恢复前的漂移与首个返回测距的残差 | [Tartan IMU](2026-11-16-insight-23.md#tartan-imu) | 需先定义时间对齐、轴向、偏置与参考坐标 |
+| 标签缺失与区间校准 | 测距评估、标定集构造 | 最难测的路线会不会也最容易缺少参考真值 | 记录真值留存机制，在校准时调整条件权重；另列部署需要哪些输入 | [PCP](2026-11-16-insight-23.md#pcp) | 理论保证的条件包括交换性和给定辅助变量后的缺失机制 |
+| 查看相交子群的校准 | 多设备可靠性实验 | 按机型和频段各自检查后哪些组合还有误差 | 比较已有分数在具体机型与频段交叉组的实际成功率 | [Multicalibration](2026-11-16-insight-23.md#multicalibration) | 样本不足的小组要报告样本数与不确定性 |
+| 以实测反馈指导下一次动作 | 重试策略、LLM 台架助手 | 同样多试几次，经验是否改变下次决策 | 保留失败时可核对的时刻、由此选择的下一步；比较相同重试次数 | [Reflexion](2026-11-16-insight-23.md#reflexion) | 累计至少成功一次和单次成功率属于两个指标 |
 
 ## 论文索引
 
@@ -657,6 +665,11 @@
 | [2026-11-16](2026-11-16-insight-22.md#scalr) | CVPR 2024 | Three Pillars Improving Vision Foundation Model Distillation for Lidar | [10.1109/CVPR52733.2024.02033](https://doi.org/10.1109/CVPR52733.2024.02033) |
 | [2026-11-16](2026-11-16-insight-22.md#kt-置信序列) | ICML 2024 | Gambling-Based Confidence Sequences for Bounded Random Vectors | [pmlr-v235-ryu24a](https://proceedings.mlr.press/v235/ryu24a.html) |
 | [2026-11-16](2026-11-16-insight-22.md#promptbreeder) | ICML 2024 | Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution | [pmlr-v235-fernando24a](https://proceedings.mlr.press/v235/fernando24a.html) |
+| [2026-11-16](2026-11-16-insight-23.md#5g-中频实测) | SIGCOMM 2024 | Unveiling the 5G Mid-Band Landscape: From Network Deployment to Performance and Application QoE | [10.1145/3651890.3672269](https://doi.org/10.1145/3651890.3672269) |
+| [2026-11-16](2026-11-16-insight-23.md#tartan-imu) | CVPR 2025 | Tartan IMU: A Light Foundation Model for Inertial Positioning in Robotics | [10.1109/CVPR52734.2025.02097](https://doi.org/10.1109/CVPR52734.2025.02097) |
+| [2026-11-16](2026-11-16-insight-23.md#pcp) | NeurIPS 2024 | Robust Conformal Prediction Using Privileged Information | [10.52202/079017-3742](https://doi.org/10.52202/079017-3742) |
+| [2026-11-16](2026-11-16-insight-23.md#multicalibration) | ICML 2024 | Multicalibration for Confidence Scoring in LLMs | [pmlr-v235-detommaso24a](https://proceedings.mlr.press/v235/detommaso24a.html) |
+| [2026-11-16](2026-11-16-insight-23.md#reflexion) | NeurIPS 2023 | Reflexion: Language Agents with Verbal Reinforcement Learning | [10.52202/075280-0377](https://doi.org/10.52202/075280-0377) |
 
 ## 写作依据
 
