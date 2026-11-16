@@ -4,6 +4,8 @@
 
 选文优先无线组网、无线感知及交叉方向，包括分布式感知、UWB与毫米波雷达、Wi-Fi感知、同步、定位和低功耗无线网络。按相关性与可获取的正式论文正文选择，不为会议数量均衡而优先收录无关主题。
 
+本轮另收集近三年 ICML、CVPR、ECCV 和 NeurIPS（NIPS）的 AI 工具与解题思路。每条从原论文的方法出发，记录它可以启发的组网问题；一个工具可以对应多个点子。专项记录区分论文精读、方法阅读和原创联想。
+
 ## 助手如何完成与复用训练
 
 每天完成原文研读、论证拆解和具体改稿，记录“助手自拟待改句或段落—问题诊断—完整改稿—修改理由—适用边界”。练习由助手完成，无需作者阅读论文、提交作业或填写进度。
@@ -93,6 +95,7 @@
 | [2026-11-16 专项 07](2026-11-16-insight-07.md) | CommSAR、RFDT（首次进入研读索引），AlphaWAN、XGate、SeRadar（复读） | 失败如何计数、总量掩盖了谁的损失、额外实验怎样检验解释 | [第 21–30 篇的写作 insight 与 UWB 同步改稿示例](2026-11-16-insight-07.md#第三个十篇的写作-insight) |
 | [2026-11-16 专项 08](2026-11-16-insight-08.md) | 5G-MAP（首次进入索引），Bridge、mmXtend、Nexus、μCeiver-Fi（复读） | 控制操作的分项时延、每次定位的能耗、通电时长、标签来源与跨链路相位 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 09](2026-11-16-insight-09.md) | PerceptAlign（首次进入索引），Demeter、M2HO、LSencom、DREW（复读） | 跨土壤改进与绝对余量、位置编码与消融、切换窗口、符号到包、吞吐到播放 | [第 31–40 篇的写作 insight 与 UWB 实验段示例](2026-11-16-insight-09.md#第四个十篇的写作-insight) |
+| [2026-11-16 专项 10](2026-11-16-insight-10.md) | TimesFM、VGGT、CoTracker、CPTC | 同步预测、现场采点、遮挡跟踪和提前唤醒 | 四篇精读、原文与实现核对、组网联想 |
 
 ## 改稿案例检索
 
@@ -376,12 +379,16 @@
 | 事件时间与应用解释 | 切换实验、截止时间 | 以跨切换的均值推断业务在新链路上的等待时间 | 保留切换前后各五秒的总体比较，再从切换时刻累计实际交付字节 | [M2HO](2026-11-16-insight-09.md#m2ho) | 估算任务何时完成还需待传量、调度顺序和到达时间 |
 | 指标定义与统计单位 | 通信感知共存、包交付 | 把一个符号的正确率当作一整个包的成功率 | 先定义每包达标门槛，再按包分组统计并保留错误分布 | [LSencom](2026-11-16-insight-09.md#lsencom) | 按正确符号比例的门槛与完整包验收要分别说明 |
 | 应用需求与实验过渡 | 传输层吞吐、应用演示 | 由下行峰值或倍数推断每种接入点都能无损播放 | 由采样格式算载荷，再读表中同方向同协议同距离的列，单写实际播放演示 | [DREW](2026-11-16-insight-09.md#drew) | 平均速率超过门槛后，逐时交付和缓冲决定能否连续播放 |
+| 成段预测 | 同步与休眠调度 | 已有连续测量，节点睡眠后失去观测 | 预测一段频偏，再积分到保护余量 | [TimesFM](2026-11-16-insight-10.md#timesfm) | 模型输入需保持连续且采样间隔一致 |
+| 先从图像获得几何 | UWB 部署测点 | 进入新空间时，少量无线测量要放在哪里 | 照片恢复结构，再按遮挡、拐角和空间变化选择采点 | [VGGT](2026-11-16-insight-10.md#vggt) | 视觉几何须配准，无线传播仍需测量 |
+| 让多个点共享运动信息 | 遮挡与链路切换 | 遮挡前沿暂时离开视野时怎样继续估计运动 | 用仍可见的点帮助跟踪，再把运动接到切换时间 | [CoTracker](2026-11-16-insight-10.md#cotracker) | 图像可见性和无线链路状态分别观察 |
+| 按状态分别积累误差 | 重传与提前唤醒 | 历史中的平稳段和突发段有不同预测误差 | 保留各状态的预测区间，再把区间接到提前分配时隙 | [CPTC](2026-11-16-insight-10.md#cptc) | 收到完整位图前后是两个不同时刻的决策 |
 
 ## 论文索引
 
 此表记录助手已收录的研读材料，供后续选文去重；具体阅读范围见每日记录。
 
-| 收录日期 | 会议 | 论文 | DOI |
+| 收录日期 | 会议 | 论文 | DOI 或会议索引 |
 | --- | --- | --- | --- |
 | [2026-11-05](2026-11-05.md) | MobiCom 2025 | PolarVisor: Clutter-free, Electronics-free Fiducial Markers for mmWave Radars Printed on Paper | [10.1145/3680207.3723456](https://doi.org/10.1145/3680207.3723456) |
 | [2026-11-05](2026-11-05.md) | SIGCOMM 2025 | Revisiting RDMA Reliability for Lossy Fabrics | [10.1145/3718958.3750480](https://doi.org/10.1145/3718958.3750480) |
@@ -509,6 +516,10 @@
 | [2026-11-16](2026-11-16-insight-07.md#rfdt) | MobiCom 2026 | Physically Accurate Differentiable Inverse Rendering for Radio Frequency Digital Twin | [10.1145/3795866.3796686](https://doi.org/10.1145/3795866.3796686) |
 | [2026-11-16](2026-11-16-insight-08.md#5g-map) | MobiCom 2025 | 5G-MAP: Demystifying the Performance Implications of Cloud-Based 5G Core Deployments | [10.1145/3680207.3723492](https://doi.org/10.1145/3680207.3723492) |
 | [2026-11-16](2026-11-16-insight-09.md#perceptalign) | MobiCom 2026 | Breaking Coordinate Overfitting: Geometry-Aware WiFi Sensing for Cross-Layout 3D Pose Estimation | [10.1145/3795866.3796697](https://doi.org/10.1145/3795866.3796697) |
+| [2026-11-16](2026-11-16-insight-10.md#timesfm) | ICML 2024 | A decoder-only foundation model for time-series forecasting | [pmlr-v235-das24c](https://proceedings.mlr.press/v235/das24c.html) |
+| [2026-11-16](2026-11-16-insight-10.md#vggt) | CVPR 2025 | VGGT: Visual Geometry Grounded Transformer | [10.1109/CVPR52734.2025.00499](https://doi.org/10.1109/CVPR52734.2025.00499) |
+| [2026-11-16](2026-11-16-insight-10.md#cotracker) | ECCV 2024 | CoTracker: It Is Better to Track Together | [10.1007/978-3-031-73033-7_2](https://doi.org/10.1007/978-3-031-73033-7_2) |
+| [2026-11-16](2026-11-16-insight-10.md#cptc) | NeurIPS 2025 | Conformal Prediction for Time-series Forecasting with Change Points | [10.52202/085713-0410](https://doi.org/10.52202/085713-0410) |
 
 ## 写作依据
 
