@@ -121,6 +121,7 @@
 | [2026-11-16 专项 27](2026-11-16-insight-27.md) | OhmScanner、ATENet、shapiq、RPSW、DeltaNet | 芯片反馈、观测时刻、通道互补与关联记忆 | [第 121–130 篇综合](2026-11-16-insight-27.md#第十三个十篇的解题思路) |
 | [2026-11-16 专项 28](2026-11-16-insight-28.md) | EVLeSen、ETAP、AACO、TIES-Merging、tinyBenchmarks | 参照通道收益、折返跟踪、成组采样、符号冲突与代表用例 | 把决定所依赖的条件写进对应的实验句。 |
 | [2026-11-16 专项 29](2026-11-16-insight-29.md) | ChargeX、单光子三维重建、MultiDimSPCI、MuDSC、LESS | 还原部署单位、表面覆盖与误差方向、特征匹配和选样 | [第 131–140 篇综合](2026-11-16-insight-29.md#第十四个十篇的解题思路) |
+| [2026-11-16 专项 30](2026-11-16-insight-30.md) | Prism5G、InstructIR、Bias-to-Text、Depth Anything V2、QTIP | 替代观测、失败分组、错误标签和相邻步耦合 | [三个研究转念](2026-11-16-insight-30.md#三个研究转念) |
 
 ## 改稿案例检索
 
@@ -504,6 +505,11 @@
 | 数学意义、证据范围 | 联合预测区间 | 同时检查两个单变量区间漏掉少见的反向变化 | 依据配对残差建立联合区域，同报覆盖率和面积 | [MultiDimSPCI](2026-11-16-insight-29.md#multidimspci) | 序列稳定性影响覆盖 |
 | 系统模型、实验设计 | 模型融合与比较 | 同名通道可能学的是不同响应 | 先在同批输入上辨认单元，再给出合并前后分任务和联合准确率 | [MuDSC](2026-11-16-insight-29.md#mudsc) | 通道响应依赖校准输入 |
 | 数学意义、消融 | 筛选训练回放 | 候选更新大而方向偏离目标 | 并列比较归一化前后的选择行为和留出任务得分 | [LESS](2026-11-16-insight-29.md#less) | 实际单步下降还与更新长度有关 |
+| 实验设计、证据边界 | 多链路吞吐量 | 只读主载波的功率就推测辅载波 | 固定被预测的链路，替换功率来源再比较相关系数 | [Prism5G](2026-11-16-insight-30.md#prism5g) | 频段和带宽都发生变化 |
+| 系统设计、结果解释 | 条件感知 | 同一输入中的纹理在不同任务里可能是信号或噪声 | 明确修复目标后再解释保留和抑制的特征 | [InstructIR](2026-11-16-insight-30.md#instructir) | 自然语言含混会改变结果 |
+| 实验设计、失败诊断 | 错误分析 | 常见词被当成失败原因 | 同一真实类别内比较判错和判对样本的图词相似度，再找独立工况复核 | [Bias-to-Text](2026-11-16-insight-30.md#bias-to-text) | 描述与错误相关不能确立因果 |
+| 真值定义、可信度 | 真值与跨域监督 | 标注仪器记录的物理表面和任务目标不一致 | 构造目标和仪器读出可分的输入，用独立参考核对 | [Depth Anything V2](2026-11-16-insight-30.md#depth-anything-v2) | 相对前后关系及米制误差分别评测 |
+| 数学意义、实验设计 | 序列编码 | 独立舍入忽略下一步能到达的数值 | 枚举短路径计算累计误差，分开报告编码误差和任务正确率 | [QTIP](2026-11-16-insight-30.md#qtip) | 起始状态必须可知 |
 
 ## 论文索引
 
@@ -736,6 +742,11 @@
 | [2026-11-16](2026-11-16-insight-29.md#multidimspci) | ICML 2024 | Conformal prediction for multi-dimensional time series by ellipsoidal sets | [pmlr-v235-xu24m](https://proceedings.mlr.press/v235/xu24m.html) |
 | [2026-11-16](2026-11-16-insight-29.md#mudsc) | CVPR 2024 | Training-Free Pretrained Model Merging | [10.1109/CVPR52733.2024.00565](https://doi.org/10.1109/CVPR52733.2024.00565) |
 | [2026-11-16](2026-11-16-insight-29.md#less) | ICML 2024 | LESS: Selecting Influential Data for Targeted Instruction Tuning | [pmlr-v235-xia24c](https://proceedings.mlr.press/v235/xia24c.html) |
+| [2026-11-16](2026-11-16-insight-30.md#prism5g) | SIGCOMM 2024 | Dissecting Carrier Aggregation in 5G Networks: Measurement, QoE Implications and Prediction | [10.1145/3651890.3672250](https://doi.org/10.1145/3651890.3672250) |
+| [2026-11-16](2026-11-16-insight-30.md#instructir) | ECCV 2024 | InstructIR: High-Quality Image Restoration Following Human Instructions | [10.1007/978-3-031-72764-1_1](https://doi.org/10.1007/978-3-031-72764-1_1) |
+| [2026-11-16](2026-11-16-insight-30.md#bias-to-text) | CVPR 2024 | Discovering and Mitigating Visual Biases through Keyword Explanation | [10.1109/CVPR52733.2024.01054](https://doi.org/10.1109/CVPR52733.2024.01054) |
+| [2026-11-16](2026-11-16-insight-30.md#depth-anything-v2) | NeurIPS 2024 | Depth Anything V2 | [10.52202/079017-0688](https://doi.org/10.52202/079017-0688) |
+| [2026-11-16](2026-11-16-insight-30.md#qtip) | NeurIPS 2024 | QTIP: Quantization with Trellises and Incoherence Processing | [10.52202/079017-1904](https://doi.org/10.52202/079017-1904) |
 
 ## 写作依据
 
