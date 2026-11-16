@@ -89,6 +89,7 @@
 | [2026-11-16 专项 03](2026-11-16-insight-03.md) | MSense、SiWiS（复读），UltraLEGO（新读） | 用处理前后仍然保留的事件、目标和相位项解释方法 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 04](2026-11-16-insight-04.md) | GPMS、Medusa、BiScatter（复读），Wall-Street（新读） | 从归一化指标、链路区间、遮挡轮换和距离索引写出设计依据 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 05](2026-11-16-insight-05.md) | B²LoRa、SaTE（复读），MetaVenom（新读） | 区分符号恢复与检包、硬件状态与波束、样本数量与测试表现 | [第 11–20 篇的写作 insight 与 UWB 同步改稿示例](2026-11-16-insight-05.md#第二个十篇的写作-insight) |
+| [2026-11-16 专项 06](2026-11-16-insight-06.md) | MetaX、GRADE（新读），Hydra、DtS、QuinID（复读） | 边界条件、三维误差、路径可辨识性、抽样分母与共享功放 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 
 ## 改稿案例检索
 
@@ -352,6 +353,11 @@
 | 实验对象与选择条件 | 接收机实验、基线比较 | 把更多包被检出直接写成符号误差降低 | 交代改变前导码后新纳入了哪些副本，分别解释检测量和合并后的误差 | [B²LoRa](2026-11-16-insight-05.md#b²lora) | 机制归因要核对副本身份、幅度、权重与噪声条件 |
 | 系统模型与图文对应 | 硬件自由度、波束验证 | 从二进制状态数直接推出能形成多少种合格波束 | 按共同受控的子阵计数，再按实测方向图逐项检查目标角度及旁瓣 | [MetaVenom](2026-11-16-insight-05.md#metavenom) | 状态容量、仿真峰值、同一块表面的实测响应分别陈述 |
 | 实验设计与比较分母 | 训练集规模、结果段 | 把相对大样本模型的 99% 写成承载了 99% 业务 | 把参照模型和共同测试集带入结果句，并提出等样本数对照以区分选样收益 | [SaTE](2026-11-16-insight-05.md#sate) | 仿真负载和拓扑表示决定代表性，结果按对应测试条件使用 |
+| 系统模型与边界条件 | 机械模型、验证 | 从四个角点高度直接宣称内部形面唯一 | 给出同样满足四个角点的两张曲面，再引入模型所需的整条边条件 | [MetaX](2026-11-16-insight-06.md#metax) | 唯一性属于给定载荷、张力和边界的模型，真实偏差须用形面测量核对 |
+| 数学意义与消融 | 训练目标、实验解释 | 把单像素反投影损失写成已匹配所有三维表面 | 用同一深度误差比较不同成像位置，再核对加入该项前后的三维测试指标 | [GRADE](2026-11-16-insight-06.md#grade) | 轴向深度、相机内参和同像素对应均为推导前提 |
+| 几何可辨识性与结果解释 | 多径模型、定位实验 | 实测峰落在两弧交点就宣称两路径总能唯一定位 | 保留关于锚点连线对称的候选点，检验新增路径是否给出不同预测 | [Hydra](2026-11-16-insight-06.md#hydra) | 已知首末反射点、可分辨的时延与几何独立性影响结论 |
+| 抽样分母与实验过渡 | 可用性测量、休眠策略 | 把失败过境中低仰角所占比例写成低仰角时的失败概率 | 先说明按成败各取样多少，再交代终端作决定时手里已有的条件 | [DtS](2026-11-16-insight-06.md#dts) | 全次过境与单个时隙也需各自确定分母 |
+| 信号模型与实验衔接 | 多频带读取、收发机实现 | 频带分开便认定会话互不干扰 | 在第二路载波关断时追踪第一路输出，再用开关预失真的包级对照检验后果 | [QuinID](2026-11-16-insight-06.md#quinid) | 共用功放的非线性是必要条件，包速率不能单独定位前导码漏检 |
 
 ## 论文索引
 
@@ -479,6 +485,8 @@
 | [2026-11-16](2026-11-16-insight-03.md#ultralego) | MobiCom 2026 | UltraLEGO: A Modular Ultra-Wideband Phased Array Platform for Wireless Sensing and Localization | [10.1145/3795866.3844461](https://doi.org/10.1145/3795866.3844461) |
 | [2026-11-16](2026-11-16-insight-04.md#wall-street) | MobiCom 2026 | Wall-Street: An Intelligent Vehicular Surface for Reliable mmWave Handover | [10.1145/3795866.3796693](https://doi.org/10.1145/3795866.3796693) |
 | [2026-11-16](2026-11-16-insight-05.md#metavenom) | MobiCom 2026 | MetaVenom: Field Programmable Fully Passive Metasurfaces | [10.1145/3795866.3844150](https://doi.org/10.1145/3795866.3844150) |
+| [2026-11-16](2026-11-16-insight-06.md#metax) | MobiCom 2026 | Mechanically Programmable Reflective Metasurfaces: A General Low-Cost Paradigm for High-Frequency Wavefront Control | [10.1145/3795866.3844482](https://doi.org/10.1145/3795866.3844482) |
+| [2026-11-16](2026-11-16-insight-06.md#grade) | MobiCom 2026 | GRADE: Single-Frame Generative Radar Depth Estimation Under Visual Degradation | [10.1145/3795866.3844478](https://doi.org/10.1145/3795866.3844478) |
 
 ## 写作依据
 
