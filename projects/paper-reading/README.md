@@ -98,6 +98,7 @@
 | [2026-11-16 专项 10](2026-11-16-insight-10.md) | TimesFM、VGGT、CoTracker、CPTC | 同步预测、现场采点、遮挡跟踪和提前唤醒 | 四篇精读、原文与实现核对、组网联想 |
 | [2026-11-16 专项 11](2026-11-16-insight-11.md) | CityGaussian、Cutie、MobileCLIP、LABO、ReEvo、FunBO | 带边界的分治、对象记忆、离线蒸馏和三种 LLM 优化 | [第 41–50 篇的思路与组合例](2026-11-16-insight-11.md#第五个十篇的解题思路) |
 | [2026-11-16 专项 12](2026-11-16-insight-12.md) | Tree of Thoughts、MoVA、DeepCache、Medusa-LLM、Geometric Algorithms、NCO4TDTSP | 分支搜索、工具调用、缓存、预计算、联合选择与时变路由 | [16 篇论文的工具与组网点子索引](2026-11-16-insight-12.md#从组网问题查工具) |
+| [2026-11-16 专项 13](2026-11-16-insight-13.md) | SateRIoT、DUSt3R、POCCO、DataComp | 上行反馈、局部配准、多目标候选、训练数据与独立实测 | [第 51–60 篇的写作 insight 与组合示例](2026-11-16-insight-13.md#第六个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -397,6 +398,10 @@
 | 先并行准备、再确认前缀 | 等待反馈时准备控制计划 | 拿到反馈后才准备计划会增加路径时延 | 在内存中准备候选计划，真实反馈到达才确认后续动作 | [Medusa-LLM](2026-11-16-insight-12.md#medusa-llm) | 可计算的候选与实际发射要分开 |
 | 按整组表示一个动作 | 冲突图与并发调度 | 只给每个节点的发送概率会丢掉谁与谁一起发 | 把一个时隙可执行的链路集合作为单位，再给整组分配份额 | [Geometric Algorithms](2026-11-16-insight-12.md#geometric-algorithms) | 不同可行组合可具有相同的节点占用率 |
 | 时变边代价与成对造题 | 周期唤醒与转发 | 到达时刻改变后最快中继可能变化 | 将边耗时写成出发时刻的函数，保持其他条件配对产生输入 | [NCO4TDTSP](2026-11-16-insight-12.md#nco4tdtsp) | 原工具是巡回路线，组网扩展的终点是网关 |
+| 用反馈触发、按期更新 | 窗口调度与跨网关协作 | 听到对端信标后怎样安排一批上行包 | 先探测上行，再估当前窗口包数，分别通知计划和实收 | [SateRIoT](2026-11-16-insight-13.md#sateriot) | 相邻节点收到计划只能暂停调度副本，确认到达才删除 |
+| 用重复观测接起局部地图 | 配准与多锚几何 | 两区都能重建，数字却在不同参考系 | 沿图的公共观测估变换，给米制和楼层坐标各自的参照 | [DUSt3R](2026-11-16-insight-13.md#dust3r) | 三维视觉点图、度量尺度和外部坐标不能混写 |
+| 改变候选的比较规则 | 多目标调度、路由与备用方案 | 轮换能耗和时延权重仍可能遗漏满足两道门槛的路 | 保留各维成本，给出加权和与最大加权成本的三路算例 | [POCCO](2026-11-16-insight-13.md#pocco) | 目标空间的差异与物理链路独立分别核验 |
+| 把数据清单作为实验变量 | 无线训练集与稀有事件 | 看到更多训练样本是否意味着采到更多独立事件 | 固定候选来源与训练展示总数，保存所用样本编号及重复次数 | [DataComp](2026-11-16-insight-13.md#datacomp) | 重复展示改变训练权重，独立运行需要新采集 |
 
 ## 论文索引
 
@@ -546,6 +551,10 @@
 | [2026-11-16](2026-11-16-insight-12.md#medusa-llm) | ICML 2024 | Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads | [pmlr-v235-cai24b](https://proceedings.mlr.press/v235/cai24b.html) |
 | [2026-11-16](2026-11-16-insight-12.md#geometric-algorithms) | NeurIPS 2025 | Geometric Algorithms for Neural Combinatorial Optimization with Constraints | [10.52202/085713-2632](https://doi.org/10.52202/085713-2632) |
 | [2026-11-16](2026-11-16-insight-12.md#nco4tdtsp) | NeurIPS 2025 | Neural Combinatorial Optimization for Time-Dependent Traveling Salesman Problem | [10.52202/085713-2442](https://doi.org/10.52202/085713-2442) |
+| [2026-11-16](2026-11-16-insight-13.md#sateriot) | MobiCom 2024 | SateRIoT: High-performance Ground-Space Networking for Rural IoT | [10.1145/3636534.3690659](https://doi.org/10.1145/3636534.3690659) |
+| [2026-11-16](2026-11-16-insight-13.md#dust3r) | CVPR 2024 | DUSt3R: Geometric 3D Vision Made Easy | [10.1109/CVPR52733.2024.01956](https://doi.org/10.1109/CVPR52733.2024.01956) |
+| [2026-11-16](2026-11-16-insight-13.md#pocco) | NeurIPS 2025 | Preference-Driven Multi-Objective Combinatorial Optimization with Conditional Computation | [10.52202/085713-0389](https://doi.org/10.52202/085713-0389) |
+| [2026-11-16](2026-11-16-insight-13.md#datacomp) | NeurIPS 2023 · Datasets and Benchmarks | DataComp: In search of the next generation of multimodal datasets | [10.52202/075280-1179](https://doi.org/10.52202/075280-1179) |
 
 ## 写作依据
 
