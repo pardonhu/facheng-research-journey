@@ -10,7 +10,7 @@
 
 前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
 
-第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路) · [第 131–140 篇：反转比较方向、观测互补与代表性](2026-11-16-insight-29.md#第十四个十篇的解题思路) · [第 141–150 篇：采集偏差、可替代观测及失败分母](2026-11-16-insight-31.md#第十五个十篇的解题思路) · [第 151–160 篇：漏测、共同错误与补偿动作](2026-11-16-insight-33.md#第十六个十篇的解题思路) · [第 161–170 篇：保留可区分的输入，检验阅读指令](2026-11-16-insight-35.md#第十七个十篇的解题思路)
+第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路) · [第 131–140 篇：反转比较方向、观测互补与代表性](2026-11-16-insight-29.md#第十四个十篇的解题思路) · [第 141–150 篇：采集偏差、可替代观测及失败分母](2026-11-16-insight-31.md#第十五个十篇的解题思路) · [第 151–160 篇：漏测、共同错误与补偿动作](2026-11-16-insight-33.md#第十六个十篇的解题思路) · [第 161–170 篇：保留可区分的输入，检验阅读指令](2026-11-16-insight-35.md#第十七个十篇的解题思路) · [第 171–180 篇：相邻关系、完整时延和信息可得时间](2026-11-16-insight-37.md#第十八个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -128,6 +128,7 @@
 | [2026-11-16 专项 34](2026-11-16-insight-34.md) | NeuralAids、Mip-Splatting、Active Statistical Inference、SALAD、Gist Tokens | 往返时限、采样混叠、非均匀核验、地点特征与指令压缩 | [怎样设计能揭露信息损失的例子](2026-11-16-insight-34.md#把被省略的输入重新放回来) |
 | [2026-11-16 专项 35](2026-11-16-insight-35.md) | WDNN、DSINE、Collapse or Thrive、BoQ、MatQuant | 硬件非线性、邻域几何、样本代际遗忘、共享查询和多精度训练 | [第 161–170 篇总结](2026-11-16-insight-35.md#第十七个十篇的解题思路) · [用 Promptbreeder 改阅读指令](2026-11-16-insight-35.md#把提示词也当作可以检验的研究工具) |
 | [2026-11-16 专项 36](2026-11-16-insight-36.md) | L3GS、CountGD、GABO、LDPC 难例训练、DCVC-RT | 渐进下发、条件计数、离线选参、残余失败、计算与操作开销 | 让现有方案先在自己的观测条件下完整运行，再决定该补哪项。 |
+| [2026-11-16 专项 37](2026-11-16-insight-37.md) | HyperCam、AnySat、Causal Graph Cut、S3、Time-MMD | 分段实测、空间干扰、次序变换和数据可获得时间 | [第 171–180 篇综合](2026-11-16-insight-37.md#第十八个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -546,6 +547,11 @@
 | 实验可信度、评价预算 | 离线选参 | 最大预测值可能落在代理模型最会高估的区域 | 分别比较来源相似性、代理预测和最终唯一候选的实测值 | [GABO](2026-11-16-insight-36.md#gabo) | 历史支持域与真实目标不能相互代替 |
 | 实验设计、指标定义 | 罕见故障/补救 | 随机加入高信噪比数据仍看不到已知译码器的遗留错误 | 在首段实际失败中训练后段，再按全量分母计算最终误帧率 | [LDPC 难例训练](2026-11-16-insight-36.md#ldpc-难例训练) | 漏检而未进入后段的帧需另计 |
 | 系统设计、结果解释 | 实时编码与传输 | 算术减少被直接解释为延迟改善 | 列调度和数据移动开销，并对照不同运动工况下的码率代价 | [DCVC-RT](2026-11-16-insight-36.md#dcvc-rt) | 不将整套系统成绩归于一项时域设计 |
+| 系统设计、指标定义 | 端侧推理与回传 | 把推理加速倍数直接写成整次上报加速 | 把固定发送时长加回两种实现，并列出识别代价 | [HyperCam](2026-11-16-insight-37.md#hypercam) | 发送时长和输入任务须匹配 |
+| 系统模型、实验设计 | 异构感知与空间聚合 | 地块平均一致却漏掉子地块内的结构 | 先按同一物理覆盖范围聚合，精细预测时再引回局部特征 | [AnySat](2026-11-16-insight-37.md#anysat) | 原文折号标记冲突，保留可核对数字 |
+| 实验设计、因果判断 | 多接入点现场对照 | 空间相关和相互干扰都被归为相邻节点要同组 | 区别处理对邻居的影响与同步业务涨落，再决定分组 | [Causal Graph Cut](2026-11-16-insight-37.md#causal-graph-cut) | 直接比较的效果取决于分组和真实场景 |
+| 系统模型、指标定义 | 时序特征 | 连续丢包混淆同一节点的报告顺序与空口顺序 | 保留采样时间并明确内部算子使用的邻接关系 | [S3](2026-11-16-insight-37.md#s3) | 仅重排已观察的输入窗口 |
+| 实验可信度、时间定义 | 日志与预测数据 | 按事件时刻接入事后写成的故障单 | 记录何时发生与何时可用，并抽查抽取后的内容 | [Time-MMD](2026-11-16-insight-37.md#time-mmd) | 预测与事后解释使用的证据不同 |
 
 ## 论文索引
 
@@ -813,6 +819,11 @@
 | [2026-11-16](2026-11-16-insight-36.md#gabo) | NeurIPS 2024 | Generative Adversarial Model-Based Optimization via Source Critic Regularization | [10.52202/079017-1397](https://doi.org/10.52202/079017-1397) |
 | [2026-11-16](2026-11-16-insight-36.md#ldpc-难例训练) | NeurIPS 2023 | Boosting Learning for LDPC Codes to Improve the Error-Floor Performance | [10.52202/075280-0971](https://doi.org/10.52202/075280-0971) |
 | [2026-11-16](2026-11-16-insight-36.md#dcvc-rt) | CVPR 2025 | Towards Practical Real-Time Neural Video Compression | [10.1109/CVPR52734.2025.01170](https://doi.org/10.1109/CVPR52734.2025.01170) |
+| [2026-11-16](2026-11-16-insight-37.md#hypercam) | MobiCom 2025 | HyperCam: Low-Power Onboard Computer Vision for IoT Cameras | [10.1145/3680207.3723490](https://doi.org/10.1145/3680207.3723490) |
+| [2026-11-16](2026-11-16-insight-37.md#anysat) | CVPR 2025 | AnySat: One Earth Observation Model for Many Resolutions, Scales, and Modalities | [10.1109/CVPR52734.2025.01819](https://doi.org/10.1109/CVPR52734.2025.01819) |
+| [2026-11-16](2026-11-16-insight-37.md#causal-graph-cut) | ICML 2025 | Balancing Interference and Correlation in Spatial Experimental Designs: A Causal Graph Cut Approach | [pmlr-v267-zhu25l](https://proceedings.mlr.press/v267/zhu25l.html) |
+| [2026-11-16](2026-11-16-insight-37.md#s3) | NeurIPS 2024 | Segment, Shuffle, and Stitch: A Simple Layer for Improving Time-Series Representations | [10.52202/079017-0158](https://doi.org/10.52202/079017-0158) |
+| [2026-11-16](2026-11-16-insight-37.md#time-mmd) | NeurIPS 2024（Datasets and Benchmarks） | Time-MMD: Multi-Domain Multimodal Dataset for Time Series Analysis | [10.52202/079017-2476](https://doi.org/10.52202/079017-2476) |
 
 ## 写作依据
 
