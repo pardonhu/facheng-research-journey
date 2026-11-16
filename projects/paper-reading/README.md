@@ -10,7 +10,7 @@
 
 前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
 
-第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路) · [第 131–140 篇：反转比较方向、观测互补与代表性](2026-11-16-insight-29.md#第十四个十篇的解题思路) · [第 141–150 篇：采集偏差、可替代观测及失败分母](2026-11-16-insight-31.md#第十五个十篇的解题思路) · [第 151–160 篇：漏测、共同错误与补偿动作](2026-11-16-insight-33.md#第十六个十篇的解题思路)
+第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路) · [第 131–140 篇：反转比较方向、观测互补与代表性](2026-11-16-insight-29.md#第十四个十篇的解题思路) · [第 141–150 篇：采集偏差、可替代观测及失败分母](2026-11-16-insight-31.md#第十五个十篇的解题思路) · [第 151–160 篇：漏测、共同错误与补偿动作](2026-11-16-insight-33.md#第十六个十篇的解题思路) · [第 161–170 篇：保留可区分的输入，检验阅读指令](2026-11-16-insight-35.md#第十七个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -126,6 +126,7 @@
 | [2026-11-16 专项 32](2026-11-16-insight-32.md) | SeaScan、GeoCalib、SSME、Photon Inhibition、在线级联 | 台架能量、校准先验、少标注和休眠漏测 | 把数据来源、未观测的时段和留给复核的样本写清。 |
 | [2026-11-16 专项 33](2026-11-16-insight-33.md) | Hydra 叶面感知、SA3D、LaSCal、AnyChange、POP-BO | 跨模态对应、共同误差、类别校准、双向检测与成对反馈 | [第 151–160 篇综合](2026-11-16-insight-33.md#第十六个十篇的解题思路) |
 | [2026-11-16 专项 34](2026-11-16-insight-34.md) | NeuralAids、Mip-Splatting、Active Statistical Inference、SALAD、Gist Tokens | 往返时限、采样混叠、非均匀核验、地点特征与指令压缩 | [怎样设计能揭露信息损失的例子](2026-11-16-insight-34.md#把被省略的输入重新放回来) |
+| [2026-11-16 专项 35](2026-11-16-insight-35.md) | WDNN、DSINE、Collapse or Thrive、BoQ、MatQuant | 硬件非线性、邻域几何、样本代际遗忘、共享查询和多精度训练 | [第 161–170 篇总结](2026-11-16-insight-35.md#第十七个十篇的解题思路) · [用 Promptbreeder 改阅读指令](2026-11-16-insight-35.md#把提示词也当作可以检验的研究工具) |
 
 ## 改稿案例检索
 
@@ -534,6 +535,11 @@
 | 指标定义、实验可信度 | 难例核验与全网误差 | 抽查了大量难例却直接平均真值 | 保留全样本预测、逐项核验概率，以加权残差修正全体均值 | [Active Statistical Inference](2026-11-16-insight-34.md#active-statistical-inference) | 核验结果可见性也可能受链路影响 |
 | 系统设计、消融 | 无线指纹检索 | 强反射被强制分给一个地点 | 允许某些局部特征不参加聚合，在匹配场景成对评估 | [SALAD](2026-11-16-insight-34.md#salad) | 偶发大幅度与不稳定特征需区别 |
 | 系统模型、指标定义 | 指令缓存与复用 | 缓存位置较少被写成等比例端到端提速 | 分开比无缓存与完整缓存，用边界样例检验保留下来的规则 | [Gist Tokens](2026-11-16-insight-34.md#gist-tokens) | 缓存为高维激活，换指令需重算 |
+| 系统判断、归因 | 射频硬件消融 | 将两套硬件准确率之差归给其中的单个部件 | 先标明整机对照改了哪些部件，再找控制单项的实验 | [WDNN](2026-11-16-insight-35.md#wdnn) | 复合级联的可表达函数由元件性质决定 |
+| 几何意义、实验设计 | 相邻表面方向估计 | 平均角误差一样掩盖相邻结构弯折 | 构造同平均绝对误差而相对方向误差不同的两例 | [DSINE](2026-11-16-insight-35.md#dsine) | 相对方向与绝对姿态分别核验 |
+| 实验设计、失败机制 | 迭代仿真数据 | 保留历史带来的收益混入每代训练量增长 | 固定每代读取条数再比较全替换和从历史抽样 | [Collapse or Thrive](2026-11-16-insight-35.md#collapse-or-thrive) | 真实数据源和合成分布假设需明确 |
+| 系统设计、实验覆盖 | 多视角指纹 | 直接平均使不同位置得到相同结果 | 保留位置身份，用共享查询读取局部特征，再跨地点比较 | [BoQ](2026-11-16-insight-35.md#boq) | 查询不能恢复输入中已丢失的身份 |
+| 数学意义、指标定义 | 多精度推理 | 高位可以切出误推为低精度仍保留同一判断 | 按各精度检验跨阈值样本对，再做共享训练 | [MatQuant](2026-11-16-insight-35.md#matquant) | 切片含舍入截断，物理测量不能随权重优化 |
 
 ## 论文索引
 
@@ -791,6 +797,11 @@
 | [2026-11-16](2026-11-16-insight-34.md#active-statistical-inference) | ICML 2024 | Active Statistical Inference | [pmlr-v235-zrnic24a](https://proceedings.mlr.press/v235/zrnic24a.html) |
 | [2026-11-16](2026-11-16-insight-34.md#salad) | CVPR 2024 | Optimal Transport Aggregation for Visual Place Recognition | [10.1109/CVPR52733.2024.01672](https://doi.org/10.1109/CVPR52733.2024.01672) |
 | [2026-11-16](2026-11-16-insight-34.md#gist-tokens) | NeurIPS 2023 | Learning to Compress Prompts with Gist Tokens | [10.52202/075280-0848](https://doi.org/10.52202/075280-0848) |
+| [2026-11-16](2026-11-16-insight-35.md#wdnn) | MobiCom 2025 | WDNN: Weighted Diffractive Neural Network for Physical-layer RF Signal Processing | [10.1145/3680207.3765240](https://doi.org/10.1145/3680207.3765240) |
+| [2026-11-16](2026-11-16-insight-35.md#dsine) | CVPR 2024 | Rethinking Inductive Biases for Surface Normal Estimation | [10.1109/CVPR52733.2024.00911](https://doi.org/10.1109/CVPR52733.2024.00911) |
+| [2026-11-16](2026-11-16-insight-35.md#collapse-or-thrive) | ICML 2025 | Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World | [pmlr-v267-kazdan25a](https://proceedings.mlr.press/v267/kazdan25a.html) |
+| [2026-11-16](2026-11-16-insight-35.md#boq) | CVPR 2024 | BoQ: A Place is Worth a Bag of Learnable Queries | [10.1109/CVPR52733.2024.01685](https://doi.org/10.1109/CVPR52733.2024.01685) |
+| [2026-11-16](2026-11-16-insight-35.md#matquant) | ICML 2025 | Matryoshka Quantization | [pmlr-v267-nair25a](https://proceedings.mlr.press/v267/nair25a.html) |
 
 ## 写作依据
 
