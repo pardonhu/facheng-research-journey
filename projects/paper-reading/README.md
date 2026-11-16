@@ -92,6 +92,7 @@
 | [2026-11-16 专项 06](2026-11-16-insight-06.md) | MetaX、GRADE（新读），Hydra、DtS、QuinID（复读） | 边界条件、三维误差、路径可辨识性、抽样分母与共享功放 | 原文段序、可核对的对照、英文改稿与迁移条件 |
 | [2026-11-16 专项 07](2026-11-16-insight-07.md) | CommSAR、RFDT（首次进入研读索引），AlphaWAN、XGate、SeRadar（复读） | 失败如何计数、总量掩盖了谁的损失、额外实验怎样检验解释 | [第 21–30 篇的写作 insight 与 UWB 同步改稿示例](2026-11-16-insight-07.md#第三个十篇的写作-insight) |
 | [2026-11-16 专项 08](2026-11-16-insight-08.md) | 5G-MAP（首次进入索引），Bridge、mmXtend、Nexus、μCeiver-Fi（复读） | 控制操作的分项时延、每次定位的能耗、通电时长、标签来源与跨链路相位 | 原文段序、可核对的对照、英文改稿与迁移条件 |
+| [2026-11-16 专项 09](2026-11-16-insight-09.md) | PerceptAlign（首次进入索引），Demeter、M2HO、LSencom、DREW（复读） | 跨土壤改进与绝对余量、位置编码与消融、切换窗口、符号到包、吞吐到播放 | [第 31–40 篇的写作 insight 与 UWB 实验段示例](2026-11-16-insight-09.md#第四个十篇的写作-insight) |
 
 ## 改稿案例检索
 
@@ -370,6 +371,11 @@
 | 系统术语与可计算的条件 | 链路部署、续航估计 | 把按需部署解释成没有业务就断电 | 列出持续供电的元件，并用真实开机时长和状态功率计算能量 | [mmXtend](2026-11-16-insight-08.md#mmxtend) | 工作功率、占空比、换件后的估算分别注明 |
 | 训练评估与数据来源 | 数据集、泛化实验 | 把按规则推得的标签写成同等数量的独立实测 | 先从一组配置运行说明标签如何形成，再单列未见配置下的实测比较 | [Nexus](2026-11-16-insight-08.md#nexus) | 原始运行、扩充样本和验证硬件须分别交代 |
 | 可辨识性与消融 | 多链路信道校准、实验解释 | 链路内相位差不变就推断不同链路已具有统一相位参照 | 让一整条链路共同旋转，检查内部差分和跨链路量分别会不会改变 | [μCeiver-Fi](2026-11-16-insight-08.md#μceiver-fi) | 联合改变校准和带宽重构的曲线只给出组合差异 |
+| 跨环境比较与结论可信度 | 泛化实验、现场部署 | 各地相对基线改善相近就称所有环境都能可靠运行 | 并列当地基线、改后绝对水平和任务门槛，再交代校准在何处执行 | [Demeter](2026-11-16-insight-09.md#demeter) | 同一方法异地重新校准和同一参数异地复用需要各自的实测 |
+| 数学意义与消融实验 | 位置编码、模型实现、跨布局结果 | 周期编码能区分所有输入，或把完整模型的收益归给三个坐标 | 构造相差一个周期的两点，比对公式与发布版本，然后列出实测消融的输入 | [PerceptAlign](2026-11-16-insight-09.md#perceptalign) | 编码器可区分、网络已利用、测试误差下降分别需要相应证据 |
+| 事件时间与应用解释 | 切换实验、截止时间 | 以跨切换的均值推断业务在新链路上的等待时间 | 保留切换前后各五秒的总体比较，再从切换时刻累计实际交付字节 | [M2HO](2026-11-16-insight-09.md#m2ho) | 估算任务何时完成还需待传量、调度顺序和到达时间 |
+| 指标定义与统计单位 | 通信感知共存、包交付 | 把一个符号的正确率当作一整个包的成功率 | 先定义每包达标门槛，再按包分组统计并保留错误分布 | [LSencom](2026-11-16-insight-09.md#lsencom) | 按正确符号比例的门槛与完整包验收要分别说明 |
+| 应用需求与实验过渡 | 传输层吞吐、应用演示 | 由下行峰值或倍数推断每种接入点都能无损播放 | 由采样格式算载荷，再读表中同方向同协议同距离的列，单写实际播放演示 | [DREW](2026-11-16-insight-09.md#drew) | 平均速率超过门槛后，逐时交付和缓冲决定能否连续播放 |
 
 ## 论文索引
 
@@ -502,6 +508,7 @@
 | [2026-11-16](2026-11-16-insight-07.md#commsar) | SIGCOMM 2026 | CommSAR: Enabling Bidirectional Communication in SAR Imaging Satellites via Shared Waveform | [10.1145/3789240.3829144](https://doi.org/10.1145/3789240.3829144) |
 | [2026-11-16](2026-11-16-insight-07.md#rfdt) | MobiCom 2026 | Physically Accurate Differentiable Inverse Rendering for Radio Frequency Digital Twin | [10.1145/3795866.3796686](https://doi.org/10.1145/3795866.3796686) |
 | [2026-11-16](2026-11-16-insight-08.md#5g-map) | MobiCom 2025 | 5G-MAP: Demystifying the Performance Implications of Cloud-Based 5G Core Deployments | [10.1145/3680207.3723492](https://doi.org/10.1145/3680207.3723492) |
+| [2026-11-16](2026-11-16-insight-09.md#perceptalign) | MobiCom 2026 | Breaking Coordinate Overfitting: Geometry-Aware WiFi Sensing for Cross-Layout 3D Pose Estimation | [10.1145/3795866.3796697](https://doi.org/10.1145/3795866.3796697) |
 
 ## 写作依据
 
