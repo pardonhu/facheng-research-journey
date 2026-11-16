@@ -10,7 +10,7 @@
 
 前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
 
-第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路)
+第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -116,6 +116,7 @@
 | [2026-11-16 专项 22](2026-11-16-insight-22.md) | SkyShare、PARE-Net、ScaLR、KT 置信序列、Promptbreeder | 总干扰与覆盖、旋转假设、跨模态配对、随时有效的置信序列、改写调参指令 | 用对照回答为什么这些证据足够、还有哪项要另测。 |
 | [2026-11-16 专项 23](2026-11-16-insight-23.md) | 5G 中频实测、Tartan IMU、PCP、Multicalibration、Reflexion | 资源乘积、运动先验、选择性缺标、交叉校准、重试记忆 | [第 101–110 篇对照和截止时间算例](2026-11-16-insight-23.md#第十一个十篇的解题思路) |
 | [2026-11-16 专项 24](2026-11-16-insight-24.md) | EarCardio、CodeFilling、Transductive Active Learning、EXOM、DoRA | 缺测位置与波形、接收者所缺信息、目标区方差、同次事件的另一选择、幅度与方向 | 先确定要改善哪个量，再说明为何这条消息或改动可能改善它。 |
+| [2026-11-16 专项 25](2026-11-16-insight-25.md) | WiLE-Audio、MAGiC-SLAM、DiffFPR、LSTD-Tournament、KIVI | 同网卡共存、回环后移图、相位歧义、离线估值器、量化分组 | [第 111–120 篇与电芯首次缺包的两组解释](2026-11-16-insight-25.md#第十二个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -474,6 +475,11 @@
 | 根据目标区域获益选择测点 | 布点、标定与主动补测 | 自身方差大的候选能否解释真正关心的位置 | 用候选与目标区域的关联和观测噪声，计算目标不确定性的变化 | [Transductive Active Learning](2026-11-16-insight-24.md#transductive-active-learning) | 若两者几乎独立，再精确测候选也难以改进目标预测 |
 | 已有观测约束下的反事实抽样 | 配置对照与原因解释 | 已失败的一包在另一设置下会怎样 | 在同一外生状态下比较两个动作，以实际观测筛选并对抽样分布重加权 | [EXOM](2026-11-16-insight-24.md#exom) | 识别单次反事实需要模型假设；不同次上板试验通常不共享衰落实现 |
 | 整体增益与通道相对方向 | 设备迁移、模型校准 | 总增益正确之后为什么特定输入仍可能错 | 先归一化方向再调独立的幅度，另用留出输入检查两者合效 | [DoRA](2026-11-16-insight-24.md#dora) | 二维例子只解释分解，多通道是否低秩须由数据验证 |
+| 共享网卡的两边各设实测对照 | 共存、时标广播与日志回传 | 同一网卡承载两种业务时，两边各付出多少代价 | 同一路径下分别独跑两项业务再合跑，报告各自指标和分母 | [WiLE-Audio](2026-11-16-insight-25.md#wile-audio) | 外部发射机竞争与本机复用是不同实验 |
+| 地图重定位后迁移既有测量 | 多设备建图与实验记录 | 一个回环改变了采样位置，原始信号哪些字段应跟着变 | 保存输入证据来核验几何，对已记录的测量坐标施加位姿修正 | [MAGiC-SLAM](2026-11-16-insight-25.md#magic-slam) | 接收功率等原始读数与其映射位置各有自己的含义 |
+| 从等价解找需要补充的观测 | 信道估计、幅相测量 | 两种不同的路径顺序是否具有完全相同的扫频功率 | 构造反序的两抽头，先验或有相位参考的观测才有机会选出一个 | [DiffFPR](2026-11-16-insight-25.md#difffpr) | 频响幅度拟合和路径方向识别应分开评价 |
+| 固定策略后选离线估值器 | 协议评价、实验方法 | 估值更高的模型是否在部分信道状态下系统高估 | 用候选值函数给一步残差加权，检查均值掩盖的成对偏差 | [LSTD-Tournament](2026-11-16-insight-25.md#lstd-tournament) | 需要日志覆盖部署状态与动作；估值器比较不是策略改进 |
+| 分组方向影响弱信号能否留存 | 缓存压缩、上报时延 | 同为两位，弱延迟格何时被强格的刻度抹掉 | 固定样本位宽和分组大小，改变共享刻度的方向，记录缓存等待 | [KIVI](2026-11-16-insight-25.md#kivi) | 量化后跨过阈值还需在独立波形上评估 |
 
 ## 论文索引
 
@@ -681,6 +687,11 @@
 | [2026-11-16](2026-11-16-insight-24.md#transductive-active-learning) | NeurIPS 2024 | Transductive Active Learning: Theory and Applications | [10.52202/079017-3961](https://doi.org/10.52202/079017-3961) |
 | [2026-11-16](2026-11-16-insight-24.md#exom) | NeurIPS 2024 | Exogenous Matching: Learning Good Proposals for Tractable Counterfactual Estimation | [10.52202/079017-4206](https://doi.org/10.52202/079017-4206) |
 | [2026-11-16](2026-11-16-insight-24.md#dora) | ICML 2024 | DoRA: Weight-Decomposed Low-Rank Adaptation | [pmlr-v235-liu24bn](https://proceedings.mlr.press/v235/liu24bn.html) |
+| [2026-11-16](2026-11-16-insight-25.md#wile-audio) | MobiCom 2025 | WiLE-Audio: Wide-Coverage Low-Energy Audio via WiFi-BLE Cross-Technology Communication | [10.1145/3680207.3765258](https://doi.org/10.1145/3680207.3765258) |
+| [2026-11-16](2026-11-16-insight-25.md#magic-slam) | CVPR 2025 | MAGiC-SLAM: Multi-Agent Gaussian Globally Consistent SLAM | [10.1109/CVPR52734.2025.00632](https://doi.org/10.1109/CVPR52734.2025.00632) |
+| [2026-11-16](2026-11-16-insight-25.md#difffpr) | ICML 2024 | DiffFPR: Diffusion Prior for Oversampled Fourier Phase Retrieval | [pmlr-v235-li24bj](https://proceedings.mlr.press/v235/li24bj.html) |
+| [2026-11-16](2026-11-16-insight-25.md#lstd-tournament) | NeurIPS 2025 | Model Selection for Off-policy Evaluation: New Algorithms and Experimental Protocol | [10.52202/085713-1430](https://doi.org/10.52202/085713-1430) |
+| [2026-11-16](2026-11-16-insight-25.md#kivi) | ICML 2024 | KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache | [pmlr-v235-liu24bz](https://proceedings.mlr.press/v235/liu24bz.html) |
 
 ## 写作依据
 
