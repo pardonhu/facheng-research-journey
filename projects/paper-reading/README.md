@@ -10,7 +10,7 @@
 
 前 100 篇可按要解决的问题查找，包括十份跨文总结、工具和原创无线算例。[百篇按问题索引](2026-11-16-insight-21.md#从一百篇里按问题找案例) · [第 91–100 篇：让调度意图落到可验证的覆盖、统计与观测](2026-11-16-insight-21.md#第十个十篇的解题思路)
 
-第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路)
+第 101 篇起继续收集并按十篇对照。[第 101–110 篇：配对、真值缺失与可靠性的停止条件](2026-11-16-insight-23.md#第十一个十篇的解题思路) · [第 111–120 篇：主动测量、幅相歧义与逐包反事实](2026-11-16-insight-25.md#第十二个十篇的解题思路) · [第 121–130 篇：接收机互补、运动校准与跨块状态](2026-11-16-insight-27.md#第十三个十篇的解题思路)
 
 ## 助手如何完成与复用训练
 
@@ -118,6 +118,7 @@
 | [2026-11-16 专项 24](2026-11-16-insight-24.md) | EarCardio、CodeFilling、Transductive Active Learning、EXOM、DoRA | 缺测位置与波形、接收者所缺信息、目标区方差、同次事件的另一选择、幅度与方向 | 先确定要改善哪个量，再说明为何这条消息或改动可能改善它。 |
 | [2026-11-16 专项 25](2026-11-16-insight-25.md) | WiLE-Audio、MAGiC-SLAM、DiffFPR、LSTD-Tournament、KIVI | 同网卡共存、回环后移图、相位歧义、离线估值器、量化分组 | [第 111–120 篇与电芯首次缺包的两组解释](2026-11-16-insight-25.md#第十二个十篇的解题思路) |
 | [2026-11-16 专项 26](2026-11-16-insight-26.md) | Gastag、Token Cropr、VisualSync、CLEAR、Mamba-2 | 参考标签间距、剪枝与位置恢复、运动激励、探测器误差、状态跨段传递 | 在去掉或校正一项信息之后，给出仍能核对目标的观测。 |
+| [2026-11-16 专项 27](2026-11-16-insight-27.md) | OhmScanner、ATENet、shapiq、RPSW、DeltaNet | 芯片反馈、观测时刻、通道互补与关联记忆 | [第 121–130 篇综合](2026-11-16-insight-27.md#第十三个十篇的解题思路) |
 
 ## 改稿案例检索
 
@@ -486,6 +487,11 @@
 | 用有辨识力的运动校时 | 时钟同步、转台标定 | 静止点对得上时，如何检验两台记录器还差多少时间 | 挑选使几何残差随时间变化的轨迹，另外安排能分开时差与装配角的动作 | [VisualSync](2026-11-16-insight-26.md#visualsync) | 固定时差、稳定装配与运动模型需经独立检验 |
 | 从检测报告比例回推事件比例 | 干扰监测、标签统计与阈值 | 探测器报告阳性的比例是否就是实际发生比例 | 根据灵敏度与假阳性率校正，同时报告样本条件和估计误差 | [CLEAR](2026-11-16-insight-26.md#clear) | 误差率若随场景变化，应按条件重新标定 |
 | 分段处理后准确传递边界状态 | 网关日志、同步状态重放 | 两段分别从零计算后要传哪些量才能还原完整递推 | 让每段保留传入状态的作用和本段新增量，按时间顺序合成 | [Mamba-2](2026-11-16-insight-26.md#mamba-2) | 仿射小例不能自动扩展到带阈值动作或缺失内部状态的协议 |
+| 实验设计、论证 | 系统校准 | 标签移动后读数改变，距离与供电同时变化 | 固定距离只改功率，再用有线仪表独立测量 | [OhmScanner](2026-11-16-insight-27.md#ohmscanner) | 片上强度码随芯片而定 |
+| 系统模型、实验设计 | 方法与消融 | 序列数值相同而峰值出现时刻不同 | 保留采样时刻并用固定参考点作对照 | [ATENet](2026-11-16-insight-27.md#atenet) | 未采样区间内的峰值未知 |
+| 指标定义、公平性 | 多传感器消融 | 单路排序选出了重复的观测 | 在同批样本上计算各组合效果及指定配置下的边际贡献 | [shapiq](2026-11-16-insight-27.md#shapiq) | 效用和已开启设备决定实际选取 |
+| 数学意义、读者理解 | 联合分布与实验动机 | 单站直方图相同，双站漏包率却变了 | 构造同时衰落与交替衰落的对照，在斜方向比较投影 | [RPSW](2026-11-16-insight-27.md#rpsw) | 需要同步样本和可比尺度 |
+| 系统模型、实验设计 | 记忆更新与评估 | 读者分不清重复上报的是绝对量还是增量 | 展示第二次写入的残差，再分开测实现速度与交叉干扰 | [DeltaNet](2026-11-16-insight-27.md#deltanet) | 关联键相似时会干扰其他读数 |
 
 ## 论文索引
 
@@ -703,6 +709,11 @@
 | [2026-11-16](2026-11-16-insight-26.md#visualsync) | NeurIPS 2025 | VisualSync: Multi-Camera Synchronization via Cross-View Object Motion | [10.52202/085713-0767](https://doi.org/10.52202/085713-0767) |
 | [2026-11-16](2026-11-16-insight-26.md#clear) | ICML 2024 | Unbiased Multi-Label Learning from Crowdsourced Annotations | [pmlr-v235-xia24a](https://proceedings.mlr.press/v235/xia24a.html) |
 | [2026-11-16](2026-11-16-insight-26.md#mamba-2) | ICML 2024 | Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality | [pmlr-v235-dao24a](https://proceedings.mlr.press/v235/dao24a.html) |
+| [2026-11-16](2026-11-16-insight-27.md#ohmscanner) | MobiCom 2025 | From Signal-based to Impedance-based Sensing: A paradigm Shift for Plug-and-Play, Mobile, and Sensitive Battery-free Sensing | [10.1145/3680207.3723480](https://doi.org/10.1145/3680207.3723480) |
+| [2026-11-16](2026-11-16-insight-27.md#atenet) | NeurIPS 2025 | Adaptive Time Encoding for Irregular Multivariate Time-Series Classification | [10.52202/085713-3407](https://doi.org/10.52202/085713-3407) |
+| [2026-11-16](2026-11-16-insight-27.md#shapiq) | NeurIPS 2024（Datasets and Benchmarks） | shapiq: Shapley Interactions for Machine Learning | [10.52202/079017-4141](https://doi.org/10.52202/079017-4141) |
+| [2026-11-16](2026-11-16-insight-27.md#rpsw) | ICML 2024 | Sliced Wasserstein with Random-Path Projecting Directions | [pmlr-v235-nguyen24l](https://proceedings.mlr.press/v235/nguyen24l.html) |
+| [2026-11-16](2026-11-16-insight-27.md#deltanet) | NeurIPS 2024 | Parallelizing Linear Transformers with the Delta Rule over Sequence Length | [10.52202/079017-3668](https://doi.org/10.52202/079017-3668) |
 
 ## 写作依据
 
