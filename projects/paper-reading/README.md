@@ -117,6 +117,7 @@
 | [2026-11-16 专项 23](2026-11-16-insight-23.md) | 5G 中频实测、Tartan IMU、PCP、Multicalibration、Reflexion | 资源乘积、运动先验、选择性缺标、交叉校准、重试记忆 | [第 101–110 篇对照和截止时间算例](2026-11-16-insight-23.md#第十一个十篇的解题思路) |
 | [2026-11-16 专项 24](2026-11-16-insight-24.md) | EarCardio、CodeFilling、Transductive Active Learning、EXOM、DoRA | 缺测位置与波形、接收者所缺信息、目标区方差、同次事件的另一选择、幅度与方向 | 先确定要改善哪个量，再说明为何这条消息或改动可能改善它。 |
 | [2026-11-16 专项 25](2026-11-16-insight-25.md) | WiLE-Audio、MAGiC-SLAM、DiffFPR、LSTD-Tournament、KIVI | 同网卡共存、回环后移图、相位歧义、离线估值器、量化分组 | [第 111–120 篇与电芯首次缺包的两组解释](2026-11-16-insight-25.md#第十二个十篇的解题思路) |
+| [2026-11-16 专项 26](2026-11-16-insight-26.md) | Gastag、Token Cropr、VisualSync、CLEAR、Mamba-2 | 参考标签间距、剪枝与位置恢复、运动激励、探测器误差、状态跨段传递 | 在去掉或校正一项信息之后，给出仍能核对目标的观测。 |
 
 ## 改稿案例检索
 
@@ -480,6 +481,11 @@
 | 从等价解找需要补充的观测 | 信道估计、幅相测量 | 两种不同的路径顺序是否具有完全相同的扫频功率 | 构造反序的两抽头，先验或有相位参考的观测才有机会选出一个 | [DiffFPR](2026-11-16-insight-25.md#difffpr) | 频响幅度拟合和路径方向识别应分开评价 |
 | 固定策略后选离线估值器 | 协议评价、实验方法 | 估值更高的模型是否在部分信道状态下系统高估 | 用候选值函数给一步残差加权，检查均值掩盖的成对偏差 | [LSTD-Tournament](2026-11-16-insight-25.md#lstd-tournament) | 需要日志覆盖部署状态与动作；估值器比较不是策略改进 |
 | 分组方向影响弱信号能否留存 | 缓存压缩、上报时延 | 同为两位，弱延迟格何时被强格的刻度抹掉 | 固定样本位宽和分组大小，改变共享刻度的方向，记录缓存等待 | [KIVI](2026-11-16-insight-25.md#kivi) | 量化后跨过阈值还需在独立波形上评估 |
+| 参考标签须共享干扰且保持测量独立 | 相位传感、标定设计 | 参考标签该放多近，差分里还剩多少环境变化 | 改变参考间距并固定被测对象，先测差分残差再标定量纲 | [Gastag](2026-11-16-insight-26.md#gastag) | 原型中的标签间距取决于天线与环境 |
+| 跳过中间计算但保留输出位置 | 稀疏处理、频谱监测 | 剪去的格点怎样在输出中保有位置 | 以旁路保留浅层表示，最后按原位置放回，再分开计数计算与输出 | [Token Cropr](2026-11-16-insight-26.md#token-cropr) | 恢复格点无法补回此前没学到的弱信号特征 |
+| 用有辨识力的运动校时 | 时钟同步、转台标定 | 静止点对得上时，如何检验两台记录器还差多少时间 | 挑选使几何残差随时间变化的轨迹，另外安排能分开时差与装配角的动作 | [VisualSync](2026-11-16-insight-26.md#visualsync) | 固定时差、稳定装配与运动模型需经独立检验 |
+| 从检测报告比例回推事件比例 | 干扰监测、标签统计与阈值 | 探测器报告阳性的比例是否就是实际发生比例 | 根据灵敏度与假阳性率校正，同时报告样本条件和估计误差 | [CLEAR](2026-11-16-insight-26.md#clear) | 误差率若随场景变化，应按条件重新标定 |
+| 分段处理后准确传递边界状态 | 网关日志、同步状态重放 | 两段分别从零计算后要传哪些量才能还原完整递推 | 让每段保留传入状态的作用和本段新增量，按时间顺序合成 | [Mamba-2](2026-11-16-insight-26.md#mamba-2) | 仿射小例不能自动扩展到带阈值动作或缺失内部状态的协议 |
 
 ## 论文索引
 
@@ -692,6 +698,11 @@
 | [2026-11-16](2026-11-16-insight-25.md#difffpr) | ICML 2024 | DiffFPR: Diffusion Prior for Oversampled Fourier Phase Retrieval | [pmlr-v235-li24bj](https://proceedings.mlr.press/v235/li24bj.html) |
 | [2026-11-16](2026-11-16-insight-25.md#lstd-tournament) | NeurIPS 2025 | Model Selection for Off-policy Evaluation: New Algorithms and Experimental Protocol | [10.52202/085713-1430](https://doi.org/10.52202/085713-1430) |
 | [2026-11-16](2026-11-16-insight-25.md#kivi) | ICML 2024 | KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache | [pmlr-v235-liu24bz](https://proceedings.mlr.press/v235/liu24bz.html) |
+| [2026-11-16](2026-11-16-insight-26.md#gastag) | MobiCom 2024 | Gastag: A Gas Sensing Paradigm using Graphene-based Tags | [10.1145/3636534.3649365](https://doi.org/10.1145/3636534.3649365) |
+| [2026-11-16](2026-11-16-insight-26.md#token-cropr) | CVPR 2025 | Token Cropr: Faster ViTs for Quite a Few Tasks | [10.1109/CVPR52734.2025.00910](https://doi.org/10.1109/CVPR52734.2025.00910) |
+| [2026-11-16](2026-11-16-insight-26.md#visualsync) | NeurIPS 2025 | VisualSync: Multi-Camera Synchronization via Cross-View Object Motion | [10.52202/085713-0767](https://doi.org/10.52202/085713-0767) |
+| [2026-11-16](2026-11-16-insight-26.md#clear) | ICML 2024 | Unbiased Multi-Label Learning from Crowdsourced Annotations | [pmlr-v235-xia24a](https://proceedings.mlr.press/v235/xia24a.html) |
+| [2026-11-16](2026-11-16-insight-26.md#mamba-2) | ICML 2024 | Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality | [pmlr-v235-dao24a](https://proceedings.mlr.press/v235/dao24a.html) |
 
 ## 写作依据
 
