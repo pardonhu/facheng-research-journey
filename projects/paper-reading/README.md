@@ -132,6 +132,7 @@
 | [2026-11-16 专项 36](2026-11-16-insight-36.md) | L3GS、CountGD、GABO、LDPC 难例训练、DCVC-RT | 渐进下发、条件计数、离线选参、残余失败、计算与操作开销 | 让现有方案先在自己的观测条件下完整运行，再决定该补哪项。 |
 | [2026-11-16 专项 37](2026-11-16-insight-37.md) | HyperCam、AnySat、Causal Graph Cut、S3、Time-MMD | 分段实测、空间干扰、次序变换和数据可获得时间 | [第 171–180 篇综合](2026-11-16-insight-37.md#第十八个十篇的解题思路) |
 | [2026-11-16 专项 38](2026-11-16-insight-38.md) | Self-Refine | 把一次改稿、外部核验与跨任务指令比较分开 | [方法与原创改稿](2026-11-16-insight-38.md) |
+| [2026-11-16 专项 39](2026-11-16-insight-39.md) | MT-Bench 评审 | 顺序偏好、外部证据与真实读者反馈 | [方法与原创改稿](2026-11-16-insight-39.md) |
 
 ## 改稿案例检索
 
@@ -556,6 +557,7 @@
 | 系统模型、指标定义 | 时序特征 | 连续丢包混淆同一节点的报告顺序与空口顺序 | 保留采样时间并明确内部算子使用的邻接关系 | [S3](2026-11-16-insight-37.md#s3) | 仅重排已观察的输入窗口 |
 | 实验可信度、时间定义 | 日志与预测数据 | 按事件时刻接入事后写成的故障单 | 记录何时发生与何时可用，并抽查抽取后的内容 | [Time-MMD](2026-11-16-insight-37.md#time-mmd) | 预测与事后解释使用的证据不同 |
 | 实验可信度、修改依据 | 实验结果复核 | 模型说数字合理却没有查运算对象 | 保留原始目标，在同一原始样本上独立重算后才改结果句 | [Self-Refine](2026-11-16-insight-38.md#self-refine) | 对象是当前稿件；要改变可复用指令还需跨稿检验 |
+| 实验设计、偏好评估 | 比较两版论文修改 | 评价可能偏向先出现的版本 | 隐藏候选来源并交换顺序，按文本身份记录分歧，用分子与分母核对数字 | [MT-Bench 评审](2026-11-16-insight-39.md#mt-bench-评审) | 作者的文字偏好取自作者本人反馈 |
 
 ## 论文索引
 
@@ -829,6 +831,7 @@
 | [2026-11-16](2026-11-16-insight-37.md#s3) | NeurIPS 2024 | Segment, Shuffle, and Stitch: A Simple Layer for Improving Time-Series Representations | [10.52202/079017-0158](https://doi.org/10.52202/079017-0158) |
 | [2026-11-16](2026-11-16-insight-37.md#time-mmd) | NeurIPS 2024（Datasets and Benchmarks） | Time-MMD: Multi-Domain Multimodal Dataset for Time Series Analysis | [10.52202/079017-2476](https://doi.org/10.52202/079017-2476) |
 | [2026-11-16](2026-11-16-insight-38.md#self-refine) | NeurIPS 2023 | Self-Refine: Iterative Refinement with Self-Feedback | [10.52202/075280-2019](https://doi.org/10.52202/075280-2019) |
+| [2026-11-16](2026-11-16-insight-39.md#mt-bench-评审) | NeurIPS 2023（Datasets and Benchmarks） | Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena | [10.52202/075280-2020](https://doi.org/10.52202/075280-2020) |
 
 ## 写作依据
 
