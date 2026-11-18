@@ -172,6 +172,7 @@
 | [2026-11-18 追加30](2026-11-18-continue-30.md) | LoGra/LogIX（新读）、NanoScatter（复读）；第十组十篇总结 | 低秩梯度日志；反事实核验；有限储能；整机开销 | 原始梯度与零分支算例、能量换算、完整英文和十篇迁移总结 |
 | [2026-11-18 追加31](2026-11-18-continue-31.md) | CARTE（新读）、AnySat、MeAnt、MetaVenom（复读） | 语义表格迁移；融合表示监督；损失集中度；状态保持与能耗 | 四篇正文分析、原创核算、完整改稿与组网实验入口 |
 | [2026-11-18 追加32](2026-11-18-continue-32.md) | Moirai、SateRIoT、MIMSID（复读）、PS-BAX（新读） | 尾部概率；集合探测；事件配对；模板辨别能力 | 四篇原创算例、实验段落及下一步组网问题 |
+| [2026-11-18 追加33](2026-11-18-continue-33.md) | BACON、Robust Sampling（新读）；第十一组十篇总结 | 仿真信息增益；核验分配；目标相关测量；实验过渡 | 联合高斯及稳健抽查算例、完整改稿、十篇综合 |
 
 ## 改稿案例检索
 
@@ -825,6 +826,10 @@
 | 模型与实验 | 共享队列 | 随机化直接写成无重复 | 按不同数据身份计算每次机会收益 | [SateRIoT](2026-11-18-continue-32.md#sateriot) | 仍需测残余重复与时序成本 |
 | 数学与工具 | 少量校准 | 模板残差小就称矩阵完全恢复 | 检查测量方向与先验分别消除什么歧义 | [MIMSID](2026-11-18-continue-32.md#mimsid) | 谱分布相同仍可能有不同新输入响应 |
 | 实验与图文 | 漂移更新 | 成像接近写成矩阵相等 | 旧矩阵、当前参考、恢复结果同时比较 | [MIMSID](2026-11-18-continue-32.md#mimsid) | 模板数减少不等于总耗时同比减少 |
+| 工具与研究问题 | 仿真校准 | 只在已测条件重复调参 | 联合选仿真设计和参数以减少校准未知量 | [BACON](2026-11-18-continue-33.md#bacon) | 真实观测固定，不能据此推知未测环境变化 |
+| 实验与论证 | 后验质量 | 各种误差并成更准确 | 分别给参数误差、预测误差与参照明确的KL | [BACON](2026-11-18-continue-33.md#bacon) | 参考后验仍由有限仿真估计 |
+| 工具与数学 | 真实核验分配 | 模型误差估计不足仍极端偏向难例 | 用核验数据调节主动与均匀抽查的混合 | [Robust-Sampling](2026-11-18-continue-33.md#robust-sampling) | 先核验标签计入总预算 |
+| 实验与篇章 | 机制验证 | 只报效率提升没有策略变化 | 依次拆分路径、稳健处理、核验数量并报告混合系数 | [Robust-Sampling](2026-11-18-continue-33.md#robust-sampling) | 渐近结论与有限样本表现分开 |
 
 ## 论文索引
 
@@ -1163,6 +1168,8 @@
 | [2026-11-18 追加30](2026-11-18-continue-30.md#logra-logix) | NeurIPS 2025 | What is Your Data Worth to GPT? LLM-Scale Data Valuation with Influence Functions | [10.52202/085713-4883](https://doi.org/10.52202/085713-4883) |
 | [2026-11-18 追加31](2026-11-18-continue-31.md#carte) | ICML 2024 | CARTE: Pretraining and Transfer for Tabular Learning | [pmlr-v235-kim24d](https://proceedings.mlr.press/v235/kim24d.html) |
 | [2026-11-18 追加32](2026-11-18-continue-32.md#ps-bax) | NeurIPS 2024 | Practical Bayesian Algorithm Execution via Posterior Sampling | [10.52202/079017-4296](https://doi.org/10.52202/079017-4296) |
+| [2026-11-18 追加33](2026-11-18-continue-33.md#bacon) | NeurIPS 2024 | Bayesian Adaptive Calibration and Optimal Design | [10.52202/079017-1800](https://doi.org/10.52202/079017-1800) |
+| [2026-11-18 追加33](2026-11-18-continue-33.md#robust-sampling) | NeurIPS 2025 | Robust Sampling for Active Statistical Inference | [10.52202/085713-2312](https://doi.org/10.52202/085713-2312) |
 
 ## 写作依据
 
