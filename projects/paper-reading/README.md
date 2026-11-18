@@ -152,6 +152,7 @@
 | [2026-11-18 追加10](2026-11-18-continue-10.md) | RANBooster、PolarVisor（复读）；Conformal PID、TRAK（新读） | 低负载节能；绝对信号与比例；残差预测；训练数据归因 | 四组英文训练、能耗与极化算例、实际运行残差反馈实验、归因矩阵计算 |
 | [2026-11-18 追加11](2026-11-18-continue-11.md) | M2HO、Bridge（复读）；DPO、L2C（新读） | 控制时间预算；局部异常；偏好重参数化；求解迭代缓存 | 四组英文改稿、控制链与相位算例、运行离散DPO验证、求解等价推导 |
 | [2026-11-18 追加12](2026-11-18-continue-12.md) | MSense、RinP（复读） | 波形恢复与读出；空间资源互补；第四组十篇总结 | 变频自相关计算、时隙集合核验、英文改稿和十篇迁移框架 |
+| [2026-11-18 追加13](2026-11-18-continue-13.md) | H2O、Proxy Causal Discovery（新读）；Polaris、CloudRIC（复读） | 新旧信息保留；隐藏中间状态；已知量与不可辨识；突发处理时限 | 四组英文改稿、注意力缓存与条件分布算例、几何歧义核算、公开解码数据重算 |
 
 ## 改稿案例检索
 
@@ -669,6 +670,14 @@
 | 图文与实验 | 动态任务 | 平均误差代替变化响应 | 依次呈现总体误差、波形对照、变化轨迹 | [MSense](2026-11-18-continue-12.md#msense) | 单条轨迹不能补出未测响应时延 |
 | 研究判断与系统模型 | 资源共享 | 总量相关被扩展为局部完全一致 | 分别改变总需求相关和资源位置 | [RinP](2026-11-18-continue-12.md#rinp) | 共享收益取决于可达性及许可 |
 | 实验与指标 | 容量比较 | 平均达标与多数时刻达标混合 | 先定义共同服务目标再比较资源 | [RinP](2026-11-18-continue-12.md#rinp) | 控制与迁移开销计入实际预算 |
+| 信息取舍与方法 | 历史缓存 | 只保留最近数据或历史高分数据 | 保留近期探索区与累计重要区并测试旧条件重现 | [H2O](2026-11-18-continue-13.md#h2o) | 缓存诊断历史不丢必收记录 |
+| 实验与可信度 | 加速结果 | 批量改变混入单次延迟收益 | 分别比较任务质量、同批量时延与扩批吞吐 | [H2O](2026-11-18-continue-13.md#h2o) | 计时包括所报告的缓存构建阶段 |
+| 系统模型与数学 | 粗采样日志 | 祖先路径被读成直接因果边 | 先列隐藏中间状态再检验代理条件分布约束 | [Proxy](2026-11-18-continue-13.md#proxy) | 依赖模型与代理假设，未来代理限离线 |
+| 实验与篇章 | 机制核验 | 总分之后只堆数据规模 | 先给任务效果再给中间机制质量 | [Proxy](2026-11-18-continue-13.md#proxy) | 代理有效性不由普通相关替代 |
+| 模型与创新 | 变量消除 | 归一化后认为所有未知量都消失 | 逐项列已知高度方向间距再说明消去的幅值 | [Polaris](2026-11-18-continue-13.md#polaris) | 比值仍可依赖未测几何 |
+| 实验与计时 | 定位性能 | 局部求解耗时代表全流程 | 分别标注求解与端到端路径并复核固定实验条件 | [Polaris](2026-11-18-continue-13.md#polaris) | 固定高度测试不外推高度变化 |
+| 实验与图文 | 实时负载 | 平均空闲直接等于可以接更多任务 | 并列利用率、授权率、尾时延并解释到达突发 | [CloudRIC](2026-11-18-continue-13.md#cloudric) | 各百分比指标分母分开 |
+| 实验与可信度 | 基线对照 | 整套差异全归给一个开关 | 写明共同代理、缺失控制及预测模型配置 | [CloudRIC](2026-11-18-continue-13.md#cloudric) | 接纳后可靠性同时报告原始需求交付量 |
 
 ## 论文索引
 
@@ -969,6 +978,8 @@
 | [2026-11-18 追加10](2026-11-18-continue-10.md#trak) | ICML 2023 | TRAK: Attributing Model Behavior at Scale | [pmlr-v202-park23c](https://proceedings.mlr.press/v202/park23c.html) |
 | [2026-11-18 追加11](2026-11-18-continue-11.md#dpo) | NeurIPS 2023 | Direct Preference Optimization: Your Language Model is Secretly a Reward Model | [10.52202/075280-2338](https://proceedings.neurips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract-Conference.html) |
 | [2026-11-18 追加11](2026-11-18-continue-11.md#l2c) | NeurIPS 2024 | Learning-to-Cache: Accelerating Diffusion Transformer via Layer Caching | [10.52202/079017-4236](https://proceedings.neurips.cc/paper_files/paper/2024/hash/f0b1515be276f6ba82b4f2b25e50bef0-Abstract-Conference.html) |
+| [2026-11-18 追加13](2026-11-18-continue-13.md#h2o) | NeurIPS 2023 | H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models | [10.52202/075280-1506](https://proceedings.neurips.cc/paper_files/paper/2023/hash/6ceefa7b15572587b78ecfcebb2827f8-Abstract-Conference.html) |
+| [2026-11-18 追加13](2026-11-18-continue-13.md#proxy) | NeurIPS 2023 | Causal Discovery from Subsampled Time Series with Proxy Variables | [10.52202/075280-1880](https://proceedings.neurips.cc/paper_files/paper/2023/hash/86cba2b31d17f237866a2e6c52c7878a-Abstract-Conference.html) |
 
 ## 写作依据
 
