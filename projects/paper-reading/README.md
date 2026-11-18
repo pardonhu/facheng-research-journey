@@ -160,6 +160,7 @@
 | [2026-11-18 追加18](2026-11-18-continue-18.md) | FlexiViT、RANPilot（新读） | 保持投响应；计划配置入数据；提前量与恢复时间 | 两组完整英文改稿、线性投影和提前量手算、第六个十篇总结 |
 | [2026-11-18 追加19](2026-11-18-continue-19.md) | SURGEON、mmTunnel（新读）；MOMENT、HybRadar（复读） | 形状与物理基线；等缓存比较；参考点外验证；多线索融合 | 四组英文段落、归一化/缓存/阵列/融合算例与组网研究问题 |
 | [2026-11-18 追加20](2026-11-18-continue-20.md) | Diffusion Forcing、MCTF、mmOVD（新读）；PassiveBLE（复读） | 多未来指导；下一层注意力；跨帧补全；唤醒与待机能耗 | 四组英文改稿、梯度/聚合/窗口/状态能耗计算和原创图注 |
+| [2026-11-18 追加21](2026-11-18-continue-21.md) | SAGE、Learning-To-Measure（新读） | 重建应用需求；共享轨迹检验预测器；同预测器检验采集策略 | 两组英文改稿、队列量化与信息增益算例、第七个十篇总结 |
 
 ## 改稿案例检索
 
@@ -733,6 +734,10 @@
 | 实验与实现 | 合并复用 | 复用近似被写成数学恒等 | 分开检验选择收益与获得依据的计算成本 | [MCTF](2026-11-18-continue-20.md#mctf) | 累计来源数与原始物理量分开 |
 | 论证与图文 | 分阶段处理 | 小阈值产生碎片被当作无效 | 先保留边界再说明后续观测怎样补全 | [mmOVD](2026-11-18-continue-20.md#mmovd) | 需核对运动与关联尺度 |
 | 指标与篇章 | 时间统计 | 检测计算替代报警反应 | 分别列处理耗时、历史窗口、连续触发和事件反应 | [mmOVD](2026-11-18-continue-20.md#mmovd) | 滑窗历史不每帧重新等待 |
+| 系统模型与数学 | 预测目标 | 接收时刻直接等同生成时刻 | 用同一区间队列与唯一出队量检查观测制造的事件 | [SAGE](2026-11-18-continue-21.md#sage) | 量化和重传分别处理 |
+| 实验与篇章 | 跨配置 | 泛化主张未列变化 | 固定应用输入列配置变化并并列时延与资源 | [SAGE](2026-11-18-continue-21.md#sage) | 多参数同时变化不归因单参数 |
+| 实验与可信度 | 主动测量 | 预测器与策略收益混合 | 先共享轨迹比较预测器再固定预测器比较策略 | [L2M](2026-11-18-continue-21.md#l2m) | 特征成本与动作覆盖明确 |
+| 系统模型与篇章 | 缺测输入 | 未测与实测零混合 | 保留值、掩码和上下文标签各自角色 | [L2M](2026-11-18-continue-21.md#l2m) | 掩码不能补出从未采过动作的收益 |
 
 ## 论文索引
 
@@ -1046,6 +1051,8 @@
 | [2026-11-18 追加20](2026-11-18-continue-20.md#diffusion-forcing) | NeurIPS 2024 | Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion | [10.52202/079017-0759](https://doi.org/10.52202/079017-0759) |
 | [2026-11-18 追加20](2026-11-18-continue-20.md#mctf) | CVPR 2024 | Multi-criteria Token Fusion with One-step-ahead Attention for Efficient Vision Transformers | [10.1109/CVPR52733.2024.01490](https://doi.org/10.1109/CVPR52733.2024.01490) |
 | [2026-11-18 追加20](2026-11-18-continue-20.md#mmovd) | MobiCom 2024 | See Through Vehicles: Fully Occluded Vehicle Detection with Millimeter Wave Radar | [10.1145/3636534.3690658](https://doi.org/10.1145/3636534.3690658) |
+| [2026-11-18 追加21](2026-11-18-continue-21.md#sage) | SIGCOMM 2026 | SAGE: A Real-Time AI System for Reducing Latency in NextG Cellular Networks | [10.1145/3789240.3829112](https://doi.org/10.1145/3789240.3829112) |
+| [2026-11-18 追加21](2026-11-18-continue-21.md#l2m) | ICML 2026 | Learning-To-Measure: In-Context Active Feature Acquisition | [pmlr-v306-kobayashi26a](https://proceedings.mlr.press/v306/kobayashi26a.html) |
 
 ## 写作依据
 
