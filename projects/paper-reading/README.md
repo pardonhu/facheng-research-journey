@@ -147,6 +147,8 @@
 | [2026-11-18 追加05](2026-11-18-continue-05.md) | CAMO、Opportunistic-ToF（新读）；DREW、PanoRadar（复读） | 多精度成本；异步信号识别；阶段时钟；误差传播 | 四组英文训练、时间和相位算例、作者实现对照 |
 | [2026-11-18 追加06](2026-11-18-continue-06.md) | SIB-ACS、Generalized Event Cameras（新读）；第11–20篇总结 | 反馈采样；发送内容；信息可用时间；第二个十篇总结 | 两组英文训练、创新代理量推导、码率与时延核验、工具组合方案 |
 | [2026-11-18 追加07](2026-11-18-continue-07.md) | Sisyphus、RFlect、ReEvo（复读）；ACGR（新读） | 跨端配置；受限角域采样；异步融合；生成规则的评价 | 四组英文训练、公式与时序例子、128条重传轨迹枚举和动态规划 |
+| [2026-11-18 追加08](2026-11-18-continue-08.md) | SwapRAN、Crowd Analytics（复读）；OneNet、MCTS-AHD（新读） | 迁移确认；时间相关；在线集成；树搜索 | 四组英文改稿、时序和梯度算例、分支探索计算 |
+| [2026-11-18 追加09](2026-11-18-continue-09.md) | SeRadar（复读）；EfficientZero V2（新读） | 零陷的信噪比取舍；当前策略重评价；第三组十篇总结 | 投影与SINR推导、旧回报算例、英文实验过渡及工具配问题 |
 
 ## 改稿案例检索
 
@@ -632,6 +634,18 @@
 | 系统模型与时间 | 异步预测 | 输入帧龄与计算时延混为一谈 | 列输入时间线并检查推断已可用前缀 | [ACGR](2026-11-18-continue-07.md#acgr) | 当前公开帧间入口使用后端帧 |
 | 篇章与实验归因 | 自动生成规则 | 最终好规则替代搜索流程验证 | 分别检验规则收益、候选行为与组件贡献 | [ReEvo](2026-11-18-continue-07.md#reevo) | 平滑统计不独自证明任务收益 |
 | 指标与工具接口 | 优化评测器 | 少尝试被直接写成高效完成 | 同报期限完成与开销并定义候选评价单位 | [ReEvo](2026-11-18-continue-07.md#reevo) | 内外层评价不能互换 |
+| 系统模型与实验 | 服务迁移 | 发送控制消息被写成恢复完成 | 分别报告发送、确认、业务恢复事件 | [SwapRAN](2026-11-18-continue-08.md#swapran) | 公开演示与论文多节点设置分别核对 |
+| 指标定义 | 分批恢复 | 总恢复时间掩盖同时受影响用户 | 同时报告峰值受影响量和用户时间积分 | [SwapRAN](2026-11-18-continue-08.md#swapran) | 保持工作总量可比 |
+| 指标定义与实验过渡 | 时序感知 | 计算时间代替得到稳定估计所需时间 | 分别报告收集、稳定和计算时间 | [Crowd-Analytics](2026-11-18-continue-08.md#crowd-analytics) | 稳定不等于估计正确 |
+| 数学与研究点子 | 时间相关 | 同一边际分布被视为同样决策条件 | 固定分布改变时间排列并测策略收益 | [Crowd-Analytics](2026-11-18-continue-08.md#crowd-analytics) | 说明相关量是否去均值 |
+| 系统模型与工具 | 在线专家 | 低权重模型逐渐失去学习机会 | 保留独立训练损失再学习组合权重 | [OneNet](2026-11-18-continue-08.md#onenet) | 训练标签按实际反馈到达 |
+| 实验与数学 | 漂移适应 | 长期权重掩盖切换后的滞后 | 用切换轨迹呈现权重惯性和短期纠偏 | [OneNet](2026-11-18-continue-08.md#onenet) | 平均指标与局部变化并报 |
+| 创新定位与工具 | 规则搜索 | 只保留当前最优候选遗漏组合改动 | 以访问次数和质量安排保留分支的探索 | [MCTS-AHD](2026-11-18-continue-08.md#mcts-ahd) | 固定候选生成和评价成本 |
+| 图文与实验 | 搜索路径 | 最终规则分数不能解释分支价值 | 主结果后补消融、搜索曲线和祖先路径 | [MCTS-AHD](2026-11-18-continue-08.md#mcts-ahd) | 路径叙事需实际日志 |
+| 数学与信号解释 | 干扰抑制 | 归一化响应被写成无损保留 | 联算目标响应、残余干扰和噪声增益 | [SeRadar](2026-11-18-continue-09.md#seradar) | 空间可分离与干扰强度决定收益 |
+| 图文与实验归因 | 局部模块 | 整机收益全部归给零陷 | 按约束、波束、特征、场景性能分层引图 | [SeRadar](2026-11-18-continue-09.md#seradar) | 单模块增益需要独立消融 |
+| 工具与系统模型 | 策略训练 | 旧策略回报直接充当当前价值 | 保留转移数据并用当前模型重评价后续决策 | [EfficientZero-V2](2026-11-18-continue-09.md#efficientzero-v2) | 模型误差与环境变化需独立核对 |
+| 实验过渡 | 价值目标 | 只做朴素对照不能检验设计选择 | 先比较旧目标再比较解决同问题的另一目标 | [EfficientZero-V2](2026-11-18-continue-09.md#efficientzero-v2) | 真实交互和模型估计分别报告 |
 
 ## 论文索引
 
@@ -925,6 +939,9 @@
 | [2026-11-18 追加06](2026-11-18-continue-06.md#sib-acs) | CVPR 2025 | Sampling Innovation-Based Adaptive Compressive Sensing | [10.1109/CVPR52734.2025.00228](https://doi.org/10.1109/CVPR52734.2025.00228) |
 | [2026-11-18 追加06](2026-11-18-continue-06.md#generalized-event-cameras) | CVPR 2024 | Generalized Event Cameras | [10.1109/CVPR52733.2024.02362](https://doi.org/10.1109/CVPR52733.2024.02362) |
 | [2026-11-18 追加07](2026-11-18-continue-07.md#acgr) | CVPR 2025 | Asynchronous Collaborative Graph Representation for Frames and Events | [10.1109/CVPR52734.2025.00162](https://doi.org/10.1109/CVPR52734.2025.00162) |
+| [2026-11-18 追加08](2026-11-18-continue-08.md#onenet) | NeurIPS 2023 | OneNet: Enhancing Time Series Forecasting Models under Concept Drift by Online Ensembling | [10.52202/075280-3066](https://doi.org/10.52202/075280-3066) |
+| [2026-11-18 追加08](2026-11-18-continue-08.md#mcts-ahd) | ICML 2025 | Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design | [pmlr-v267-zheng25o](https://proceedings.mlr.press/v267/zheng25o.html) |
+| [2026-11-18 追加09](2026-11-18-continue-09.md#efficientzero-v2) | ICML 2024 | EfficientZero V2: Mastering Discrete and Continuous Control with Limited Data | [pmlr-v235-wang24at](https://proceedings.mlr.press/v235/wang24at.html) |
 
 ## 写作依据
 
