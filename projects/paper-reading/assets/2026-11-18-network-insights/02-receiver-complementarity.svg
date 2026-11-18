@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="805" viewBox="0 0 1400 805" role="img" aria-labelledby="title desc">
+<title id="title">辅助接收点是否收到了中心漏掉的包</title><desc id="desc">两个接收点均收到十包中的九包。当它们均漏第四包时，联合仍只得到九包；中心漏第四包而辅助漏第七包时，联合可得到全部十包，随后还需转发第四包给中心。</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="64" y="65" font-size="40" fill="#172b4d" font-weight="700" text-anchor="start">两个接收点都收到 90%，帮助可能完全不同</text>
+<text x="64" y="111" font-size="27" fill="#50647a" font-weight="400" text-anchor="start">看逐包记录：辅助接收点收到的，恰好是不是中心漏掉的？</text>
+<rect x="64" y="140" width="1272" height="53" rx="12" fill="#f6f8fb" stroke="#f6f8fb" stroke-width="1.5"/>
+<text x="86" y="175" font-size="24" fill="#50647a" font-weight="400" text-anchor="start">✓ 收到或可从两处取得        × 丢失        本图用 10 个包做示例，非实测。</text>
+<rect x="64" y="218" width="620" height="380" rx="12" fill="white" stroke="#d9e2ec" stroke-width="1.5"/>
+<text x="88" y="263" font-size="30" fill="#172b4d" font-weight="700" text-anchor="start">漏的是同一包</text>
+<text x="88" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="start">包编号</text>
+<text x="215" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">1</text>
+<text x="260" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">2</text>
+<text x="305" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">3</text>
+<text x="350" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">4</text>
+<text x="395" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">5</text>
+<text x="440" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">6</text>
+<text x="485" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">7</text>
+<text x="530" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">8</text>
+<text x="575" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">9</text>
+<text x="620" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">10</text>
+<text x="86" y="355" font-size="23" fill="#172b4d" font-weight="600" text-anchor="start">中心</text>
+<rect x="196" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="215" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="241" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="260" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="286" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="305" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="331" y="324" width="38" height="46" rx="6" fill="#fff0f0" stroke="#c3393d" stroke-width="1.5"/>
+<text x="350" y="356" font-size="29" fill="#c3393d" font-weight="600" text-anchor="middle">×</text>
+<rect x="376" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="395" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="421" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="440" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="466" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="485" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="511" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="530" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="556" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="575" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="601" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="620" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<text x="86" y="427" font-size="23" fill="#172b4d" font-weight="600" text-anchor="start">辅助</text>
+<rect x="196" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="215" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="241" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="260" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="286" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="305" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="331" y="396" width="38" height="46" rx="6" fill="#fff0f0" stroke="#c3393d" stroke-width="1.5"/>
+<text x="350" y="428" font-size="29" fill="#c3393d" font-weight="600" text-anchor="middle">×</text>
+<rect x="376" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="395" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="421" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="440" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="466" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="485" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="511" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="530" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="556" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="575" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="601" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="620" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<text x="86" y="499" font-size="23" fill="#172b4d" font-weight="600" text-anchor="start">两处合并</text>
+<rect x="196" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="215" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="241" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="260" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="286" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="305" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="331" y="468" width="38" height="46" rx="6" fill="#fff0f0" stroke="#c3393d" stroke-width="1.5"/>
+<text x="350" y="500" font-size="29" fill="#c3393d" font-weight="600" text-anchor="middle">×</text>
+<rect x="376" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="395" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="421" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="440" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="466" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="485" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="511" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="530" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="556" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="575" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="601" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="620" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<text x="88" y="565" font-size="27" fill="#c3393d" font-weight="600" text-anchor="start">合并后仍缺第 4 包：9 / 10</text>
+<rect x="716" y="218" width="620" height="380" rx="12" fill="white" stroke="#d9e2ec" stroke-width="1.5"/>
+<text x="740" y="263" font-size="30" fill="#172b4d" font-weight="700" text-anchor="start">漏的是不同包</text>
+<text x="740" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="start">包编号</text>
+<text x="867" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">1</text>
+<text x="912" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">2</text>
+<text x="957" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">3</text>
+<text x="1002" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">4</text>
+<text x="1047" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">5</text>
+<text x="1092" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">6</text>
+<text x="1137" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">7</text>
+<text x="1182" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">8</text>
+<text x="1227" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">9</text>
+<text x="1272" y="302" font-size="21" fill="#50647a" font-weight="400" text-anchor="middle">10</text>
+<text x="738" y="355" font-size="23" fill="#172b4d" font-weight="600" text-anchor="start">中心</text>
+<rect x="848" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="867" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="893" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="912" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="938" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="957" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="983" y="324" width="38" height="46" rx="6" fill="#fff0f0" stroke="#c3393d" stroke-width="1.5"/>
+<text x="1002" y="356" font-size="29" fill="#c3393d" font-weight="600" text-anchor="middle">×</text>
+<rect x="1028" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1047" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1073" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1092" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1118" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1137" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1163" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1182" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1208" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1227" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1253" y="324" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1272" y="356" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<text x="738" y="427" font-size="23" fill="#172b4d" font-weight="600" text-anchor="start">辅助</text>
+<rect x="848" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="867" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="893" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="912" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="938" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="957" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="983" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1002" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1028" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1047" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1073" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1092" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1118" y="396" width="38" height="46" rx="6" fill="#fff0f0" stroke="#c3393d" stroke-width="1.5"/>
+<text x="1137" y="428" font-size="29" fill="#c3393d" font-weight="600" text-anchor="middle">×</text>
+<rect x="1163" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1182" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1208" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1227" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1253" y="396" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1272" y="428" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<text x="738" y="499" font-size="23" fill="#172b4d" font-weight="600" text-anchor="start">两处合并</text>
+<rect x="848" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="867" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="893" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="912" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="938" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="957" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="983" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1002" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1028" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1047" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1073" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1092" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1118" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1137" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1163" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1182" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1208" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1227" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<rect x="1253" y="468" width="38" height="46" rx="6" fill="#eaf6f1" stroke="#b4d5c9" stroke-width="1.5"/>
+<text x="1272" y="500" font-size="29" fill="#117c75" font-weight="600" text-anchor="middle">✓</text>
+<text x="740" y="565" font-size="27" fill="#117c75" font-weight="600" text-anchor="start">两处共同拥有全部包：10 / 10</text>
+<rect x="64" y="628" width="1272" height="107" rx="12" fill="#f6f8fb" stroke="#f6f8fb" stroke-width="1.5"/>
+<text x="86" y="668" font-size="28" fill="#2463b4" font-weight="600" text-anchor="start">右图的下一步：辅助把第 4 包转发给中心。</text>
+<text x="86" y="709" font-size="24" fill="#50647a" font-weight="400" text-anchor="start">“两处共同拥有”还需要传输才能变成“中心收到”；反馈和转发都占用时间。</text>
+<text x="64" y="776" font-size="24" fill="#172b4d" font-weight="400" text-anchor="start">接收率相同，互补程度不同。先配对同一批包的收包记录，再评估增加辅助点的收益。</text>
+</g>
+</svg>
