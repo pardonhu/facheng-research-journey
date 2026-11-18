@@ -171,6 +171,7 @@
 | [2026-11-18 追加29](2026-11-18-continue-29.md) | TimeXer、mmFHE、GIF-MCTS（新读）；TinyLEO（复读） | 目标与辅助序列；恢复事件链；算法与加密分离；可执行世界模型 | 四篇英文训练及输入歧义、积压、软峰值、终止事件算例 |
 | [2026-11-18 追加30](2026-11-18-continue-30.md) | LoGra/LogIX（新读）、NanoScatter（复读）；第十组十篇总结 | 低秩梯度日志；反事实核验；有限储能；整机开销 | 原始梯度与零分支算例、能量换算、完整英文和十篇迁移总结 |
 | [2026-11-18 追加31](2026-11-18-continue-31.md) | CARTE（新读）、AnySat、MeAnt、MetaVenom（复读） | 语义表格迁移；融合表示监督；损失集中度；状态保持与能耗 | 四篇正文分析、原创核算、完整改稿与组网实验入口 |
+| [2026-11-18 追加32](2026-11-18-continue-32.md) | Moirai、SateRIoT、MIMSID（复读）、PS-BAX（新读） | 尾部概率；集合探测；事件配对；模板辨别能力 | 四篇原创算例、实验段落及下一步组网问题 |
 
 ## 改稿案例检索
 
@@ -816,6 +817,14 @@
 | 实验与图文 | 冗余选择 | 仅凭平均丢失率选择码率 | 追踪丢失集中度并比较同步条件下goodput | [MeAnt](2026-11-18-continue-31.md#meant) | 交织延迟与码率图文差异需保留 |
 | 指标与论证 | 节能 | 低瞬时功率直接称任务省电 | 先测完成相同搬运任务的积分能量，再按改写间隔摊销 | [MetaVenom](2026-11-18-continue-31.md#metavenom) | 吸起体积不等于完整交付量 |
 | 实验与可信度 | 状态保持 | 一次填排曲线外推长期免维护 | 分开操作残液、循环次数与放置蒸发 | [MetaVenom](2026-11-18-continue-31.md#metavenom) | 公开存档数组核验不等于射频测量 |
+| 指标与模型 | 预测服务调度 | 平均误差直接推出截止时间可靠 | 输出并检验决策阈值附近概率，再测策略收益 | [Moirai](2026-11-18-continue-32.md#moirai) | 混合输出不自动校准或保证非负 |
+| 实验与图文 | 整体到机制 | 表格与预测区间图重复称更好 | 用整体指标定位收益，再以同序列解释输出形状 | [Moirai](2026-11-18-continue-32.md#moirai) | 局部图不替代覆盖率统计 |
+| 工具与目标 | 校准选点 | 找齐备用配置写成寻找最高分 | 后验函数输出候选集合，再在其中比较熵 | [PS-BAX](2026-11-18-continue-32.md#ps-bax) | 最终合格集合须允许为空 |
+| 实验与篇章 | 解释集合识别 | 多图重复笼统结论 | 重复F1、空间实例、时间表各回答一个问题 | [PS-BAX](2026-11-18-continue-32.md#ps-bax) | 一次实例与总体统计作用不同 |
+| 指标与论证 | 控制消息及时性 | 分别给延迟分布就断定能避免重复 | 按事件配对通知到达与下一次动作 | [SateRIoT](2026-11-18-continue-32.md#sateriot) | 边缘分布不能决定联合成功率 |
+| 模型与实验 | 共享队列 | 随机化直接写成无重复 | 按不同数据身份计算每次机会收益 | [SateRIoT](2026-11-18-continue-32.md#sateriot) | 仍需测残余重复与时序成本 |
+| 数学与工具 | 少量校准 | 模板残差小就称矩阵完全恢复 | 检查测量方向与先验分别消除什么歧义 | [MIMSID](2026-11-18-continue-32.md#mimsid) | 谱分布相同仍可能有不同新输入响应 |
+| 实验与图文 | 漂移更新 | 成像接近写成矩阵相等 | 旧矩阵、当前参考、恢复结果同时比较 | [MIMSID](2026-11-18-continue-32.md#mimsid) | 模板数减少不等于总耗时同比减少 |
 
 ## 论文索引
 
@@ -1153,6 +1162,7 @@
 | [2026-11-18 追加29](2026-11-18-continue-29.md#gif-mcts) | NeurIPS 2024 | Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search | [10.52202/079017-1933](https://doi.org/10.52202/079017-1933) |
 | [2026-11-18 追加30](2026-11-18-continue-30.md#logra-logix) | NeurIPS 2025 | What is Your Data Worth to GPT? LLM-Scale Data Valuation with Influence Functions | [10.52202/085713-4883](https://doi.org/10.52202/085713-4883) |
 | [2026-11-18 追加31](2026-11-18-continue-31.md#carte) | ICML 2024 | CARTE: Pretraining and Transfer for Tabular Learning | [pmlr-v235-kim24d](https://proceedings.mlr.press/v235/kim24d.html) |
+| [2026-11-18 追加32](2026-11-18-continue-32.md#ps-bax) | NeurIPS 2024 | Practical Bayesian Algorithm Execution via Posterior Sampling | [10.52202/079017-4296](https://doi.org/10.52202/079017-4296) |
 
 ## 写作依据
 
