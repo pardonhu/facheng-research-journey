@@ -155,6 +155,7 @@
 | [2026-11-18 追加13](2026-11-18-continue-13.md) | H2O、Proxy Causal Discovery（新读）；Polaris、CloudRIC（复读） | 新旧信息保留；隐藏中间状态；已知量与不可辨识；突发处理时限 | 四组英文改稿、注意力缓存与条件分布算例、几何歧义核算、公开解码数据重算 |
 | [2026-11-18 追加14](2026-11-18-continue-14.md) | Toolformer、SRe2L（新读）；PerceptAlign、Self-Refine（复读） | 工具增量价值；视图目标配对；任务指标与表示解释；可执行反馈 | 四组英文改稿、工具筛选损失与蒸馏梯度算例、表示退化例、22621序列原创核对 |
 | [2026-11-18 追加15](2026-11-18-continue-15.md) | RadioStream、RFDT（复读）；第41–50篇总结 | 计划数据分母；连续采样路径；响应层代理；工具与条件的组合 | 两组英文改稿、采样速率和缺口核算、200步原创优化例、第五个十篇总结 |
+| [2026-11-18 追加16](2026-11-18-continue-16.md) | LogEI（新读）；SpaceSched、DragonFly、Tree of Thoughts（复读） | 联合试验预算；占比与服务容量；共同误差消去；搜索与选择分工 | 四组英文改稿、平滑误差界与有限发送概率核算、双峰/时钟例、20组公开搜索日志重算 |
 
 ## 改稿案例检索
 
@@ -692,6 +693,14 @@
 | 图文与计时 | 流处理 | 突发传输速率代替持续采样处理率 | 同一批数据分别除传输时间和采样周期 | [RadioStream](2026-11-18-continue-15.md#radiostream) | 后续处理需单独实测 |
 | 数学与方法 | 分阶段优化 | 近似目标被一直当作最终目标 | 先说明早期平滑目的再给恢复精确响应的过渡式 | [RFDT](2026-11-18-continue-15.md#rfdt) | 响应混合与损失混合不同 |
 | 实验与可信度 | 求解加速 | 迭代数下降直接写成运行时间加速 | 统一任务和停止阈值分别报告迭代与耗时 | [RFDT](2026-11-18-continue-15.md#rfdt) | 示意损失曲面不代替实际收敛曲线 |
+| 实验与方法 | 候选选择 | 各试验预算固定后再比较算法 | 交叉比较采集函数与资源联合分配 | [LogEI](2026-11-18-continue-16.md#logei) | 批内最大改善适合找最好候选而非服务全部节点 |
+| 数学与可信度 | 平滑优化 | 近似评分直接视为原评分 | 用明确误差界核对候选排序是否稳定 | [LogEI](2026-11-18-continue-16.md#logei) | 界不含模型误差且绑定平滑版本 |
+| 实验与指标 | 公平性 | 优先占比相近直接写成服务公平 | 同时报告总工作量、服务机会与完成情况 | [SpaceSched](2026-11-18-continue-16.md#spacesched) | CDF描述统计分布不保证等待上界 |
+| 数学与方法 | 优先选择 | 分位数阈值被写成固定选中比例 | 保留严格比较符号并核对并列值 | [SpaceSched](2026-11-18-continue-16.md#spacesched) | 低优先仍在队列不等于丢弃 |
+| 数学与图文 | 差分测量 | 消去共同项扩大成消去全部误差 | 分别推导中心与间距保留的量 | [DragonFly](2026-11-18-continue-16.md#dragonfly) | 要求同源可分辨双峰并检查非共同误差 |
+| 实验与篇章 | 动机证据 | 基线动态失效被当作温漂收益验证 | 先描述峰移再解释身份影响，独立设计温漂测试 | [DragonFly](2026-11-18-continue-16.md#dragonfly) | 运动快时间项仍需另处理 |
+| 实验与研究判断 | 搜索失败 | 默认失败来自生成不足 | 分别计访问到合格方案与最终选中合格方案 | [Tree-of-Thoughts](2026-11-18-continue-16.md#tree-of-thoughts) | 真值最佳状态只作离线上界 |
+| 实验与方法 | 模型分工 | 更强模型不区分提议和评价 | 交叉改变生成器与评价器并记录成本 | [Tree-of-Thoughts](2026-11-18-continue-16.md#tree-of-thoughts) | 瓶颈结论绑定任务及设置 |
 
 ## 论文索引
 
@@ -996,6 +1005,7 @@
 | [2026-11-18 追加13](2026-11-18-continue-13.md#proxy) | NeurIPS 2023 | Causal Discovery from Subsampled Time Series with Proxy Variables | [10.52202/075280-1880](https://proceedings.neurips.cc/paper_files/paper/2023/hash/86cba2b31d17f237866a2e6c52c7878a-Abstract-Conference.html) |
 | [2026-11-18 追加14](2026-11-18-continue-14.md#toolformer) | NeurIPS 2023 | Toolformer: Language Models Can Teach Themselves to Use Tools | [10.52202/075280-2997](https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html) |
 | [2026-11-18 追加14](2026-11-18-continue-14.md#sre2l) | NeurIPS 2023 | Squeeze, Recover and Relabel: Dataset Condensation at ImageNet Scale From A New Perspective | [10.52202/075280-3219](https://proceedings.neurips.cc/paper_files/paper/2023/hash/e91fb65c6324a984ea9ef39a5b84af04-Abstract-Conference.html) |
+| [2026-11-18 追加16](2026-11-18-continue-16.md#logei) | NeurIPS 2023 | Unexpected Improvements to Expected Improvement for Bayesian Optimization | [10.52202/075280-0904](https://proceedings.neurips.cc/paper_files/paper/2023/hash/419f72cbd568ad62183f8132a3605a2a-Abstract-Conference.html) |
 
 ## 写作依据
 
