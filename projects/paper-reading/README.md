@@ -161,6 +161,7 @@
 | [2026-11-18 追加19](2026-11-18-continue-19.md) | SURGEON、mmTunnel（新读）；MOMENT、HybRadar（复读） | 形状与物理基线；等缓存比较；参考点外验证；多线索融合 | 四组英文段落、归一化/缓存/阵列/融合算例与组网研究问题 |
 | [2026-11-18 追加20](2026-11-18-continue-20.md) | Diffusion Forcing、MCTF、mmOVD（新读）；PassiveBLE（复读） | 多未来指导；下一层注意力；跨帧补全；唤醒与待机能耗 | 四组英文改稿、梯度/聚合/窗口/状态能耗计算和原创图注 |
 | [2026-11-18 追加21](2026-11-18-continue-21.md) | SAGE、Learning-To-Measure（新读） | 重建应用需求；共享轨迹检验预测器；同预测器检验采集策略 | 两组英文改稿、队列量化与信息增益算例、第七个十篇总结 |
+| [2026-11-18 追加22](2026-11-18-continue-22.md) | Partial Causal Discovery、BSense、GaLore（新读）；LoRaTrimmer（复读） | 决策所需结构；局部背景；梯度子空间刷新；符号与每秒工作量 | 四组英文改稿、因果枚举/协方差/低秩更新/处理预算核算 |
 
 ## 改稿案例检索
 
@@ -738,6 +739,14 @@
 | 实验与篇章 | 跨配置 | 泛化主张未列变化 | 固定应用输入列配置变化并并列时延与资源 | [SAGE](2026-11-18-continue-21.md#sage) | 多参数同时变化不归因单参数 |
 | 实验与可信度 | 主动测量 | 预测器与策略收益混合 | 先共享轨迹比较预测器再固定预测器比较策略 | [L2M](2026-11-18-continue-21.md#l2m) | 特征成本与动作覆盖明确 |
 | 系统模型与篇章 | 缺测输入 | 未测与实测零混合 | 保留值、掩码和上下文标签各自角色 | [L2M](2026-11-18-continue-21.md#l2m) | 掩码不能补出从未采过动作的收益 |
+| 研究判断与模型 | 决策建模 | 默认先恢复完整系统 | 以保留可能最优干预集合定义需学习结构 | [Partial-Causal-Discovery](2026-11-18-continue-22.md#partial-causal-discovery) | 硬干预权限与识别条件明确 |
+| 实验与篇章 | 两阶段成本 | 只报告候选下降 | 依次量测发现成本、保留动作、总决策代价 | [Partial-Causal-Discovery](2026-11-18-continue-22.md#partial-causal-discovery) | 候选最坏仍可能指数大 |
+| 系统模型与数学 | 背景判断 | 混合所有环境建一份背景 | 按区域建模并保留特征相关性 | [BSense](2026-11-18-continue-22.md#bsense) | 分布检查失败交后级处理 |
+| 图文与指标 | 过滤参数 | 删得更多等同效果更好 | 并列删噪声与误删目标，区分历史分位与新数据效果 | [BSense](2026-11-18-continue-22.md#bsense) | 点、对象、轨迹单位分开 |
+| 数学与实验 | 计算预算 | 每符号复杂度等同实时能力 | 结合符号到达率核每秒工作量，再测具体实现 | [LoRaTrimmer](2026-11-18-continue-22.md#loratrimmer) | 演示稠密矩阵与低存储算法分别标明 |
+| 论证与篇章 | 接收分段 | 符号收益直接扩为整包收益 | 独立测前导检测与负载判决，用较小增益解释机制 | [LoRaTrimmer](2026-11-18-continue-22.md#loratrimmer) | 加长前导码需计入同一空口预算 |
+| 数学与论证 | 更新空间 | 局部低秩被写成固定空间够用 | 构造梯度方向变化再解释周期刷新与完整权重累计 | [GaLore](2026-11-18-continue-22.md#galore) | 低秩统计与完整Adam轨迹不同 |
+| 实验与图文 | 秩与恢复时间 | 少存储被写成更快恢复 | 分别画固定更新数表现与共同目标耗时 | [GaLore](2026-11-18-continue-22.md#galore) | 计SVD工作区与刷新成本 |
 
 ## 论文索引
 
@@ -1053,6 +1062,9 @@
 | [2026-11-18 追加20](2026-11-18-continue-20.md#mmovd) | MobiCom 2024 | See Through Vehicles: Fully Occluded Vehicle Detection with Millimeter Wave Radar | [10.1145/3636534.3690658](https://doi.org/10.1145/3636534.3690658) |
 | [2026-11-18 追加21](2026-11-18-continue-21.md#sage) | SIGCOMM 2026 | SAGE: A Real-Time AI System for Reducing Latency in NextG Cellular Networks | [10.1145/3789240.3829112](https://doi.org/10.1145/3789240.3829112) |
 | [2026-11-18 追加21](2026-11-18-continue-21.md#l2m) | ICML 2026 | Learning-To-Measure: In-Context Active Feature Acquisition | [pmlr-v306-kobayashi26a](https://proceedings.mlr.press/v306/kobayashi26a.html) |
+| [2026-11-18 追加22](2026-11-18-continue-22.md#partial-causal-discovery) | NeurIPS 2024 | Partial Structure Discovery is Sufficient for No-regret Learning in Causal Bandits | [10.52202/079017-3462](https://doi.org/10.52202/079017-3462) |
+| [2026-11-18 追加22](2026-11-18-continue-22.md#bsense) | MobiSys 2026 | Needle in a Haystack: Tracking UAVs from Massive Noise in Real-World 5G-A Base Station Data | [10.1145/3745756.3809186](https://doi.org/10.1145/3745756.3809186) |
+| [2026-11-18 追加22](2026-11-18-continue-22.md#galore) | ICML 2024 | GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection | [pmlr-v235-zhao24s](https://proceedings.mlr.press/v235/zhao24s.html) |
 
 ## 写作依据
 
