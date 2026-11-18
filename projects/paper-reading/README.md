@@ -158,6 +158,7 @@
 | [2026-11-18 追加16](2026-11-18-continue-16.md) | LogEI（新读）；SpaceSched、DragonFly、Tree of Thoughts（复读） | 联合试验预算；占比与服务容量；共同误差消去；搜索与选择分工 | 四组英文改稿、平滑误差界与有限发送概率核算、双峰/时钟例、20组公开搜索日志重算 |
 | [2026-11-18 追加17](2026-11-18-continue-17.md) | Schedule-Free（新读）；XGate、GRADE、Promptbreeder（复读） | 训练/评估参数；粗检测到精校；辅助分支贡献；案例反推指令 | 四组英文改稿、优化器状态手算、chirp残差与误差差例、原创提示开发记录 |
 | [2026-11-18 追加18](2026-11-18-continue-18.md) | FlexiViT、RANPilot（新读） | 保持投响应；计划配置入数据；提前量与恢复时间 | 两组完整英文改稿、线性投影和提前量手算、第六个十篇总结 |
+| [2026-11-18 追加19](2026-11-18-continue-19.md) | SURGEON、mmTunnel（新读）；MOMENT、HybRadar（复读） | 形状与物理基线；等缓存比较；参考点外验证；多线索融合 | 四组英文段落、归一化/缓存/阵列/融合算例与组网研究问题 |
 
 ## 改稿案例检索
 
@@ -715,6 +716,14 @@
 | 实验与图文 | 粒度对照 | 准确率变化与token数混合 | 同步改输入及分块保持token数量，再比较插值 | [FlexiViT](2026-11-18-continue-18.md#flexivit) | token相同不等于整网计算完全相同 |
 | 系统模型与方法 | 配置迁移 | 只增加相似样本 | 执行目标配置的控制交互生成相应行为 | [RANPilot](2026-11-18-continue-18.md#ranpilot) | 旧轨迹需覆盖相关环境 |
 | 指标与篇章 | 恢复时间 | 提前计算被写成总成本消失 | 以生效为起点分收集训练，再列前置成本 | [RANPilot](2026-11-18-continue-18.md#ranpilot) | 提前通知量决定可隐藏的工作 |
+| 系统模型与数学 | 特征接口 | 归一化后特征被当作保留全部物理量 | 分别保存形状嵌入与决策所需原始统计量 | [MOMENT](2026-11-18-continue-19.md#moment) | 嵌入与反归一化重建接口分开 |
+| 实验与篇章 | 表征评价 | 散点分离替代任务成绩 | 总体任务后用单属性控制解释信息保留 | [MOMENT](2026-11-18-continue-19.md#moment) | 冻结编码器与有标签分类器分别说明 |
+| 实验与可信度 | 校准 | 参考点效果直接外推 | 已知点求参数后移动目标验证 | [HybRadar](2026-11-18-continue-19.md#hybradar) | 硬件状态和温度变化另测 |
+| 指标与论证 | 时序要求 | 只报告漂移数值 | 将命令到达加稳定时间与操作窗口比较 | [HybRadar](2026-11-18-continue-19.md#hybradar) | 响应延迟不自动代表完全稳定 |
+| 实验与公平性 | 资源分配 | 用裁剪率均值表示内存 | 按层体积配平实际激活及索引缓存 | [SURGEON](2026-11-18-continue-19.md#surgeon) | 缓存与进程峰值内存分开 |
+| 篇章与图文 | 机制分析 | 代理量曲线替代有效性验证 | 先等资源比较，再消融取舍，最后解释层间分配 | [SURGEON](2026-11-18-continue-19.md#surgeon) | 梯度代理不等于真实精度贡献 |
+| 数学与研究判断 | 线索融合 | 单项准确率直接推组合准确率 | 对齐同样本误差再做单规则组件对照 | [mmTunnel](2026-11-18-continue-19.md#mmtunnel) | 共同偏差不会被均值消除 |
+| 图文与篇章 | 中间与系统证据 | 排名比例或个例代替总体结果 | 排名说明线索，系统对照检验组合，个例解释可见机制 | [mmTunnel](2026-11-18-continue-19.md#mmtunnel) | 离线吞吐不等于最坏延迟 |
 
 ## 论文索引
 
@@ -1023,6 +1032,8 @@
 | [2026-11-18 追加17](2026-11-18-continue-17.md#schedule-free) | NeurIPS 2024 | The Road Less Scheduled | [10.52202/079017-0320](https://proceedings.neurips.cc/paper_files/paper/2024/hash/136b9a13861308c8948cd308ccd02658-Abstract-Conference.html) |
 | [2026-11-18 追加18](2026-11-18-continue-18.md#flexivit) | CVPR 2023 | FlexiViT: One Model for All Patch Sizes | [10.1109/CVPR52729.2023.01393](https://doi.org/10.1109/CVPR52729.2023.01393) |
 | [2026-11-18 追加18](2026-11-18-continue-18.md#ranpilot) | SIGCOMM 2026 | RANPilot: Making AI Functionalities Robust to Dynamic O-RAN Reconfigurations | [10.1145/3789240.3829146](https://doi.org/10.1145/3789240.3829146) |
+| [2026-11-18 追加19](2026-11-18-continue-19.md#surgeon) | CVPR 2025 | SURGEON: Memory-Adaptive Fully Test-Time Adaptation via Dynamic Activation Sparsity | [10.1109/CVPR52734.2025.02841](https://doi.org/10.1109/CVPR52734.2025.02841) |
+| [2026-11-18 追加19](2026-11-18-continue-19.md#mmtunnel) | MobiCom 2025 | Ghost Points Matter: Far-Range Vehicle Detection with a Single mmWave Radar in Tunnel | [10.1145/3680207.3765237](https://doi.org/10.1145/3680207.3765237) |
 
 ## 写作依据
 
