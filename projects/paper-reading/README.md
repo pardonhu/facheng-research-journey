@@ -164,6 +164,7 @@
 | [2026-11-18 追加22](2026-11-18-continue-22.md) | Partial Causal Discovery、BSense、GaLore（新读）；LoRaTrimmer（复读） | 决策所需结构；局部背景；梯度子空间刷新；符号与每秒工作量 | 四组英文改稿、因果枚举/协方差/低秩更新/处理预算核算 |
 | [2026-11-18 追加23](2026-11-18-continue-23.md) | OptiMUS、Wi²SAR、STAR（新读）；SaTE（复读） | 需求到优化模型；共享容量；共同变化与支路差异；多目标共享表征 | 四组原创英文改稿，调度枚举、容量修正、有限步长与相位变换算例 |
 | [2026-11-18 追加24](2026-11-18-continue-24.md) | POM、TAP3D（新读）；第八组十篇总结 | 搜索动作迁移；查询预算；物理重建与几何监督；模型到执行的证据链 | 两组原创英文训练、矩阵与物理等值算例、第八组十篇迁移总结 |
+| [2026-11-18 追加25](2026-11-18-continue-25.md) | Vanilla BO、Gaussian Grouping、MetaVision（新读）；AlphaWAN（复读） | 核相关性；隐藏几何监督；同孔径路径编码；容量与接收余量 | 四组原创英文改稿、核与后验计算、遮挡梯度、时间码及链路余量算例 |
 
 ## 改稿案例检索
 
@@ -761,6 +762,14 @@
 | 实验与篇章 | 调参成本 | 代数等同实机测量成本 | 按实际查询数比较并单列总时间 | [POM](2026-11-18-continue-24.md#pom) | 首次样本及微调查询纳入预算 |
 | 系统模型与数学 | 物理潜变量 | 重建吻合等同物理参数测准 | 说明前向模型和独立监督分别消除什么歧义 | [TAP3D](2026-11-18-continue-24.md#tap3d) | 单像素反例不等同全图无法辨认 |
 | 实验与图文 | 标签效率 | 平均收益写成每档相同 | 先定义预训练与微调再按同标签量成对比较 | [TAP3D](2026-11-18-continue-24.md#tap3d) | DCD与中心位置误差分别定义 |
+| 研究判断与数学 | 调参失效 | 维度多直接被写成必须换算法 | 量测距离、核相关性和后验信息共享后调整尺度 | [Vanilla-BO](2026-11-18-continue-25.md#vanilla-bo) | 先验适合性仍需留出配置检查 |
+| 实验与篇章 | 机制解释 | 只以最终值解释代理模型 | 先检查相关性与预测再比较同预算目标 | [Vanilla-BO](2026-11-18-continue-25.md#vanilla-bo) | 性能改善不能独自证明全局模型准确 |
+| 系统模型与实验 | 接收资源 | 容量收益等同消除无线干扰 | 独立量测解码器竞争与接收SNR阈值 | [AlphaWAN](2026-11-18-continue-25.md#alphawan) | 芯片机制需实证 |
+| 图文与篇章 | 逐步部署 | 总平均掩盖旧网影响 | 固定网络身份并分别报告参与与旧网收益 | [AlphaWAN](2026-11-18-continue-25.md#alphawan) | 参与数量之外固定干扰条件 |
+| 论证与实验 | 隐藏监督 | 可见掩码正确等同整个物体分组完整 | 删除目标后量测残留并对照邻域监督 | [Gaussian-Grouping](2026-11-18-continue-25.md#gaussian-grouping) | 空间邻接可能跨物体 |
+| 图文与工具 | 环境干预 | 视觉编辑直接当无线真值 | 以物体组定义可复现几何变化再测真实链路 | [Gaussian-Grouping](2026-11-18-continue-25.md#gaussian-grouping) | 度量尺度和材料信息单独校准 |
+| 数学与论证 | 路径编码 | 多反射路径直接等同可分观测 | 分别说明保留波束的共同相位与区分路径的时间码 | [MetaVision](2026-11-18-continue-25.md#metavision) | 时间窗口内信道变化影响解码 |
+| 实验与篇章 | 新增视角 | 额外孔径与编码收益混合 | 配置对比与同孔径消融分别回答性能和机制 | [MetaVision](2026-11-18-continue-25.md#metavision) | 文本精读不描述未看图像布局 |
 
 ## 论文索引
 
@@ -1084,6 +1093,9 @@
 | [2026-11-18 追加23](2026-11-18-continue-23.md#star) | NeurIPS 2025 | Soft Task-Aware Routing of Experts for Equivariant Representation Learning | [10.52202/085713-0372](https://doi.org/10.52202/085713-0372) |
 | [2026-11-18 追加24](2026-11-18-continue-24.md#pom) | NeurIPS 2024 | Pretrained Optimization Model for Zero-Shot Black Box Optimization | [10.52202/079017-0456](https://doi.org/10.52202/079017-0456) |
 | [2026-11-18 追加24](2026-11-18-continue-24.md#tap3d) | MobiCom 2026 | TAP3D: Thermal-Assisted 3D Human Point Clouds | [10.1145/3795866.3844491](https://doi.org/10.1145/3795866.3844491) |
+| [2026-11-18 追加25](2026-11-18-continue-25.md#vanilla-bo) | ICML 2024 | Vanilla Bayesian Optimization Performs Great in High Dimensions | [pmlr-v235-hvarfner24a](https://proceedings.mlr.press/v235/hvarfner24a.html) |
+| [2026-11-18 追加25](2026-11-18-continue-25.md#gaussian-grouping) | ECCV 2024 | Gaussian Grouping: Segment and Edit Anything in 3D Scenes | [10.1007/978-3-031-73397-0_10](https://doi.org/10.1007/978-3-031-73397-0_10) |
+| [2026-11-18 追加25](2026-11-18-continue-25.md#metavision) | MobiCom 2026 | MetaVision: Enhancing Resolution for Wi-Fi Vision with Hierarchical Programmable Metasurface | [10.1145/3795866.3844479](https://doi.org/10.1145/3795866.3844479) |
 
 ## 写作依据
 
