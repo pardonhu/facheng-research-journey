@@ -167,6 +167,7 @@
 | [2026-11-18 追加25](2026-11-18-continue-25.md) | Vanilla BO、Gaussian Grouping、MetaVision（新读）；AlphaWAN（复读） | 核相关性；隐藏几何监督；同孔径路径编码；容量与接收余量 | 四组原创英文改稿、核与后验计算、遮挡梯度、时间码及链路余量算例 |
 | [2026-11-18 追加26](2026-11-18-continue-26.md) | Understanding HDBO、FisherRF、LaSR（新读）；ArachNet（复读） | 局部候选；预留反馈；批量信息更新；概念驱动公式 | 四组英文改稿及梯度、调度、信息增益、有限重试算例 |
 | [2026-11-18 追加27](2026-11-18-continue-27.md) | Demeter（复读）、PocketVib（新读）；第九组十篇总结 | 扫描次序；校准摊销；行时间；组装后真值 | 同预算探测与频率响应算例、三组英文改稿、十篇迁移总结 |
+| [2026-11-18 追加28](2026-11-18-continue-28.md) | RealMLP、LibMOON（新读）；HORCRUX、FlowForm（复读） | 预处理迁移；偏好到配置；误差不变性；交叉环境 | 四篇源码或正文核验、原创数值例与完整英文段落 |
 
 ## 改稿案例检索
 
@@ -784,6 +785,14 @@
 | 系统模型与篇章 | 长期成本 | 单包省电直接等同每日省电 | 按受益业务量摊销搜索及触发开销 | [Demeter](2026-11-18-continue-27.md#demeter) | 周期触发和按需触发分别记录 |
 | 数学与系统模型 | 采样信息 | 整帧率直接限制全部信息 | 由行时间推导有效采样与差分响应 | [PocketVib](2026-11-18-continue-27.md#pocketvib) | 频率保留不等于幅度及峰值排序保留 |
 | 实验与图文 | 可信参照 | 装配后沿用名义真值 | 先量测实际激励再引图计算误差 | [PocketVib](2026-11-18-continue-27.md#pocketvib) | 处理耗时与观察窗口分别报告 |
+| 工具与数学 | 输入尺度 | 极端值压缩普通样本间距 | 对照稳健缩放与软截断并检查零IQR | [RealMLP](2026-11-18-continue-28.md#realmlp) | 尾部幅度可能是有用信息 |
+| 实验与篇章 | 可插拔组件 | 整体收益全归给预处理 | 固定后端消融后再换后端测试 | [RealMLP](2026-11-18-continue-28.md#realmlp) | 统计量只取训练数据且保留尾部评价 |
+| 数学与指标 | 预测误差 | 同NMSE被当作同任务影响 | 分别检查共同相位与相对相位误差 | [HORCRUX](2026-11-18-continue-28.md#horcrux) | 波束例不直接替代测距时序 |
+| 篇章与实验 | 实验衔接 | 模型领先而简单任务收益小 | 让前一任务不敏感因素引出后一任务 | [HORCRUX](2026-11-18-continue-28.md#horcrux) | 固定用户数、功率及信道条件 |
+| 实验与论证 | 配置迁移 | 环境变差和配置失配混在同比 | 优化环境与测试环境交叉比较 | [FlowForm](2026-11-18-continue-28.md#flowform) | 同测试环境基线与绝对值同时保留 |
+| 图文与系统模型 | 安装公差 | 一个距离范数概括全部扰动 | 按平移旋转轴及工作距离解释 | [FlowForm](2026-11-18-continue-28.md#flowform) | 单轴实验不能代替联合偏差 |
+| 工具与创新 | 配置取舍 | 只反复调整一个线性总分 | 保留实测非支配配置或学习偏好到配置 | [LibMOON](2026-11-18-continue-28.md#libmoon) | 先检查硬约束、尺度和前沿形状 |
+| 指标与实验 | 配置集合 | 低Spacing等同完整覆盖 | 共同坐标展示配置并结合覆盖和重复数量 | [LibMOON](2026-11-18-continue-28.md#libmoon) | 固定参考点；函数实现先与公式核对 |
 
 ## 论文索引
 
@@ -1114,6 +1123,8 @@
 | [2026-11-18 追加26](2026-11-18-continue-26.md#fisherrf) | ECCV 2024 | FisherRF: Active View Selection and Mapping with Radiance Fields Using Fisher Information | [10.1007/978-3-031-72624-8_24](https://doi.org/10.1007/978-3-031-72624-8_24) |
 | [2026-11-18 追加26](2026-11-18-continue-26.md#lasr) | NeurIPS 2024 | Symbolic Regression with a Learned Concept Library | [10.52202/079017-1419](https://doi.org/10.52202/079017-1419) |
 | [2026-11-18 追加27](2026-11-18-continue-27.md#pocketvib) | MobiCom 2026 | When Mobile ToF Meets Micro-Vibration: Multi-Point kHz-Frequency Sensing using Laser Speckle | [10.1145/3795866.3796680](https://doi.org/10.1145/3795866.3796680) |
+| [2026-11-18 追加28](2026-11-18-continue-28.md#realmlp) | NeurIPS 2024 | Better by Default: Strong Pre-Tuned MLPs and Boosted Trees on Tabular Data | [10.52202/079017-0837](https://doi.org/10.52202/079017-0837) |
+| [2026-11-18 追加28](2026-11-18-continue-28.md#libmoon) | NeurIPS 2024 Datasets and Benchmarks | LibMOON: A Gradient-based MultiObjective OptimizatioN Library in PyTorch | [10.52202/079017-0065](https://doi.org/10.52202/079017-0065) |
 
 ## 写作依据
 
