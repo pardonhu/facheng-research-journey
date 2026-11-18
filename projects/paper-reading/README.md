@@ -162,6 +162,7 @@
 | [2026-11-18 追加20](2026-11-18-continue-20.md) | Diffusion Forcing、MCTF、mmOVD（新读）；PassiveBLE（复读） | 多未来指导；下一层注意力；跨帧补全；唤醒与待机能耗 | 四组英文改稿、梯度/聚合/窗口/状态能耗计算和原创图注 |
 | [2026-11-18 追加21](2026-11-18-continue-21.md) | SAGE、Learning-To-Measure（新读） | 重建应用需求；共享轨迹检验预测器；同预测器检验采集策略 | 两组英文改稿、队列量化与信息增益算例、第七个十篇总结 |
 | [2026-11-18 追加22](2026-11-18-continue-22.md) | Partial Causal Discovery、BSense、GaLore（新读）；LoRaTrimmer（复读） | 决策所需结构；局部背景；梯度子空间刷新；符号与每秒工作量 | 四组英文改稿、因果枚举/协方差/低秩更新/处理预算核算 |
+| [2026-11-18 追加23](2026-11-18-continue-23.md) | OptiMUS、Wi²SAR、STAR（新读）；SaTE（复读） | 需求到优化模型；共享容量；共同变化与支路差异；多目标共享表征 | 四组原创英文改稿，调度枚举、容量修正、有限步长与相位变换算例 |
 
 ## 改稿案例检索
 
@@ -747,6 +748,14 @@
 | 论证与篇章 | 接收分段 | 符号收益直接扩为整包收益 | 独立测前导检测与负载判决，用较小增益解释机制 | [LoRaTrimmer](2026-11-18-continue-22.md#loratrimmer) | 加长前导码需计入同一空口预算 |
 | 数学与论证 | 更新空间 | 局部低秩被写成固定空间够用 | 构造梯度方向变化再解释周期刷新与完整权重累计 | [GaLore](2026-11-18-continue-22.md#galore) | 低秩统计与完整Adam轨迹不同 |
 | 实验与图文 | 秩与恢复时间 | 少存储被写成更快恢复 | 分别画固定更新数表现与共同目标耗时 | [GaLore](2026-11-18-continue-22.md#galore) | 计SVD工作区与刷新成本 |
+| 系统模型与篇章 | 模块化建模 | 局部修改缺少关联定义 | 连接需求、约束、变量与代码后检索局部上下文 | [OptiMUS](2026-11-18-continue-23.md#optimus) | 共享定义需一致 |
+| 实验与可信度 | 建模成功 | 可运行或单实例目标一致等同需求正确 | 独立按原始需求检查并扰动参数 | [OptiMUS](2026-11-18-continue-23.md#optimus) | 检查器不能重用同一错误约束 |
+| 系统模型与数学 | 共享资源 | 每流独立可行等同全网可行 | 通过路径链路矩阵共同检查资源占用 | [SaTE](2026-11-18-continue-23.md#sate) | 裁剪可能减少交付且不等同重优化 |
+| 实验与可信度 | 故障恢复 | 零容量输入被写成新路线生成 | 给出候选路径失效比例及剩余集合上的恢复 | [SaTE](2026-11-18-continue-23.md#sate) | 最终评价须使用修正后分配 |
+| 数学与论证 | 幅度测向 | 去共同偏置写成消除所有信道影响 | 先定义保留图样再给共同与支路扰动对照 | [Wi2SAR](2026-11-18-continue-23.md#wi2sar) | 同包快照及模板条件明确 |
+| 实验与图文 | 资源与指标 | 方向指标直接等同每步靠近 | 持续与一次校准并列并结合步长解释PR | [Wi2SAR](2026-11-18-continue-23.md#wi2sar) | 二维与三维实验分别报告 |
+| 论证与篇章 | 机制解释 | 权重差异等同物理分工 | 先证共同信息再检查单专家信息及下游收益 | [STAR](2026-11-18-continue-23.md#star) | 相关关系不等同独立因果解释 |
+| 系统模型与实验 | 训练部署 | soft routing写成稀疏推理加速 | 分别说明预训练专家与部署编码器 | [STAR](2026-11-18-continue-23.md#star) | 需匹配训练资源并定义可信变换 |
 
 ## 论文索引
 
@@ -1065,6 +1074,9 @@
 | [2026-11-18 追加22](2026-11-18-continue-22.md#partial-causal-discovery) | NeurIPS 2024 | Partial Structure Discovery is Sufficient for No-regret Learning in Causal Bandits | [10.52202/079017-3462](https://doi.org/10.52202/079017-3462) |
 | [2026-11-18 追加22](2026-11-18-continue-22.md#bsense) | MobiSys 2026 | Needle in a Haystack: Tracking UAVs from Massive Noise in Real-World 5G-A Base Station Data | [10.1145/3745756.3809186](https://doi.org/10.1145/3745756.3809186) |
 | [2026-11-18 追加22](2026-11-18-continue-22.md#galore) | ICML 2024 | GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection | [pmlr-v235-zhao24s](https://proceedings.mlr.press/v235/zhao24s.html) |
+| [2026-11-18 追加23](2026-11-18-continue-23.md#optimus) | ICML 2024 | OptiMUS: Scalable Optimization Modeling with (MI)LP Solvers and Large Language Models | [pmlr-v235-ahmaditeshnizi24a](https://proceedings.mlr.press/v235/ahmaditeshnizi24a.html) |
+| [2026-11-18 追加23](2026-11-18-continue-23.md#wi2sar) | MobiCom 2026 | “Take Me Home, Wi-Fi Drone”: A Drone-based Wireless System for Wilderness Search and Rescue | [10.1145/3795866.3796679](https://doi.org/10.1145/3795866.3796679) |
+| [2026-11-18 追加23](2026-11-18-continue-23.md#star) | NeurIPS 2025 | Soft Task-Aware Routing of Experts for Equivariant Representation Learning | [10.52202/085713-0372](https://doi.org/10.52202/085713-0372) |
 
 ## 写作依据
 
