@@ -163,6 +163,7 @@
 | [2026-11-18 追加21](2026-11-18-continue-21.md) | SAGE、Learning-To-Measure（新读） | 重建应用需求；共享轨迹检验预测器；同预测器检验采集策略 | 两组英文改稿、队列量化与信息增益算例、第七个十篇总结 |
 | [2026-11-18 追加22](2026-11-18-continue-22.md) | Partial Causal Discovery、BSense、GaLore（新读）；LoRaTrimmer（复读） | 决策所需结构；局部背景；梯度子空间刷新；符号与每秒工作量 | 四组英文改稿、因果枚举/协方差/低秩更新/处理预算核算 |
 | [2026-11-18 追加23](2026-11-18-continue-23.md) | OptiMUS、Wi²SAR、STAR（新读）；SaTE（复读） | 需求到优化模型；共享容量；共同变化与支路差异；多目标共享表征 | 四组原创英文改稿，调度枚举、容量修正、有限步长与相位变换算例 |
+| [2026-11-18 追加24](2026-11-18-continue-24.md) | POM、TAP3D（新读）；第八组十篇总结 | 搜索动作迁移；查询预算；物理重建与几何监督；模型到执行的证据链 | 两组原创英文训练、矩阵与物理等值算例、第八组十篇迁移总结 |
 
 ## 改稿案例检索
 
@@ -756,6 +757,10 @@
 | 实验与图文 | 资源与指标 | 方向指标直接等同每步靠近 | 持续与一次校准并列并结合步长解释PR | [Wi2SAR](2026-11-18-continue-23.md#wi2sar) | 二维与三维实验分别报告 |
 | 论证与篇章 | 机制解释 | 权重差异等同物理分工 | 先证共同信息再检查单专家信息及下游收益 | [STAR](2026-11-18-continue-23.md#star) | 相关关系不等同独立因果解释 |
 | 系统模型与实验 | 训练部署 | soft routing写成稀疏推理加速 | 分别说明预训练专家与部署编码器 | [STAR](2026-11-18-continue-23.md#star) | 需匹配训练资源并定义可信变换 |
+| 研究判断与数学 | 优化器迁移 | 新任务固定参数预测受设备变化影响 | 复用由反馈产生新候选的搜索策略 | [POM](2026-11-18-continue-24.md#pom) | 目标查询和参数可行性仍要检查 |
+| 实验与篇章 | 调参成本 | 代数等同实机测量成本 | 按实际查询数比较并单列总时间 | [POM](2026-11-18-continue-24.md#pom) | 首次样本及微调查询纳入预算 |
+| 系统模型与数学 | 物理潜变量 | 重建吻合等同物理参数测准 | 说明前向模型和独立监督分别消除什么歧义 | [TAP3D](2026-11-18-continue-24.md#tap3d) | 单像素反例不等同全图无法辨认 |
+| 实验与图文 | 标签效率 | 平均收益写成每档相同 | 先定义预训练与微调再按同标签量成对比较 | [TAP3D](2026-11-18-continue-24.md#tap3d) | DCD与中心位置误差分别定义 |
 
 ## 论文索引
 
@@ -1077,6 +1082,8 @@
 | [2026-11-18 追加23](2026-11-18-continue-23.md#optimus) | ICML 2024 | OptiMUS: Scalable Optimization Modeling with (MI)LP Solvers and Large Language Models | [pmlr-v235-ahmaditeshnizi24a](https://proceedings.mlr.press/v235/ahmaditeshnizi24a.html) |
 | [2026-11-18 追加23](2026-11-18-continue-23.md#wi2sar) | MobiCom 2026 | “Take Me Home, Wi-Fi Drone”: A Drone-based Wireless System for Wilderness Search and Rescue | [10.1145/3795866.3796679](https://doi.org/10.1145/3795866.3796679) |
 | [2026-11-18 追加23](2026-11-18-continue-23.md#star) | NeurIPS 2025 | Soft Task-Aware Routing of Experts for Equivariant Representation Learning | [10.52202/085713-0372](https://doi.org/10.52202/085713-0372) |
+| [2026-11-18 追加24](2026-11-18-continue-24.md#pom) | NeurIPS 2024 | Pretrained Optimization Model for Zero-Shot Black Box Optimization | [10.52202/079017-0456](https://doi.org/10.52202/079017-0456) |
+| [2026-11-18 追加24](2026-11-18-continue-24.md#tap3d) | MobiCom 2026 | TAP3D: Thermal-Assisted 3D Human Point Clouds | [10.1145/3795866.3844491](https://doi.org/10.1145/3795866.3844491) |
 
 ## 写作依据
 
