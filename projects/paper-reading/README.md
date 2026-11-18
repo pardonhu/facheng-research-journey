@@ -139,6 +139,7 @@
 | [2026-11-16 专项 41](2026-11-16-insight-41.md) | MASt3R | 对齐地图之前，先检验谁和谁是同一个实体 | [方法与原创改稿](2026-11-16-insight-41.md) |
 | [2026-11-16 专项 42](2026-11-16-insight-42.md) | Chorus | 把两条路径的到达时间与播放缓冲接在一起 | [方法与原创改稿](2026-11-16-insight-42.md) |
 | [2026-11-16 专项 43](2026-11-16-insight-43.md) | Timer | 从误差排序到业务告警，再用公开日志核对分母 | [方法与原创改稿](2026-11-16-insight-43.md) |
+| [2026-11-18](2026-11-18.md) | SpotLight；dAuth；RF-Mediator；LATTE（共4篇） | 实验间过渡；总体指标到机制；逐层消融；估时与任务结果 | 六组英文前后改稿、四个原创算例、CDF图注与八条案例 |
 
 ## 改稿案例检索
 
@@ -568,6 +569,14 @@
 | 系统模型、实验对照 | 双站感知与跨视角配对 | 两个位置接近的回波是否来自同一个物体 | 在同一候选集分别用几何及描述特征配对，另取可控身份真值并报告匹配精度和覆盖 | [MASt3R](2026-11-16-insight-41.md#mast3r) | 身份真值来自独立测量，外观或频谱相似也可能配错 |
 | 系统模型、指标定义 | 多路径调度与应用截止时间 | 两条路径的额定速率更高，片段却更晚收齐 | 先计算两个子流各自完成的时间，再核对缓冲是否耗尽，用相同网络条件下的单路与双路结果作比较 | [Chorus](2026-11-16-insight-42.md#chorus) | 逐段预计时间与播放期限分开；整机比较同时改变了多个环节 |
 | 系统模型、统计指标 | 时钟异常检测或预测性维护 | 看完测试序列得到的异常排名被写成实时预警能力 | 注明预测、实测、打分的时刻，核对相应样本的独立故障标签 | [Timer](2026-11-16-insight-43.md#timer) | 离线最高分片段的比例无法给出部署时的误报率 |
+| 实验论证与图文配合 | 评估、消融 | 总分提高而收益来源不明 | 分开错误类别，指向具体时间段，再接组件对照 | [SpotLight](2026-11-18.md#spotlight) | 单条轨迹解释动作，组件比较支持贡献范围 |
+| 系统模型与读者理解 | 故障诊断、讨论 | 末端吞吐或收包率无法决定检查位置 | 沿故障传播过程关联计划、执行和观测，再交代下一步调查 | [SpotLight](2026-11-18.md#spotlight) | 跨设备时序判断需统一时基 |
+| 篇章与实验设计 | 真机与规模实验 | 换测试工具显得突然 | 交代前一工具覆盖什么、新实验需要什么事件与负载 | [dAuth](2026-11-18.md#dauth) | 明确冷启动或保留上下文重连及排除样本 |
+| 指标定义与可信度 | 阈值、并发评估 | 将足量副本与完整采集混写 | 定义响应的可替代关系，结合负载分别报告完成时间 | [dAuth](2026-11-18.md#dauth) | 密钥份额阈值不能直接替代电芯覆盖要求 |
+| 论证与实验设计 | 总体结果之后的消融 | 数字差被直接归因于模块 | 按保留和取消的能力描述配置，再比较结果与失败案例 | [RF-Mediator](2026-11-18.md#rf-mediator) | 中位数差与逐样本配对差分别处理 |
+| 图形设计与图文配合 | 分布、逐链路比较 | CDF轴名与排序方式不对应 | 分布独立排序，配对结果用共同样本编号与差值 | [RF-Mediator](2026-11-18.md#rf-mediator) | 排序未说明的曲线不直接读取分位数 |
+| 篇章与研究证据 | 动机、方法、实验衔接 | 方法结果没有回答原始现象 | 保留比较条件，说明改变的执行步骤，再回访原始差异 | [LATTE](2026-11-18.md#latte) | 条件变化时交代可比较的范围 |
+| 指标定义与信息取舍 | 自适应调度结果 | 中间分数改善直接写成任务改善 | 解释选择行为，分别报告工作量、覆盖与完成时间 | [LATTE](2026-11-18.md#latte) | 缩减任务后的高分须保留原采集要求 |
 
 ## 论文索引
 
@@ -846,6 +855,10 @@
 | [2026-11-16](2026-11-16-insight-41.md#mast3r) | ECCV 2024 | Grounding Image Matching in 3D with MASt3R | [10.1007/978-3-031-73220-1_5](https://doi.org/10.1007/978-3-031-73220-1_5) |
 | [2026-11-16](2026-11-16-insight-42.md#chorus) | MobiCom 2024 | Chorus: Coordinating Mobile Multipath Scheduling and Adaptive Video Streaming | [10.1145/3636534.3649359](https://doi.org/10.1145/3636534.3649359) |
 | [2026-11-16](2026-11-16-insight-43.md#timer) | ICML 2024 | Timer: Generative Pre-trained Transformers Are Large Time Series Models | [pmlr-v235-liu24cb](https://proceedings.mlr.press/v235/liu24cb.html) |
+| [2026-11-18](2026-11-18.md#spotlight) | MobiCom 2024 | SpotLight: Accurate, Explainable and Efficient Anomaly Detection for Open RAN | [10.1145/3636534.3649380](https://doi.org/10.1145/3636534.3649380) |
+| [2026-11-18](2026-11-18.md#dauth) | SIGCOMM 2024 | dAuth: A Resilient Authentication Architecture for Federated Private Cellular Networks | [10.1145/3651890.3672263](https://doi.org/10.1145/3651890.3672263) |
+| [2026-11-18](2026-11-18.md#rf-mediator) | MobiCom 2024 | RF-Mediator: Tuning Medium Interfaces with Flexible Metasurfaces | [10.1145/3636534.3649353](https://doi.org/10.1145/3636534.3649353) |
+| [2026-11-18](2026-11-18.md#latte) | MobiCom 2024 | LATTE: Layer Algorithm-aware Training Time Estimation for Heterogeneous Federated Learning | [10.1145/3636534.3690705](https://doi.org/10.1145/3636534.3690705) |
 
 ## 写作依据
 
