@@ -149,6 +149,7 @@
 | [2026-11-18 追加07](2026-11-18-continue-07.md) | Sisyphus、RFlect、ReEvo（复读）；ACGR（新读） | 跨端配置；受限角域采样；异步融合；生成规则的评价 | 四组英文训练、公式与时序例子、128条重传轨迹枚举和动态规划 |
 | [2026-11-18 追加08](2026-11-18-continue-08.md) | SwapRAN、Crowd Analytics（复读）；OneNet、MCTS-AHD（新读） | 迁移确认；时间相关；在线集成；树搜索 | 四组英文改稿、时序和梯度算例、分支探索计算 |
 | [2026-11-18 追加09](2026-11-18-continue-09.md) | SeRadar（复读）；EfficientZero V2（新读） | 零陷的信噪比取舍；当前策略重评价；第三组十篇总结 | 投影与SINR推导、旧回报算例、英文实验过渡及工具配问题 |
+| [2026-11-18 追加10](2026-11-18-continue-10.md) | RANBooster、PolarVisor（复读）；Conformal PID、TRAK（新读） | 低负载节能；绝对信号与比例；残差预测；训练数据归因 | 四组英文训练、能耗与极化算例、实际运行残差反馈实验、归因矩阵计算 |
 
 ## 改稿案例检索
 
@@ -646,6 +647,14 @@
 | 图文与实验归因 | 局部模块 | 整机收益全部归给零陷 | 按约束、波束、特征、场景性能分层引图 | [SeRadar](2026-11-18-continue-09.md#seradar) | 单模块增益需要独立消融 |
 | 工具与系统模型 | 策略训练 | 旧策略回报直接充当当前价值 | 保留转移数据并用当前模型重评价后续决策 | [EfficientZero-V2](2026-11-18-continue-09.md#efficientzero-v2) | 模型误差与环境变化需独立核对 |
 | 实验过渡 | 价值目标 | 只做朴素对照不能检验设计选择 | 先比较旧目标再比较解决同问题的另一目标 | [EfficientZero-V2](2026-11-18-continue-09.md#efficientzero-v2) | 真实交互和模型估计分别报告 |
+| 指标与实验过渡 | 低负载节能 | 覆盖相同被写成并发能力相同 | 同报服务器功率与活跃用户吞吐并解释关闭动作 | [RANBooster](2026-11-18-continue-10.md#ranbooster) | 整网与服务器分母分别计算 |
+| 系统模型 | 资源监测 | 平均占用相同被用于逐资源复用 | 按下游动作选择验证粒度 | [RANBooster](2026-11-18-continue-10.md#ranbooster) | 均值吻合仍可能错位置 |
+| 指标定义与图文 | 器件设计 | 转换比例被当成有效回波强度 | 配对展示幅度及归一化比例并接结构损耗 | [PolarVisor](2026-11-18-continue-10.md#polarvisor) | 比例分母明确 |
+| 实验与迁移 | 安装朝向 | 波形集中被直接写成链路更强 | 保持位置功率并联合测绝对功率与形状 | [PolarVisor](2026-11-18-continue-10.md#polarvisor) | 旋转的合成影响不单归极化 |
+| 工具与创新定位 | 在线预测 | 主模型更新慢造成结构性误差 | 轻量预测残差并用已到达反馈校准 | [Conformal-PID](2026-11-18-continue-10.md#conformal-pid) | 残差结构和反馈可用时间决定适用性 |
+| 图文与实验 | 时序覆盖 | 平均覆盖掩盖连续失误 | 同时展示滚动覆盖、区间代价和最长漏覆盖串 | [Conformal-PID](2026-11-18-continue-10.md#conformal-pid) | 长期保证按其假设解释 |
+| 实验推进与可信度 | 训练数据归因 | 相似记录直接被当成模型原因 | 先提候选解释再等量删样重训练 | [TRAK](2026-11-18-continue-10.md#trak) | 补采收益另行验证 |
+| 数学与指标 | 归因矩阵 | 内积相似度替代整体数据影响 | 用梯度结构重加权并核对LDS指标 | [TRAK](2026-11-18-continue-10.md#trak) | 归因依赖模型输出与局部近似 |
 
 ## 论文索引
 
@@ -942,6 +951,8 @@
 | [2026-11-18 追加08](2026-11-18-continue-08.md#onenet) | NeurIPS 2023 | OneNet: Enhancing Time Series Forecasting Models under Concept Drift by Online Ensembling | [10.52202/075280-3066](https://doi.org/10.52202/075280-3066) |
 | [2026-11-18 追加08](2026-11-18-continue-08.md#mcts-ahd) | ICML 2025 | Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design | [pmlr-v267-zheng25o](https://proceedings.mlr.press/v267/zheng25o.html) |
 | [2026-11-18 追加09](2026-11-18-continue-09.md#efficientzero-v2) | ICML 2024 | EfficientZero V2: Mastering Discrete and Continuous Control with Limited Data | [pmlr-v235-wang24at](https://proceedings.mlr.press/v235/wang24at.html) |
+| [2026-11-18 追加10](2026-11-18-continue-10.md#conformal-pid) | NeurIPS 2023 | Conformal PID Control for Time Series Prediction | [10.52202/075280-1000](https://proceedings.neurips.cc/paper_files/paper/2023/hash/47f2fad8c1111d07f83c91be7870f8db-Abstract-Conference.html) |
+| [2026-11-18 追加10](2026-11-18-continue-10.md#trak) | ICML 2023 | TRAK: Attributing Model Behavior at Scale | [pmlr-v202-park23c](https://proceedings.mlr.press/v202/park23c.html) |
 
 ## 写作依据
 
