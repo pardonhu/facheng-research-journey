@@ -153,6 +153,7 @@
 | [2026-11-18 追加11](2026-11-18-continue-11.md) | M2HO、Bridge（复读）；DPO、L2C（新读） | 控制时间预算；局部异常；偏好重参数化；求解迭代缓存 | 四组英文改稿、控制链与相位算例、运行离散DPO验证、求解等价推导 |
 | [2026-11-18 追加12](2026-11-18-continue-12.md) | MSense、RinP（复读） | 波形恢复与读出；空间资源互补；第四组十篇总结 | 变频自相关计算、时隙集合核验、英文改稿和十篇迁移框架 |
 | [2026-11-18 追加13](2026-11-18-continue-13.md) | H2O、Proxy Causal Discovery（新读）；Polaris、CloudRIC（复读） | 新旧信息保留；隐藏中间状态；已知量与不可辨识；突发处理时限 | 四组英文改稿、注意力缓存与条件分布算例、几何歧义核算、公开解码数据重算 |
+| [2026-11-18 追加14](2026-11-18-continue-14.md) | Toolformer、SRe2L（新读）；PerceptAlign、Self-Refine（复读） | 工具增量价值；视图目标配对；任务指标与表示解释；可执行反馈 | 四组英文改稿、工具筛选损失与蒸馏梯度算例、表示退化例、22621序列原创核对 |
 
 ## 改稿案例检索
 
@@ -678,6 +679,14 @@
 | 实验与计时 | 定位性能 | 局部求解耗时代表全流程 | 分别标注求解与端到端路径并复核固定实验条件 | [Polaris](2026-11-18-continue-13.md#polaris) | 固定高度测试不外推高度变化 |
 | 实验与图文 | 实时负载 | 平均空闲直接等于可以接更多任务 | 并列利用率、授权率、尾时延并解释到达突发 | [CloudRIC](2026-11-18-continue-13.md#cloudric) | 各百分比指标分母分开 |
 | 实验与可信度 | 基线对照 | 整套差异全归给一个开关 | 写明共同代理、缺失控制及预测模型配置 | [CloudRIC](2026-11-18-continue-13.md#cloudric) | 接纳后可靠性同时报告原始需求交付量 |
+| 数学与创新 | 工具筛选 | 调用形式和真实返回收益混在一起 | 比较不调用、仅查询、查询加结果的后续损失 | [Toolformer](2026-11-18-continue-14.md#toolformer) | 成本项为新增设计而非论文原式 |
+| 实验与可信度 | 诊断工具 | 用筛选工具的数据报告最终收益 | 构造和选择数据与未见测试轨迹分开 | [Toolformer](2026-11-18-continue-14.md#toolformer) | 同一上下文保持可比并计测量成本 |
+| 方法与信息取舍 | 小数据训练 | 裁剪输入与整条原始目标机械配对 | 为实际增强视图生成并重放对应软目标 | [SRe2L](2026-11-18-continue-14.md#sre2l) | 软目标不改变物理标签也非校准概率 |
+| 实验与图文 | 数据压缩 | 更大模型混指恢复教师和学生 | 固定数据分别改变恢复者、标注者与学生 | [SRe2L](2026-11-18-continue-14.md#sre2l) | 总字节预算含目标和视图元数据 |
+| 实验与图文 | 表示学习 | 特征颜色混合替代任务信息保留 | 先任务误差再说明特征提取位置和布局颜色 | [PerceptAlign](2026-11-18-continue-14.md#perceptalign) | 降维图单独不能排除表示塌缩 |
+| 研究判断 | 跨设备迁移 | 板号不易识别被等同于控制可用 | 同时检查设备混合与链路质量信息 | [PerceptAlign](2026-11-18-continue-14.md#perceptalign) | 以整板留出和真实控制目标验证 |
+| 方法与实验 | 代码修改 | 重复生成只要求更快 | 反馈定位操作、给改法并明确保持的行为 | [Self-Refine](2026-11-18-continue-14.md#self-refine) | 行为检查先于设备计时 |
+| 篇章与图文 | 反馈消融 | 总体收益没有解释修改来自哪里 | 具体反馈对照后接迭代增量和独立多采样 | [Self-Refine](2026-11-18-continue-14.md#self-refine) | 候选数量相同不等于计算成本相同 |
 
 ## 论文索引
 
@@ -980,6 +989,8 @@
 | [2026-11-18 追加11](2026-11-18-continue-11.md#l2c) | NeurIPS 2024 | Learning-to-Cache: Accelerating Diffusion Transformer via Layer Caching | [10.52202/079017-4236](https://proceedings.neurips.cc/paper_files/paper/2024/hash/f0b1515be276f6ba82b4f2b25e50bef0-Abstract-Conference.html) |
 | [2026-11-18 追加13](2026-11-18-continue-13.md#h2o) | NeurIPS 2023 | H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models | [10.52202/075280-1506](https://proceedings.neurips.cc/paper_files/paper/2023/hash/6ceefa7b15572587b78ecfcebb2827f8-Abstract-Conference.html) |
 | [2026-11-18 追加13](2026-11-18-continue-13.md#proxy) | NeurIPS 2023 | Causal Discovery from Subsampled Time Series with Proxy Variables | [10.52202/075280-1880](https://proceedings.neurips.cc/paper_files/paper/2023/hash/86cba2b31d17f237866a2e6c52c7878a-Abstract-Conference.html) |
+| [2026-11-18 追加14](2026-11-18-continue-14.md#toolformer) | NeurIPS 2023 | Toolformer: Language Models Can Teach Themselves to Use Tools | [10.52202/075280-2997](https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html) |
+| [2026-11-18 追加14](2026-11-18-continue-14.md#sre2l) | NeurIPS 2023 | Squeeze, Recover and Relabel: Dataset Condensation at ImageNet Scale From A New Perspective | [10.52202/075280-3219](https://proceedings.neurips.cc/paper_files/paper/2023/hash/e91fb65c6324a984ea9ef39a5b84af04-Abstract-Conference.html) |
 
 ## 写作依据
 
