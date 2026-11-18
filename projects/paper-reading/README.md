@@ -168,6 +168,8 @@
 | [2026-11-18 追加26](2026-11-18-continue-26.md) | Understanding HDBO、FisherRF、LaSR（新读）；ArachNet（复读） | 局部候选；预留反馈；批量信息更新；概念驱动公式 | 四组英文改稿及梯度、调度、信息增益、有限重试算例 |
 | [2026-11-18 追加27](2026-11-18-continue-27.md) | Demeter（复读）、PocketVib（新读）；第九组十篇总结 | 扫描次序；校准摊销；行时间；组装后真值 | 同预算探测与频率响应算例、三组英文改稿、十篇迁移总结 |
 | [2026-11-18 追加28](2026-11-18-continue-28.md) | RealMLP、LibMOON（新读）；HORCRUX、FlowForm（复读） | 预处理迁移；偏好到配置；误差不变性；交叉环境 | 四篇源码或正文核验、原创数值例与完整英文段落 |
+| [2026-11-18 追加29](2026-11-18-continue-29.md) | TimeXer、mmFHE、GIF-MCTS（新读）；TinyLEO（复读） | 目标与辅助序列；恢复事件链；算法与加密分离；可执行世界模型 | 四篇英文训练及输入歧义、积压、软峰值、终止事件算例 |
+| [2026-11-18 追加30](2026-11-18-continue-30.md) | LoGra/LogIX（新读）、NanoScatter（复读）；第十组十篇总结 | 低秩梯度日志；反事实核验；有限储能；整机开销 | 原始梯度与零分支算例、能量换算、完整英文和十篇迁移总结 |
 
 ## 改稿案例检索
 
@@ -793,6 +795,18 @@
 | 图文与系统模型 | 安装公差 | 一个距离范数概括全部扰动 | 按平移旋转轴及工作距离解释 | [FlowForm](2026-11-18-continue-28.md#flowform) | 单轴实验不能代替联合偏差 |
 | 工具与创新 | 配置取舍 | 只反复调整一个线性总分 | 保留实测非支配配置或学习偏好到配置 | [LibMOON](2026-11-18-continue-28.md#libmoon) | 先检查硬约束、尺度和前沿形状 |
 | 指标与实验 | 配置集合 | 低Spacing等同完整覆盖 | 共同坐标展示配置并结合覆盖和重复数量 | [LibMOON](2026-11-18-continue-28.md#libmoon) | 固定参考点；函数实现先与公式核对 |
+| 系统模型与工具 | 辅助预测 | 所有传感器同粒度同时预测 | 区分目标历史和已到达辅助观测 | [TimeXer](2026-11-18-continue-29.md#timexer) | 外部观测年龄与窗口长度分开 |
+| 实验与篇章 | 融合收益 | 只报告整体误差 | 先改历史长度再替换内容并测试部分缺失 | [TimeXer](2026-11-18-continue-29.md#timexer) | 结构对照、全替换与随机缺失不同 |
+| 指标与系统模型 | 故障恢复 | 局部绕行与所有故障恢复混用 | 按连通条件记录不同动作及起止事件 | [TinyLEO](2026-11-18-continue-29.md#tinyleo) | 星型网络不直接照搬多跳 |
+| 实验与篇章 | 缓存恢复 | 连通恢复等同业务完成 | 分别测修复与持续到达下的队列排空 | [TinyLEO](2026-11-18-continue-29.md#tinyleo) | 平均时延不作为期限上界 |
+| 实验与论证 | 计算近似 | 更换算法和执行表示共用一个基线 | 传统流程、适配明文、相同密文分开比较 | [mmFHE](2026-11-18-continue-29.md#mmfhe) | 预测一致性与原任务准确率不同 |
+| 数学与接口 | 软选择 | 加权索引当真实目标编号 | 保留离散动作需要的输出信息 | [mmFHE](2026-11-18-continue-29.md#mmfhe) | 多峰和等强峰可能给出中间位置 |
+| 创新与工具 | 规则执行 | 每次推演都询问LLM | 生成并验证step模型后反复执行 | [GIF-MCTS](2026-11-18-continue-29.md#gif-mcts) | 确定协议更新和随机信道分别建模 |
+| 指标与实验 | 模型规划 | 高平均匹配率替代决策验证 | 单列完成超时事件并冻结模型后测规划 | [GIF-MCTS](2026-11-18-continue-29.md#gif-mcts) | 本文公式与当前奖励加权实现分别记录 |
+| 数学与工具 | 重复归因 | 每次查询重算所有样本梯度 | 在固定检查点保存压缩梯度并复用 | [LoGra-LogIX](2026-11-18-continue-30.md#logra-logix) | 指定投影恒等不等于完整影响无损 |
+| 实验与篇章 | 排序用途 | 高分数据直接称故障原因 | 用等检查量删除重训对照验证排序 | [LoGra-LogIX](2026-11-18-continue-30.md#logra-logix) | 分数符号、参考标签与日志范围明确 |
+| 指标与系统模型 | 省电比例 | 核心模块优化代替整标签收益 | 同时报告模块和整机并按阶段积分 | [NanoScatter](2026-11-18-continue-30.md#nanoscatter) | 等待启动及支持电路须计入 |
+| 实验与图文 | 有限储能 | 电容周期数直接当单包效率 | 规定初终态和供能条件后解释放电轨迹 | [NanoScatter](2026-11-18-continue-30.md#nanoscatter) | 有限能量运行与能量自持不同 |
 
 ## 论文索引
 
@@ -1125,6 +1139,10 @@
 | [2026-11-18 追加27](2026-11-18-continue-27.md#pocketvib) | MobiCom 2026 | When Mobile ToF Meets Micro-Vibration: Multi-Point kHz-Frequency Sensing using Laser Speckle | [10.1145/3795866.3796680](https://doi.org/10.1145/3795866.3796680) |
 | [2026-11-18 追加28](2026-11-18-continue-28.md#realmlp) | NeurIPS 2024 | Better by Default: Strong Pre-Tuned MLPs and Boosted Trees on Tabular Data | [10.52202/079017-0837](https://doi.org/10.52202/079017-0837) |
 | [2026-11-18 追加28](2026-11-18-continue-28.md#libmoon) | NeurIPS 2024 Datasets and Benchmarks | LibMOON: A Gradient-based MultiObjective OptimizatioN Library in PyTorch | [10.52202/079017-0065](https://doi.org/10.52202/079017-0065) |
+| [2026-11-18 追加29](2026-11-18-continue-29.md#timexer) | NeurIPS 2024 | TimeXer: Empowering Transformers for Time Series Forecasting with Exogenous Variables | [10.52202/079017-0015](https://doi.org/10.52202/079017-0015) |
+| [2026-11-18 追加29](2026-11-18-continue-29.md#mmfhe) | MobiCom 2026 | mmFHE: mmWave Sensing with End-to-End Fully Homomorphic Encryption | [10.1145/3795866.3844486](https://doi.org/10.1145/3795866.3844486) |
+| [2026-11-18 追加29](2026-11-18-continue-29.md#gif-mcts) | NeurIPS 2024 | Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search | [10.52202/079017-1933](https://doi.org/10.52202/079017-1933) |
+| [2026-11-18 追加30](2026-11-18-continue-30.md#logra-logix) | NeurIPS 2025 | What is Your Data Worth to GPT? LLM-Scale Data Valuation with Influence Functions | [10.52202/085713-4883](https://doi.org/10.52202/085713-4883) |
 
 ## 写作依据
 
