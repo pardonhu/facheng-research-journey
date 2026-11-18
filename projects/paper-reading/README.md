@@ -150,6 +150,7 @@
 | [2026-11-18 追加08](2026-11-18-continue-08.md) | SwapRAN、Crowd Analytics（复读）；OneNet、MCTS-AHD（新读） | 迁移确认；时间相关；在线集成；树搜索 | 四组英文改稿、时序和梯度算例、分支探索计算 |
 | [2026-11-18 追加09](2026-11-18-continue-09.md) | SeRadar（复读）；EfficientZero V2（新读） | 零陷的信噪比取舍；当前策略重评价；第三组十篇总结 | 投影与SINR推导、旧回报算例、英文实验过渡及工具配问题 |
 | [2026-11-18 追加10](2026-11-18-continue-10.md) | RANBooster、PolarVisor（复读）；Conformal PID、TRAK（新读） | 低负载节能；绝对信号与比例；残差预测；训练数据归因 | 四组英文训练、能耗与极化算例、实际运行残差反馈实验、归因矩阵计算 |
+| [2026-11-18 追加11](2026-11-18-continue-11.md) | M2HO、Bridge（复读）；DPO、L2C（新读） | 控制时间预算；局部异常；偏好重参数化；求解迭代缓存 | 四组英文改稿、控制链与相位算例、运行离散DPO验证、求解等价推导 |
 
 ## 改稿案例检索
 
@@ -655,6 +656,14 @@
 | 图文与实验 | 时序覆盖 | 平均覆盖掩盖连续失误 | 同时展示滚动覆盖、区间代价和最长漏覆盖串 | [Conformal-PID](2026-11-18-continue-10.md#conformal-pid) | 长期保证按其假设解释 |
 | 实验推进与可信度 | 训练数据归因 | 相似记录直接被当成模型原因 | 先提候选解释再等量删样重训练 | [TRAK](2026-11-18-continue-10.md#trak) | 补采收益另行验证 |
 | 数学与指标 | 归因矩阵 | 内积相似度替代整体数据影响 | 用梯度结构重加权并核对LDS指标 | [TRAK](2026-11-18-continue-10.md#trak) | 归因依赖模型输出与局部近似 |
+| 实验与时序 | 预测控制 | 更早识别被直接写成更早完成 | 从提前量扣除传递、执行和在途排空 | [M2HO](2026-11-18-continue-11.md#m2ho) | 事件时间与控制器收到时间区分 |
+| 研究判断 | 漏报分析 | 所有漏报都只归于预测器 | 按子类检查新增触发能否赶上动作 | [M2HO](2026-11-18-continue-11.md#m2ho) | 无可用先兆结论限已检查信号 |
+| 系统模型与信息取舍 | 多测量融合 | 过早汇总丢失局部质量 | 保留位置与异常信息再筛选合并 | [Bridge](2026-11-18-continue-11.md#bridge) | 线性平均与同权OLS本可交换 |
+| 图文与实验 | 采样控制 | 更多样本直接等于更好恢复 | 图例同时标处理粒度与包数 | [Bridge](2026-11-18-continue-11.md#bridge) | 完整配置收益不分配给单组件 |
+| 数学与创新定位 | 偏好优化 | 为只需差值的目标估计完整中间模型 | 反解策略参数化并消去共同归一化项 | [DPO](2026-11-18-continue-11.md#dpo) | 同上下文比较及参考支持条件 |
+| 实验与可信度 | 自动评价 | 单一评审胜率包揽方法与评价正确性 | 受控目标、真实任务和评审核验分层 | [DPO](2026-11-18-continue-11.md#dpo) | 有限数据训练不继承全局最优声明 |
+| 数学与方法 | 迭代缓存 | 循环次数被当成有效新信息 | 先推导全复用等价再说明保留计算 | [L2C](2026-11-18-continue-11.md#l2c) | 结论绑定求解公式 |
+| 实验与图文 | 计算分配 | 等步数掩盖实际耗时 | 等实测延迟比较少步求解与层缓存 | [L2C](2026-11-18-continue-11.md#l2c) | 批量硬件和计时范围固定 |
 
 ## 论文索引
 
@@ -953,6 +962,8 @@
 | [2026-11-18 追加09](2026-11-18-continue-09.md#efficientzero-v2) | ICML 2024 | EfficientZero V2: Mastering Discrete and Continuous Control with Limited Data | [pmlr-v235-wang24at](https://proceedings.mlr.press/v235/wang24at.html) |
 | [2026-11-18 追加10](2026-11-18-continue-10.md#conformal-pid) | NeurIPS 2023 | Conformal PID Control for Time Series Prediction | [10.52202/075280-1000](https://proceedings.neurips.cc/paper_files/paper/2023/hash/47f2fad8c1111d07f83c91be7870f8db-Abstract-Conference.html) |
 | [2026-11-18 追加10](2026-11-18-continue-10.md#trak) | ICML 2023 | TRAK: Attributing Model Behavior at Scale | [pmlr-v202-park23c](https://proceedings.mlr.press/v202/park23c.html) |
+| [2026-11-18 追加11](2026-11-18-continue-11.md#dpo) | NeurIPS 2023 | Direct Preference Optimization: Your Language Model is Secretly a Reward Model | [10.52202/075280-2338](https://proceedings.neurips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract-Conference.html) |
+| [2026-11-18 追加11](2026-11-18-continue-11.md#l2c) | NeurIPS 2024 | Learning-to-Cache: Accelerating Diffusion Transformer via Layer Caching | [10.52202/079017-4236](https://proceedings.neurips.cc/paper_files/paper/2024/hash/f0b1515be276f6ba82b4f2b25e50bef0-Abstract-Conference.html) |
 
 ## 写作依据
 
