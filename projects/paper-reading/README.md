@@ -170,6 +170,7 @@
 | [2026-11-18 追加28](2026-11-18-continue-28.md) | RealMLP、LibMOON（新读）；HORCRUX、FlowForm（复读） | 预处理迁移；偏好到配置；误差不变性；交叉环境 | 四篇源码或正文核验、原创数值例与完整英文段落 |
 | [2026-11-18 追加29](2026-11-18-continue-29.md) | TimeXer、mmFHE、GIF-MCTS（新读）；TinyLEO（复读） | 目标与辅助序列；恢复事件链；算法与加密分离；可执行世界模型 | 四篇英文训练及输入歧义、积压、软峰值、终止事件算例 |
 | [2026-11-18 追加30](2026-11-18-continue-30.md) | LoGra/LogIX（新读）、NanoScatter（复读）；第十组十篇总结 | 低秩梯度日志；反事实核验；有限储能；整机开销 | 原始梯度与零分支算例、能量换算、完整英文和十篇迁移总结 |
+| [2026-11-18 追加31](2026-11-18-continue-31.md) | CARTE（新读）、AnySat、MeAnt、MetaVenom（复读） | 语义表格迁移；融合表示监督；损失集中度；状态保持与能耗 | 四篇正文分析、原创核算、完整改稿与组网实验入口 |
 
 ## 改稿案例检索
 
@@ -807,6 +808,14 @@
 | 实验与篇章 | 排序用途 | 高分数据直接称故障原因 | 用等检查量删除重训对照验证排序 | [LoGra-LogIX](2026-11-18-continue-30.md#logra-logix) | 分数符号、参考标签与日志范围明确 |
 | 指标与系统模型 | 省电比例 | 核心模块优化代替整标签收益 | 同时报告模块和整机并按阶段积分 | [NanoScatter](2026-11-18-continue-30.md#nanoscatter) | 等待启动及支持电路须计入 |
 | 实验与图文 | 有限储能 | 电容周期数直接当单包效率 | 规定初终态和供能条件后解释放电轨迹 | [NanoScatter](2026-11-18-continue-30.md#nanoscatter) | 有限能量运行与能量自持不同 |
+| 工具与模型 | 异构记录迁移 | 字段顺序不同导致输入意义变化 | 将列名语义与数值关联，分别核对单位和缺失 | [CARTE](2026-11-18-continue-31.md#carte) | 同一物理量和标签含义须统一 |
+| 实验与篇章 | 预训练迁移 | 实体匹配与列匹配混作单一贡献 | 分别控制实体重合和字段配对，再比较目标独训 | [CARTE](2026-11-18-continue-31.md#carte) | 无显著差异不等于严格等价 |
+| 模型与篇章 | 自监督训练 | 融合表示预测写成真实波形恢复 | 按教师目标、学生可见范围和预测对象展开 | [AnySat](2026-11-18-continue-31.md#anysat) | 表示需下游监督，不能替代物理测量 |
+| 实验与判断 | 统一配置 | 多任务增减不一致仍笼统称更好 | 分任务报告并交代资源收益与共用配置目标 | [AnySat](2026-11-18-continue-31.md#anysat) | 论文与当前损失实现分别核对 |
+| 模型与论证 | 层间接口 | 门限输出直接视为纯擦除信道 | 区分可定位擦除与通过阈值的误判 | [MeAnt](2026-11-18-continue-31.md#meant) | 实际CRC接口不能照搬符号模型 |
+| 实验与图文 | 冗余选择 | 仅凭平均丢失率选择码率 | 追踪丢失集中度并比较同步条件下goodput | [MeAnt](2026-11-18-continue-31.md#meant) | 交织延迟与码率图文差异需保留 |
+| 指标与论证 | 节能 | 低瞬时功率直接称任务省电 | 先测完成相同搬运任务的积分能量，再按改写间隔摊销 | [MetaVenom](2026-11-18-continue-31.md#metavenom) | 吸起体积不等于完整交付量 |
+| 实验与可信度 | 状态保持 | 一次填排曲线外推长期免维护 | 分开操作残液、循环次数与放置蒸发 | [MetaVenom](2026-11-18-continue-31.md#metavenom) | 公开存档数组核验不等于射频测量 |
 
 ## 论文索引
 
@@ -1143,6 +1152,7 @@
 | [2026-11-18 追加29](2026-11-18-continue-29.md#mmfhe) | MobiCom 2026 | mmFHE: mmWave Sensing with End-to-End Fully Homomorphic Encryption | [10.1145/3795866.3844486](https://doi.org/10.1145/3795866.3844486) |
 | [2026-11-18 追加29](2026-11-18-continue-29.md#gif-mcts) | NeurIPS 2024 | Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search | [10.52202/079017-1933](https://doi.org/10.52202/079017-1933) |
 | [2026-11-18 追加30](2026-11-18-continue-30.md#logra-logix) | NeurIPS 2025 | What is Your Data Worth to GPT? LLM-Scale Data Valuation with Influence Functions | [10.52202/085713-4883](https://doi.org/10.52202/085713-4883) |
+| [2026-11-18 追加31](2026-11-18-continue-31.md#carte) | ICML 2024 | CARTE: Pretraining and Transfer for Tabular Learning | [pmlr-v235-kim24d](https://proceedings.mlr.press/v235/kim24d.html) |
 
 ## 写作依据
 
