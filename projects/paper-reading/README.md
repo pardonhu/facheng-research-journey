@@ -156,6 +156,7 @@
 | [2026-11-18 追加14](2026-11-18-continue-14.md) | Toolformer、SRe2L（新读）；PerceptAlign、Self-Refine（复读） | 工具增量价值；视图目标配对；任务指标与表示解释；可执行反馈 | 四组英文改稿、工具筛选损失与蒸馏梯度算例、表示退化例、22621序列原创核对 |
 | [2026-11-18 追加15](2026-11-18-continue-15.md) | RadioStream、RFDT（复读）；第41–50篇总结 | 计划数据分母；连续采样路径；响应层代理；工具与条件的组合 | 两组英文改稿、采样速率和缺口核算、200步原创优化例、第五个十篇总结 |
 | [2026-11-18 追加16](2026-11-18-continue-16.md) | LogEI（新读）；SpaceSched、DragonFly、Tree of Thoughts（复读） | 联合试验预算；占比与服务容量；共同误差消去；搜索与选择分工 | 四组英文改稿、平滑误差界与有限发送概率核算、双峰/时钟例、20组公开搜索日志重算 |
+| [2026-11-18 追加17](2026-11-18-continue-17.md) | Schedule-Free（新读）；XGate、GRADE、Promptbreeder（复读） | 训练/评估参数；粗检测到精校；辅助分支贡献；案例反推指令 | 四组英文改稿、优化器状态手算、chirp残差与误差差例、原创提示开发记录 |
 
 ## 改稿案例检索
 
@@ -701,6 +702,14 @@
 | 实验与篇章 | 动机证据 | 基线动态失效被当作温漂收益验证 | 先描述峰移再解释身份影响，独立设计温漂测试 | [DragonFly](2026-11-18-continue-16.md#dragonfly) | 运动快时间项仍需另处理 |
 | 实验与研究判断 | 搜索失败 | 默认失败来自生成不足 | 分别计访问到合格方案与最终选中合格方案 | [Tree-of-Thoughts](2026-11-18-continue-16.md#tree-of-thoughts) | 真值最佳状态只作离线上界 |
 | 实验与方法 | 模型分工 | 更强模型不区分提议和评价 | 交叉改变生成器与评价器并记录成本 | [Tree-of-Thoughts](2026-11-18-continue-16.md#tree-of-thoughts) | 瓶颈结论绑定任务及设置 |
+| 数学与实现 | 训练导出 | 训练缓冲区直接视为推理参数 | 分别定义基础、梯度位置、平均序列及评估切换 | [Schedule-Free](2026-11-18-continue-17.md#schedule-free) | BN统计与导出成本另核 |
+| 实验与篇章 | 简化主张 | 删除学习率进程被写成无需调参 | 检查剩余参数是否依赖停止位置 | [Schedule-Free](2026-11-18-continue-17.md#schedule-free) | 未知终点与已知终点参考分别标明 |
+| 篇章与数学 | 分级校准 | 粗检测、估计和补偿合成一个动作 | 说明粗信息定位哪段观测、相消何项、留下何待估量 | [XGate](2026-11-18-continue-17.md#xgate) | 两段不同偏差会留下残差 |
+| 实验与图文 | 窗口检测 | 长窗口被写成普遍更好 | 先单包测门槛再并发检验逐轮发现 | [XGate](2026-11-18-continue-17.md#xgate) | 检测率不等于载荷交付率 |
+| 方法与可信度 | 残差分支 | 零初始化被写成退化时必定关闭 | 分别交代初始贡献、训练分布及退化行为测量 | [GRADE](2026-11-18-continue-17.md#grade) | 显式禁用与学习型弱化分开 |
+| 指标与图文 | 融合结果 | 任务误差相同被写成输出相同 | 固定输入与采样噪声分别量测输出差和任务误差 | [GRADE](2026-11-18-continue-17.md#grade) | 明确第一阶段雷达与雷达条件扩散参照 |
+| 研究判断与方法 | 经验提炼 | 一次成功直接变成通用指令 | 从成功提候选规则，再用不同类型案例检验 | [Promptbreeder](2026-11-18-continue-17.md#promptbreeder) | 开发案例不计独立测试 |
+| 实验与可信度 | 改写算子 | 总体命中率直接排列算子优劣 | 对相同父提示配对比较并做固定预算消融 | [Promptbreeder](2026-11-18-continue-17.md#promptbreeder) | 过程平均成绩与最终准确率分开 |
 
 ## 论文索引
 
@@ -1006,6 +1015,7 @@
 | [2026-11-18 追加14](2026-11-18-continue-14.md#toolformer) | NeurIPS 2023 | Toolformer: Language Models Can Teach Themselves to Use Tools | [10.52202/075280-2997](https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html) |
 | [2026-11-18 追加14](2026-11-18-continue-14.md#sre2l) | NeurIPS 2023 | Squeeze, Recover and Relabel: Dataset Condensation at ImageNet Scale From A New Perspective | [10.52202/075280-3219](https://proceedings.neurips.cc/paper_files/paper/2023/hash/e91fb65c6324a984ea9ef39a5b84af04-Abstract-Conference.html) |
 | [2026-11-18 追加16](2026-11-18-continue-16.md#logei) | NeurIPS 2023 | Unexpected Improvements to Expected Improvement for Bayesian Optimization | [10.52202/075280-0904](https://proceedings.neurips.cc/paper_files/paper/2023/hash/419f72cbd568ad62183f8132a3605a2a-Abstract-Conference.html) |
+| [2026-11-18 追加17](2026-11-18-continue-17.md#schedule-free) | NeurIPS 2024 | The Road Less Scheduled | [10.52202/079017-0320](https://proceedings.neurips.cc/paper_files/paper/2024/hash/136b9a13861308c8948cd308ccd02658-Abstract-Conference.html) |
 
 ## 写作依据
 
