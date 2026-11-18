@@ -165,6 +165,8 @@
 | [2026-11-18 追加23](2026-11-18-continue-23.md) | OptiMUS、Wi²SAR、STAR（新读）；SaTE（复读） | 需求到优化模型；共享容量；共同变化与支路差异；多目标共享表征 | 四组原创英文改稿，调度枚举、容量修正、有限步长与相位变换算例 |
 | [2026-11-18 追加24](2026-11-18-continue-24.md) | POM、TAP3D（新读）；第八组十篇总结 | 搜索动作迁移；查询预算；物理重建与几何监督；模型到执行的证据链 | 两组原创英文训练、矩阵与物理等值算例、第八组十篇迁移总结 |
 | [2026-11-18 追加25](2026-11-18-continue-25.md) | Vanilla BO、Gaussian Grouping、MetaVision（新读）；AlphaWAN（复读） | 核相关性；隐藏几何监督；同孔径路径编码；容量与接收余量 | 四组原创英文改稿、核与后验计算、遮挡梯度、时间码及链路余量算例 |
+| [2026-11-18 追加26](2026-11-18-continue-26.md) | Understanding HDBO、FisherRF、LaSR（新读）；ArachNet（复读） | 局部候选；预留反馈；批量信息更新；概念驱动公式 | 四组英文改稿及梯度、调度、信息增益、有限重试算例 |
+| [2026-11-18 追加27](2026-11-18-continue-27.md) | Demeter（复读）、PocketVib（新读）；第九组十篇总结 | 扫描次序；校准摊销；行时间；组装后真值 | 同预算探测与频率响应算例、三组英文改稿、十篇迁移总结 |
 
 ## 改稿案例检索
 
@@ -770,6 +772,18 @@
 | 图文与工具 | 环境干预 | 视觉编辑直接当无线真值 | 以物体组定义可复现几何变化再测真实链路 | [Gaussian-Grouping](2026-11-18-continue-25.md#gaussian-grouping) | 度量尺度和材料信息单独校准 |
 | 数学与论证 | 路径编码 | 多反射路径直接等同可分观测 | 分别说明保留波束的共同相位与区分路径的时间码 | [MetaVision](2026-11-18-continue-25.md#metavision) | 时间窗口内信道变化影响解码 |
 | 实验与篇章 | 新增视角 | 额外孔径与编码收益混合 | 配置对比与同孔径消融分别回答性能和机制 | [MetaVision](2026-11-18-continue-25.md#metavision) | 文本精读不描述未看图像布局 |
+| 数学与实验 | 优化机制 | 最终好配置等同全局模型准确 | 固定观测检查拟合，再比较候选生成与局部随机基线 | [Understanding-HDBO](2026-11-18-continue-26.md#understanding-hdbo) | 原模型和简化RBF算例分开 |
+| 论证与篇章 | 结果解释 | 多阶段改动混为一个原因 | 初始化与候选起点做两因素对照 | [Understanding-HDBO](2026-11-18-continue-26.md#understanding-hdbo) | 闭环轨迹改变后数据也随之改变 |
+| 系统模型与论证 | 反馈语义 | 收到包等同批准未来占槽 | 分别记录交付状态与周期预留 | [ArachNet](2026-11-18-continue-26.md#arachnet) | 接收正确也可能因未来冲突拒绝预留 |
+| 数学与实验 | 低利用率冲突 | 总负载小推断偏移可行 | 枚举周期偏移并测试重排 | [ArachNet](2026-11-18-continue-26.md#arachnet) | 周期约束和同步条件不可省略 |
+| 数学与工具 | 批量观测 | 静态最高分重复选择同一方向 | 每次累加已选信息后重新评分 | [FisherRF](2026-11-18-continue-26.md#fisherrf) | 局部模型与相关误差需明确 |
+| 实验与图文 | 选择收益 | 换后端和采样一起比较 | 固定后端、初始观测及最终预算 | [FisherRF](2026-11-18-continue-26.md#fisherrf) | 另以一次排序检验更新贡献 |
+| 创新与工具 | 搜索经验 | 只保存最佳候选无法迁移结构 | 抽取协议概念并生成可检验的表达式 | [LaSR](2026-11-18-continue-26.md#lasr) | 文字概念仍需执行与留出条件检验 |
+| 指标与篇章 | 发现规律 | 拟合误差低等同恢复真实公式 | 精确匹配、预测误差、复杂度分别解释 | [LaSR](2026-11-18-continue-26.md#lasr) | 挑战集筛选及小差值保留范围 |
+| 实验与论证 | 参数扫描 | 配置效果与时间漂移混合 | 以同预算对称交错检查排序 | [Demeter](2026-11-18-continue-27.md#demeter) | 仅抵消所建模漂移且保留切换效应 |
+| 系统模型与篇章 | 长期成本 | 单包省电直接等同每日省电 | 按受益业务量摊销搜索及触发开销 | [Demeter](2026-11-18-continue-27.md#demeter) | 周期触发和按需触发分别记录 |
+| 数学与系统模型 | 采样信息 | 整帧率直接限制全部信息 | 由行时间推导有效采样与差分响应 | [PocketVib](2026-11-18-continue-27.md#pocketvib) | 频率保留不等于幅度及峰值排序保留 |
+| 实验与图文 | 可信参照 | 装配后沿用名义真值 | 先量测实际激励再引图计算误差 | [PocketVib](2026-11-18-continue-27.md#pocketvib) | 处理耗时与观察窗口分别报告 |
 
 ## 论文索引
 
@@ -1096,6 +1110,10 @@
 | [2026-11-18 追加25](2026-11-18-continue-25.md#vanilla-bo) | ICML 2024 | Vanilla Bayesian Optimization Performs Great in High Dimensions | [pmlr-v235-hvarfner24a](https://proceedings.mlr.press/v235/hvarfner24a.html) |
 | [2026-11-18 追加25](2026-11-18-continue-25.md#gaussian-grouping) | ECCV 2024 | Gaussian Grouping: Segment and Edit Anything in 3D Scenes | [10.1007/978-3-031-73397-0_10](https://doi.org/10.1007/978-3-031-73397-0_10) |
 | [2026-11-18 追加25](2026-11-18-continue-25.md#metavision) | MobiCom 2026 | MetaVision: Enhancing Resolution for Wi-Fi Vision with Hierarchical Programmable Metasurface | [10.1145/3795866.3844479](https://doi.org/10.1145/3795866.3844479) |
+| [2026-11-18 追加26](2026-11-18-continue-26.md#understanding-hdbo) | ICML 2025 | Understanding High-Dimensional Bayesian Optimization | [pmlr-v267-papenmeier25a](https://proceedings.mlr.press/v267/papenmeier25a.html) |
+| [2026-11-18 追加26](2026-11-18-continue-26.md#fisherrf) | ECCV 2024 | FisherRF: Active View Selection and Mapping with Radiance Fields Using Fisher Information | [10.1007/978-3-031-72624-8_24](https://doi.org/10.1007/978-3-031-72624-8_24) |
+| [2026-11-18 追加26](2026-11-18-continue-26.md#lasr) | NeurIPS 2024 | Symbolic Regression with a Learned Concept Library | [10.52202/079017-1419](https://doi.org/10.52202/079017-1419) |
+| [2026-11-18 追加27](2026-11-18-continue-27.md#pocketvib) | MobiCom 2026 | When Mobile ToF Meets Micro-Vibration: Multi-Point kHz-Frequency Sensing using Laser Speckle | [10.1145/3795866.3796680](https://doi.org/10.1145/3795866.3796680) |
 
 ## 写作依据
 
