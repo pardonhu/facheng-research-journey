@@ -144,6 +144,8 @@
 | [2026-11-18 追加02](2026-11-18-continue-02.md) | CosMAC、UWBOrient（复读）；PBGI、Track-and-Stop（新读） | 活动检测到控制；备用观测的缺失区间；测试顺序与成本；信息性实验与停止规则 | 四组英文改稿、概率与序贯算例、实现检查和八条改稿案例 |
 | [2026-11-18 追加03](2026-11-18-continue-03.md) | Chorus、Medusa（复读）；本轮前十篇总结 | 启用时刻与资源可用；代理任务到物理输出；实验段落的连贯写法 | 两组完整英改、时序及指标计算、四条案例与十篇工具总结 |
 | [2026-11-18 追加04](2026-11-18-continue-04.md) | RF-LEGO、HydraNet（复读）；MF-GRAD、HeO（新读） | 物理字典与模块接口；业务分组；多精度实验分配；连续目标与离散完成 | 四组英文训练、公开实现检查、公式核算及六节点求解演示 |
+| [2026-11-18 追加05](2026-11-18-continue-05.md) | CAMO、Opportunistic-ToF（新读）；DREW、PanoRadar（复读） | 多精度成本；异步信号识别；阶段时钟；误差传播 | 四组英文训练、时间和相位算例、作者实现对照 |
+| [2026-11-18 追加06](2026-11-18-continue-06.md) | SIB-ACS、Generalized Event Cameras（新读）；第11–20篇总结 | 反馈采样；发送内容；信息可用时间；第二个十篇总结 | 两组英文训练、创新代理量推导、码率与时延核验、工具组合方案 |
 
 ## 改稿案例检索
 
@@ -609,6 +611,18 @@
 | 数学意义与测量 | 多精度测试 | 便宜读数被当成目标现场无偏值 | 分别列统计误差和精度偏差界 | [MF-GRAD](2026-11-18-continue-04.md#mf-grad) | 理论保证随实际停止阈值核对 |
 | 数学意义与方法 | 组合优化 | 最终等价公式被当作相同搜索过程 | 计算连续中间状态梯度并单列目标调整 | [HeO](2026-11-18-continue-04.md#heo) | 高次连续变体不直接套多线性精确结论 |
 | 指标与图文 | 约束任务评估 | 平均接近完成等同完整成功 | 并列局部满足率与整题完成率 | [HeO](2026-11-18-continue-04.md#heo) | 明确两类指标分母及相关性 |
+| 实验成本与比较 | 多精度调参 | 低精度收益忽略测试价格 | 并列成本函数、候选排序与目标精度验证 | [CAMO](2026-11-18-continue-05.md#camo) | 预测准确与优化总成本分开 |
+| 数学意义 | 近似评估 | 低精度排名被直接延续 | 检查随精度变化的排名交叉 | [CAMO](2026-11-18-continue-05.md#camo) | 交叉算例仅说明风险 |
+| 系统模型与分解 | 方法 | 全部观测始终混合 | 估计共同频率时汇聚，恢复局部时延时分开 | [Opportunistic-ToF](2026-11-18-continue-05.md#opportunistic-tof) | 需存在可识别的周期结构 |
+| 证据与指标 | 实验 | 频率估计精度代替光源分离能力 | 分别说明精度、分辨率与几何误差 | [Opportunistic-ToF](2026-11-18-continue-05.md#opportunistic-tof) | 采集与合成步骤按实际方式描述 |
+| 系统模型与实现 | 时钟设置 | 高主频直接推导好时序 | 按接收计算、发射边沿、切换事件写约束 | [DREW](2026-11-18-continue-05.md#drew) | 表4不是单因素时钟消融 |
+| 实验解释 | 故障诊断 | 对未改善的干预只字不提 | 写清改变的变量和结果怎样改变调查方向 | [DREW](2026-11-18-continue-05.md#drew) | 保留干预细节缺失的范围 |
+| 数学意义与误差 | 运动补偿 | 平均误差替代相干误差 | 由位移投影推导残余相位并说明时间结构 | [PanoRadar](2026-11-18-continue-05.md#panoradar) | 窄带算例不是全图成像保证 |
+| 图文与结论 | 敏感性实验 | 模块精度没有下游含义 | 把实际工作点放在注入误差的下游曲线上 | [PanoRadar](2026-11-18-continue-05.md#panoradar) | 结论随扰动生成方式限定 |
+| 实验设计与归因 | 采样评估 | 网络与测量收益混在一起 | 同重构器同总预算比较采样，再比较反馈次数 | [SIB-ACS](2026-11-18-continue-06.md#sib-acs) | 探测与反馈不能作为免费输入 |
+| 数学意义 | 代理指标 | 重构变化被命名为真实误差下降 | 展开误差变化并验证代理量有效条件 | [SIB-ACS](2026-11-18-continue-06.md#sib-acs) | 学习重构不自动满足正交投影条件 |
+| 图文与实验推进 | 表示和压缩 | 好看的示例直接代表同成本收益 | 由真实场景到下游用途再到码率失真曲线 | [Generalized-Event-Cameras](2026-11-18-continue-06.md#generalized-event-cameras) | 包头与最终刷新计入成本 |
+| 系统模型与时延 | 在线接口 | 高时间分辨率等同低延迟 | 明确积分值描述的区间及到达时刻 | [Generalized-Event-Cameras](2026-11-18-continue-06.md#generalized-event-cameras) | 离线回溯结论不直接迁移在线控制 |
 
 ## 论文索引
 
@@ -897,6 +911,10 @@
 | [2026-11-18 追加02](2026-11-18-continue-02.md#track-and-stop) | ICML 2024 | Adaptive Online Experimental Design for Causal Discovery | [pmlr-v235-elahi24a](https://proceedings.mlr.press/v235/elahi24a.html) |
 | [2026-11-18 追加04](2026-11-18-continue-04.md#mf-grad) | NeurIPS 2024 | Optimal Multi-Fidelity Best-Arm Identification | [10.52202/079017-3874](https://doi.org/10.52202/079017-3874) |
 | [2026-11-18 追加04](2026-11-18-continue-04.md#heo) | NeurIPS 2024 | Efficient Combinatorial Optimization via Heat Diffusion | [10.52202/079017-3559](https://doi.org/10.52202/079017-3559) |
+| [2026-11-18 追加05](2026-11-18-continue-05.md#camo) | NeurIPS 2025 | CAMO: Convergence-Aware Multi-Fidelity Bayesian Optimization | [10.52202/085713-4789](https://doi.org/10.52202/085713-4789) |
+| [2026-11-18 追加05](2026-11-18-continue-05.md#opportunistic-tof) | CVPR 2025 | Opportunistic Single-Photon Time of Flight | [10.1109/CVPR52734.2025.01478](https://doi.org/10.1109/CVPR52734.2025.01478) |
+| [2026-11-18 追加06](2026-11-18-continue-06.md#sib-acs) | CVPR 2025 | Sampling Innovation-Based Adaptive Compressive Sensing | [10.1109/CVPR52734.2025.00228](https://doi.org/10.1109/CVPR52734.2025.00228) |
+| [2026-11-18 追加06](2026-11-18-continue-06.md#generalized-event-cameras) | CVPR 2024 | Generalized Event Cameras | [10.1109/CVPR52733.2024.02362](https://doi.org/10.1109/CVPR52733.2024.02362) |
 
 ## 写作依据
 
