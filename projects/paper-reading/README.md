@@ -173,6 +173,7 @@
 | [2026-11-18 追加31](2026-11-18-continue-31.md) | CARTE（新读）、AnySat、MeAnt、MetaVenom（复读） | 语义表格迁移；融合表示监督；损失集中度；状态保持与能耗 | 四篇正文分析、原创核算、完整改稿与组网实验入口 |
 | [2026-11-18 追加32](2026-11-18-continue-32.md) | Moirai、SateRIoT、MIMSID（复读）、PS-BAX（新读） | 尾部概率；集合探测；事件配对；模板辨别能力 | 四篇原创算例、实验段落及下一步组网问题 |
 | [2026-11-18 追加33](2026-11-18-continue-33.md) | BACON、Robust Sampling（新读）；第十一组十篇总结 | 仿真信息增益；核验分配；目标相关测量；实验过渡 | 联合高斯及稳健抽查算例、完整改稿、十篇综合 |
+| [2026-11-18 追加34](2026-11-18-continue-34.md) | Polarix、PiSSA、BILBO（新读）、LoRaSeek（复读） | 同流参考；初始化方向；原始采集分组；双层查询 | 四篇具体机制、可复算例、完整英文与迁移顺序 |
 
 ## 改稿案例检索
 
@@ -830,6 +831,14 @@
 | 实验与论证 | 后验质量 | 各种误差并成更准确 | 分别给参数误差、预测误差与参照明确的KL | [BACON](2026-11-18-continue-33.md#bacon) | 参考后验仍由有限仿真估计 |
 | 工具与数学 | 真实核验分配 | 模型误差估计不足仍极端偏向难例 | 用核验数据调节主动与均匀抽查的混合 | [Robust-Sampling](2026-11-18-continue-33.md#robust-sampling) | 先核验标签计入总预算 |
 | 实验与篇章 | 机制验证 | 只报效率提升没有策略变化 | 依次拆分路径、稳健处理、核验数量并报告混合系数 | [Robust-Sampling](2026-11-18-continue-33.md#robust-sampling) | 渐近结论与有限样本表现分开 |
+| 论证与图文 | 计时参考 | 泛称同步改善但误差来源不明 | 用应保持不变的控制量定位累计漂移，再在同流设置参考 | [Polarix](2026-11-18-continue-34.md#polarix) | 累计误差与周期内误差分开 |
+| 实验与指标 | 组件贡献 | 最终误差降幅当作中间量降幅 | 控制实验说明作用路径，最终消融量化任务收益 | [Polarix](2026-11-18-continue-34.md#polarix) | ARD分母与任务复杂度明确 |
+| 数学与工具 | 少样本适应 | 冻结剩余权重没有解释原输出 | 用残差加主分量保持初始等价，再更新低秩因子 | [PiSSA](2026-11-18-continue-34.md#pissa) | 主方向是否匹配设备变化需测试 |
+| 实验与篇章 | 初始优势 | 前几步损失下降代替最终收益 | 连接早期放大图、延长训练和分量对照 | [PiSSA](2026-11-18-continue-34.md#pissa) | 优化精度和训练预算匹配 |
+| 实验与可信度 | 数据增强 | 新噪声副本当作独立新环境 | 按原始采集分组并明确噪声、波形和场地层级 | [LoRaSeek](2026-11-18-continue-34.md#loraseek) | 当前切分函数检查不证明历史实验泄漏 |
+| 篇章与图文 | 首次部署与适配 | 微调后结果混入直接迁移主张 | 同位置顺序、颜色和轴对照原样使用与本地微调 | [LoRaSeek](2026-11-18-continue-34.md#loraseek) | 目标数据量和适配耗时需独立报告 |
+| 工具与模型 | 嵌套调参 | 一个未确认内层响应当作真值 | 保留候选响应并按两处不确定性重定向查询 | [BILBO](2026-11-18-continue-34.md#bilbo) | 实际控制需确有两层目标 |
+| 实验与指标 | 优化成本 | 按不同工作量的迭代数比较 | 计入初始化和内层函数查询，再报告实际总耗时 | [BILBO](2026-11-18-continue-34.md#bilbo) | 乐观候选集不保证每次硬件动作可行 |
 
 ## 论文索引
 
@@ -1170,6 +1179,9 @@
 | [2026-11-18 追加32](2026-11-18-continue-32.md#ps-bax) | NeurIPS 2024 | Practical Bayesian Algorithm Execution via Posterior Sampling | [10.52202/079017-4296](https://doi.org/10.52202/079017-4296) |
 | [2026-11-18 追加33](2026-11-18-continue-33.md#bacon) | NeurIPS 2024 | Bayesian Adaptive Calibration and Optimal Design | [10.52202/079017-1800](https://doi.org/10.52202/079017-1800) |
 | [2026-11-18 追加33](2026-11-18-continue-33.md#robust-sampling) | NeurIPS 2025 | Robust Sampling for Active Statistical Inference | [10.52202/085713-2312](https://doi.org/10.52202/085713-2312) |
+| [2026-11-18 追加34](2026-11-18-continue-34.md#polarix) | MobiCom 2026 | Polarix: Monitoring Multi-Component Liquids via Polarized Light | [10.1145/3795866.3844475](https://doi.org/10.1145/3795866.3844475) |
+| [2026-11-18 追加34](2026-11-18-continue-34.md#pissa) | NeurIPS 2024 | PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models | [10.52202/079017-3846](https://doi.org/10.52202/079017-3846) |
+| [2026-11-18 追加34](2026-11-18-continue-34.md#bilbo) | ICML 2025 | BILBO: BILevel Bayesian Optimization | [pmlr-v267-chew25a](https://proceedings.mlr.press/v267/chew25a.html) |
 
 ## 写作依据
 
