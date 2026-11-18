@@ -146,6 +146,7 @@
 | [2026-11-18 追加04](2026-11-18-continue-04.md) | RF-LEGO、HydraNet（复读）；MF-GRAD、HeO（新读） | 物理字典与模块接口；业务分组；多精度实验分配；连续目标与离散完成 | 四组英文训练、公开实现检查、公式核算及六节点求解演示 |
 | [2026-11-18 追加05](2026-11-18-continue-05.md) | CAMO、Opportunistic-ToF（新读）；DREW、PanoRadar（复读） | 多精度成本；异步信号识别；阶段时钟；误差传播 | 四组英文训练、时间和相位算例、作者实现对照 |
 | [2026-11-18 追加06](2026-11-18-continue-06.md) | SIB-ACS、Generalized Event Cameras（新读）；第11–20篇总结 | 反馈采样；发送内容；信息可用时间；第二个十篇总结 | 两组英文训练、创新代理量推导、码率与时延核验、工具组合方案 |
+| [2026-11-18 追加07](2026-11-18-continue-07.md) | Sisyphus、RFlect、ReEvo（复读）；ACGR（新读） | 跨端配置；受限角域采样；异步融合；生成规则的评价 | 四组英文训练、公式与时序例子、128条重传轨迹枚举和动态规划 |
 
 ## 改稿案例检索
 
@@ -623,6 +624,14 @@
 | 数学意义 | 代理指标 | 重构变化被命名为真实误差下降 | 展开误差变化并验证代理量有效条件 | [SIB-ACS](2026-11-18-continue-06.md#sib-acs) | 学习重构不自动满足正交投影条件 |
 | 图文与实验推进 | 表示和压缩 | 好看的示例直接代表同成本收益 | 由真实场景到下游用途再到码率失真曲线 | [Generalized-Event-Cameras](2026-11-18-continue-06.md#generalized-event-cameras) | 包头与最终刷新计入成本 |
 | 系统模型与时延 | 在线接口 | 高时间分辨率等同低延迟 | 明确积分值描述的区间及到达时刻 | [Generalized-Event-Cameras](2026-11-18-continue-06.md#generalized-event-cameras) | 离线回溯结论不直接迁移在线控制 |
+| 方法与系统接口 | 跨端配置 | 本地开关效果依赖未写出的发送条件 | 沿信号路径交代另一端的配套动作 | [Sisyphus](2026-11-18-continue-07.md#sisyphus) | 灵敏度绑定共同配置 |
+| 实验过渡 | 台架到现场 | 场景改变未交代 | 明确RF链数量、功率及同步职责 | [Sisyphus](2026-11-18-continue-07.md#sisyphus) | 台架门槛不能直接代替现场距离 |
+| 系统模型与数学 | 稀疏采样 | 采样减少缺少允许信号范围 | 先定义支持角域再解释间距 | [RFlect](2026-11-18-continue-07.md#rflect) | 角域外信号仍可能混叠 |
+| 图文与证据 | 物理成像 | 系统图被当作单项消融 | 分开几何设置、重建展示与固定资源对照 | [RFlect](2026-11-18-continue-07.md#rflect) | 孔径配置对应关系待澄清 |
+| 实验推进 | 多模态融合 | 融合贡献与对齐贡献混合 | 先增事件再几何对齐和特征对齐 | [ACGR](2026-11-18-continue-07.md#acgr) | 递增增量依赖加入顺序 |
+| 系统模型与时间 | 异步预测 | 输入帧龄与计算时延混为一谈 | 列输入时间线并检查推断已可用前缀 | [ACGR](2026-11-18-continue-07.md#acgr) | 当前公开帧间入口使用后端帧 |
+| 篇章与实验归因 | 自动生成规则 | 最终好规则替代搜索流程验证 | 分别检验规则收益、候选行为与组件贡献 | [ReEvo](2026-11-18-continue-07.md#reevo) | 平滑统计不独自证明任务收益 |
+| 指标与工具接口 | 优化评测器 | 少尝试被直接写成高效完成 | 同报期限完成与开销并定义候选评价单位 | [ReEvo](2026-11-18-continue-07.md#reevo) | 内外层评价不能互换 |
 
 ## 论文索引
 
@@ -915,6 +924,7 @@
 | [2026-11-18 追加05](2026-11-18-continue-05.md#opportunistic-tof) | CVPR 2025 | Opportunistic Single-Photon Time of Flight | [10.1109/CVPR52734.2025.01478](https://doi.org/10.1109/CVPR52734.2025.01478) |
 | [2026-11-18 追加06](2026-11-18-continue-06.md#sib-acs) | CVPR 2025 | Sampling Innovation-Based Adaptive Compressive Sensing | [10.1109/CVPR52734.2025.00228](https://doi.org/10.1109/CVPR52734.2025.00228) |
 | [2026-11-18 追加06](2026-11-18-continue-06.md#generalized-event-cameras) | CVPR 2024 | Generalized Event Cameras | [10.1109/CVPR52733.2024.02362](https://doi.org/10.1109/CVPR52733.2024.02362) |
+| [2026-11-18 追加07](2026-11-18-continue-07.md#acgr) | CVPR 2025 | Asynchronous Collaborative Graph Representation for Frames and Events | [10.1109/CVPR52734.2025.00162](https://doi.org/10.1109/CVPR52734.2025.00162) |
 
 ## 写作依据
 
