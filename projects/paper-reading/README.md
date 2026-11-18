@@ -159,6 +159,7 @@
 | [2026-11-18 追加17](2026-11-18-continue-17.md) | Schedule-Free（新读）；XGate、GRADE、Promptbreeder（复读） | 训练/评估参数；粗检测到精校；辅助分支贡献；案例反推指令 | 四组英文改稿、优化器状态手算、chirp残差与误差差例、原创提示开发记录 |
 | [2026-11-18 追加18](2026-11-18-continue-18.md) | FlexiViT、RANPilot（新读） | 保持投响应；计划配置入数据；提前量与恢复时间 | 两组完整英文改稿、线性投影和提前量手算、第六个十篇总结 |
 | [2026-11-18 追加19](2026-11-18-continue-19.md) | SURGEON、mmTunnel（新读）；MOMENT、HybRadar（复读） | 形状与物理基线；等缓存比较；参考点外验证；多线索融合 | 四组英文段落、归一化/缓存/阵列/融合算例与组网研究问题 |
+| [2026-11-18 追加20](2026-11-18-continue-20.md) | Diffusion Forcing、MCTF、mmOVD（新读）；PassiveBLE（复读） | 多未来指导；下一层注意力；跨帧补全；唤醒与待机能耗 | 四组英文改稿、梯度/聚合/窗口/状态能耗计算和原创图注 |
 
 ## 改稿案例检索
 
@@ -724,6 +725,14 @@
 | 篇章与图文 | 机制分析 | 代理量曲线替代有效性验证 | 先等资源比较，再消融取舍，最后解释层间分配 | [SURGEON](2026-11-18-continue-19.md#surgeon) | 梯度代理不等于真实精度贡献 |
 | 数学与研究判断 | 线索融合 | 单项准确率直接推组合准确率 | 对齐同样本误差再做单规则组件对照 | [mmTunnel](2026-11-18-continue-19.md#mmtunnel) | 共同偏差不会被均值消除 |
 | 图文与篇章 | 中间与系统证据 | 排名比例或个例代替总体结果 | 排名说明线索，系统对照检验组合，个例解释可见机制 | [mmTunnel](2026-11-18-continue-19.md#mmtunnel) | 离线吞吐不等于最坏延迟 |
+| 研究判断与方法 | 序列决策 | 一个未来样本直接确定当前动作 | 保留多个未来分支并用真实反馈重规划 | [Diffusion-Forcing](2026-11-18-continue-20.md#diffusion-forcing) | 期望代价目标不提供逐次保证 |
+| 实验与篇章 | 能力分解 | 总体表现代替所有能力 | 按稳定生成、多样本指导、动作执行和长度分别设问 | [Diffusion-Forcing](2026-11-18-continue-20.md#diffusion-forcing) | 生成动作与后处理控制器分开 |
+| 实验与论证 | 串联阶段 | 持续加冗余却未找前级门槛 | 先测唤醒再选匹配地址冗余与容量 | [PassiveBLE](2026-11-18-continue-20.md#passiveble) | 条件概率需同批逐包计数 |
+| 指标与篇章 | 状态能耗 | 上行功率代替周期平均 | 给出各状态电路和时长再求周期能量 | [PassiveBLE](2026-11-18-continue-20.md#passiveble) | 待机与切换开销独立保留 |
+| 方法与图文 | 压缩依据 | 上一层关注默认代表下一层需求 | 用同输入显示关注变化再引入当前可计算信息 | [MCTF](2026-11-18-continue-20.md#mctf) | 下一层不等于未来测量 |
+| 实验与实现 | 合并复用 | 复用近似被写成数学恒等 | 分开检验选择收益与获得依据的计算成本 | [MCTF](2026-11-18-continue-20.md#mctf) | 累计来源数与原始物理量分开 |
+| 论证与图文 | 分阶段处理 | 小阈值产生碎片被当作无效 | 先保留边界再说明后续观测怎样补全 | [mmOVD](2026-11-18-continue-20.md#mmovd) | 需核对运动与关联尺度 |
+| 指标与篇章 | 时间统计 | 检测计算替代报警反应 | 分别列处理耗时、历史窗口、连续触发和事件反应 | [mmOVD](2026-11-18-continue-20.md#mmovd) | 滑窗历史不每帧重新等待 |
 
 ## 论文索引
 
@@ -1034,6 +1043,9 @@
 | [2026-11-18 追加18](2026-11-18-continue-18.md#ranpilot) | SIGCOMM 2026 | RANPilot: Making AI Functionalities Robust to Dynamic O-RAN Reconfigurations | [10.1145/3789240.3829146](https://doi.org/10.1145/3789240.3829146) |
 | [2026-11-18 追加19](2026-11-18-continue-19.md#surgeon) | CVPR 2025 | SURGEON: Memory-Adaptive Fully Test-Time Adaptation via Dynamic Activation Sparsity | [10.1109/CVPR52734.2025.02841](https://doi.org/10.1109/CVPR52734.2025.02841) |
 | [2026-11-18 追加19](2026-11-18-continue-19.md#mmtunnel) | MobiCom 2025 | Ghost Points Matter: Far-Range Vehicle Detection with a Single mmWave Radar in Tunnel | [10.1145/3680207.3765237](https://doi.org/10.1145/3680207.3765237) |
+| [2026-11-18 追加20](2026-11-18-continue-20.md#diffusion-forcing) | NeurIPS 2024 | Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion | [10.52202/079017-0759](https://doi.org/10.52202/079017-0759) |
+| [2026-11-18 追加20](2026-11-18-continue-20.md#mctf) | CVPR 2024 | Multi-criteria Token Fusion with One-step-ahead Attention for Efficient Vision Transformers | [10.1109/CVPR52733.2024.01490](https://doi.org/10.1109/CVPR52733.2024.01490) |
+| [2026-11-18 追加20](2026-11-18-continue-20.md#mmovd) | MobiCom 2024 | See Through Vehicles: Fully Occluded Vehicle Detection with Millimeter Wave Radar | [10.1145/3636534.3690658](https://doi.org/10.1145/3636534.3690658) |
 
 ## 写作依据
 
