@@ -143,6 +143,7 @@
 | [2026-11-18 追加01](2026-11-18-continue-01.md) | SiWiS、DeRa（复读）；Bounce、COAT（新读） | 特征稳定与输入筛选；到达周期与服务时间；类别重编号；变量提议到测量 | 四组完整英文改稿、可复算小例子、公开实现核查和八条改稿案例 |
 | [2026-11-18 追加02](2026-11-18-continue-02.md) | CosMAC、UWBOrient（复读）；PBGI、Track-and-Stop（新读） | 活动检测到控制；备用观测的缺失区间；测试顺序与成本；信息性实验与停止规则 | 四组英文改稿、概率与序贯算例、实现检查和八条改稿案例 |
 | [2026-11-18 追加03](2026-11-18-continue-03.md) | Chorus、Medusa（复读）；本轮前十篇总结 | 启用时刻与资源可用；代理任务到物理输出；实验段落的连贯写法 | 两组完整英改、时序及指标计算、四条案例与十篇工具总结 |
+| [2026-11-18 追加04](2026-11-18-continue-04.md) | RF-LEGO、HydraNet（复读）；MF-GRAD、HeO（新读） | 物理字典与模块接口；业务分组；多精度实验分配；连续目标与离散完成 | 四组英文训练、公开实现检查、公式核算及六节点求解演示 |
 
 ## 改稿案例检索
 
@@ -600,6 +601,14 @@
 | 实验解释与参数选择 | 敏感性分析 | 只说默认参数最佳 | 先写成本与质量的共同变化，再保留质量下降的转折 | [Chorus](2026-11-18-continue-03.md#chorus) | 参数选择限于已测条件 |
 | 系统模型与论证 | 学习方法到物理输出 | 代理训练目标直接被写成生理源身份 | 分别定义样本规则、融合过程和独立输出辨认 | [Medusa](2026-11-18-continue-03.md#medusa) | 构造标签不直接保证物理身份 |
 | 指标与实验可信度 | 波形恢复结果 | 余弦相似度承担幅度与遮挡因果结论 | 先说明两个示例的条件，再接分组频率误差 | [Medusa](2026-11-18-continue-03.md#medusa) | 形状、幅度和条件对照各有对应证据 |
+| 系统模型与接口 | 可复用模块 | 程序接通被当作物理迁移成功 | 给出观测、字典与角度输出的对应关系 | [RF-LEGO](2026-11-18-continue-04.md#rf-lego) | 更换几何需核对字典及校准 |
+| 实验解释 | 算法和硬件消融 | 同表内不同干预共用一个结论 | 分别解释删学习组件与减少天线的结果 | [RF-LEGO](2026-11-18-continue-04.md#rf-lego) | 冻结权重迁移需要对应实验 |
+| 系统模型与应用指标 | 规模评估 | 并发资源数直接替代任务完成速度 | 定义工作量、类别需求与可并发集合 | [HydraNet](2026-11-18-continue-04.md#hydranet) | 物理并发可行性需另满足 |
+| 指标定义与可信度 | 吞吐量与任务时间 | 两图分母未知却互相换算 | 分别写载荷计数和计时区间 | [HydraNet](2026-11-18-continue-04.md#hydranet) | 轨迹回放按其实际方式描述 |
+| 实验论证与机制 | 优化结果 | 低成本结论只有总成本曲线 | 另记录候选与精度上的实际分配 | [MF-GRAD](2026-11-18-continue-04.md#mf-grad) | 关闭停止的机制实验单列用途 |
+| 数学意义与测量 | 多精度测试 | 便宜读数被当成目标现场无偏值 | 分别列统计误差和精度偏差界 | [MF-GRAD](2026-11-18-continue-04.md#mf-grad) | 理论保证随实际停止阈值核对 |
+| 数学意义与方法 | 组合优化 | 最终等价公式被当作相同搜索过程 | 计算连续中间状态梯度并单列目标调整 | [HeO](2026-11-18-continue-04.md#heo) | 高次连续变体不直接套多线性精确结论 |
+| 指标与图文 | 约束任务评估 | 平均接近完成等同完整成功 | 并列局部满足率与整题完成率 | [HeO](2026-11-18-continue-04.md#heo) | 明确两类指标分母及相关性 |
 
 ## 论文索引
 
@@ -886,6 +895,8 @@
 | [2026-11-18 追加01](2026-11-18-continue-01.md#coat) | NeurIPS 2024 | Discovery of the Hidden World with Large Language Models | [10.52202/079017-3249](https://doi.org/10.52202/079017-3249) |
 | [2026-11-18 追加02](2026-11-18-continue-02.md#pbgi) | NeurIPS 2024 | Cost-aware Bayesian Optimization via the Pandora’s Box Gittins Index | [10.52202/079017-3669](https://doi.org/10.52202/079017-3669) |
 | [2026-11-18 追加02](2026-11-18-continue-02.md#track-and-stop) | ICML 2024 | Adaptive Online Experimental Design for Causal Discovery | [pmlr-v235-elahi24a](https://proceedings.mlr.press/v235/elahi24a.html) |
+| [2026-11-18 追加04](2026-11-18-continue-04.md#mf-grad) | NeurIPS 2024 | Optimal Multi-Fidelity Best-Arm Identification | [10.52202/079017-3874](https://doi.org/10.52202/079017-3874) |
+| [2026-11-18 追加04](2026-11-18-continue-04.md#heo) | NeurIPS 2024 | Efficient Combinatorial Optimization via Heat Diffusion | [10.52202/079017-3559](https://doi.org/10.52202/079017-3559) |
 
 ## 写作依据
 
