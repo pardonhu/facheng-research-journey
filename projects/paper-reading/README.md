@@ -141,6 +141,7 @@
 | [2026-11-16 专项 43](2026-11-16-insight-43.md) | Timer | 从误差排序到业务告警，再用公开日志核对分母 | [方法与原创改稿](2026-11-16-insight-43.md) |
 | [2026-11-18](2026-11-18.md) | SpotLight；dAuth；RF-Mediator；LATTE（共4篇） | 实验间过渡；总体指标到机制；逐层消融；估时与任务结果 | 六组英文前后改稿、四个原创算例、CDF图注与八条案例 |
 | [2026-11-18 追加01](2026-11-18-continue-01.md) | SiWiS、DeRa（复读）；Bounce、COAT（新读） | 特征稳定与输入筛选；到达周期与服务时间；类别重编号；变量提议到测量 | 四组完整英文改稿、可复算小例子、公开实现核查和八条改稿案例 |
+| [2026-11-18 追加02](2026-11-18-continue-02.md) | CosMAC、UWBOrient（复读）；PBGI、Track-and-Stop（新读） | 活动检测到控制；备用观测的缺失区间；测试顺序与成本；信息性实验与停止规则 | 四组英文改稿、概率与序贯算例、实现检查和八条改稿案例 |
 
 ## 改稿案例检索
 
@@ -586,6 +587,14 @@
 | 论证与读者理解 | 机制解释 | 性能变化直接归因于复杂算法 | 内部计数检验候选解释，再核对具体采样规则 | [Bounce](2026-11-18-continue-01.md#bounce) | 采样偏好与完整优化差异分步验证 |
 | 系统模型与方法表达 | 日志分析、AI工具 | 只写LLM能发现原因而没有可测输出 | 给每个变量定义、取值依据和可获得时刻 | [COAT](2026-11-18-continue-01.md#coat) | 未记录的量留为缺失或安排补测 |
 | 实验论证与指标 | 因素与关系发现 | 最终图或分数代替中间步骤核验 | 分别检验提议、赋值与关系恢复 | [COAT](2026-11-18-continue-01.md#coat) | 相关因素与原因方向分别处理 |
+| 系统模型与反馈 | 接入控制 | 缺包被统一解释为碰撞 | 写明活动检测如何进入控制，并保留单源退化对照 | [CosMAC](2026-11-18-continue-02.md#cosmac) | 活动阳性与真碰撞需要分别计数 |
+| 实验设计与图文 | 原型验证 | 从可检测活动跳到控制一定有效 | 先验证接收位置和时序，再测错误控制动作 | [CosMAC](2026-11-18-continue-02.md#cosmac) | 多个CAD采样不能当作多个独立碰撞包 |
+| 读者理解与篇章 | 输入缺失后的备用路径 | 只报替代估计精度，没交代何时启用 | 依次写触发条件、剩余观测、替代输出及代价 | [UWBOrient](2026-11-18-continue-02.md#uwborient) | 持续输出与准确性分别报告 |
+| 实验设计与可信度 | 备用估计评估 | 已有读数的相关性扩大到缺失区间 | 说明拟合窗口，并用独立真值检验实际缺失区间 | [UWBOrient](2026-11-18-continue-02.md#uwborient) | 保留缺失随姿态发生的选择性 |
+| 实验归因与公平性 | 消融实验 | 两个同时变化的组件共用一句原因解释 | 增加两种中间版本，使曲线分别对应缩放与稳定计算 | [PBGI](2026-11-18-continue-02.md#pbgi) | 对照需保留相同外层优化条件 |
+| 指标定义与决策 | 成本敏感优化 | 测试次数省却没有成本含义 | 明确测试成本、最终收益、单位及后续停止机会 | [PBGI](2026-11-18-continue-02.md#pbgi) | 独立收益模型的最优性不直接移到相关测量 |
+| 数学意义与实验选择 | 方法、实验规划 | 只说选信息量大的实验 | 列候选解释在各操作下的预测并计算分布差异 | [Track-and-Stop](2026-11-18-continue-02.md#track-and-stop) | 未知预测需估计并持续探索 |
+| 实现可信度与指标 | 序贯实验评估 | 模拟误差曲线被用于保证自动停止 | 分别测固定样本误差和可观测停止规则的错误率 | [Track-and-Stop](2026-11-18-continue-02.md#track-and-stop) | 设备上的停止器不能读取真图 |
 
 ## 论文索引
 
@@ -870,6 +879,8 @@
 | [2026-11-18](2026-11-18.md#latte) | MobiCom 2024 | LATTE: Layer Algorithm-aware Training Time Estimation for Heterogeneous Federated Learning | [10.1145/3636534.3690705](https://doi.org/10.1145/3636534.3690705) |
 | [2026-11-18 追加01](2026-11-18-continue-01.md#bounce) | NeurIPS 2023 | Bounce: Reliable High-Dimensional Bayesian Optimization for Combinatorial and Mixed Spaces | [10.52202/075280-0086](https://doi.org/10.52202/075280-0086) |
 | [2026-11-18 追加01](2026-11-18-continue-01.md#coat) | NeurIPS 2024 | Discovery of the Hidden World with Large Language Models | [10.52202/079017-3249](https://doi.org/10.52202/079017-3249) |
+| [2026-11-18 追加02](2026-11-18-continue-02.md#pbgi) | NeurIPS 2024 | Cost-aware Bayesian Optimization via the Pandora’s Box Gittins Index | [10.52202/079017-3669](https://doi.org/10.52202/079017-3669) |
+| [2026-11-18 追加02](2026-11-18-continue-02.md#track-and-stop) | ICML 2024 | Adaptive Online Experimental Design for Causal Discovery | [pmlr-v235-elahi24a](https://proceedings.mlr.press/v235/elahi24a.html) |
 
 ## 写作依据
 
