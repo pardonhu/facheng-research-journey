@@ -178,11 +178,20 @@
 | [2026-11-18 追加32](2026-11-18-continue-32.md) | Moirai、SateRIoT、MIMSID（复读）、PS-BAX（新读） | 尾部概率；集合探测；事件配对；模板辨别能力 | 四篇原创算例、实验段落及下一步组网问题 |
 | [2026-11-18 追加33](2026-11-18-continue-33.md) | BACON、Robust Sampling（新读）；第十一组十篇总结 | 仿真信息增益；核验分配；目标相关测量；实验过渡 | 联合高斯及稳健抽查算例、完整改稿、十篇综合 |
 | [2026-11-18 追加34](2026-11-18-continue-34.md) | Polarix、PiSSA、BILBO（新读）、LoRaSeek（复读） | 同流参考；初始化方向；原始采集分组；双层查询 | 四篇具体机制、可复算例、完整英文与迁移顺序 |
+| [2026-11-19](2026-11-19.md) | Wi-Fi感知包扰动；StarCDN；BeamCraft；Poison2Cure（4篇新读） | 实验承接；等有效容量对照；逐周期实时性；隐私与任务效用 | 四组完整英文改稿、原创算例与图注、八条案例、存档图文一致性核对 |
 
 ## 改稿案例检索
 
 | 维度 | 适用章节 | 改稿触发条件 | 具体改法 | 案例与来源 | 适用边界 |
 | --- | --- | --- | --- | --- | --- |
+| 篇章与指标 | 实验、开销 | 主结果后突然插入开销图 | 段首先接尚未验证的系统性质，再交代分母、条件和绝对差 | [Wi-Fi感知包扰动](2026-11-19.md#packet-perturbation)，§6.4、图13 | 单次均值与差值不代替重复性或等价检验 |
+| 图文与实验条件 | 分类、工况实验 | 总平均掩盖困难组合，矩阵单元含义不清 | 总览后展开类别或工况；图注写清单元事件、固定目标与分母 | [Wi-Fi感知包扰动](2026-11-19.md#packet-perturbation)，图8 | 不同目标的独立试验不能套用行和为1的解释 |
+| 实验公平性与机制 | 实验、消融 | 总体胜出后直接归因于算法 | 用等有效可访问容量比较，再测能区分解释的中间量 | [StarCDN](2026-11-19.md#starcdn)，§5.2.1–5.2.2 | 物理资源总量、访问路径与通信成本另行说明 |
+| 段落与图文配合 | 实验 | 多张图只重复性能更好 | 让下一图回答上一图留下的问题，固定方法编码，补机制中间量 | [StarCDN](2026-11-19.md#starcdn)，图7、表3、图10 | 每项因果解释需对应对照或中间量证据 |
+| 时间指标与篇章 | 实时性实验 | 单个计算均值被解释为所有周期及时 | 从方法依赖推出时间要求，明确计时端点与完整开销，再配对比较周期期限 | [BeamCraft](2026-11-19.md#beamcraft)，§5.1.2、图9 | 平均时间只能支持相应统计层面的判断 |
+| 数学意义与图文一致性 | 参数分析 | 公式端点、曲线趋势与结果动词冲突 | 代入参数端点后检查坐标及正文，保留来源版本和待核问题 | [BeamCraft](2026-11-19.md#beamcraft)，§3.3、图11(d) | 当前定位作者存档疑点，正式版本或勘误需另查 |
+| 创新定位与段落 | 动机、方法引入 | 只说现有方案不够好，缺少从观察到办法的过程 | 用常规修补办法的受控结果提出尚未解决的问题，再指出可改变的输入环节 | [Poison2Cure](2026-11-19.md#poison2cure)，动机实验 | 操作入口需在当前系统中实际存在 |
+| 双目标指标与图文 | 实验、参数取舍 | 只报目标指标，读者无法判断其他任务代价 | 同图保留目标任务与正常任务的指标，写清各自方向和共同条件 | [Poison2Cure](2026-11-19.md#poison2cure)，基线与约束实验 | 结论按两项实测结果形成，不能预写同时改善 |
 | 读者理解与图文配合 | 动机、方法、评估 | 只说交织抗丢包，读者看不出怎样恢复 | 固定丢包数与冗余，用两行发送次序展示每个编码组损失，再比较整轮时间 | [MeAnt 启发的交织图解](2026-11-18-network-insights-illustrated.md#一-连丢三个包时-怎样让校验仍然够用) | XOR 是原创简化例；需可定位的丢包，校验与等待计入成本 |
 | 指标定义与证据 | 动机、协作机制、评估 | 用两条链路的平均接收率声称可互补 | 按同一包编号画两处接收结果，再区分联合拥有与中心实际收到 | [SateRIoT 启发的补漏图解](2026-11-18-network-insights-illustrated.md#二-两个接收点都收到九成-为什么有时能补齐) | 图中 10 包为示例；转发、确认与时隙开销需单独计入 |
 | 目标定义与方法解释 | 参数标定、方法、评估 | 只说 AI 调参，缺少下一次动作的理由 | 定义合格集合，画出一次抽样、候选内选择与真实测量更新，再比较误选漏选 | [PS-BAX 选点图解](2026-11-18-network-insights-illustrated.md#三-参数太多时-下一次为什么测-d) | 多指标组网模型需另设计；预测候选以独立测试确认 |
@@ -1189,6 +1198,10 @@
 | [2026-11-18 追加34](2026-11-18-continue-34.md#polarix) | MobiCom 2026 | Polarix: Monitoring Multi-Component Liquids via Polarized Light | [10.1145/3795866.3844475](https://doi.org/10.1145/3795866.3844475) |
 | [2026-11-18 追加34](2026-11-18-continue-34.md#pissa) | NeurIPS 2024 | PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models | [10.52202/079017-3846](https://doi.org/10.52202/079017-3846) |
 | [2026-11-18 追加34](2026-11-18-continue-34.md#bilbo) | ICML 2025 | BILBO: BILevel Bayesian Optimization | [pmlr-v267-chew25a](https://proceedings.mlr.press/v267/chew25a.html) |
+| [2026-11-19](2026-11-19.md#packet-perturbation) | MobiCom 2024 | Practical Adversarial Attack on WiFi Sensing Through Unnoticeable Communication Packet Perturbation | [10.1145/3636534.3649367](https://doi.org/10.1145/3636534.3649367) |
+| [2026-11-19](2026-11-19.md#starcdn) | SIGCOMM 2025 | StarCDN: Moving Content Delivery Networks to Space | [10.1145/3718958.3754345](https://doi.org/10.1145/3718958.3754345) |
+| [2026-11-19](2026-11-19.md#beamcraft) | MobiCom 2024 | Beamforming made Malicious: Manipulating Wi-Fi Traffic via Beamforming Feedback Forgery | [10.1145/3636534.3690669](https://doi.org/10.1145/3636534.3690669) |
+| [2026-11-19](2026-11-19.md#poison2cure) | MobiCom 2025 | Poison to Cure: Privacy-preserving Wi-Fi Multi-User Sensing via Data Poisoning | [10.1145/3680207.3723459](https://doi.org/10.1145/3680207.3723459) |
 
 ## 写作依据
 
