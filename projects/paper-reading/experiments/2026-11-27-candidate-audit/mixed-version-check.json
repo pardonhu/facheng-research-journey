@@ -1,0 +1,16 @@
+{
+  "synthetic": true,
+  "field": "GF(5)",
+  "enumerated_value_assignments": 625,
+  "latest_state_errors_after_one_fresh_equation": 0,
+  "latest_constraints_preserved_from_base": 2,
+  "latest_constraints_if_discard_old_packets": 1,
+  "full_version_elimination_latest_constraints": 2,
+  "random_algebra_identity_cases": 300,
+  "random_algebra_identity_failures": 0,
+  "late_old_counterexample": {
+    "full_cache_current_rank_after_late_packet": 3,
+    "prematurely_compacted_current_rank_after_late_packet": 2
+  },
+  "interpretation": "Algebraic reuse is valid and equals full multi-version elimination; premature closure loses useful late equations. No new-protocol gain established."
+}

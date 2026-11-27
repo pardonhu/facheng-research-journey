@@ -1,0 +1,65 @@
+{
+  "type": "algebra_and_storage_audit_not_HARQ_performance",
+  "seed": 20261127,
+  "exact_family": {
+    "receive_dimensions": 8,
+    "projection_rank": 2,
+    "random_observations": 1000,
+    "allowed_channel_variants": 12,
+    "maximum_LLR_difference_full_vs_projected": 1.2434497875801753e-14
+  },
+  "irrecoverable_from_old_LLR": {
+    "observations": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "old_LLR": [
+      4.0,
+      4.0
+    ],
+    "revised_LLR": [
+      5.65685424949238,
+      0.0
+    ]
+  },
+  "latent_dimension_counterexample": {
+    "parameter_dimension": 1,
+    "required_linear_observation_span_rank": 8
+  },
+  "historical_channel_counterexample": {
+    "old_y": 1.0,
+    "old_h": 1.0,
+    "current_h": -1.0,
+    "correct_historical_LLR": 4.0,
+    "wrong_current_h_on_old_y_LLR": -4.0
+  },
+  "out_of_family_LLR_error_bound": {
+    "samples": 1000,
+    "violations": 0,
+    "maximum_actual_error_over_bound": 0.845316593692179,
+    "meaning": "BPSK LLR numerical bound only, not a coded-BLER or safety certificate"
+  },
+  "illustrative_partial_storage_bits_per_data_symbol": {
+    "settings": "8 Rx, 1 stream, 64-QAM, 1024 data symbols, 64 retained pilots; 8-bit real IQ/projection, 6-bit LLR; basis 16-bit real",
+    "LLR_only": 36,
+    "raw_IQ_with_pilots": 136,
+    "rank2_projection_pilots_basis": 40.5,
+    "rank4_projection_pilots_basis": 73,
+    "excludes": "per-symbol residual norm e (adds 8 bits/symbol if quantized to 8 bits), headers, noise/covariance/CSI metadata, quantizer scales, codec working memory; these are partial subtotals, not total cache costs; unequal errors must be measured"
+  },
+  "not_tested": [
+    "neural receiver adaptation",
+    "actual HARQ loss",
+    "LDPC CRC",
+    "finite precision projection quality",
+    "out-of-family update rate",
+    "process-pinned receiver baseline",
+    "calibrated mixed-version LLR baseline"
+  ]
+}

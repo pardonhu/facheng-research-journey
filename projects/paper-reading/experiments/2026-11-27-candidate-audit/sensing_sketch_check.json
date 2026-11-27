@@ -1,0 +1,23 @@
+{
+  "seed": 20261127,
+  "T": 256,
+  "R": 16,
+  "repetitions": 2000,
+  "sigma": 0.15,
+  "physical_model": "three directed bistatic channels; one stationary point target; unknown iid node carrier phase per frame; known coarse frame alignment; additive independent complex Gaussian receiver noise",
+  "truth_real": 0.6065522624263971,
+  "truth_imag": -0.7950436170081608,
+  "mse": {
+    "full": 0.00026933127048947705,
+    "sample": 0.004131829071512925,
+    "ams": 17.271252880704395,
+    "mean_then_close": 0.9999642789350385
+  },
+  "complex_values_uploaded": {
+    "full": 768,
+    "sample": 48,
+    "ams": 48,
+    "mean_then_close": 3
+  },
+  "scope": "synthetic mechanism test, not hardware result. Shared sample index / projection seed metadata not charged; same seed metadata convention. Full sensing ADC cost common to all. AMS arithmetic is substantially larger."
+}

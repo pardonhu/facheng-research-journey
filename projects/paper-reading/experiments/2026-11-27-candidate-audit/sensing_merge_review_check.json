@@ -1,0 +1,39 @@
+{
+  "scope": "algebra only, not real task precision or new mathematical results",
+  "warp_max_counterexample": {
+    "a": [
+      1.0,
+      0.0
+    ],
+    "b": [
+      0.0,
+      1.0
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "warp_after_max": 1.0,
+    "max_after_warp": 0.5
+  },
+  "arbitrary_decoder_latent_max": {
+    "tree_left": [
+      0.0
+    ],
+    "tree_right": [
+      0.0
+    ],
+    "decode_after_max": [
+      0.0
+    ],
+    "max_after_decode": [
+      1.0
+    ],
+    "conclusion": "Tree invariance requires associative latent merge, not decoder homomorphism"
+  },
+  "known_nonexpansive_bound_check": {
+    "local_linf_bound": 0.1,
+    "fused_linf_error": 0.09924089852107376,
+    "conclusion": "Requires all local errors bounded and same coordinate system; does not bound AP"
+  }
+}

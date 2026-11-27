@@ -1,0 +1,79 @@
+{
+  "seed": 20261127,
+  "tx_antennas": 2,
+  "targets": 4,
+  "illuminations": 3,
+  "angles_degrees": [
+    -40.0,
+    -10.0,
+    14.999999999999998,
+    35.0
+  ],
+  "tx_weight_energy": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "min_amplitude_at_targets": 0.20663990170821292,
+  "min_permutation_signature_distance": 0.8637309601582223,
+  "results": [
+    {
+      "snr_db": 100,
+      "target_by_probe_model_violation_scale": 0,
+      "trials": 400,
+      "whole_permutation_accuracy": 1.0,
+      "single_target_ratio_ablation": 0.285,
+      "profile_row_column_gain_als": 1.0,
+      "known_array_nullspace_bgpc_aod": 1.0
+    },
+    {
+      "snr_db": 30,
+      "target_by_probe_model_violation_scale": 0,
+      "trials": 400,
+      "whole_permutation_accuracy": 1.0,
+      "single_target_ratio_ablation": 0.2775,
+      "profile_row_column_gain_als": 1.0,
+      "known_array_nullspace_bgpc_aod": 1.0
+    },
+    {
+      "snr_db": 20,
+      "target_by_probe_model_violation_scale": 0,
+      "trials": 400,
+      "whole_permutation_accuracy": 0.995,
+      "single_target_ratio_ablation": 0.265,
+      "profile_row_column_gain_als": 0.9975,
+      "known_array_nullspace_bgpc_aod": 0.9975
+    },
+    {
+      "snr_db": 10,
+      "target_by_probe_model_violation_scale": 0,
+      "trials": 400,
+      "whole_permutation_accuracy": 0.5625,
+      "single_target_ratio_ablation": 0.09,
+      "profile_row_column_gain_als": 0.6375,
+      "known_array_nullspace_bgpc_aod": 0.675
+    },
+    {
+      "snr_db": 20,
+      "target_by_probe_model_violation_scale": 0.1,
+      "trials": 400,
+      "whole_permutation_accuracy": 0.9875,
+      "single_target_ratio_ablation": 0.2,
+      "profile_row_column_gain_als": 0.9875,
+      "known_array_nullspace_bgpc_aod": 0.995
+    },
+    {
+      "snr_db": 20,
+      "target_by_probe_model_violation_scale": 0.3,
+      "trials": 400,
+      "whole_permutation_accuracy": 0.69,
+      "single_target_ratio_ablation": 0.145,
+      "profile_row_column_gain_als": 0.7325,
+      "known_array_nullspace_bgpc_aod": 0.865
+    }
+  ],
+  "payload_reference": "raw T*K complex amplitudes per RX; ratios (T-1)*K complex amplitudes; actual quantization, packet overhead, beam timing and miss handling not tested",
+  "bgpc_scope": "Same observed 3x4 response matrices and known transmit array weights; per-RX nullspace estimates inverse row gain, pseudoinverse recovers 2-element AoD response, then matches inferred sin(theta). This is a classical BGPC specialization, no new estimator claimed.",
+  "profile_scope": "35 alternating LS iterations per permutation; complex SVD initialization; reference receiver treated as a noisy regressor, not a full errors-in-variables maximum likelihood solver; same 3 probe measurements and same candidate permutations as invariant method",
+  "scope": "synthetic separable point-scatterer amplitude model; compares an invariant, row-column ALS and known-array BGPC-AoD; no full errors-in-variables ML, TSP19 beam design or waveform optimization. Unknown nuisance gains sampled independently per receiver/illumination."
+}

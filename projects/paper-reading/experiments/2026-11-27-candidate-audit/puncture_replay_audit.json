@@ -1,0 +1,54 @@
+{
+  "scope": "Synthetic Bayesian demapper counterexample, not FastSET, DeepRx, LDPC or hardware measurement",
+  "seed": 20261127,
+  "trials_per_snr": 120000,
+  "channel_prior": [
+    "1",
+    "j"
+  ],
+  "pilot_energy": 0.1,
+  "data_energy_each": 1.0,
+  "code": "(3,2) parity, s3=s1*s2",
+  "counterfactual": "Retain the first two BPSK resource elements at identical times, frequencies and powers; omit the parity observation.",
+  "what_is_proved": "Deleting an output LLR does not in general remove information already used by a data-aided front-end. Recompute on the retained observation set.",
+  "limitations": [
+    "This deletion frees a resource element, not a shortened block or higher modulation MCS.",
+    "No front-end AGC, RF nonlinearities or cross-RE interference.",
+    "No successful-packet selection.",
+    "Demapper marginalizes independent data priors and does not exploit the parity check explicitly."
+  ],
+  "results": [
+    {
+      "snr_db": -3,
+      "post_llr_puncture_error": 0.37699166666666667,
+      "observation_mask_recompute_error": 0.3866583333333333,
+      "known_channel_error": 0.29268333333333335,
+      "paired_error_difference": 0.009666666666666667,
+      "paired_difference_standard_error": 0.0007447433014029094
+    },
+    {
+      "snr_db": 0,
+      "post_llr_puncture_error": 0.20755,
+      "observation_mask_recompute_error": 0.22855833333333334,
+      "known_channel_error": 0.15115,
+      "paired_error_difference": 0.021008333333333334,
+      "paired_difference_standard_error": 0.0007513924916884805
+    },
+    {
+      "snr_db": 3,
+      "post_llr_puncture_error": 0.062475,
+      "observation_mask_recompute_error": 0.07879166666666666,
+      "known_channel_error": 0.04521666666666667,
+      "paired_error_difference": 0.016316666666666667,
+      "paired_difference_standard_error": 0.0005253362074293715
+    },
+    {
+      "snr_db": 6,
+      "post_llr_puncture_error": 0.005541666666666667,
+      "observation_mask_recompute_error": 0.008975,
+      "known_channel_error": 0.0047666666666666664,
+      "paired_error_difference": 0.0034333333333333334,
+      "paired_difference_standard_error": 0.00019013697637694445
+    }
+  ]
+}
