@@ -1,0 +1,17 @@
+{
+  "kind": "original_single_tap_identifiability_counterexample",
+  "reference_phase": "real_axis",
+  "reference_amplitude_points": 301,
+  "maximum_observation_difference": 0.0,
+  "future_combination_magnitudes": [
+    1.7088007490635064,
+    0.6
+  ],
+  "threshold": 1.2,
+  "threshold_crossings": [
+    true,
+    false
+  ],
+  "hardware_measurement": false,
+  "analytic_reason": "abs(x+iy+a)^2=(x+a)^2+y^2 for real a; sign(y) is unobserved"
+}
